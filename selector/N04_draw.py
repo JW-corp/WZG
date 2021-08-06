@@ -289,6 +289,8 @@ parser.add_argument("region", type=str, help="Signal")
 parser.add_argument("filename", type=str, help="210531_eee_2018")
 args = parser.parse_args()
 
+isPlot_MC = True
+
 
 
 if args.region == "Baseline":
@@ -483,17 +485,28 @@ plt.rcParams.update({
 	'xtick.labelsize': 12,
 	'ytick.labelsize': 12
 })
-fig, (ax, rax) = plt.subplots(
-#fig, ax = plt.subplots(
-	#nrows=1,
-	nrows=2,
-	ncols=1,
-	figsize=(10,10),
-	gridspec_kw={"height_ratios": (3, 1)},
-	sharex=True
-)
 
-fig.subplots_adjust(hspace=.07)
+
+
+
+if isPlot_MC:
+	fig, ax= plt.subplots(
+		nrows=1,
+		ncols=1,
+		figsize=(10,10),
+		sharex=True
+	)
+else:
+	
+	fig, (ax, rax) = plt.subplots(
+		nrows=2,
+		ncols=1,
+		figsize=(10,10),
+		gridspec_kw={"height_ratios": (3, 1)},
+		sharex=True
+	)
+	
+	fig.subplots_adjust(hspace=.07)
 
 
 from cycler import cycler
@@ -518,26 +531,18 @@ error_opts = {
 	'edgecolor': (0,0,0,.5),
 	'linewidth': 0
 }
-data_err_opts = {
-	'linestyle': 'none',
-'marker': '.',
-'markersize': 10.,
-'color': 'k',
-'elinewidth': 1,
-}
 
 
-# -- Make order of stak
-#print("##" * 20)
-#order_dict = {}
-#for i, j in h1.values().items():
-#	order_dict[i[0]] = j[-3]
-#	#order_dict[i[0]] = j[-2]
-#
-#orderd_dict = dict(sorted(order_dict.items(),key=(lambda x: x[1])))
-#for i,j in orderd_dict.items():
-#	order_dict[i[0]] = j[-3]
-#	print("{0} : {1}".format(i,j))
+if not isPlot_MC:
+
+	data_err_opts = {
+		'linestyle': 'none',
+	'marker': '.',
+	'markersize': 10.,
+	'color': 'k',
+	'elinewidth': 1,
+	}
+
 
 
 region = args.region
@@ -551,11 +556,8 @@ for i,j in orderd_dict.items():
 	
 
 
-
-
 # MC plotting
 import re
-
 
 if year == "2018":
 	notdata = re.compile('(?!Egamma)')
@@ -591,39 +593,37 @@ hist.plot1d(
 
 
 
-# DATA plotting
-hist.plot1d(
-	h1[data].integrate('region',region),
-	ax=ax,
-	clear=False,
-	error_opts=data_err_opts
-	
-)
+if not isPlot_MC:
+	# DATA plotting
+	hist.plot1d(
+		h1[data].integrate('region',region),
+		ax=ax,
+		clear=False,
+		error_opts=data_err_opts
+		
+	)
 
-# -- Ratio Plot
-hist.plotratio(
-	num=h1[data].integrate('region',region).sum("dataset"),
-	denom=h1[notdata].integrate('region',region).sum("dataset"),
-	ax=rax,
-	error_opts=data_err_opts,
-	denom_fill_opts={},
-	guide_opts={},
-	unc="num",
-)
+	# -- Ratio Plot
+	hist.plotratio(
+		num=h1[data].integrate('region',region).sum("dataset"),
+		denom=h1[notdata].integrate('region',region).sum("dataset"),
+		ax=rax,
+		error_opts=data_err_opts,
+		denom_fill_opts={},
+		guide_opts={},
+		unc="num",
+	)
 
-np.set_printoptions(suppress=True)
-
-
-rax.set_ylabel("Data/MC")
-
-rax.set_ylim(0, 2)
+	np.set_printoptions(suppress=True)
+	rax.set_ylabel("Data/MC")
+	rax.set_ylim(0, 2)
+	ax.set_xlabel('')
 
 
 ax._get_lines.prop_cycler = ax._get_patches_for_fill.prop_cycler
 ax.autoscale(axis="x", tight=True)
 ax.set_ylim(ymin, ymax)
 ax.set_xlim(xmin, xmax)
-ax.set_xlabel('')
 
 
 if histname == 'cutflow':
