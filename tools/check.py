@@ -55,6 +55,7 @@ def pass_triggers(infile,sample_name,year):
 	
 	events = events[triggers_mask]
 
+	'''
 	Electron = events.Electron
 	EleSelmask = (
 		(Electron.pt >= 10)
@@ -77,6 +78,7 @@ def pass_triggers(infile,sample_name,year):
 	# Apply flow2
 	Tri_electron_mask = ak.num(Electron) == 3
 	events = events[Tri_electron_mask]
+	'''
 
 	return ak.to_numpy(events.event)
 
