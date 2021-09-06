@@ -1,13 +1,28 @@
 import glob
 import subprocess
-
-
-
-
+import argparse
 
 ##### -----Please add input hist list here
-sample_name = 'Egamma'
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--name', help='outname')
+args  =parser.parse_args()
+
+sample_name = args.name
+
 file_list  = glob.glob("/x6/cms/skim_2ElIdPt10_Electron_channel/x6/cms/store/data/Run2018*/EGamma/*/*/*/*.root")
+
+if sample_name == 'SingleMuon':
+	file_list = glob.glob("../skim_2ElIdPt10_Electron_channel/x6/cms/store/data/*/SingleMuon/*/*/*/*.root")
+
+if sample_name == 'EGamma':
+	file_list  = glob.glob("/x6/cms/skim_2ElIdPt10_Electron_channel/x6/cms/store/data/Run2018*/EGamma/*/*/*/*.root")
+
+if sample_name == 'DoubleMuon':
+	file_list = glob.glob("/x6/cms/skim_2ElIdPt10_Electron_channel/x6/cms/store/data/*/DoubleMuon/NANOAOD/*/*/*.root")
+
+if sample_name == 'MuonEG':
+	file_list = glob.glob("/x6/cms/skim_2ElIdPt10_Electron_channel/x6/cms/store/data/*/MuonEG/*/*/*/*.root")
 
 
 def calc_Nout(maxfile,nfile):
@@ -27,13 +42,14 @@ for i in range(nout):
 	end = start + maxfile 
 	
 	infiles = (' '.join(file_list[start:end]))
-
+	print(infiles)
 
 	fn_out = sample_name + "_" + str(i) + ".npy"
 
 
 	print("############################## SET: ",fn_out)
-	print(infiles)
+	#print(infiles)
+
 	
 	# Run specific excutable codes
 	args = 'python' + ' '+ 'check.py' + ' ' + '--outname' + ' ' + fn_out + ' '+  infiles

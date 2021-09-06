@@ -2,7 +2,7 @@ import glob
 import numpy as np
 from tqdm import tqdm
 
-Egamma	   = 'data_after_trigger/Egamm*.npy'
+Egamma	   = 'data_after_trigger/EGamm*.npy'
 DoubleMuon = 'data_after_trigger/DoubleMuon*.npy'
 SingleMuon = 'data_after_trigger/SingleMuon*.npy'
 MuonEG	   = 'data_after_trigger/MuonEG*.npy'
@@ -17,31 +17,23 @@ Egamma_list		= glob.glob(Egamma)
 DoubleMuon_arr = []
 for f in tqdm(DoubleMuon_list):
 	DoubleMuon_arr = np.concatenate([DoubleMuon_arr,np.load(f)[()]])
-print(len(DoubleMuon_arr))
+print("DoubeMuon: ",len(DoubleMuon_arr))
 
 SingleMuon_arr = []
 for f in tqdm(SingleMuon_list):
 	SingleMuon_arr = np.concatenate([SingleMuon_arr,np.load(f)[()]])
-print(len(SingleMuon_arr))
+print("SingleMuon: ",len(SingleMuon_arr))
 
 MuonEG_arr = []
 for f in tqdm(MuonEG_list):
 	MuonEG_arr = np.concatenate([MuonEG_arr,np.load(f)[()]])
-print(len(MuonEG_arr))
+print("MuonEG: ",len(MuonEG_arr))
 
 Egamma_arr = []
 for f in tqdm(Egamma_list):
 	Egamma_arr = np.concatenate([Egamma_arr,np.load(f)[()]])
-print(len(Egamma_arr))
+print("Egama: ",len(Egamma_arr))
 
-print("Double Muon ")
-print(len(DoubleMuon_arr))
-
-print("Single Muon")
-print(len(SingleMuon_arr))
-
-print("Muon EG")
-print(len(MuonEG_arr))
 
 def show_duplicate(arr1,arr2):
 	a = np.concatenate([arr1,arr2])

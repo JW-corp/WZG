@@ -9,7 +9,9 @@ import argparse
 
 
 
-def pass_triggers(infile,sample_name):
+def pass_triggers(infile,sample_name,year):
+	
+	#print(infile)
 	events = NanoEventsFactory.from_root(infile, schemaclass=NanoAODSchema).events()
 	
 	
@@ -17,40 +19,72 @@ def pass_triggers(infile,sample_name):
 		'Egamma':{
 		"2018":["Ele23_Ele12_CaloIdL_TrackIdL_IsoVL","Ele32_WPTight_Gsf"]
 		},
-		'DoubleMuon':{
+		'SingleMuon':{
 		"2018":["IsoMu24"]
 		},
-		'MuonEG':{
+		'DoubleMuon':{
 		"2018":["Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8"]
 		},
-		'SingleMuon':{
+		'MuonEG':{
 		"2018":["Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ","Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL"]
 		},
 	}
 	
-	
-	# double lepton trigger
-	year='2018'
-	do_trigger = True
-	if not do_trigger:
-		triggers_mask = np.ones(len(events), dtype=np.bool)
-	else:
-		triggers_mask = np.zeros(len(events), dtype=np.bool)
-		for path in triggers[sample_name][year]:
-			if path not in events.HLT.fields:
-				continue
-			triggers_mask = triggers_mask | events.HLT[path]
-	
+	triggers_mask = np.ones(len(events),dtype=np.bool)
+
+	# --Trigger-mask for SingleMuon
+	if sample_name == 'SingleMuon':
+		triggers_mask = triggers_mask & events.HLT[triggers['SingleMuon'][year][0]]
+
+	# --Trigger-mask for DoubleMuon
+	elif sample_name == 'DoubleMuon':
+		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
+						& events.HLT[triggers['DoubleMuon'][year][0]]
+
+	# --Trigger-maks for Egamma
+	elif sample_name == 'Egamma':
+		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
+						& (~events.HLT[triggers['DoubleMuon'][year][0]])\
+						& (events.HLT[triggers['Egamma'][year][0]] | events.HLT[triggers['Egamma'][year][1]])
+			
+	# --Trigger-maks for MuonEG
+	elif sample_name == 'MuonEG':
+		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
+						& (events.HLT[triggers['Egamma'][year][0]] | events.HLT[triggers['Egamma'][year][1]])\
+						& (events.HLT[triggers['MuonEG'][year][0]] | events.HLT[triggers['MuonEG'][year][1]])
 	
 	events = events[triggers_mask]
+
+	Electron = events.Electron
+	EleSelmask = (
+		(Electron.pt >= 10)
+		& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
+		& (Electron.cutBased > 2)
+		& (abs(Electron.dxy) < 0.05)
+		& (abs(Electron.dz) < 0.1)
+	) | (
+		(Electron.pt >= 10)
+		& (np.abs(Electron.eta + Electron.deltaEtaSC) > 1.479)
+		& (np.abs(Electron.eta + Electron.deltaEtaSC) <= 2.5)
+		& (Electron.cutBased > 2)
+		& (abs(Electron.dxy) < 0.1)
+		& (abs(Electron.dz) < 0.2)
+	)
+
+
+	Electron = Electron[EleSelmask]
+	
+	# Apply flow2
+	Tri_electron_mask = ak.num(Electron) == 3
+	events = events[Tri_electron_mask]
+
 	return ak.to_numpy(events.event)
 
 
-
-def Loop(flist,sample_name):
+def Loop(flist,sample_name,year):
 	evt_arr=[]
 	for f in tqdm(flist):
-		evt_arr		+= list(set(pass_triggers(f,sample_name)))
+		evt_arr		+= list(set(pass_triggers(f,sample_name,year)))
 		evt_arr		 = list(set(evt_arr))
 	
 
@@ -63,27 +97,12 @@ if __name__ == "__main__":
 	parser.add_argument('--outname', '-o', help='outname')
 	args  =parser.parse_args()
 	
-	
+	year = '2018'
 	sample_name = args.outname.split('_')[0]
 	flist = args.flist
-	evt_number_arr = Loop(flist,sample_name)
+	evt_number_arr = Loop(flist,sample_name,year)
 
 	np.save(args.outname,evt_number_arr)
 
-
-#evt_DoubleMuon  = pass_triggers(sample_dict,'DoubleMuon')
-#evt_MuonEG		= pass_triggers(sample_dict,'MuonEG')
-#evt_SingleMuon  = pass_triggers(sample_dict,'SingleMuon')
-
-#print(evt_Egamma)
-#print(evt_DoubleMuon)
-#print(evt_MuonEG)
-#print(evt_SingleMuon)
-#
-#a = np.concatenate([evt_Egamma,evt_DoubleMuon,evt_MuonEG,evt_SingleMuon])
-#unq, unq_idx, unq_cnt = np.unique(a, return_inverse=True, return_counts=True)
-#cnt_mask = unq_cnt > 1
-#dup_ids = unq[cnt_mask]
-#print("duplicated: ",dup_ids)
 
 
