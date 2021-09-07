@@ -13,8 +13,8 @@ def pass_triggers(infile,sample_name,year):
 	
 	#print(infile)
 	events = NanoEventsFactory.from_root(infile, schemaclass=NanoAODSchema).events()
-	
-	
+		
+
 	triggers = {
 		'Egamma':{
 		"2018":["Ele23_Ele12_CaloIdL_TrackIdL_IsoVL","Ele32_WPTight_Gsf"]
@@ -30,67 +30,51 @@ def pass_triggers(infile,sample_name,year):
 		},
 	}
 	
-	triggers_mask = np.ones(len(events),dtype=np.bool)
-
+	triggers_mask = np.zeros(len(events),dtype=np.bool)
 	# --Trigger-mask for SingleMuon
 	if sample_name == 'SingleMuon':
-		triggers_mask = triggers_mask & events.HLT[triggers['SingleMuon'][year][0]]
+		triggers_mask = events.HLT[triggers['SingleMuon'][year][0]]
 
 	# --Trigger-mask for DoubleMuon
 	elif sample_name == 'DoubleMuon':
-		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
+		triggers_mask = (~events.HLT[triggers['SingleMuon'][year][0]])\
 						& events.HLT[triggers['DoubleMuon'][year][0]]
 
 	# --Trigger-maks for Egamma
 	elif sample_name == 'Egamma':
-		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
+		triggers_mask = (~events.HLT[triggers['SingleMuon'][year][0]])\
 						& (~events.HLT[triggers['DoubleMuon'][year][0]])\
 						& (events.HLT[triggers['Egamma'][year][0]] | events.HLT[triggers['Egamma'][year][1]])
 			
 	# --Trigger-maks for MuonEG
 	elif sample_name == 'MuonEG':
-		triggers_mask = triggers_mask & (~events.HLT[triggers['SingleMuon'][year][0]])\
-						& (events.HLT[triggers['Egamma'][year][0]] | events.HLT[triggers['Egamma'][year][1]])\
+		triggers_mask =  (~events.HLT[triggers['SingleMuon'][year][0]])\
+						& (~events.HLT[triggers['Egamma'][year][0]]) &  (~events.HLT[triggers['Egamma'][year][1]])\
+						& (~events.HLT[triggers['DoubleMuon'][year][0]])\
 						& (events.HLT[triggers['MuonEG'][year][0]] | events.HLT[triggers['MuonEG'][year][1]])
 	
 	events = events[triggers_mask]
-
-	'''
-	Electron = events.Electron
-	EleSelmask = (
-		(Electron.pt >= 10)
-		& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
-		& (Electron.cutBased > 2)
-		& (abs(Electron.dxy) < 0.05)
-		& (abs(Electron.dz) < 0.1)
-	) | (
-		(Electron.pt >= 10)
-		& (np.abs(Electron.eta + Electron.deltaEtaSC) > 1.479)
-		& (np.abs(Electron.eta + Electron.deltaEtaSC) <= 2.5)
-		& (Electron.cutBased > 2)
-		& (abs(Electron.dxy) < 0.1)
-		& (abs(Electron.dz) < 0.2)
-	)
-
-
-	Electron = Electron[EleSelmask]
 	
-	# Apply flow2
-	Tri_electron_mask = ak.num(Electron) == 3
-	events = events[Tri_electron_mask]
-	'''
-
-	return ak.to_numpy(events.event)
+	return ak.to_numpy(events.event), ak.to_numpy(events.run), ak.to_numpy(events.luminosityBlock)
 
 
 def Loop(flist,sample_name,year):
-	evt_arr=[]
-	for f in tqdm(flist):
-		evt_arr		+= list(set(pass_triggers(f,sample_name,year)))
-		evt_arr		 = list(set(evt_arr))
 	
+	evt_arr=[]
+	run_arr=[]
+	lumi_arr=[]
+	tree={'run':run_arr, 'event':evt_arr,'lumiblock':lumi_arr}
+	for f in tqdm(flist):
 
-	return evt_arr
+		evts,runs,lumi = pass_triggers(f,sample_name,year)
+		tree['event'] += list(evts)
+		tree['run'] += list(runs)
+		tree['lumiblock'] += list(lumi)
+		print(len(tree['run']),len(tree['event']),len(tree['lumiblock']))
+		
+		
+	return tree
+
 
 if __name__ == "__main__":
 
@@ -102,9 +86,6 @@ if __name__ == "__main__":
 	year = '2018'
 	sample_name = args.outname.split('_')[0]
 	flist = args.flist
-	evt_number_arr = Loop(flist,sample_name,year)
-
-	np.save(args.outname,evt_number_arr)
-
-
-
+	ntuple = Loop(flist,sample_name,year)
+	
+	np.save(args.outname,ntuple)
