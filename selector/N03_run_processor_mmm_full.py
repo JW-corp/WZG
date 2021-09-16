@@ -45,8 +45,6 @@ class JW_Processor(processor.ProcessorABC):
 			},
 		}
 
-
-
 		# Corrrection set
 		self._corrections = corrections
 		self._puweight_arr = puweight_arr
@@ -62,19 +60,18 @@ class JW_Processor(processor.ProcessorABC):
 					hist.Bin("cutflow", "Cut index", [0, 1, 2, 3, 4, 5, 6, 7]),
 				),
 
-
 				# -- Kinematics -- #
 				"mass": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
-					hist.Bin("mass", "$m_{e+e-}$ [GeV]", 100, 0, 200),
+					hist.Bin("mass", "$m_{l+l-}$ [GeV]", 100, 0, 200),
 				),
 				"mass_lll": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
-					hist.Bin("mass_lll", "$m_{lll}$ [GeV]", 1000, 0, 500),
+					hist.Bin("mass_lll", "$m_{lll}$ [GeV]", 1000, 0, 1000),
 				),
 				"MT": hist.Hist(
 					"Events",
@@ -89,65 +86,52 @@ class JW_Processor(processor.ProcessorABC):
 					hist.Bin("met", "met [GeV]", 300, 0, 600),
 				),
 				# -- Muon -- #
-				"mupt": hist.Hist(
+				"mu1pt": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
-					hist.Bin("mupt", "Leading Muon  $P_{T}$ [GeV]", 300, 25, 600),
+					hist.Bin("mu1pt", "Leading Muon $P_{T}$ [GeV]", 300, 25, 600),
 				),
-				"mueta": hist.Hist(
-					"Events",
-					hist.Cat("dataset", "Dataset"),
-					hist.Cat("region", "region"),
-					hist.Bin("mueta", "Leading Muon $\eta$ [GeV]", 20, -5, 5),
-				),
-				"muphi": hist.Hist(
-					"Events",
-					hist.Cat("dataset", "Dataset"),
-					hist.Cat("region", "region"),
-					hist.Bin("muphi", "Leading Muon $\phi$ [GeV]", 20, -3.15, 3.15),
-				),
-				# -- Electron -- #
-				"ele1pt": hist.Hist(
-					"Events",
-					hist.Cat("dataset", "Dataset"),
-					hist.Cat("region", "region"),
-					hist.Bin("ele1pt", "Leading Electron $P_{T}$ [GeV]", 300, 25, 600),
-				),
-				"ele2pt": hist.Hist(
+				"mu2pt": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
 					hist.Bin(
-						"ele2pt", "Subleading $Electron P_{T}$ [GeV]", 300, 10, 600
+						"mu2pt", "Subleading Muon $P_{T}$ [GeV]", 300, 10, 600
 					),
 				),
-				"ele1eta": hist.Hist(
+				"mu3pt": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
-					hist.Bin("ele1eta", "Leading Electron $\eta$ [GeV]", 20, -5, 5),
+					hist.Bin("mu3pt", "Third Muon $P_{T}$ [GeV]", 300, 25, 600),
 				),
-				"ele2eta": hist.Hist(
+				"mu1eta": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
-					hist.Bin("ele2eta", "Subleading Electron $\eta$ [GeV]", 20, -5, 5),
+					hist.Bin("mu1eta", "Leading Muon  $\eta$ [GeV]", 20, -5, 5),
 				),
-				"ele1phi": hist.Hist(
+				"mu2eta": hist.Hist(
+					"Events",
+					hist.Cat("dataset", "Dataset"),
+					hist.Cat("region", "region"),
+					hist.Bin("mu2eta", "Subleading Muon $\eta$ [GeV]", 20, -5, 5),
+				),
+				"mu1phi": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
 					hist.Bin(
-						"ele1phi", "Leading Electron $\phi$ [GeV]", 20, -3.15, 3.15
+						"mu1phi", "Leading Muonn $\phi$ [GeV]", 20, -3.15, 3.15
 					),
 				),
-				"ele2phi": hist.Hist(
+				"mu2phi": hist.Hist(
 					"Events",
 					hist.Cat("dataset", "Dataset"),
 					hist.Cat("region", "region"),
 					hist.Bin(
-						"ele2phi", "Subleading Electron $\phi$ [GeV]", 20, -3.15, 3.15
+						"mu2phi", "Subleading Muon $\phi$ [GeV]", 20, -3.15, 3.15
 					),
 				),
 				# -- Photon -- #
@@ -261,7 +245,7 @@ class JW_Processor(processor.ProcessorABC):
 
 		# Golden Json file
 		if (self._year == "2018") and isData:
-			injson = "/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/Coffea_WZG/Corrections/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt.RunABD"
+			injson = "/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/Coffea_WZG/Corrections/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt.RunABCD"
 
 		if (self._year == "2017") and isData:
 			injson = "/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/Coffea_WZG/Corrections/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt"
@@ -270,41 +254,18 @@ class JW_Processor(processor.ProcessorABC):
 
 		if not isData:
 
-			# Egamma reco ID
-			get_ele_reco_above20_sf = self._corrections["get_ele_reco_above20_sf"][
-				self._year
-			]
-			get_ele_medium_id_sf = self._corrections["get_ele_medium_id_sf"][self._year]
-			get_pho_medium_id_sf = self._corrections["get_pho_medium_id_sf"][self._year]
-
-			# DoubleEG trigger # 2016, 2017 are not applied yet
-			if self._year == "2018":
-				get_ele_trig_leg1_SF = self._corrections["get_ele_trig_leg1_SF"][
-					self._year
-				]
-				get_ele_trig_leg1_data_Eff = self._corrections[
-					"get_ele_trig_leg1_data_Eff"
-				][self._year]
-				get_ele_trig_leg1_mc_Eff = self._corrections[
-					"get_ele_trig_leg1_mc_Eff"
-				][self._year]
-				get_ele_trig_leg2_SF = self._corrections["get_ele_trig_leg2_SF"][
-					self._year
-				]
-				get_ele_trig_leg2_data_Eff = self._corrections[
-					"get_ele_trig_leg2_data_Eff"
-				][self._year]
-				get_ele_trig_leg2_mc_Eff = self._corrections[
-					"get_ele_trig_leg2_mc_Eff"
-				][self._year]
-
+			
 			# Muon ID, Iso
 			get_mu_tight_id_sf = self._corrections["get_mu_tight_id_sf"][self._year]
 			get_mu_tight_iso_sf = self._corrections["get_mu_tight_iso_sf"][self._year]
 
+			# Photon ID, Iso
+			get_pho_medium_id_sf = self._corrections["get_pho_medium_id_sf"][self._year]
+
 			# PU weight with custom made npy and multi-indexing
 			pu_weight_idx = ak.values_astype(events.Pileup.nTrueInt, "int64")
 			pu = self._puweight_arr[pu_weight_idx]
+
 
 		# <----- Helper functions ------>#
 
@@ -315,8 +276,6 @@ class JW_Processor(processor.ProcessorABC):
 			jet  = jet[ak.argsort(jet.pt, ascending=False, axis=1)]
 			muon = muon[ak.argsort(muon.pt, ascending=False, axis=1)] 
 			return ele, pho, jet, muon
-
-
 
 		# Lorentz vectors
 		from coffea.nanoevents.methods import vector
@@ -345,7 +304,6 @@ class JW_Processor(processor.ProcessorABC):
 			return vec
 
 		# <----- Selection ------>#
-
 		Initial_events = events
 		# Good Run ( Golden Json files )
 		from coffea import lumi_tools
@@ -364,11 +322,13 @@ class JW_Processor(processor.ProcessorABC):
 
 		# Cut flow
 		cut0 = np.zeros(len(events))
+		
 		if not isFake:
 			out["cutflow"].fill(dataset=dataset, cutflow=cut0)
 
-		##----------- Cut flow1: Passing Triggers
 
+		##----------- Cut flow1: Passing Triggers
+		
 		triggers_mask = np.zeros(len(events),dtype=np.bool)
 		if isData:
 			# --Trigger-mask for SingleMuon
@@ -412,14 +372,15 @@ class JW_Processor(processor.ProcessorABC):
 		events.Electron, events.Photon, events.Jet, events.Muon = sort_by_pt(
 			events.Electron, events.Photon, events.Jet, events.Muon
 		)
-
+		
+		
 		# Good Primary vertex
 		nPV = events.PV.npvsGood
 		nPV_nw = events.PV.npvsGood
 		if not isData:
 			nPV = nPV * pu
 
-			print(pu)
+			#print(pu)
 
 		# Apply cut1
 		events = events[triggers_mask]
@@ -436,13 +397,16 @@ class JW_Processor(processor.ProcessorABC):
 
 		# Set Particles
 		Electron = events.Electron
+		vetoElectron = events.Electron
 		Muon = events.Muon
+		vetoMuon = events.Muon
 		Photon = events.Photon
 		MET = events.MET
 		Jet = events.Jet
 
-		##----------- Cut flow2: Muon Selection
-		
+
+		print("#1 passing trig: ",len(events))
+		##----------- Cut flow2: Tight Muon Selection
 		if dataset == "FakeLepton":
 			MuSelmask = (
 				(Muon.pt >= 10)
@@ -467,28 +431,32 @@ class JW_Processor(processor.ProcessorABC):
 			)
 		Muon = Muon[MuSelmask]
 
-		# Exactly one muon
-		Muon_sel_mask = ak.num(Muon) == 1
-		Electron = Electron[Muon_sel_mask]
-		Photon = Photon[Muon_sel_mask]
-		Jet = Jet[Muon_sel_mask]
-		MET = MET[Muon_sel_mask]
-		Muon = Muon[Muon_sel_mask]
-		events = events[Muon_sel_mask]
-		if not isData:
-			pu = pu[Muon_sel_mask]
+#		##-------- Loose Muon Selection
+#
+#		if dataset == "FakeLepton":
+#
+#			MuSelmask = (
+#				(vetoMuon.pt >= 10)
+#				& (abs(vetoMuon.eta) <= 2.5)
+#				& (vetoMuon.looseId)
+#			)
+#
+#		else:
+#			MuSelmask = (
+#				(vetoMuon.pt >= 10)
+#				& (abs(vetoMuon.eta) <= 2.5)
+#				& (vetoMuon.looseId)
+#				& (vetoMuon.pfRelIso04_all < 0.4)
+#			)
+#		vetoMuon = vetoMuon[MuSelmask]
 
-		# Stop processing if there is no event remain
-		if len(Electron) == 0:
-			return out
 
-		cut2 = np.ones(len(events)) * 2
-		if not isFake:
-			out["cutflow"].fill(dataset=dataset, cutflow=cut2)
 
-		##----------- Cut flow3: Electron Selection
-		
+
+
+		##----------- Tight Electron selection
 		if dataset == "FakeLepton":
+			
 			EleSelmask = (
 				(Electron.pt >= 10)
 				& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
@@ -501,6 +469,7 @@ class JW_Processor(processor.ProcessorABC):
 				& (abs(Electron.dxy) < 0.1)
 				& (abs(Electron.dz) < 0.2)
 			)
+
 		else:
 			if not isData:
 				EleSelmask = (
@@ -534,29 +503,86 @@ class JW_Processor(processor.ProcessorABC):
 					& (abs(Electron.dxy) < 0.1)
 					& (abs(Electron.dz) < 0.2)
 				)
-
+	
 		Electron = Electron[EleSelmask]
 
-		# Exactly two electrons
-		ee_mask = ak.num(Electron) == 2
-		Electron = Electron[ee_mask]
-		Photon = Photon[ee_mask]
-		Jet = Jet[ee_mask]
-		MET = MET[ee_mask]
-		Muon = Muon[ee_mask]
-		if not isData:
-			pu = pu[ee_mask]
-		events = events[ee_mask]
+
+		##----------- loose Electron selection
+		if dataset == "FakeLepton":
+			
+			EleSelmask = (
+				(Electron.pt >= 10)
+				& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
+				& (abs(Electron.dxy) < 0.05)
+				& (abs(Electron.dz) < 0.1)
+			) | (
+				(Electron.pt >= 10)
+				& (np.abs(Electron.eta + Electron.deltaEtaSC) > 1.479)
+				& (np.abs(Electron.eta + Electron.deltaEtaSC) <= 2.5)
+				& (abs(Electron.dxy) < 0.1)
+				& (abs(Electron.dz) < 0.2)
+			)
+
+		else:
+			if not isData:
+				EleSelmask = (
+					(Electron.pt >= 10)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
+					& (Electron.cutBased > 0)
+					& (abs(Electron.dxy) < 0.05)
+					& (abs(Electron.dz) < 0.1)
+					& (Electron.genPartFlav == 1)
+				) | (
+					(Electron.pt >= 10)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) > 1.479)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) <= 2.5)
+					& (Electron.cutBased > 0)
+					& (abs(Electron.dxy) < 0.1)
+					& (abs(Electron.dz) < 0.2)
+					& (Electron.genPartFlav == 1)
+				)
+			else:
+				EleSelmask = (
+					(Electron.pt >= 10)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) < 1.479)
+					& (Electron.cutBased > 0)
+					& (abs(Electron.dxy) < 0.05)
+					& (abs(Electron.dz) < 0.1)
+				) | (
+					(Electron.pt >= 10)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) > 1.479)
+					& (np.abs(Electron.eta + Electron.deltaEtaSC) <= 2.5)
+					& (Electron.cutBased > 0)
+					& (abs(Electron.dxy) < 0.1)
+					& (abs(Electron.dz) < 0.2)
+				)
+		
+		vetoElectron = vetoElectron[EleSelmask]
+
+		# Apply flow2
+		Tri_muon_mask = (ak.num(Muon) == 3)
+		Muon		 = Muon[Tri_muon_mask]
+		vetoElectron = vetoElectron[Tri_muon_mask]
+		Photon		 = Photon[Tri_muon_mask]
+		if (not isData) and (not isFake):
+		#	gen_photons = gen_photons[Tri_electron_mask]
+			pu		 = pu[Tri_muon_mask]
+		Jet			 = Jet[Tri_muon_mask]
+		MET			 = MET[Tri_muon_mask]
+		Electron	 = Electron[Tri_muon_mask]
+		#vetoMuon	 = vetoMuon[Tri_electron_mask]
+		events		 = events[Tri_muon_mask]
 
 		# Stop processing if there is no event remain
-		if len(Electron) == 0:
+		if len(events) == 0:
 			return out
 
-		cut3 = np.ones(len(events)) * 3
+		cut2 = np.ones(len(events)) * 2
 		if not isFake:
-			out["cutflow"].fill(dataset=dataset, cutflow=cut3)
+			out["cutflow"].fill(dataset=dataset, cutflow=cut2)
 
-		##----------- Cut flow4: Photon Selection
+		print("#1 passing mmm: ",len(events))
+		##----------- Cut flow3: Photon Selection
 
 		# Basic photon selection
 		isgap_mask = (abs(Photon.eta) < 1.442) | (
@@ -571,35 +597,51 @@ class JW_Processor(processor.ProcessorABC):
 		else:
 			PT_ID_mask = (Photon.pt >= 20) & (Photon.cutBased > 1)
 
-		# dR cut with selected Muon and Electrons
-		dr_pho_ele_mask = ak.all(
-			Photon.metric_table(Electron) >= 0.5, axis=-1
-		)  # default metric table: delta_r
-		dr_pho_mu_mask = ak.all(Photon.metric_table(Muon) >= 0.5, axis=-1)
+
+		# Photon cleaning
+		if ak.sum(ak.num(Electron)) > 0:
+			dr_mask = (ak.all(Photon.metric_table(Electron) >= 0.5, axis=-1) &
+			ak.all(Photon.metric_table(Muon) >= 0.5, axis=-1))
+
+		else:
+			dr_mask = ak.all(Photon.metric_table(Muon) >= 0.5, axis=-1)
 
 
 		# Add genPartFlav to remove Fake Photon in MC samples ( They are already considered by data driven method )
 		if not isData:
 			genPartFlav_mask =  (Photon.genPartFlav == 1)
-			PhoSelmask = (genPartFlav_mask & PT_ID_mask & isgap_mask & Pixel_seed_mask & dr_pho_ele_mask & dr_pho_mu_mask)
+			PhoSelmask = (genPartFlav_mask & PT_ID_mask & isgap_mask & Pixel_seed_mask & dr_mask)
 		else:
-			PhoSelmask = (PT_ID_mask & isgap_mask & Pixel_seed_mask & dr_pho_ele_mask & dr_pho_mu_mask)
+			PhoSelmask = (PT_ID_mask & isgap_mask & Pixel_seed_mask & dr_mask)
+			
 		
 		Photon = Photon[PhoSelmask]
 
-		# Apply cut 4
+		# Apply cut 3
 		A_photon_mask = ak.num(Photon) > 0
-		Electron = Electron[A_photon_mask]
-		Photon = Photon[A_photon_mask]
-		Jet = Jet[A_photon_mask]
-		Muon = Muon[A_photon_mask]
-		MET = MET[A_photon_mask]
-		if not isData:
+		Photon		  = Photon[A_photon_mask]
+		Jet			  = Jet[A_photon_mask]
+		Muon		  = Muon[A_photon_mask]
+
+		if ak.sum(ak.num(vetoElectron)) > 0:
+			vetoElectron  = vetoElectron[A_photon_mask]
+		
+		if ak.sum(ak.num(Electron)) > 0:
+			Electron  = Electron[A_photon_mask]
+
+
+		#if ak.sum(ak.num(vetoMuon)) != 0:
+		#	vetoMuon = vetoMuon[A_photon_mask]
+		MET			  = MET[A_photon_mask]
+
+
+		if (not isData) and (not isFake):
+		#	gen_photons = gen_photons[A_photon_mask]
 			pu = pu[A_photon_mask]
 		events = events[A_photon_mask]
-
+		
 		# Stop processing if there is no event remain
-		if len(Electron) == 0:
+		if len(Photon) == 0:
 			return out
 
 		def make_leading_pair(target, base):
@@ -608,22 +650,22 @@ class JW_Processor(processor.ProcessorABC):
 		leading_pho = make_leading_pair(Photon, Photon)
 
 
-
 		# --veto Bjet
-		dr_jet_ele_mask = ak.all(
-			Jet.metric_table(Electron) >= 0.5, axis=-1
+		dr_jet_mu_mask = ak.all(
+			Jet.metric_table(Muon) >= 0.5, axis=-1
 		)  # default metric table: delta_r
 
-		if ak.sum(ak.num(Muon)) != 0:
-			dr_jet_mu_mask = ak.all(Jet.metric_table(Muon) >= 0.5, axis=-1)
+		if ak.sum(ak.num(Electron)) > 0:
+			dr_jet_ele_mask = ak.all(Jet.metric_table(Electron) >= 0.5, axis=-1)
 			bJet_mask =  (Jet.pt > 10) & (abs(Jet.eta) <2.4) & (dr_jet_ele_mask) & (dr_jet_mu_mask) & (Jet.btagDeepB > 0.7665)
 
 		else:
-			bJet_mask =  (Jet.pt > 10) & (abs(Jet.eta) <2.4) & (dr_jet_ele_mask) & (Jet.btagDeepB > 0.7665)
+			bJet_mask =  (Jet.pt > 10) & (abs(Jet.eta) <2.4) & (dr_jet_mu_mask) & (Jet.btagDeepB > 0.7665)
 
 		Jet = Jet[bJet_mask]
 
 
+		print("#3 passing photon: ",len(events))
 
 		# -------------------- Make Fake Photon BKGs---------------------------#
 		def make_bins(pt, isEB,isEE, bin_range_str):
@@ -664,7 +706,7 @@ class JW_Processor(processor.ProcessorABC):
 			# Read Fake fraction --> Mapping bin name to int()
 
 			if self._year == "2018":
-				in_dict = np.load("Fitting_210914_FakeTemplate/Fit_results.npy", allow_pickle="True")[
+				in_dict = np.load("Fitting_210915_FakePhoton_template_much/Fit_results.npy", allow_pickle="True")[
 					()
 				]
 
@@ -695,136 +737,166 @@ class JW_Processor(processor.ProcessorABC):
 			fw = vec_zero_one(fw)
 		else:
 			fw = np.ones(len(events))
-		
-		cut4 = np.ones(len(Photon)) * 4
-		out["cutflow"].fill(dataset=dataset, cutflow=cut4,weight=fw)
-		#print("Fake fraction weight: ", len(fw), len(cut4), fw)
 
-		##----------- Cut flow5: OSSF
-		ossf_mask = Electron.charge[:, 0] + Electron.charge[:, 1] == 0
+		cut3 = np.ones(len(events)) * 3
+		out["cutflow"].fill(dataset=dataset, cutflow=cut3,weight=fw)
 
-		# Apply cut 5
-		Electron = Electron[ossf_mask]
+		##----------- Cut flow4: OSSF
+		# OSSF index maker
+		@numba.njit
+		def find_3lep(events_leptons, builder):
+			for leptons in events_leptons:
+
+				builder.begin_list()
+				nlep = len(leptons)
+				for i0 in range(nlep):
+					for i1 in range(i0 + 1, nlep):
+						if leptons[i0].charge + leptons[i1].charge != 0:
+							continue
+
+						for i2 in range(nlep):
+							if len({i0, i1, i2}) < 3:
+								continue
+
+							if nlep <= 3:
+								builder.begin_tuple(3)
+								builder.index(0).integer(i0)
+								builder.index(1).integer(i1)
+								builder.index(2).integer(i2)
+							else:
+								builder.begin_tuple(4)
+								builder.index(0).integer(i0)
+								builder.index(1).integer(i1)
+								builder.index(2).integer(i2)
+								builder.index(3).integer(
+									list({0, 1, 2, 3} - {i0, i1, i2})[0]
+								)
+
+							builder.end_tuple()
+				builder.end_list()
+			return builder
+
+		mmm_triplet_idx = find_3lep(Muon, ak.ArrayBuilder()).snapshot()
+
+		ossf_mask = (
+			(ak.num(mmm_triplet_idx) == 2)
+			| (ak.num(mmm_triplet_idx) == 6)
+			| (ak.num(mmm_triplet_idx) == 8)
+		)
+		# 2 for e+ e+ e- ,  e+ e- e-
+		# 6 for e+ e+ e+ e- or e- e- e- e+
+		# 8 for e+ e+ e- e-
+
+		# Apply cut 4
+		mmm_triplet_idx = mmm_triplet_idx[ossf_mask]
+		Muon = Muon[ossf_mask]
 		Photon = Photon[ossf_mask]
+		leading_pho = leading_pho[ossf_mask]
 		fw = fw[ossf_mask]
 		if ak.sum(ak.num(Jet)) != 0:
 			Jet = Jet[ossf_mask]
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			vetoElectron  = vetoElectron[ossf_mask]
+
+
 		MET = MET[ossf_mask]
-		Muon = Muon[ossf_mask]
 		if not isData:
 			pu = pu[ossf_mask]
 		events = events[ossf_mask]
 
 		# Stop processing if there is no event remain
-		if len(Electron) == 0:
+		if len(Muon) == 0:
 			return out
 
-		cut5 = np.ones(ak.sum(ak.num(Electron) > 0)) * 5
-		out["cutflow"].fill(dataset=dataset, cutflow=cut5,weight=fw)
+		cut4 = np.ones(len(events)) * 4
+		out["cutflow"].fill(dataset=dataset, cutflow=cut4,weight=fw)
+
 
 		# Fake Lepton weight
 		if dataset == "FakeLepton":
 			fake_lep_w = events.fake.lepton_weight
 
-		# Define Electron Triplet
-		Diele = ak.zip(
+
+
+		# Define Muon Triplet
+
+		Triple_muon = [Muon[mmm_triplet_idx[idx]] for idx in "012"]
+		Triple_mmm = ak.zip(
 			{
-				"lep1": Electron[:, 0],
-				"lep2": Electron[:, 1],
-				"p4": TLorentz_vector(Electron[:, 0] + Electron[:, 1]),
+				"lep1": Triple_muon[0],
+				"lep2": Triple_muon[1],
+				"lep3": Triple_muon[2],
+				"p4": TLorentz_vector(Triple_muon[0] + Triple_muon[1]),
 			}
 		)
 
-		leading_ele = Diele.lep1
-		subleading_ele = Diele.lep2
+		# Ele pair selector --> Close to Z mass
+		bestZ_idx  = ak.singletons(ak.argmin(abs(Triple_mmm.p4.mass - 91.1876), axis=1))
+		Triple_mmm = Triple_mmm[bestZ_idx]
 
-		def make_leading_pair(target, base):
-			return target[ak.argmax(base.pt, axis=1, keepdims=True)]
+		leading_mu	  = Triple_mmm.lep1
+		subleading_mu = Triple_mmm.lep2
+		third_mu	  = Triple_mmm.lep3
 
-		leading_pho = make_leading_pair(Photon, Photon)
+		# -- Scale Factor for each muon
 
-
-		# -- Scale Factor for each electron
 		# Trigger weight helper function
-		def Trigger_Weight(eta1, pt1, eta2, pt2):
-			per_ev_MC = (
-				get_ele_trig_leg1_mc_Eff(eta1, pt1)
-				* get_ele_trig_leg2_mc_Eff(eta2, pt2)
-				+ get_ele_trig_leg1_mc_Eff(eta2, pt2)
-				* get_ele_trig_leg2_mc_Eff(eta1, pt1)
-				- get_ele_trig_leg1_mc_Eff(eta1, pt1)
-				* get_ele_trig_leg1_mc_Eff(eta2, pt2)
-			)
-
-			per_ev_data = (
-				get_ele_trig_leg1_data_Eff(eta1, pt1)
-				* get_ele_trig_leg1_SF(eta1, pt1)
-				* get_ele_trig_leg2_data_Eff(eta2, pt2)
-				* get_ele_trig_leg2_SF(eta2, pt2)
-				+ get_ele_trig_leg1_data_Eff(eta2, pt2)
-				* get_ele_trig_leg1_SF(eta2, pt2)
-				* get_ele_trig_leg2_data_Eff(eta1, pt1)
-				* get_ele_trig_leg2_SF(eta1, pt1)
-				- get_ele_trig_leg1_data_Eff(eta1, pt1)
-				* get_ele_trig_leg1_SF(eta1, pt1)
-				* get_ele_trig_leg1_data_Eff(eta2, pt2)
-				* get_ele_trig_leg1_SF(eta2, pt2)
-			)
-
-			return per_ev_data / per_ev_MC
 
 		if not isData:
 
-			## -------------< Egamma ID and Reco Scale factor > -----------------##
+			## -------------< ID and Reco Scale factor > -----------------##
+
+			# Photon
 			pho_medium_id_sf = get_pho_medium_id_sf(
 				ak.flatten(leading_pho.eta), ak.flatten(leading_pho.pt)
 			)
 
-			ele_reco_sf = get_ele_reco_above20_sf(
-				leading_ele.deltaEtaSC + leading_ele.eta,
-				leading_ele.pt,
-			) * get_ele_reco_above20_sf(
-				subleading_ele.deltaEtaSC + subleading_ele.eta,
-				subleading_ele.pt,
+			# mmm
+			mu_tight_id_sf   = get_mu_tight_id_sf(ak.flatten(abs(leading_mu.eta)), ak.flatten(leading_mu.pt)\
+			) *\
+				get_mu_tight_id_sf(ak.flatten(abs(subleading_mu.eta)), ak.flatten(subleading_mu.pt)\
+			) *\
+				get_mu_tight_id_sf(ak.flatten(abs(third_mu.eta)), ak.flatten(third_mu.pt)\
+			) 
+
+
+			mu_tight_iso_sf  = get_mu_tight_iso_sf(
+				ak.flatten(abs(leading_mu.eta)), ak.flatten(leading_mu.pt)\
+			) *	get_mu_tight_iso_sf(\
+				ak.flatten(abs(subleading_mu.eta)), ak.flatten(subleading_mu.pt)\
+			) * get_mu_tight_iso_sf(\
+				ak.flatten(abs(third_mu.eta)), ak.flatten(third_mu.pt)\
 			)
 
-			ele_medium_id_sf = get_ele_medium_id_sf(
-				leading_ele.deltaEtaSC + leading_ele.eta,
-				leading_ele.pt,
-			) * get_ele_medium_id_sf(
-				subleading_ele.deltaEtaSC + subleading_ele.eta,
-				subleading_ele.pt,
-			)
 
-			## -------------< Muon ID and Iso Scale factor > -----------------##
-			mu_tight_id_sf = get_mu_tight_id_sf(
-				ak.flatten(abs(Muon.eta)), ak.flatten(Muon.pt)
-			)
-			mu_tight_iso_sf = get_mu_tight_iso_sf(
-				ak.flatten(abs(Muon.eta)), ak.flatten(Muon.pt)
-			)
+			## -------------< Trigger Scale factor > -----------------##
 
-			## -------------< Double Electron Trigger Scale factor > -----------------##
-			ele_trig_weight = np.ones(len(pho_medium_id_sf)) * 0.987/0.988 # year 2018
+			trig_weight = np.ones(len(pho_medium_id_sf)) * 0.987/0.988 # year 2018
 
-		##----------- Cut flow6: Baseline selection
+
+
+
+
+		##----------- Cut flow5: Basline selection
 
 		# Mee cut
-		Mee_cut_mask = Diele.p4.mass > 4
+		dimu = Triple_mmm.p4
+		MZ_cut_mask = ak.firsts(dimu.mass) > 4
 
-		# Lepton PT cuts
-		Leppt_mask = ak.firsts(
-			(Diele.lep1.pt >= 25) & (Diele.lep2.pt >= 10) & (Muon.pt >= 25)
+		# Electron PT cuts
+		Mupt_mask = ak.firsts(
+			(leading_mu.pt >= 25) & (subleading_mu.pt >= 10) & (third_mu.pt >= 25)
 		)
 
-		Baseline_mask = Leppt_mask  & Mee_cut_mask  # SR,CR
+		Baseline_mask = Mupt_mask & MZ_cut_mask  # SR,CR
 
-		# Apply cut6
-		Diele_base = Diele[Baseline_mask]
+		# Apply cut5
+		Triple_mmm_base = Triple_mmm[Baseline_mask]
 		leading_pho_base = leading_pho[Baseline_mask]
-		MET_base = MET[Baseline_mask]
 		Muon_base = Muon[Baseline_mask]
+		MET_base = MET[Baseline_mask] 
 		events_base = events[Baseline_mask]
+
 
 		# Photon  EE and EB
 		isEE_mask = leading_pho.isScEtaEE
@@ -836,169 +908,242 @@ class JW_Processor(processor.ProcessorABC):
 		if len(leading_pho_base) == 0:
 			return out
 
-		fw_cut6 = fw[Baseline_mask]
-		cut6 = np.ones(len(events_base)) * 6
-		out["cutflow"].fill(dataset=dataset, cutflow=cut6,weight=fw_cut6)
+		fw_cut5 = fw[Baseline_mask]
+		cut5 = np.ones(len(events_base)) * 5
+		out["cutflow"].fill(dataset=dataset, cutflow=cut5,weight=fw_cut5)
 
-		base_arr_dict = {
-			"Diele_sel": Diele_base,
-			"leading_pho_sel": leading_pho_base,
-			"MET_sel": MET_base,
-			"Muon_sel": Muon_base,
-			"Pho_EE_sel": Pho_EE_base,
-			"Pho_EB_sel": Pho_EB_base,
+
+		base_arr_dict ={
+			"Triple_mmm_sel"  :   Triple_mmm_base
+			,"leading_pho_sel":   leading_pho_base 
+			,"Muon_sel"		  :	  Muon_base
+			,"MET_sel"		  :	  MET_base
+			,"Pho_EE_sel"	  :	  Pho_EE_base
+			,"Pho_EB_sel"	  :	  Pho_EB_base
 		}
 
+		
 		##-----------  << SR >>
-		Zmass_window_mask = abs(Diele.p4.mass - 91.1876) < 15
+		Zmass_window_mask = ak.firsts(abs(Triple_mmm.p4.mass - 91.1876)) <= 15
 
 		if dataset == "FakeLepton":
 			MET_mask = MET > 20
 		else:
 			MET_mask = MET.pt > 20
 
-
 		bjet_veto = ak.num(Jet) == 0
-		#Mlll_mask = ((Diele.p4 + Muon[:, 0]).mass) > 100
-		#SR_mask = Zmass_window_mask & MET_mask & bjet_veto & Mlll_mask
-		SR_mask = Zmass_window_mask & MET_mask & bjet_veto
-
-		SR_mask = Baseline_mask & SR_mask
-		Diele_SR = Diele[SR_mask]
-		leading_pho_SR = leading_pho[SR_mask]
-		Muon_SR = Muon[SR_mask]
-		MET_SR = MET[SR_mask]
-		Jet_SR = Jet[SR_mask]
-		events_SR = events[SR_mask]
-		Pho_EE_SR = leading_pho[isEE_mask & SR_mask]
-		Pho_EB_SR = leading_pho[isEB_mask & SR_mask]
+		#Mlll_mask = ak.firsts((Triple_mmm.p4 + Triple_mmm.lep3).mass) > 100
+		
+		
 
 
-
-		fw_cut7 = fw[SR_mask]
-		cut7 = np.ones(len(events_SR)) * 7
-		out["cutflow"].fill(dataset=dataset, cutflow=cut7,weight=fw_cut7)
-
-
-
-
-		SR_arr_dict = {
-			"Diele_sel": Diele_SR,
-			"leading_pho_sel": leading_pho_SR,
-			"MET_sel": MET_SR,
-			"Muon_sel": Muon_SR,
-			"Pho_EE_sel": Pho_EE_SR,
-			"Pho_EB_sel": Pho_EB_SR,
-		}
-
-		##-----------  << LowMET >>
-		Zmass_window_mask = abs(Diele.p4.mass - 91.1876) < 15
-		if dataset == "FakeLepton":
-			MET_mask = MET <= 30
+		print("######: show show show",sum(ak.num(vetoElectron)))
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			Ele_veto = ak.num(vetoElectron) == 0
+			SR_mask = (Ele_veto & Zmass_window_mask & MET_mask & bjet_veto)
+		
 		else:
-			MET_mask = MET.pt <= 30
-		bjet_veto = ak.num(Jet) == 0
-		#Mlll_mask = ((Diele.p4 + Muon[:, 0]).mass) > 100
-		#CR_ZJets_mask = Zmass_window_mask & MET_mask & bjet_veto & Mlll_mask
-		CR_ZJets_mask = Zmass_window_mask & MET_mask & bjet_veto 
+			SR_mask = (Zmass_window_mask & MET_mask & bjet_veto)
+		
 
-		CR_ZJets_mask = Baseline_mask & CR_ZJets_mask
-		Diele_CR_ZJets = Diele[CR_ZJets_mask]
-		leading_pho_CR_ZJets = leading_pho[CR_ZJets_mask]
-		Muon_CR_ZJets = Muon[CR_ZJets_mask]
-		MET_CR_ZJets = MET[CR_ZJets_mask]
-		Jet_CR_ZJets = Jet[CR_ZJets_mask]
-		events_CR_ZJets = events[CR_ZJets_mask]
-		Pho_EE_CR_ZJets = leading_pho[isEE_mask & CR_ZJets_mask]
-		Pho_EB_CR_ZJets = leading_pho[isEB_mask & CR_ZJets_mask]
 
-		CR_ZJets_arr_dict = {
-			"Diele_sel": Diele_CR_ZJets,
-			"leading_pho_sel": leading_pho_CR_ZJets,
-			"MET_sel": MET_CR_ZJets,
-			"Muon_sel": Muon_CR_ZJets,
-			"Pho_EE_sel": Pho_EE_CR_ZJets,
-			"Pho_EB_sel": Pho_EB_CR_ZJets,
+		SR_mask				= Baseline_mask & SR_mask
+		Triple_mmm_SR		= Triple_mmm[SR_mask]
+		leading_pho_SR		= leading_pho[SR_mask]
+		MET_SR				= MET[SR_mask]
+		Jet_SR				= Jet[SR_mask]
+		events_SR			= events[SR_mask]
+		Pho_EE_SR			= leading_pho[isEE_mask & SR_mask]
+		Pho_EB_SR			= leading_pho[isEB_mask & SR_mask]
+
+		fw_cut6 = fw[SR_mask]
+		cut6 = np.ones(len(events_SR)) * 6
+		out["cutflow"].fill(dataset=dataset, cutflow=cut6,weight=fw_cut6)
+
+		SR_arr_dict ={
+			"Triple_mmm_sel" :   Triple_mmm_SR
+			,"leading_pho_sel":  leading_pho_SR 
+			,"MET_sel"		 :	 MET_SR
+			,"Pho_EE_sel"	 :	 Pho_EE_SR
+			,"Pho_EB_sel"	 :	 Pho_EB_SR
 		}
 
-		##-----------  << CR-T-enriched >>
-		Zmass_window_mask = abs(Diele.p4.mass - 91.1876) > 5
+		
+		##-----------  << CR-ZZA >>
+		N_muon=0
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			N_muon = ak.num(vetoElectron)
+		
+		is4lep = (N_muon +ak.num(Muon)) == 4
+		Zmass_window_mask = ak.firsts(abs(Triple_mmm.p4.mass - 91.1876)) < 15
+
+
 		if dataset == "FakeLepton":
 			MET_mask = MET > 30
 		else:
 			MET_mask = MET.pt > 30
+
 		bjet_veto = ak.num(Jet) == 0
-		#Mlll_mask = ((Diele.p4 + Muon[:, 0]).mass) > 100
-		CR_Tenri_mask = Zmass_window_mask & MET_mask & bjet_veto 
+		CR_ZZA_mask = (is4lep & Zmass_window_mask & MET_mask & bjet_veto)
+		
+		CR_ZZA_mask					= Baseline_mask & CR_ZZA_mask
+		Triple_mmm_CR_ZZA			= Triple_mmm[CR_ZZA_mask]
+		leading_pho_CR_ZZA			= leading_pho[CR_ZZA_mask]
+		MET_CR_ZZA					= MET[CR_ZZA_mask]
+		Jet_CR_ZZA					= Jet[CR_ZZA_mask]
+		events_CR_ZZA				= events[CR_ZZA_mask]
+		Pho_EE_CR_ZZA				= leading_pho[isEE_mask & CR_ZZA_mask]
+		Pho_EB_CR_ZZA				= leading_pho[isEB_mask & CR_ZZA_mask]
 
-		CR_Tenri_mask = Baseline_mask & CR_Tenri_mask
-		Diele_CR_t = Diele[CR_Tenri_mask]
-		leading_pho_CR_t = leading_pho[CR_Tenri_mask]
-		Muon_CR_t = Muon[CR_Tenri_mask]
-		MET_CR_t = MET[CR_Tenri_mask]
-		Jet_CR_t = Jet[CR_Tenri_mask]
-		events_CR_t = events[CR_Tenri_mask]
-		Pho_EE_CR_t = leading_pho[isEE_mask & CR_Tenri_mask]
-		Pho_EB_CR_t = leading_pho[isEB_mask & CR_Tenri_mask]
-
-		CR_tEnriched_arr_dict = {
-			"Diele_sel": Diele_CR_t,
-			"leading_pho_sel": leading_pho_CR_t,
-			"MET_sel": MET_CR_t,
-			"Muon_sel": Muon_CR_t,
-			"Pho_EE_sel": Pho_EE_CR_t,
-			"Pho_EB_sel": Pho_EB_CR_t,
+		CR_ZZA_arr_dict ={
+			"Triple_mmm_sel" :   Triple_mmm_CR_ZZA
+			,"leading_pho_sel":  leading_pho_CR_ZZA
+			,"MET_sel"		 :	 MET_CR_ZZA
+			,"Pho_EE_sel"	 :	 Pho_EE_CR_ZZA
+			,"Pho_EB_sel"	 :	 Pho_EB_CR_ZZA
 		}
 
+
+ 		##-----------  << LowMET >>
+		Zmass_window_mask = ak.firsts(abs(Triple_mmm.p4.mass - 91.1876)) <= 15
+
+		if dataset == "FakeLepton":
+			MET_mask = MET <= 20
+		else:
+			MET_mask = MET.pt <= 20
+
+		bjet_veto = ak.num(Jet) == 0
+		#Mlll_mask = ak.firsts((Triple_mmm.p4 + Triple_mmm.lep3).mass) > 100
+		
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			print("What?!!!!!! another lepton! Muon!")
+			Ele_veto = (ak.num(vetoElectron) == 0)
+			CR_ZJets_mask = (Ele_veto & Zmass_window_mask & MET_mask & bjet_veto)
+		else:
+			CR_ZJets_mask = (Zmass_window_mask & MET_mask & bjet_veto)
+
+		CR_ZJets_mask					= Baseline_mask & CR_ZJets_mask
+		Triple_mmm_CR_ZJets				= Triple_mmm[CR_ZJets_mask]
+		leading_pho_CR_ZJets			= leading_pho[CR_ZJets_mask]
+		MET_CR_ZJets					= MET[CR_ZJets_mask]
+		Jet_CR_ZJets					= Jet[CR_ZJets_mask]
+		events_CR_ZJets					= events[CR_ZJets_mask]
+		Pho_EE_CR_ZJets					= leading_pho[isEE_mask & CR_ZJets_mask]
+		Pho_EB_CR_ZJets					= leading_pho[isEB_mask & CR_ZJets_mask]
+
+
+		CR_ZJets_arr_dict ={
+			"Triple_mmm_sel" :   Triple_mmm_CR_ZJets
+			,"leading_pho_sel":  leading_pho_CR_ZJets
+			,"MET_sel"		 :	 MET_CR_ZJets
+			,"Pho_EE_sel"	 :	 Pho_EE_CR_ZJets
+			,"Pho_EB_sel"	 :	 Pho_EB_CR_ZJets
+		}
+		
+		
+		##-----------  << CR-T-enriched >>
+		Zmass_window_mask = ak.firsts(abs(Triple_mmm.p4.mass - 91.1876)) > 5
+
+		if dataset == "FakeLepton":
+			MET_mask = MET > 30
+		else:
+			MET_mask = MET.pt > 30
+
+		bjet_veto = ak.num(Jet) == 0
+		
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			Ele_veto = ak.num(vetoElectron) == 0
+			CR_Tenri_mask = (Ele_veto & Zmass_window_mask & MET_mask & bjet_veto)
+			
+		else:
+			CR_Tenri_mask = (Zmass_window_mask & MET_mask & bjet_veto)
+		
+		CR_Tenri_mask			= Baseline_mask & CR_Tenri_mask
+		Triple_mmm_CR_t			= Triple_mmm[CR_Tenri_mask]
+		leading_pho_CR_t		= leading_pho[CR_Tenri_mask]
+		MET_CR_t				= MET[CR_Tenri_mask]
+		Jet_CR_t				= Jet[CR_Tenri_mask]
+		events_CR_t 			= events[CR_Tenri_mask]
+		Pho_EE_CR_t				= leading_pho[isEE_mask & CR_Tenri_mask]
+		Pho_EB_CR_t				= leading_pho[isEB_mask & CR_Tenri_mask]
+		
+		CR_tEnriched_arr_dict ={
+			"Triple_mmm_sel" :   Triple_mmm_CR_t
+			,"leading_pho_sel":  leading_pho_CR_t
+			,"MET_sel"		 :	 MET_CR_t
+			,"Pho_EE_sel"	 :	 Pho_EE_CR_t
+			,"Pho_EB_sel"	 :	 Pho_EB_CR_t
+		}
+
+
+
 		##-----------  << CR-Conversion >>
-		Zmass_window_mask = abs(Diele.p4.mass - 91.1876) > 15
+		Zmass_window_mask = ak.firsts(abs(Triple_mmm.p4.mass - 91.1876)) > 15
+
+
 		if dataset == "FakeLepton":
 			MET_mask = MET <= 30
 		else:
 			MET_mask = MET.pt <= 30
+
+
 		bjet_veto = ak.num(Jet) == 0
-		#Mlll_mask = ((Diele.p4 + Muon[:, 0]).mass) <= 100
-		CR_conv_mask = Zmass_window_mask & MET_mask & bjet_veto
 
-		CR_conv_mask = Baseline_mask & CR_conv_mask
-		Diele_CR_conv = Diele[CR_conv_mask]
+		if ak.sum(ak.num(vetoElectron)) != 0:
+			Ele_veto = ak.num(vetoElectron) == 0
+			CR_conv_mask = (Ele_veto & Zmass_window_mask & MET_mask & bjet_veto)
+
+		else:
+			CR_conv_mask = (Zmass_window_mask & MET_mask & bjet_veto)
+
+
+		CR_conv_mask		= Baseline_mask & CR_conv_mask
+		Triple_mmm_CR_conv	= Triple_mmm[CR_conv_mask]
 		leading_pho_CR_conv = leading_pho[CR_conv_mask]
-		Muon_CR_conv = Muon[CR_conv_mask]
-		MET_CR_conv = MET[CR_conv_mask]
-		Jet_CR_conv = Jet[CR_conv_mask]
-		events_CR_conv = events[CR_conv_mask]
-		Pho_EE_CR_conv = leading_pho[isEE_mask & CR_conv_mask]
-		Pho_EB_CR_conv = leading_pho[isEB_mask & CR_conv_mask]
+		MET_CR_conv			= MET[CR_conv_mask]
+		Jet_CR_conv			= Jet[CR_conv_mask]
+		events_CR_conv		= events[CR_conv_mask]
+		Pho_EE_CR_conv		= leading_pho[isEE_mask & CR_conv_mask]
+		Pho_EB_CR_conv		= leading_pho[isEB_mask & CR_conv_mask]
+	
 
-		CR_Conversion_dict = {
-			"Diele_sel": Diele_CR_conv,
-			"leading_pho_sel": leading_pho_CR_conv,
-			"MET_sel": MET_CR_conv,
-			"Muon_sel": Muon_CR_conv,
-			"Pho_EE_sel": Pho_EE_CR_conv,
-			"Pho_EB_sel": Pho_EB_CR_conv,
+		CR_Conversion_dict ={
+			"Triple_mmm_sel" :   Triple_mmm_CR_conv
+			,"leading_pho_sel":  leading_pho_CR_conv
+			,"MET_sel"		 :	 MET_CR_conv
+			,"Pho_EE_sel"	 :	 Pho_EE_CR_conv
+			,"Pho_EB_sel"	 :	 Pho_EB_CR_conv
 		}
-
+		
 		## -------------------- Prepare making hist --------------#
 
 		regions = {
-			"Baseline": base_arr_dict,
-			"Signal": SR_arr_dict,
-			"CR_ZJets": CR_ZJets_arr_dict,
-			"CR_tEnriched": CR_tEnriched_arr_dict,
-			"CR_conversion": CR_Conversion_dict,
+			"Baseline"		 :	base_arr_dict
+			,"Signal"		 :	SR_arr_dict
+			,"CR_ZZA"		 :	CR_ZZA_arr_dict
+			,"CR_ZJets"		 :	CR_ZJets_arr_dict
+			,"CR_tEnriched"	 :	CR_tEnriched_arr_dict
+			,"CR_conversion" :	CR_Conversion_dict
 		}
-
+	
 		mask_dict = {
-			"Baseline": Baseline_mask,
-			"Signal": SR_mask,
-			"CR_ZJets": CR_ZJets_mask,
-			"CR_tEnriched": CR_Tenri_mask,
-			"CR_conversion": CR_conv_mask,
+			"Baseline"		 : Baseline_mask  
+			,"Signal"		 : SR_mask
+			,"CR_ZZA"		 : CR_ZZA_mask
+			,"CR_ZJets"		 : CR_ZJets_mask
+			,"CR_tEnriched"	 : CR_Tenri_mask
+			,"CR_conversion" : CR_conv_mask
 		}
 
-		for region, arr_dict in regions.items():
 
+		for region,arr_dict in regions.items():
+		
+
+			# Do not consider no-evt 
+			# Stop processing if there is no event remain
+			#if len(arr_dict['MET_sel']) == 0:
+			#	continue
+			
 			# Photon
 			phoPT = ak.flatten(arr_dict["leading_pho_sel"].pt)
 			phoEta = ak.flatten(arr_dict["leading_pho_sel"].eta)
@@ -1014,25 +1159,22 @@ class JW_Processor(processor.ProcessorABC):
 
 			# Photon EB
 			if len(arr_dict["Pho_EB_sel"].pt) != 0:
-				Pho_EB_PT = ak.flatten(arr_dict["Pho_EB_sel"].pt)
+				Pho_EB_PT  = ak.flatten(arr_dict["Pho_EB_sel"].pt)
 				Pho_EB_Eta = ak.flatten(arr_dict["Pho_EB_sel"].eta)
 				Pho_EB_Phi = ak.flatten(arr_dict["Pho_EB_sel"].phi)
 				Pho_EB_sieie = ak.flatten(arr_dict["Pho_EB_sel"].sieie)
 				Pho_EB_Iso_charge = ak.flatten(arr_dict["Pho_EB_sel"].pfRelIso03_chg)
 
-			# Electrons
-			ele1PT = arr_dict["Diele_sel"].lep1.pt
-			ele1Eta = arr_dict["Diele_sel"].lep1.eta
-			ele1Phi = arr_dict["Diele_sel"].lep1.phi
-
-			ele2PT = arr_dict["Diele_sel"].lep2.pt
-			ele2Eta = arr_dict["Diele_sel"].lep2.eta
-			ele2Phi = arr_dict["Diele_sel"].lep2.phi
-
 			# Muon
-			muPT = ak.flatten(arr_dict["Muon_sel"].pt)
-			muEta = ak.flatten(arr_dict["Muon_sel"].eta)
-			muPhi = ak.flatten(arr_dict["Muon_sel"].phi)
+			mu1PT  = ak.flatten(arr_dict["Triple_mmm_sel"].lep1.pt)
+			mu1Eta = ak.flatten(arr_dict["Triple_mmm_sel"].lep1.eta)
+			mu1Phi = ak.flatten(arr_dict["Triple_mmm_sel"].lep1.phi)
+			mu2PT  = ak.flatten(arr_dict["Triple_mmm_sel"].lep2.pt)
+			mu2Eta = ak.flatten(arr_dict["Triple_mmm_sel"].lep2.eta)
+			mu2Phi = ak.flatten(arr_dict["Triple_mmm_sel"].lep2.phi)
+			mu3PT  = ak.flatten(arr_dict["Triple_mmm_sel"].lep3.pt)
+			mu3Eta = ak.flatten(arr_dict["Triple_mmm_sel"].lep3.eta)
+			mu3Phi = ak.flatten(arr_dict["Triple_mmm_sel"].lep3.phi)
 
 			# MET
 			if dataset == "FakeLepton":
@@ -1041,24 +1183,22 @@ class JW_Processor(processor.ProcessorABC):
 				met = arr_dict["MET_sel"].pt
 
 			# M(eea) M(ee)
-			diele = arr_dict["Diele_sel"].p4
-			lll_vec = diele + arr_dict["Muon_sel"][:, 0]
-			Mlll = lll_vec.mass
-			Mee = diele.mass
+			dimu = arr_dict["Triple_mmm_sel"].p4
+			lll_vec = dimu + arr_dict["Triple_mmm_sel"].lep3
+			Mlll = ak.flatten(lll_vec.mass)
+			Mll = ak.flatten(arr_dict["Triple_mmm_sel"].p4.mass)
 
-			# W MT (--> beta)
+			## W MT (--> beta )
+			#Ele3 = ak.flatten(arr_dict["Triple_mmm_sel"].lep3)
 			#MT = np.sqrt(
-			#	2
-			#	* arr_dict["Muon_sel"].pt
-			#	* arr_dict["MET_sel"].pt
-			#	* (1 - np.cos(abs(arr_dict["MET_sel"].delta_phi(arr_dict["Muon_sel"]))))
+			#	2 * Ele3.pt * arr_dict["MET_sel"].pt * (1 - np.cos(abs(arr_dict["MET_sel"].delta_phi(Ele3))))
 			#)
-			#MT = np.array(ak.firsts(MT))
+			#MT = np.array(MT)
 
 			# --- Apply weight and hist
-			weights = processor.Weights(len(cut5))
+			weights = processor.Weights(len(cut4))
 
-			# --- skim cut-weight
+
 			def skim_weight(arr):
 				mask1 = ~ak.is_none(arr)
 				subarr = arr[mask1]
@@ -1072,22 +1212,23 @@ class JW_Processor(processor.ProcessorABC):
 			if isFake:
 				weights.add("fake_fraction", fw)
 
+
 			if dataset == "FakeLepton":
 				weights.add("fake_lepton_weight",fake_lep_w)
 
-			# Weight and SF here
-			if not (isData | isFake):
-				weights.add("pileup", pu)
-				weights.add("ele_id", ele_medium_id_sf)
-				weights.add("ele_reco", ele_reco_sf)
-				weights.add("pho_id", pho_medium_id_sf)
-				weights.add("mu_id", mu_tight_id_sf)
-				weights.add("mu_iso", mu_tight_id_sf)
-				weights.add("ele_trigger", ele_trig_weight)
+			else:
+				# Weight and SF here
+				if not (isData | isFake):
+					weights.add("pileup", pu)
+					weights.add("pho_id", pho_medium_id_sf)
+					weights.add("mu_id", mu_tight_id_sf)
+					weights.add("mu_iso", mu_tight_iso_sf)
+					weights.add("trigger", trig_weight)
 
 			# ---------------------------- Fill hist --------------------------------------#
 
-			# Merger dataset 
+			
+			# Merger dataset
 			
 			if isFake:
 				dataset = "FakePhoton"
@@ -1095,13 +1236,12 @@ class JW_Processor(processor.ProcessorABC):
 			else:
 				if ((dataset == "SingleMuon") or (dataset =="DoubleMuon") or (dataset =="Egamma") or (dataset =="MuonEG")):
 					dataset = "Data"
-
-
-			# Initial events
+				
+			
 			out["sumw"][dataset] += len(Initial_events)
 
 			print(
-				"region: {0} ### cut0: {1},cut1: {2}, cut2: {3},cut3: {4},cut4: {5},cut5: {6},cut6: {7}, cut7: {8}".format(
+				"region: {0} ###  cut0: {1},cut1: {2},cut2: {3},cut3: {4},cut4: {5},cut5: {6}, cut6: {7}".format(
 					region,
 					len(cut0),
 					len(cut1),
@@ -1109,8 +1249,7 @@ class JW_Processor(processor.ProcessorABC):
 					len(cut3),
 					len(cut4),
 					len(cut5),
-					len(cut6),
-					len(met)
+					len(met),
 				)
 			)
 
@@ -1118,110 +1257,65 @@ class JW_Processor(processor.ProcessorABC):
 
 			# -- met -- #
 			out["met"].fill(
-				dataset=dataset,
-				region=region,
-				met=met,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset, region = region, met=met,weight=skim_weight(weights.weight() * cuts)
 			)
 
 			# --mass -- #
 			#out["MT"].fill(
-			#	dataset=dataset,
-			#	region=region,
-			#	MT=MT,
-			#	weight=skim_weight(weights.weight() * cuts),
+			#	dataset=dataset, region = region,MT=MT, weight=skim_weight(weights.weight() * cuts)
 			#)
-
 			out["mass"].fill(
-				dataset=dataset,
-				region=region,
-				mass=Mee,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset, region = region,mass=Mll, weight=skim_weight(weights.weight() * cuts)
 			)
 			out["mass_lll"].fill(
-				dataset=dataset,
-				region=region,
-				mass_lll=Mlll,
-				weight=skim_weight(weights.weight() * cuts),
-			)
-
-			# -- Muon -- #
-			out["mupt"].fill(
-				dataset=dataset,
-				region=region,
-				mupt=muPT,
-				weight=skim_weight(weights.weight() * cuts),
-			)
-			out["mueta"].fill(
-				dataset=dataset,
-				region=region,
-				mueta=muEta,
-				weight=skim_weight(weights.weight() * cuts),
-			)
-			out["muphi"].fill(
-				dataset=dataset,
-				region=region,
-				muphi=muPhi,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset, region = region,mass_lll=Mlll, weight=skim_weight(weights.weight() * cuts)
 			)
 
 			# -- Electron -- #
-			out["ele1pt"].fill(
+			out["mu1pt"].fill(
+				dataset=dataset, region = region,mu1pt=mu1PT, weight=skim_weight(weights.weight() * cuts)
+			)
+			out["mu1eta"].fill(
 				dataset=dataset,
 				region=region,
-				ele1pt=ele1PT,
+				mu1eta=mu1Eta,
 				weight=skim_weight(weights.weight() * cuts),
 			)
-			out["ele1eta"].fill(
+			out["mu1phi"].fill(
 				dataset=dataset,
 				region=region,
-				ele1eta=ele1Eta,
+				mu1phi=mu1Phi,
 				weight=skim_weight(weights.weight() * cuts),
 			)
-			out["ele1phi"].fill(
+			out["mu2pt"].fill(
+				dataset=dataset, region=region, mu2pt=mu2PT, weight=skim_weight(weights.weight() * cuts)
+			)
+			out["mu2eta"].fill(
 				dataset=dataset,
 				region=region,
-				ele1phi=ele1Phi,
+				mu2eta=mu2Eta,
 				weight=skim_weight(weights.weight() * cuts),
 			)
-			out["ele2pt"].fill(
+			out["mu2phi"].fill(
 				dataset=dataset,
 				region=region,
-				ele2pt=ele2PT,
+				mu2phi=mu2Phi,
 				weight=skim_weight(weights.weight() * cuts),
 			)
-			out["ele2eta"].fill(
-				dataset=dataset,
-				region=region,
-				ele2eta=ele2Eta,
-				weight=skim_weight(weights.weight() * cuts),
-			)
-			out["ele2phi"].fill(
-				dataset=dataset,
-				region=region,
-				ele2phi=ele2Phi,
-				weight=skim_weight(weights.weight() * cuts),
+			out["mu3pt"].fill(
+				dataset=dataset, region=region, mu3pt=mu3PT, weight=skim_weight(weights.weight() * cuts)
 			)
 
 			# -- Photon -- #
 
 			out["phopt"].fill(
-				dataset=dataset,
-				region=region,
-				phopt=phoPT,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset,region=region,  phopt=phoPT, weight=skim_weight(weights.weight() * cuts)
 			)
 			out["phoeta"].fill(
-				dataset=dataset,
-				region=region,
-				phoeta=phoEta,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset,region=region,  phoeta=phoEta, weight=skim_weight(weights.weight() * cuts)
 			)
 			out["phophi"].fill(
-				dataset=dataset,
-				region=region,
-				phophi=phoPhi,
-				weight=skim_weight(weights.weight() * cuts),
+				dataset=dataset,region=region,  phophi=phoPhi, weight=skim_weight(weights.weight() * cuts)
 			)
 
 			if len(arr_dict["Pho_EE_sel"].pt) != 0:
@@ -1331,12 +1425,15 @@ if __name__ == "__main__":
 
 	sample_name = data_sample.split("_")[0]
 
+
+
 	corr_file = "../Corrections/corrections.coffea"
 	# corr_file = "corrections.coffea" # Condor-batch
 
 	corrections = load(corr_file)
 
 	## Read PU weight file
+
 	if not isdata:
 		pu_path_dict = {
 			"DY": "mcPileupDist_DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8.npy",
@@ -1370,7 +1467,6 @@ if __name__ == "__main__":
 	else:
 		pu = -1
 
-
 	print("Processing the sample: ", sample_name)
 	samples = {sample_name: filelist}
 
@@ -1383,7 +1479,7 @@ if __name__ == "__main__":
 		"Events",  # Tree name
 		JW_Processor_instance,  # Class
 		executor=processor.futures_executor,
-		executor_args={"schema": NanoAODSchema, "workers": 48},
+		executor_args={"schema": NanoAODSchema, "workers": 56},
 		# maxchunks=4,
 	)
 
@@ -1393,7 +1489,6 @@ if __name__ == "__main__":
 		outname = "Data_" + data_sample + ".futures"
 	else:
 		outname = data_sample + ".futures"
-
 	# outname = 'DY_test.futures'
 	save(result, outname)
 
