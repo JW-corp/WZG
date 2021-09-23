@@ -664,7 +664,7 @@ class JW_Processor(processor.ProcessorABC):
 			# Read Fake fraction --> Mapping bin name to int()
 
 			if self._year == "2018":
-				in_dict = np.load("Fitting_210914_FakeTemplate/Fit_results.npy", allow_pickle="True")[
+				in_dict = np.load("Fitting_210918_FakePhoton_template/Fit_results.npy", allow_pickle="True")[
 					()
 				]
 
@@ -1394,6 +1394,7 @@ if __name__ == "__main__":
 	else:
 		outname = data_sample + ".futures"
 
+	outname = "210921_EgammaUL18eem/" + outname
 	# outname = 'DY_test.futures'
 	save(result, outname)
 

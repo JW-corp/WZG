@@ -529,7 +529,7 @@ class JW_Processor(processor.ProcessorABC):
 
 		Electron = Electron[Tri_electron_mask]
 		Photon = Photon[Tri_electron_mask]
-		if (not isData) and (not isFake):
+		if (not isData) and (not isFake) and (dataset!="FakeLepton"):
 		#	gen_photons = gen_photons[Tri_electron_mask]
 			pu = pu[Tri_electron_mask]
 		Jet = Jet[Tri_electron_mask]
@@ -597,7 +597,7 @@ class JW_Processor(processor.ProcessorABC):
 
 
 		MET = MET[A_photon_mask]
-		if (not isData) and (not isFake):
+		if (not isData) and (not isFake) and (dataset!="FakeLepton"):
 		#	gen_photons = gen_photons[A_photon_mask]
 			pu = pu[A_photon_mask]
 		events = events[A_photon_mask]
@@ -668,7 +668,7 @@ class JW_Processor(processor.ProcessorABC):
 			# Read Fake fraction --> Mapping bin name to int()
 
 			if self._year == "2018":
-				in_dict = np.load("Fitting_210914_FakeTemplate/Fit_results.npy", allow_pickle="True")[
+				in_dict = np.load("Fitting_210918_FakePhoton_template/Fit_results.npy", allow_pickle="True")[
 					()
 				]
 
@@ -806,7 +806,7 @@ class JW_Processor(processor.ProcessorABC):
 
 		# Trigger weight helper function
 
-		if not isData:
+		if (not isData) and (not isFake) and (dataset!="FakeLepton"):
 
 			## -------------< Egamma ID and Reco Scale factor > -----------------##
 			pho_medium_id_sf = get_pho_medium_id_sf(
@@ -1195,7 +1195,7 @@ class JW_Processor(processor.ProcessorABC):
 
 			else:
 				# Weight and SF here
-				if not (isData | isFake):
+				if (not isData) and (not isFake) and (dataset!="FakeLepton"):
 					weights.add("pileup", pu)
 					weights.add("ele_id", ele_medium_id_sf)
 					weights.add("pho_id", pho_medium_id_sf)
@@ -1411,7 +1411,7 @@ if __name__ == "__main__":
 
 	## Read PU weight file
 
-	if not isdata:
+	if (not isdata) and (sample_name!="FakeLepton"):
 		pu_path_dict = {
 			"DY": "mcPileupDist_DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8.npy",
 			"TTWJets": "mcPileupDist_TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8.npy",
@@ -1466,8 +1466,10 @@ if __name__ == "__main__":
 		outname = "Data_" + data_sample + ".futures"
 	else:
 		outname = data_sample + ".futures"
-	# outname = 'DY_test.futures'
+	
+	#outname = "210923_EgammaUL18eee/" + outname
 	save(result, outname)
+	
 
 	elapsed_time = time.time() - start
 	print("Time: ", elapsed_time)
