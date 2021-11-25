@@ -131,11 +131,12 @@ def draw_hist(df,target,start,end,bin,hist):
 	binwidth = (end - start) / bin
 
 	if hist=='Mwz':
-		plt.hist(h_Mwz, weights = arr_w, bins=bins, alpha=1, histtype='step', linewidth=2, label=target)
+		h1 = plt.hist(h_Mwz, weights = arr_w, bins=bins, alpha=1, histtype='step', linewidth=2, label=target)
 	elif hist=='phoPT':
-		plt.hist(h_phoPT, weights = arr_w, bins=bins, alpha=1,	histtype='step', linewidth=2, label=target)
+		h1 = plt.hist(h_phoPT, weights = arr_w, bins=bins, alpha=1,	histtype='step', linewidth=2, label=target)
 	else:
 		print("no ..!")	
+
 	plt.xlabel(hist, fontsize=16)  # Y-label
 	plt.ylabel("Number of Events/(%d GeV)" % binwidth, fontsize=16)  # Y-label
 
@@ -144,24 +145,143 @@ def draw_hist(df,target,start,end,bin,hist):
 
 
 
+
 if __name__ == "__main__":
 
 	df = pd.read_csv('aQGC_list_db.csv',delimiter=',')
 	df.set_index('name',inplace=True)
-	display(df)
+	#display(df)
 
 	plt.style.use(hep.style.ROOT)
-	draw_hist(df,'sm',0,1500,15,'Mwz')
-	draw_hist(df,'aQGC_all0',0,1500,15,'Mwz')
-	draw_hist(df,'FT0_1.00E-12',0,1500,15,'Mwz')
-	draw_hist(df,'FT0_2.00E-12',0,1500,15,'Mwz')
-	draw_hist(df,'FT0_-2.00E-12',0,1500,15,'Mwz')
-	draw_hist(df,'FT0_5.00E-12',0,1500,15,'Mwz')
+
+	#variable,maxi = 'phoPT',500
+	variable,maxi = 'Mwz',1500
+
+
+	draw_hist(df,'sm',0,maxi,15,variable)
+	draw_hist(df,'aQGC_all0',0,maxi,15,variable)
+	#draw_hist(df,'FT0_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT0_2.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT0_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT0_1.00E-11',0,maxi,15,variable)
+	#outname = 'FT0_mWZ.png'	
+
+
+	#draw_hist(df,'FT1_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_2.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_3.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_4.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_6.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_8.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT1_1.00E-11',0,maxi,15,variable)
+	#outname = 'FT1_mWZ.png'	
+
+	#draw_hist(df,'FT2_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT2_3.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT2_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT2_7.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT2_1.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FT2_3.00E-11',0,maxi,15,variable)
+	#outname = 'FT2_mWZ.png'	
+
+	#draw_hist(df,'FT5_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT5_3.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT5_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT5_7.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT5_1.00E-11',0,maxi,15,variable)
+	#outname = 'FT5_mWZ.png'	
+
+	#draw_hist(df,'FT6_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT6_3.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT6_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT6_1.00E-11',0,maxi,15,variable)
+	#outname = 'FT6_mWZ.png'	
+
+	#draw_hist(df,'FT7_1.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT7_3.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT7_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT7_7.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FT7_1.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FT7_3.00E-11',0,maxi,15,variable)
+	#outname = 'FT7_mWZ.png'	
+
+	#draw_hist(df,'FM0_1.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM0_2.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM0_4.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM0_6.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM0_2.00E-10',0,maxi,15,variable)
+	#draw_hist(df,'FM0_1.00E-9',0,maxi,15,variable)
+	#outname = 'FM0_mWZ.png'	
+
+	#draw_hist(df,'FM1_1.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM1_3.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM1_5.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM1_7.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM1_1.00E-10',0,maxi,15,variable)
+	#draw_hist(df,'FM1_5.00E-10',0,maxi,15,variable)
+	#draw_hist(df,'FM1_1.00E-9',0,maxi,15,variable)
+	#draw_hist(df,'FM1_5.00E-9',0,maxi,15,variable)
+	#outname = 'FM1_mWZ.png'	
+
+	#draw_hist(df,'FM2_5.00E-12',0,maxi,15,variable)
+	#draw_hist(df,'FM2_1.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM2_2.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM2_4.00E-11',0,maxi,15,variable)
+	#draw_hist(df,'FM2_1.00E-10',0,maxi,15,variable)
+	#draw_hist(df,'FM2_5.00E-10',0,maxi,15,variable)
+	#outname = 'FM2_mWZ.png'	
+
+	#draw_hist(df,'FM3_1.00E-11',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_2.00E-11',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_4.00E-11',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_6.00E-11',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_1.00E-10',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_5.00E-10',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_7.00E-10',0,maxi,15,variable) 
+	#draw_hist(df,'FM3_1.00E-9',0,maxi,15,variable) 
+	#outname = 'FM3_mWZ.png'	
+
+	#draw_hist(df,'FM4_5.00E-12',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_1.00E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_1.50E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_2.00E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_4.00E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_6.00E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_8.00E-11',0,maxi,15,variable)   
+	#draw_hist(df,'FM4_1.00E-10',0,maxi,15,variable)   
+	#outname = 'FM4_mWZ.png'	
+
+	#draw_hist(df,'FM5_3.00E-12',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_5.00E-12',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_7.00E-12',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_1.00E-11',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_4.00E-11',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_6.00E-11',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_8.00E-11',0,maxi,15,variable)     
+	#draw_hist(df,'FM5_1.00E-10',0,maxi,15,variable)     
+	#outname = 'FM5_mWZ.png'	
+
+	draw_hist(df,'FM7_1.00E-11',0,maxi,15,variable)      
+	draw_hist(df,'FM7_3.00E-11',0,maxi,15,variable)      
+	draw_hist(df,'FM7_5.00E-11',0,maxi,15,variable)      
+	draw_hist(df,'FM7_7.00E-11',0,maxi,15,variable)      
+	draw_hist(df,'FM7_1.00E-10',0,maxi,15,variable)      
+	draw_hist(df,'FM7_2.00E-10',0,maxi,15,variable)      
+	draw_hist(df,'FM7_3.00E-10',0,maxi,15,variable)      
+	draw_hist(df,'FM7_4.00E-10',0,maxi,15,variable)      
+	draw_hist(df,'FM7_5.00E-10',0,maxi,15,variable)      
+	outname = 'FM7_mWZ.png'	
+
 	
+
+
+
+
 	plt.xticks(fontsize=16)  # xtick size
 	plt.yticks(fontsize=16)  # ytick size
 	
 	plt.grid(alpha=0.5)  # grid
 	plt.legend(prop={"size": 15})  # show legend
 	
-	plt.show()  # show histogram
+	#plt.show()  # show histogram
+	plt.savefig(outname)
