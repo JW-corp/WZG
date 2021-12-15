@@ -1,7 +1,9 @@
 
 
 # Test for tutorial
-python run_condor.pt -f jsons/input_mc_test_2018.json
+#python run_condor.pt -f jsons/input_mc_test_2018.json
+
+
 
 
 
@@ -15,3 +17,24 @@ python run_condor.pt -f jsons/input_mc_test_2018.json
 
 
 
+
+##  Data
+
+# preVFP
+
+#python run_condor.py -f jsons/input_data2016_pre.json -y 2016_preVFP
+
+
+# postVFP
+#python run_condor.py -f jsons/input_data2016_post.json -y 2016
+
+
+
+## MC
+
+# preVFP
+#python run_condor.py -f jsons/input_mc2016_pre.json -y 2016_preVFP
+
+
+#postVFP
+python run_condor.py -f jsons/input_mc2016_post.json -y 2016

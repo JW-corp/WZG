@@ -62,5 +62,6 @@ class eleRECOSFProducer(Module):
     return True
 
 eleRECOSF2016 = lambda: eleRECOSFProducer("2016")
+eleRECOSF2016_preVFP = lambda: eleRECOSFProducer("2016preVFP")
 eleRECOSF2017 = lambda: eleRECOSFProducer("2017")
 eleRECOSF2018 = lambda: eleRECOSFProducer("2018")

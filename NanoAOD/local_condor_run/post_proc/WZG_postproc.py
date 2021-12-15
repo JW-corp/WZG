@@ -64,7 +64,7 @@ else:
         Modules = [countHistogramsProducer(),muonScaleRes2016b(),first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),WZG_select_Module_16()]
     if args.year == '2016_preVFP':
         jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016_preVFP", jesUncert="Total", metBranchName="MET", splitJER=False)
-        Modules = [countHistogramsProducer(),muonScaleRes2016a(),first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),WZG_select_Module_16preVFP()]
+        Modules = [countHistogramsProducer(),muonScaleRes2016a(),first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),jetmetCorrector(),WZG_select_Module_16preVFP()]
 
 if args.file:
 
