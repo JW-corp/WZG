@@ -9,7 +9,8 @@ import json
 parser = argparse.ArgumentParser(description='condor for postproc')
 parser.add_argument('-f', dest='file', default='', help='json file input')
 parser.add_argument('-y', dest='year', default='2018', help='year')
-parser.add_argument('-isFake',type=bool, default=False, help='json file input')
+parser.add_argument('-isFakeFR',type=bool, default=False, help='json file input')
+parser.add_argument('-isFakeAR',type=bool, default=False, help='json file input')
 args = parser.parse_args()
 
 year = args.year
@@ -104,8 +105,8 @@ for dataset in jsons:
 
 
 			# set NanoAOD tool and run jobs
-			if args.isFake:
-				f.write("cd PhysicsTools/NanoAODTools/nanoAOD-WVG/FakePhoton\n")
+			if args.isFakeFR or args.isFakeAR:
+				f.write("cd PhysicsTools/NanoAODTools/nanoAOD-WVG/FakeLepton\n")
 			else:
 				f.write("cd PhysicsTools/NanoAODTools/nanoAOD-WVG/WZG_selector\n")
 			f.write("[[ -d " + datasetname + " ]]" + " || " +  " mkdir " +  datasetname + "\n")
@@ -113,8 +114,12 @@ for dataset in jsons:
 
 			if isdata:
 
-				if args.isFake:
-					f.write("python full_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " + "-d" + " " +\
+				if args.isFakeFR:
+					f.write("python FR_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " + "-d" + " " +\
+					"-dataset_name" + " " + datasetname + " " +  "-p" + " " +  period + "\n")
+
+				elif args.isFakeAR:
+					f.write("python AR_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " + "-d" + " " +\
 					"-dataset_name" + " " + datasetname + " " +  "-p" + " " +  period + "\n")
 
 				else:
@@ -122,8 +127,12 @@ for dataset in jsons:
 					"-dataset_name" + " " + datasetname + " " +  "-p" + " " +  period + "\n")
 			else:
 
-				if args.isFake:
-					f.write("python full_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " +\
+				if args.isFakeFR:
+					f.write("python FR_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " +\
+					"-dataset_name" + " " + datasetname + " " +  "-p" + " " +  period + "\n")
+
+				elif args.isFakeAR:
+					f.write("python AR_Template_postproc.py -f" + " " + filepath + " " + "-y" + " " + year + " " +\
 					"-dataset_name" + " " + datasetname + " " +  "-p" + " " +  period + "\n")
 
 				else:

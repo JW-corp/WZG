@@ -286,11 +286,24 @@ class FakePho_Producer(Module):
 
             tight_jets.append(i)
 
+
             if event.Jet_pt_nom[i] >= 30:
+                if self.year == '2016_preVFP':
+                    if jets[i].btagDeepB > 0.8819   :
+                            tight_bjets.append(i)
+
+
+                if self.year == '2016':
+                    if jets[i].btagDeepB > 0.8767:
+                            tight_bjets.append(i)
+
+
                 if self.year == '2017':
                     if jets[i].btagDeepB > 0.7738:
                             tight_bjets.append(i)
-                elif self.year == '2018':
+
+
+                if self.year == '2018':
                     if jets[i].btagDeepB > 0.7665:
                             tight_bjets.append(i)
 
@@ -695,8 +708,9 @@ class FakePho_first_Template_Producer(Module):
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
 
-FakePho_Module = lambda : FakePho_Producer()
-FakePho_Module_16 = lambda : FakePho_Producer('2016')
-FakePho_Module_17 = lambda : FakePho_Producer('2017')
-FakePho_Module_18 = lambda : FakePho_Producer('2018')
+FakePho_Module		    = lambda : FakePho_Producer()
+FakePho_Module_16		= lambda : FakePho_Producer('2016')
+FakePho_Module_16preVFP = lambda : FakePho_Producer('2016_preVFP')
+FakePho_Module_17		= lambda : FakePho_Producer('2017')
+FakePho_Module_18		= lambda : FakePho_Producer('2018')
 FakePho_first_Template_Module = lambda : FakePho_first_Template_Producer()
