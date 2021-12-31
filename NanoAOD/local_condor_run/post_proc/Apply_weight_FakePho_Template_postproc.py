@@ -25,12 +25,13 @@ args = parser.parse_args()
 
 
 
-if args.year == '2016'
-	Modules = [FakePho_Module_test(),ApplyWeightFakePhotonModule16()]
-if args.year == '2017'
-	Modules = [FakePho_Module_test(),ApplyWeightFakePhotonModule17()]
-if args.year == '2018'
-	Modules = [FakePho_Module_test(),ApplyWeightFakePhotonModule18()]
+if args.year == '2016':
+	#Modules = [FakePho_Module_test(),ApplyWeightFakePhotonModule16()]
+	Modules = [ApplyWeightFakePhotonModule16()]
+if args.year == '2017':
+	Modules = [ApplyWeightFakePhotonModule17()]
+if args.year == '2018':
+	Modules = [ApplyWeightFakePhotonModule18()]
 
 
 
