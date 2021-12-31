@@ -25,7 +25,6 @@ parser.add_argument('-m', dest='mode', default='local', help='runmode local/cond
 parser.add_argument('-y', dest='year', default='2018', help='year')
 parser.add_argument('-d', dest='isdata',action='store_true',default=False)
 parser.add_argument('-p', dest='period',default="B", help="Run period, only work for data")
-args = parser.parse_args()
 
 
 PrefCorrUL16_preVFP = lambda : PrefCorr(jetroot="L1PrefiringMaps.root", jetmapname="L1prefiring_jetptvseta_UL2016preVFP", photonroot="L1PrefiringMaps.root", photonmapname="L1prefiring_photonptvseta_UL2016preVFP", branchnames=["PrefireWeight","PrefireWeight_Up", "PrefireWeight_Down"])
