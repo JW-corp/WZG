@@ -43,36 +43,23 @@ class WZG_Producer(Module):
 		self.out.branch("ntight_electrons","i")
 		self.out.branch("ntight_muons","i")
 
+		self.out.branch("tight_electrons_pt", "F")
+		self.out.branch("tight_electrons_eta","F")
+		self.out.branch("tight_electrons_phi","F")
+		self.out.branch("tight_muons_pt", "F")
+		self.out.branch("tight_muons_eta","F")
+		self.out.branch("tight_muons_phi","F")
+		self.out.branch("tight_photon_pt","F")  
+		self.out.branch("tight_photon_eta","F")  
+		self.out.branch("tight_photon_phi","F")  
 
 
-		self.out.branch("WZG_lepton1_pt",  "F")
-		self.out.branch("WZG_lepton1_eta",  "F")
-		self.out.branch("WZG_lepton1_phi",  "F")
-		self.out.branch("WZG_lepton1_mass",  "F")
-		self.out.branch("WZG_lepton1_genPartFlav",  "i")
-		self.out.branch("WZG_lepton1_index",  "i")
-		self.out.branch("WZG_lepton2_pt",  "F")
-		self.out.branch("WZG_lepton2_eta",  "F")
-		self.out.branch("WZG_lepton2_phi",  "F")
-		self.out.branch("WZG_lepton2_mass",  "F")
-		self.out.branch("WZG_lepton2_genPartFlav",  "i")
-		self.out.branch("WZG_lepton2_index",  "i")
-		self.out.branch("WZG_lepton3_pt",  "F")
-		self.out.branch("WZG_lepton3_eta",  "F")
-		self.out.branch("WZG_lepton3_phi",  "F")
-		self.out.branch("WZG_lepton3_mass",  "F")
-		self.out.branch("WZG_lepton3_genPartFlav",  "i")
-		self.out.branch("WZG_lepton3_index",  "i")
-		self.out.branch("WZG_photon_pt",  "F")
-		self.out.branch("WZG_photon_eta",  "F")
-		self.out.branch("WZG_photon_phi",  "F")
-		self.out.branch("WZG_photon_mass",  "F")
-		self.out.branch("WZG_photon_genPartFlav",  "i")
-		self.out.branch("WZG_photon_index",  "i")
-		self.out.branch("WZG_dileptonmass",  "F")
-		self.out.branch("WZG_trileptonmass",  "F")
-		self.out.branch("WZG_mlla",  "F")
-		self.out.branch("WZG_MET",  "F")
+		self.out.branch("Z_ele1_pt",  "F")
+		self.out.branch("Z_ele2_pt",  "F")
+		self.out.branch("Z_mu1_pt",  "F")
+		self.out.branch("Z_mu2_pt",  "F")
+		self.out.branch("Ele_dileptonmass",  "F")
+		self.out.branch("Mu_dileptonmass",  "F")
 
 
 		self.out.branch("Muon_ID_Weight", "F")
@@ -297,9 +284,7 @@ class WZG_Producer(Module):
 		self.out.fillBranch("nJets", len(tight_jets))
 		self.out.fillBranch("nbJets", len(tight_bjets))
 
-		channel = -99 
-
-
+		channel = 0
 
 
 
@@ -317,153 +302,88 @@ class WZG_Producer(Module):
 		self.out.fillBranch('ntight_electrons',len(tight_electrons))
 		self.out.fillBranch('ntight_muons',len(tight_muons))
 
-		if len(tight_electrons) >=2 or len(tight_muons) >= 2:
 
-			dileptonmass = float('inf')
-			m_lla = -float('inf')
-
-
-			# ee
-			if len(tight_electrons)>=2:
-				# move the different charge lepton to the end for further analysis
-				dileptonmass = (electrons[tight_electrons[0]].p4() + electrons[tight_electrons[1]].p4()).M()
+		#print("##"*20)
+		for i in range(len(event.GenPart_pdgId)):
+			
+			#print(event.GenPart_pdgId[i] , event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])
+			if (abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15):
+				#and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])==23:
+				channel = abs(event.GenPart_pdgId[i])
+				#print("channel: ",abs(event.GenPart_pdgId[i]))
+				break
+		if channel == 0:
+		
+			for j in range(len(event.GenPart_pdgId)):
+				print("weied channel: ",j,event.GenPart_pdgId[j],event.GenPart_genPartIdxMother[j])
+			
+			#print("??")
 				
-				if electrons[tight_electrons[0]].pt < 25:
-					return False
+		
+		
+		dileptonmass = float('inf')
+		m_lla = -float('inf')
 
-				if len(tight_photons) > 0:
-					m_lla = (electrons[tight_electrons[0]].p4() + electrons[tight_electrons[1]].p4() + photons[tight_photons[0]].p4()).M()
+
+
+
+		# ee
+		if len(tight_electrons)>=2:
+			# move the different charge lepton to the end for further analysis
+
+			if electrons[tight_electrons[0]].pt > 25:
+				dileptonmass = (electrons[tight_electrons[0]].p4() + electrons[tight_electrons[1]].p4()).M()
+				self.out.fillBranch("Ele_dileptonmass", dileptonmass)
+			
+
 
 				temp_zl1_p4 = electrons[tight_electrons[0]].p4()
-				temp_zl1_index = tight_electrons[0]
 				temp_zl2_p4 = electrons[tight_electrons[1]].p4()
-				temp_zl2_index = tight_electrons[1]
-				if hasattr(electrons[tight_electrons[0]],"genPartFlav"):
-					temp_zl1_genPartFlav = electrons[tight_electrons[0]].genPartFlav
-					temp_zl2_genPartFlav = electrons[tight_electrons[1]].genPartFlav
+				self.out.fillBranch("Z_ele1_pt", temp_zl1_p4.Pt())
+				self.out.fillBranch("Z_ele2_pt", temp_zl2_p4.Pt())
 
-				channel = 0
+		# mu
+		if len(tight_muons)>=2:
 
-
-			# mu
-			if len(tight_muons)>=2:
+			if muons[tight_muons[0]].pt > 25:
 				dileptonmass = (muons[tight_muons[0]].p4() + muons[tight_muons[1]].p4()).M()
-				
-				if muons[tight_muons[0]].pt < 25:
-					return False
-				if len(tight_photons) > 0:
-					m_lla = (muons[tight_muons[0]].p4() + muons[tight_muons[1]].p4() + photons[tight_photons[0]].p4()).M()
+				self.out.fillBranch("Mu_dileptonmass", dileptonmass)
+			
 
 				temp_zl1_p4 = muons[tight_muons[0]].p4()
-				temp_zl1_index = tight_muons[0]
-				temp_zl1_p4.SetPtEtaPhiM(event.Muon_corrected_pt[0], temp_zl1_p4.Eta(), temp_zl1_p4.Phi(), temp_zl1_p4.M())
 				temp_zl2_p4 = muons[tight_muons[1]].p4()
-				temp_zl2_index = tight_muons[1]
-				temp_zl2_p4.SetPtEtaPhiM(event.Muon_corrected_pt[1], temp_zl2_p4.Eta(), temp_zl2_p4.Phi(), temp_zl2_p4.M())
-				if hasattr(muons[tight_muons[0]],"genPartFlav"):
-					temp_wl1_genPartFlav = muons[tight_muons[0]].genPartFlav
-					temp_zl1_genPartFlav = muons[tight_muons[1]].genPartFlav
-
-				channel = 1
-			
-			
-			if True:
+				self.out.fillBranch("Z_mu1_pt", temp_zl1_p4.Pt())
+				self.out.fillBranch("Z_mu2_pt", temp_zl2_p4.Pt())
+		
+		
 
 
-				self.out.fillBranch("channel_mark", channel)
-				# l1: w, l2: zl1, l3: zl2
-				if len(tight_muons)>=2 or len(tight_electrons)>=2:
-					self.out.fillBranch("WZG_lepton1_pt", temp_zl1_p4.Pt())
-					self.out.fillBranch("WZG_lepton1_eta", temp_zl1_p4.Eta())
-					self.out.fillBranch("WZG_lepton1_phi", temp_zl1_p4.Phi())
-					self.out.fillBranch("WZG_lepton1_mass", temp_zl1_p4.M())
-					self.out.fillBranch("WZG_lepton1_index", temp_zl1_index)
-					self.out.fillBranch("WZG_lepton2_pt", temp_zl2_p4.Pt())
-					self.out.fillBranch("WZG_lepton2_eta", temp_zl2_p4.Eta())
-					self.out.fillBranch("WZG_lepton2_phi", temp_zl2_p4.Phi())
-					self.out.fillBranch("WZG_lepton2_mass", temp_zl2_p4.M())
-					self.out.fillBranch("WZG_lepton2_index", temp_zl2_index)
-					self.out.fillBranch("WZG_dileptonmass", dileptonmass)
-				if len(tight_photons)>=1:
-					self.out.fillBranch("WZG_photon_pt", photons[tight_photons[0]].pt)
-					self.out.fillBranch("WZG_photon_eta", photons[tight_photons[0]].eta)
-					self.out.fillBranch("WZG_photon_phi", photons[tight_photons[0]].phi)
-					self.out.fillBranch("WZG_photon_mass", photons[tight_photons[0]].mass)
-					self.out.fillBranch("WZG_photon_index", tight_photons[0])
-					if hasattr(photons[tight_photons[0]], "genPartFlav"):
-						self.out.fillBranch("WZG_photon_genPartFlav", photons[tight_photons[0]].genPartFlav)
-					self.out.fillBranch("WZG_mlla", m_lla)
-				#if 'temp_wl1_genPartFlav' in locals():
-				#	self.out.fillBranch("WZG_lepton1_genPartFlav", temp_wl1_genPartFlav)
-				#	self.out.fillBranch("WZG_lepton2_genPartFlav", temp_zl1_genPartFlav)
-				self.out.fillBranch("WZG_MET", MET)
-				return True
+		self.out.fillBranch("channel_mark", channel)
 
-		return False
+
+
+		# tight electron
+		if len(tight_electrons)>0:
+			self.out.fillBranch("tight_electrons_pt", electrons[tight_electrons[0]].pt)
+			self.out.fillBranch("tight_electrons_eta", electrons[tight_electrons[0]].eta)
+			self.out.fillBranch("tight_electrons_phi", electrons[tight_electrons[0]].phi)
+
+		if len(tight_muons)>0:
+			self.out.fillBranch("tight_muons_pt", muons[tight_muons[0]].pt)
+			self.out.fillBranch("tight_muons_eta", muons[tight_muons[0]].eta)
+			self.out.fillBranch("tight_muons_phi", muons[tight_muons[0]].phi)
+
+		if len(tight_photons)>=1:
+			self.out.fillBranch("tight_photon_pt", photons[tight_photons[0]].pt)
+			self.out.fillBranch("tight_photon_eta", photons[tight_photons[0]].eta)
+			self.out.fillBranch("tight_photon_phi", photons[tight_photons[0]].phi)
+		return True
+
 	
 
-class first_Template_Producer(Module):
-	def __init__(self):
-		pass
-	def beginFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
-		self.out = wrappedOutputTree
-		self.out.branch("nLooseNotTightLep","I")
-		self.out.branch("nTightLep","I")
-		self.out.branch("nTightMuon","I")
-		self.out.branch("nTightElectron","I")
-		self.out.branch("nLooseNotTightMuon","I")
-		self.out.branch("nLooseNotTightElectron","I")
-		pass
 
-	def endFile(self, inputFile, outputFile, inputTree, wrappedOutputTree):
-		pass
 
-	def analyze(self, event):
-		"""process event, return True (go to next module) or False (fail, go to next event)"""
-		electrons = Collection(event, "Electron")
-		muons = Collection(event, "Muon")
-		# photons = Collection(event, "Photon")
-		tight_photons = []
-		tight_electrons = [] 
-		tight_muons = [] 
-		loose_but_not_tight_muons = []
-		loose_but_not_tight_electrons = []
 
-		if (event.nElectron + event.nMuon) < 2:
-			return False
-
-		for i in range (0,len(muons)):
-			if event.Muon_corrected_pt[i] < 10:
-				continue
-			if abs(muons[i].eta) > 2.4:
-				continue
-			if muons[i].tightId and muons[i].pfRelIso04_all < 0.15:
-				tight_muons.append(i)
-			elif muons[i].looseId and muons[i].pfRelIso04_all < 0.4:
-				loose_but_not_tight_muons.append(i)
-
-		for i in range(0,len(electrons)):
-			if electrons[i].pt < 10:
-				continue
-			if abs(electrons[i].eta + electrons[i].deltaEtaSC) >  2.5:
-				continue
-			if (abs(electrons[i].eta + electrons[i].deltaEtaSC) < 1.479 and abs(electrons[i].dz) < 0.1 and abs(electrons[i].dxy) < 0.05) or (abs(electrons[i].eta + electrons[i].deltaEtaSC) > 1.479 and abs(electrons[i].dz) < 0.2 and abs(electrons[i].dxy) < 0.1):
-				if electrons[i].cutBased >= 3:
-					tight_electrons.append(i)
-				elif electrons[i].cutBased >= 1:
-					loose_but_not_tight_electrons.append(i)
-
-		if (len(tight_electrons) + len(tight_muons) > 4) or (len(tight_electrons) + len(tight_muons) <= 2):
-			return False
-
-		self.out.fillBranch("nLooseNotTightLep", len(loose_but_not_tight_muons)+len(loose_but_not_tight_electrons))
-		self.out.fillBranch("nTightLep", len(tight_muons)+len(tight_electrons))
-		self.out.fillBranch("nTightMuon", len(tight_muons))
-		self.out.fillBranch("nTightElectron", len(tight_electrons))
-		self.out.fillBranch("nLooseNotTightMuon", len(loose_but_not_tight_muons))
-		self.out.fillBranch("nLooseNotTightElectron", len(loose_but_not_tight_electrons))
-
-		return True
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
 WZG_select_Module_PKUKNU			= lambda : WZG_Producer()
@@ -471,4 +391,3 @@ WZG_select_Module_16preVFP_PKUKNU  = lambda : WZG_Producer("2016_preVFP")
 WZG_select_Module_16_PKUKNU		= lambda : WZG_Producer("2016")
 WZG_select_Module_17_PKUKNU		= lambda : WZG_Producer("2017")
 WZG_select_Module_18_PKUKNU		= lambda : WZG_Producer("2018")
-first_Template_Module_PKUKNU		= lambda : first_Template_Producer()
