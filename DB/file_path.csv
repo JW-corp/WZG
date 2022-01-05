@@ -1,0 +1,119 @@
+
+
+# Fake Lepton Data
+ DoubleEG_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016B_Skim.root
+ DoubleEG_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016C_Skim.root
+ DoubleEG_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016D_Skim.root
+ DoubleEG_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016E_Skim.root
+ DoubleEG_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016F_Skim.root
+ DoubleEG_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016G_Skim.root
+ DoubleEG_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleEG_Run2016H_Skim.root
+ DoubleMuon_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016B_Skim.root
+ DoubleMuon_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016C_Skim.root
+ DoubleMuon_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016D_Skim.root
+ DoubleMuon_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016E_Skim.root
+ DoubleMuon_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016F_Skim.root
+ DoubleMuon_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016G_Skim.root
+ DoubleMuon_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/DoubleMuon_Run2016H_Skim.root
+ MuonEG_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016B_Skim.root
+ MuonEG_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016C_Skim.root
+ MuonEG_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016D_Skim.root
+ MuonEG_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016E_Skim.root
+ MuonEG_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016F_Skim.root
+ MuonEG_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016G_Skim.root
+ MuonEG_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/MuonEG_Run2016H_Skim.root
+ SingleElectron_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016B_Skim.root
+ SingleElectron_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016C_Skim.root
+ SingleElectron_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016D_Skim.root
+ SingleElectron_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016E_Skim.root
+ SingleElectron_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016F_Skim.root
+ SingleElectron_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016G_Skim.root
+ SingleElectron_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleElectron_Run2016H_Skim.root
+ SingleMuon_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016B_Skim.root
+ SingleMuon_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016C_Skim.root
+ SingleMuon_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016D_Skim.root
+ SingleMuon_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016E_Skim.root
+ SingleMuon_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016F_Skim.root
+ SingleMuon_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016G_Skim.root
+ SingleMuon_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/SingleMuon_Run2016H_Skim.root
+
+# Fake Lepton MC
+GluGluToContinToZZTo2e2mu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/GluGluToContinToZZTo2e2mu_2016_Skim.root
+GluGluToContinToZZTo2e2tau,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/GluGluToContinToZZTo2e2tau_2016_Skim.root
+GluGluToContinToZZTo4e,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/GluGluToContinToZZTo4e_2016_Skim.root
+GluGluToContinToZZTo4mu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/GluGluToContinToZZTo4mu_2016_Skim.root
+GluGluToContinToZZTo4tau,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/GluGluToContinToZZTo4tau_2016_Skim.root
+TTGJets,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTGJets_2016_Skim.root
+TTWJetsToLNu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTWJetsToLNu_2016_Skim.root
+TTWW,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTWW_2016_Skim.root
+TTWZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTWZ_2016_Skim.root
+TTZToLLNuNu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTZToLLNuNu_2016_Skim.root
+TTZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/TTZZ_2016_Skim.root
+WWZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/WWZ_2016_Skim.root
+WZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/WZZ_2016_Skim.root
+WZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/WZ_2016_Skim.root
+ZGToLLG,x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/ZGToLLG_2016_Skim.root
+ZZZ,x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/ZZZ_2016_Skim.root
+ZZ,x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/ZZ_2016_Skim.root
+tZq,x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/tZq_2016_Skim.root
+ttHToNonbb,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakeLepton/FakeLepton_weighted_2016/ttHToNonbb_2016_Skim.root
+
+# Fake Photon Data
+DoubleEG_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016B_Skim.root
+DoubleEG_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016C_Skim.root
+DoubleEG_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016D_Skim.root
+DoubleEG_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016E_Skim.root
+DoubleEG_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016F_Skim.root
+DoubleEG_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016G_Skim.root
+DoubleEG_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleEG_Run2016H_Skim.root
+DoubleMuon_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016B_Skim.root
+DoubleMuon_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016C_Skim.root
+DoubleMuon_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016D_Skim.root
+DoubleMuon_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016E_Skim.root
+DoubleMuon_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016F_Skim.root
+DoubleMuon_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016G_Skim.root
+DoubleMuon_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/DoubleMuon_Run2016H_Skim.root
+MuonEG_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016B_Skim.root
+MuonEG_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016C_Skim.root
+MuonEG_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016D_Skim.root
+MuonEG_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016E_Skim.root
+MuonEG_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016F_Skim.root
+MuonEG_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016G_Skim.root
+MuonEG_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/MuonEG_Run2016H_Skim.root
+SingleElectron_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016B_Skim.root
+SingleElectron_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016C_Skim.root
+SingleElectron_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016D_Skim.root
+SingleElectron_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016E_Skim.root
+SingleElectron_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016F_Skim.root
+SingleElectron_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016G_Skim.root
+SingleElectron_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleElectron_Run2016H_Skim.root
+SingleMuon_Run2016B,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016B_Skim.root
+SingleMuon_Run2016C,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016C_Skim.root
+SingleMuon_Run2016D,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016D_Skim.root
+SingleMuon_Run2016E,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016E_Skim.root
+SingleMuon_Run2016F,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016F_Skim.root
+SingleMuon_Run2016G,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016G_Skim.root
+SingleMuon_Run2016H,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/SingleMuon_Run2016H_Skim.root
+ 
+
+# Fake Photon MC
+GluGluToContinToZZTo2e2mu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo2e2mu_2016_Skim.root
+GluGluToContinToZZTo2e2tau,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo2e2tau_2016_Skim.root
+GluGluToContinToZZTo2mu2tau,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo2mu2tau_2016_Skim.root
+GluGluToContinToZZTo4e,x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo4e_2016_Skim.root
+GluGluToContinToZZTo4mu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo4mu_2016_Skim.root
+GluGluToContinToZZTo4tau,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/GluGluToContinToZZTo4tau_2016_Skim.root
+TTGJets,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTGJets_2016_Skim.root
+TTWJetsToLNu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTWJetsToLNu_2016_Skim.root
+TTWW,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTWW_2016_Skim.root
+TTWZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTWZ_2016_Skim.root
+TTZToLLNuNu,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTZToLLNuNu_2016_Skim.root
+TTZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/TTZZ_2016_Skim.root
+WWZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/WWZ_2016_Skim.root
+WZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/WZZ_2016_Skim.root
+WZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/WZ_2016_Skim.root
+ZGToLLG,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/ZGToLLG_2016_Skim.root
+ZZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/ZZZ_2016_Skim.root
+ZZ,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/ZZ_2016_Skim.root
+tZq,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/tZq_2016_Skim.root
+ttHToNonbb,/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB/FakePhoton/FakePhoton_weighted_2016/ttHToNonbb_2016_Skim.root
