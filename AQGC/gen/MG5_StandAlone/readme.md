@@ -1,1 +1,0 @@
-All zero param test
