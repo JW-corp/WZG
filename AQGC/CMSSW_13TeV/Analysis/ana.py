@@ -14,17 +14,17 @@ def Read_Tree(path):
 	print('there are {0} numebr of events'.format(Evt_num))
 	Particles = tree.arrays(filter_name='Particle*')
 	
-	is_Ele = abs(Particles['Particle.PID']) == 11
-	is_Ele_ch = ak.num(Particles['Particle.PID'][is_Ele]) == 2
 	
-	is_Mu = abs(Particles['Particle.PID']) == 13
-	is_Mu_ch = ak.num(Particles['Particle.PID'][is_Mu]) == 2
+	#print("show me the PID: ",Particles['Particle.PID'])
 	
-	Particles_ele_ch = Particles[is_Ele_ch ]
-	Particles_mu_ch  = Particles[is_Mu_ch ]
-	
-	
-	return Evt_num,Particles_ele_ch,Particles_mu_ch
+	ele_mask = abs(Particles['Particle.PID'])==11
+	mu_mask  = abs(Particles['Particle.PID'])==13
+
+	# only muon or electron channels are considered
+	basic_mask = (ak.num(Particles['Particle.PT'][ele_mask]) +ak.num(Particles['Particle.PT'][mu_mask])) >= 3
+	print("Before basic channel cut: ",len(Particles))
+	print("After basic channel cut: ",len(Particles[basic_mask]))
+	return Evt_num,Particles[basic_mask]
 
 
 def Make_Object_Array(Particles):	
@@ -39,27 +39,17 @@ def Make_Object_Array(Particles):
 	"Pz" : Particles['Particle.Pz'][Photon_mask],  
 	})
 	
-	Electron_mask = abs(Particles['Particle.PID']) == 11
-	Electron = ak.zip({
-	"PT" :	Particles['Particle.PT'][Electron_mask],
-	"Eta":	Particles['Particle.Eta'][Electron_mask],
-	"Phi":	Particles['Particle.Phi'][Electron_mask],
-	"E" :	Particles['Particle.E'][Electron_mask],
-	"Px" : Particles['Particle.Px'][Electron_mask],
-	"Py" : Particles['Particle.Py'][Electron_mask],  
-	"Pz" : Particles['Particle.Pz'][Electron_mask],  
+	Lepton_mask = (abs(Particles['Particle.PID']) == 11) | (abs(Particles['Particle.PID']) == 13)
+	Lepton = ak.zip({
+	"PID" :	Particles['Particle.PID'][Lepton_mask],
+	"PT" :	Particles['Particle.PT'][Lepton_mask],
+	"Eta":	Particles['Particle.Eta'][Lepton_mask],
+	"Phi":	Particles['Particle.Phi'][Lepton_mask],
+	"E" :	Particles['Particle.E'][Lepton_mask],
+	"Px" : Particles['Particle.Px'][Lepton_mask],
+	"Py" : Particles['Particle.Py'][Lepton_mask],  
+	"Pz" : Particles['Particle.Pz'][Lepton_mask],  
 	})   
-	
-	Muon_mask = abs(Particles['Particle.PID']) == 13
-	Muon = ak.zip({
-	"PT" :	Particles['Particle.PT'][Muon_mask],
-	"Eta":	Particles['Particle.Eta'][Muon_mask],
-	"Phi":	Particles['Particle.Phi'][Muon_mask],
-	"E" :	Particles['Particle.E'][Muon_mask],
-	"Px" : Particles['Particle.Px'][Muon_mask],
-	"Py" : Particles['Particle.Py'][Muon_mask],  
-	"Pz" : Particles['Particle.Pz'][Muon_mask],  
-	})
 	
 	W_mask = abs(Particles['Particle.PID']) ==24 
 	Wboson = ak.zip({
@@ -73,81 +63,82 @@ def Make_Object_Array(Particles):
 	})
 
 	
-	return Electron,Muon,Photon,Wboson
+	return Lepton,Photon,Wboson
 
 
-def Analysis(chmark,Particles):
+# --Main analysis code
+def Analysis(Particles):
 	
-	print("Start analysis {0} channel".format(chmark))
-	Electron,Muon,Photon,Wboson = Make_Object_Array(Particles)
+	Lepton,Photon,Wboson = Make_Object_Array(Particles)
 	
-	if chmark=='Electron':
-		print("test -- contain muon? ",ak.sum(ak.num(Muon)))
-		print("test -- does not have diele? ",ak.sum(ak.num(Electron) !=2))
-		Lep1_vec = vector.obj(px=Electron[:,0].Px,py=Electron[:,0].Py,pz=Electron[:,0].Pz,E=Electron[:,0].E)
-		Lep2_vec = vector.obj(px=Electron[:,1].Px,py=Electron[:,1].Py,pz=Electron[:,1].Pz,E=Electron[:,1].E)
-		
-	elif chmark=='Muon':
-		print("test -- contain Electron? ",ak.sum(ak.num(Electron)))
-		print("test -- does not have dimu? ",ak.sum(ak.num(Muon) !=2))
-		Lep1_vec = vector.obj(px=Muon[:,0].Px,py=Muon[:,0].Py,pz=Muon[:,0].Pz,E=Muon[:,0].E)
-		Lep2_vec = vector.obj(px=Muon[:,1].Px,py=Muon[:,1].Py,pz=Muon[:,1].Pz,E=Muon[:,1].E)
-	else:
-		raise NameError('unavailable channel name')
+	WLep_vec  = vector.obj(px=Lepton[:,0].Px,py=Lepton[:,0].Py,pz=Lepton[:,0].Pz,E=Lepton[:,0].E)
+	ZLep1_vec = vector.obj(px=Lepton[:,1].Px,py=Lepton[:,1].Py,pz=Lepton[:,1].Pz,E=Lepton[:,1].E)
+	ZLep2_vec = vector.obj(px=Lepton[:,2].Px,py=Lepton[:,2].Py,pz=Lepton[:,2].Pz,E=Lepton[:,2].E)
+	Pho_vec	  = vector.obj(px=Photon[:,0].Px,py=Photon[:,0].Py,pz=Photon[:,0].Pz,E=Photon[:,0].E)
 
-	W_vec	= vector.obj(px=Wboson[:,0].Px,py=Wboson[:,0].Py,pz=Wboson[:,0].Pz,E=Wboson[:,0].E)
-	WZ_vec	= Lep1_vec + Lep2_vec + W_vec	
+	WLep  = Lepton[:,0]
+	ZLep1 = Lepton[:,1]
+	ZLep2 = Lepton[:,2]
+	Pho   = Photon[:,0]
+
+	Z_vec      = ZLep1_vec + ZLep2_vec
+	ZA_vec     = ZLep1_vec + ZLep2_vec + Pho_vec
+	lll_vec    = ZLep1_vec + ZLep2_vec + WLep_vec
+
+	Mll  = Z_vec.M
+	MllA = ZA_vec.M
+	Mlll = lll_vec.M
+
+	lepPT_mask = (ZLep1.PT > 25) & (ZLep2.PT > 15) & (WLep.PT > 25 )
+	Mll_mask   = abs(Mll-91.188)<=15
+	Mlll_mask  = Mlll > 100
+	MllA_mask  = MllA > 250	
+
+	SR_selection_mask = lepPT_mask & Mll_mask & Mlll_mask & MllA_mask
+
+	MllA  = MllA[SR_selection_mask]
+	Mll   = Mll[SR_selection_mask]
+	PhoPT = Pho.PT[SR_selection_mask]
 	
-	Mwz   =  WZ_vec.M.to_numpy()
-	phoPT =  ak.flatten(Photon.PT).to_numpy()
-	return Mwz,phoPT 
+
+	# You can add more here...
+	return MllA
 
 
 
+
+# --Added for more complex channel-wise coding
 def Process(path):
-	Evt_num,Particles_ele_ch,Particles_mu_ch = Read_Tree(path)
-	
-	Nevt = Evt_num
-	print("Elech + Much == Evtnum ? ",len(Particles_ele_ch) + len(Particles_mu_ch) == Evt_num)
-	ele_Mwz,ele_phoPT   = Analysis("Electron",Particles_ele_ch)
-	mu_Mwz,mu_phoPT   = Analysis("Muon",Particles_mu_ch)
-	Mwz_arr   = np.concatenate((ele_Mwz, mu_Mwz), axis = 0)
-	phoPT_arr = np.concatenate((ele_phoPT, mu_phoPT), axis = 0)
-	
-	return Nevt,Mwz_arr,phoPT_arr
-
-
-
-
+	Evt_num,Particles  = Read_Tree(path)
+	MllA			   = Analysis(Particles)
+	return Evt_num,MllA
 
 
 def draw_hist(df,target,start,end,bin,hist):
-	Nevt,arr_Mwz, arr_phoPT = Process(df.loc[target]['path'])
-	arr_w = np.ones(len(arr_Mwz)) *  59.7*1000 *df.loc[target]['xsec'] / Nevt
 
-	h_Mwz   = np.clip(arr_Mwz,start,end)
-	h_phoPT = np.clip(arr_phoPT,start,end)
+	# read data
+	Nevt,llA_mass_arr	= Process(df.loc[target]['path'])
+	arr_w				= np.ones(len(llA_mass_arr)) *  35.86*1000 *df.loc[target]['xsec'] / Nevt # weight
 
-	bins = np.linspace(start, end, bin) 
+
+	# make hist
+	h_llA_mass   = np.clip(llA_mass_arr,start,end)
+
+	bins	 = np.linspace(start, end, bin) 
 	binwidth = (end - start) / bin
 
-	if hist=='Mwz':
-		h1 = plt.hist(h_Mwz, weights = arr_w, bins=bins, alpha=1, histtype='step', linewidth=2, label=target)
-	elif hist=='phoPT':
-		h1 = plt.hist(h_phoPT, weights = arr_w, bins=bins, alpha=1,	histtype='step', linewidth=2, label=target)
+	if hist=='llA_mass':
+		h1 = plt.hist(h_llA_mass, weights = arr_w, bins=bins, alpha=1, histtype='step', linewidth=2,label=target)
 	else:
 		print("no ..!")	
 
 	plt.xlabel(hist, fontsize=16)  # Y-label
 	plt.ylabel("Number of Events/(%d GeV)" % binwidth, fontsize=16)  # Y-label
 
-
 	print("## Breakdown histograms")
 	bin_contents = h1[0]
 	bin_x		 = h1[1]
 	
-
-
 	return bin_x,bin_contents
 
 
@@ -176,14 +167,14 @@ if __name__ == "__main__":
 
 	# variables
 	plt.style.use(hep.style.ROOT)
-	#variable,maxi = 'phoPT',500
-	variable,maxi = 'Mwz',1500
+	variable,mini,maxi = 'llA_mass',250,1000 # histname, xmin xmax
 
 	#Nbins=15
-	Nbins=7
+	Nbins=6
 
 	# Set_parameters
 	param_list = ['FT0' ,'FT1' ,'FT2' ,'FT5' ,'FT6' ,'FT7' ,'FM0' ,'FM1' ,'FM2' ,'FM3' ,'FM4' ,'FM6' ,'FM7'] 
+	#param_list = ['FT0'] 
 
 
 	#param = param_list[0]
@@ -191,11 +182,11 @@ if __name__ == "__main__":
 		hist_name_list = hist_name_dict[param]
 		outname = out_name_dict[param]
 		
-		# Draw SM
-		bin_x, sm_y = draw_hist(df,'sm',0,maxi,Nbins,variable)
+		# Draw SM/
+		bin_x, sm_y = draw_hist(df,'sm',mini,maxi,Nbins,variable)
 
-		# Draw aQGC
-		run(hist_name_list,df,0,maxi,Nbins,variable,sm_y,outname)
+		## Draw aQGC
+		run(hist_name_list,df,mini,maxi,Nbins,variable,sm_y,outname)
 
 		plt.xticks(fontsize=16)  # xtick size
 		plt.yticks(fontsize=16)  # ytick size
@@ -203,7 +194,8 @@ if __name__ == "__main__":
 		plt.grid(alpha=0.5)  # grid
 		plt.legend(prop={"size": 15})  # show legend
 		plt.title(outname+'.png',fontsize=17)	
-
+		plt.yscale('log')
+	
 		#plt.show()
 		plt.savefig(outname)
 		plt.close()

@@ -5,15 +5,20 @@ import ROOT
 
 # Read data within fixed m(WZ) bins 
 
-fname_list = ['FM0_mWZ.npy' ,'FM1_mWZ.npy' ,'FM2_mWZ.npy' ,'FM3_mWZ.npy' ,'FM4_mWZ.npy' ,'FM5_mWZ.npy' ,'FM7_mWZ.npy' ,'FT0_mWZ.npy' ,'FT1_mWZ.npy' ,'FT2_mWZ.npy' ,'FT5_mWZ.npy' ,'FT6_mWZ.npy' ,'FT7_mWZ.npy'] 
+fname_list = ['FM0_mllA.npy' ,'FM1_mllA.npy' ,'FM2_mllA.npy' ,'FM3_mllA.npy' ,'FM4_mllA.npy' ,'FM5_mllA.npy' ,'FM7_mllA.npy' ,'FT0_mllA.npy' ,'FT1_mllA.npy' ,'FT2_mllA.npy' ,'FT5_mllA.npy' ,'FT6_mllA.npy' ,'FT7_mllA.npy'] 
+
+fname_list = ['FT0_mllA.npy']
+
+bin = 5
+
 for fname in fname_list:
-	#fname = 'FT0_mWZ.npy'
+	#fname = 'FT0_mllA.npy'
 	data  = np.load(fname,allow_pickle=True)[()]
 	y_dict = data[1] 
 	y_keys = data[1].keys()
 	
 	
-	for ith_bin in range(6):
+	for ith_bin in range(bin):
 	
 		x      = data[0][ith_bin]
 		
