@@ -5,11 +5,11 @@ import ROOT
 
 # Read data within fixed m(WZ) bins 
 
-fname_list = ['FM0_mllA.npy' ,'FM1_mllA.npy' ,'FM2_mllA.npy' ,'FM3_mllA.npy' ,'FM4_mllA.npy' ,'FM5_mllA.npy' ,'FM7_mllA.npy' ,'FT0_mllA.npy' ,'FT1_mllA.npy' ,'FT2_mllA.npy' ,'FT5_mllA.npy' ,'FT6_mllA.npy' ,'FT7_mllA.npy'] 
 
-fname_list = ['FT0_mllA.npy']
+fname_list = ['FT0_llA_mass.npy']
+#fname_list = ['FT0_lllA_mass.npy']
 
-bin = 5
+bin = 4
 
 for fname in fname_list:
 	#fname = 'FT0_mllA.npy'
@@ -44,24 +44,24 @@ for fname in fname_list:
 		
 		# Fitting : p0 + p1x + p2x^2
 		g1     = ROOT.TGraph(len(graph_x),graph_x,graph_y)
-		fit1   = g1.Fit('pol2','S')
+		f1	   = ROOT.TF1("f1","[0]*x*x + [1]*x+1")
+		#fit1   = g1.Fit('pol2','S')
+		fit1   = g1.Fit('f1','S')
 		print(fit1) 
 		
 		p0=fit1.Parameter(0)
 		p1=fit1.Parameter(1)
-		p2=fit1.Parameter(2)
-		def func(x,p0,p1,p2):
-			return p0 + p1*x + p2*x*x
+		def func(x,p0,p1):
+			return 1+ p1*x + p0*x*x
 		func_x = np.linspace(0,np.max(graph_x),100)
 		
 		
 		# Draw graph
 		import matplotlib.pyplot as plt
 		plt.plot(graph_x,graph_y,'o')
-		plt.plot(func_x,func(func_x,p0,p1,p2),color='r',alpha=0.5,label='fitted: p0 + p1x + p2$x^2$')
+		plt.plot(func_x,func(func_x,p0,p1),color='r',alpha=0.5,label='fitted: 1 + p1x + p0$x^2$')
 		plt.plot([], [], ' ', label="p0 : {0:.3f}".format(p0))
 		plt.plot([], [], ' ', label="p1 : {0:.3f}".format(p1))
-		plt.plot([], [], ' ', label="p2 : {0:.3f}".format(p2))
 		
 		plt.legend()
 		plt.grid('-',alpha=0.5)
