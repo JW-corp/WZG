@@ -1,0 +1,18 @@
+imax 1  number of channels
+jmax *  number of backgrounds
+kmax *  number of nuisance parameters (sources of systematical uncertainties)
+-----------------------------------------------------------------------------
+bin                  llaMass
+observation          0
+-----------------------------------------------------------------------------
+bin                  llaMass         llaMass              
+process              aqgc	   sm           
+process              0         1                  
+rate		         2.476    0.4485
+-----------------------------------------------------------------------------
+# 
+lumi        lnN      1.012     1.012 
+JES/JER     lnN      1.2       1.2
+HLT_sta     lnN		 1.007	   1.007
+HLT_sys		lnN		 1.005	   1.005
+id_eff		lnN		 1.001	   1.001
