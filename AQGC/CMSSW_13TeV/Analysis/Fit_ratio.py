@@ -41,7 +41,6 @@ for fname in fname_list:
 		graph_y=np.array(graph_y)
 		
 		
-		
 		# Fitting : p0 + p1x + p2x^2
 		g1     = ROOT.TGraph(len(graph_x),graph_x,graph_y)
 		f1	   = ROOT.TF1("f1","[0]*x*x + [1]*x+1")
@@ -55,7 +54,12 @@ for fname in fname_list:
 			return 1+ p1*x + p0*x*x
 		func_x = np.linspace(0,np.max(graph_x),100)
 		
-		
+		if ith_bin == bin-1:
+			ratio_point_from_func = np.array([func(0.1*i,p0,p1) for i in range(1,10*int(graph_x.max())+1)])
+			print([i*0.1 for i in range(1,10*int(graph_x.max())+1)])
+			print("ratio: ",ratio_point_from_func)
+			np.save('FT0_ratio.npy',ratio_point_from_func)
+
 		# Draw graph
 		import matplotlib.pyplot as plt
 		plt.plot(graph_x,graph_y,'o')

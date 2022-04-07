@@ -17,14 +17,14 @@ args = 'echo' + ' ' + 'name' + ' ' + ' ' + 'm2' + ' ' + 'm1' + ' ' + 'median'  +
 subprocess.call(args,shell=True)
 
 for idx,row in df.iterrows():
-
+	
 	if idx==0:
 		sm_yield = row['yield']
 		continue
 	
 
-
 	args = './' + 'make_data_card.sh' + ' ' + str(row['name']) + ' ' + str(row['yield']) + ' '+  str(sm_yield) + ' ' + out_csv_name
+	print(args)
 	subprocess.call(args,shell=True)
 	
 
