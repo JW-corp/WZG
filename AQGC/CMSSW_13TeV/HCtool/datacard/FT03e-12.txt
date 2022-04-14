@@ -8,7 +8,7 @@ observation          0
 bin                  llaMass         llaMass              
 process              aqgc	   sm           
 process              0         1                  
-rate		         2.476    0.4485
+rate		         2.216    0.4485
 -----------------------------------------------------------------------------
 # 
 lumi        lnN      1.012     1.012 
