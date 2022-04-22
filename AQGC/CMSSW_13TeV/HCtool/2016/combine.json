@@ -1,0 +1,18 @@
+{
+    "utils":{
+        "imax":1
+    },
+
+
+    "regions":{
+        "SR_1":{
+            "final_name":"SR",
+            "file_name":"WZG",
+            "bins":4,
+            "variable":"WZG_mlla",
+            "variable_plotname":"mZA",
+            "csv":"combine_SR.csv",
+            "tag":"2016"
+        }
+    }
+}
