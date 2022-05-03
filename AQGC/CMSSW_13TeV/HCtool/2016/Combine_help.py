@@ -6,8 +6,11 @@ import pandas as pd
 from decimal import Decimal
 import shutil
 
+
+
 parser = argparse.ArgumentParser(description='prepare combined cards')
 parser.add_argument('-f', dest='file', default='./combine.json', help='input json with configuration')
+parser.add_argument('infile',default='aqgc_root_for_HC/FT0_WZG_2016.root', help='python Combine_help.py aqgc_root_for_HC/FT0_WZG_2016.root')
 args = parser.parse_args()
 
 def GetHist(region, file, variable, process):
@@ -130,7 +133,9 @@ if __name__ == '__main__':
 		print "processes: ", processes, "\n"
 
 		# Get all histogram
-		file_region = ROOT.TFile.Open(region_name + '_' + str(tag) + '.root', 'READ')
+		#file_region = ROOT.TFile.Open(region_name + '_' + str(tag) + '.root', 'READ') # hard code
+		file_region = ROOT.TFile.Open(args.infile, 'READ') # automated
+
 
 		hist_region = {}
 		for process in processes:
@@ -139,20 +144,28 @@ if __name__ == '__main__':
 		
 		print 'preparing cards for: ', str(region_plotname + '_' + str(tag))
 		path_region = str('cards_' + region_plotname + '_' + str(tag))
+
+
+		# does not remove for aQGC
 		if os.path.exists(path_region):
-			print("existing %s, removing" %(path_region))
-			shutil.rmtree(path_region)
-			os.mkdir(path_region)
+			#print("existing %s, removing" %(path_region))
+			#shutil.rmtree(path_region)
+			#os.mkdir(path_region)
+			pass
 		else:
 			os.mkdir(path_region)
 
 		# for aQGC --> Only consider the last bin
 		lastbin= jsons['regions'][region]['bins']
 	
+
+
+		fname=args.infile.split('/')[-1].split('_')[0]
 		#for bin in range(1, jsons['regions'][region]['bins']+1):
 		for bin in [lastbin]:
 			bin_content = region_plotname + '_' + variable_plotname + '_bin' + str(bin)
-			with open(path_region + '/card_' + bin_content + '.txt', 'w+') as f:
+			#with open(path_region + '/card_' + bin_content + '.txt', 'w+') as f: # hard code
+			with open(path_region + '/' + fname + '_card_' + bin_content + '.txt', 'w+') as f: # automated
 				f.write('imax \t' + str(imax) + '\tnumber of channels\n')
 				f.write('jmax \t' + str(len(df.columns)-2-imax) + '\tnumber of bkgs\n')
 				f.write('kmax \t' + str(len(df.index)) + '\tnumber of NPs\n')
@@ -227,8 +240,8 @@ if __name__ == '__main__':
 
 			if observation == 0:
 				print "no obs_data in path_%s/card_%s.txt, cleaning..." % (path_region, bin_content)
-				os.remove(path_region + '/card_' + bin_content + '.txt')
+				#os.remove(path_region + '/card_' + bin_content + '.txt')
 				pass
-
+				
 		file_region.Close()
 

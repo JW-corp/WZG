@@ -153,7 +153,7 @@ def draw_hist(df,target,start,end,bin,hist):
 	Nevt,llA_mass_arr,lllA_mass_arr,PhoPT_arr	= Process(df.loc[target]['path'])
 	arr_w										= np.ones(len(llA_mass_arr)) *  35.86*1000 *df.loc[target]['xsec'] / Nevt # weight
 
-
+	
 
 	#print("minmax lllA: ",min(lllA_mass_arr),max(lllA_mass_arr))
 	#print("minmax llA: ",min(llA_mass_arr),max(llA_mass_arr))
@@ -217,8 +217,7 @@ def run(hist_name_list,df,start,end,Nbins,variable,sm_y,outname):
 if __name__ == "__main__":
 
 	# Read DB
-	df = pd.read_csv('xsec_aQGC_DB.csv',delimiter=',') #13TeV
-	#df = pd.read_csv('/x6/spool/dylee/workspace/aQGC/draw/gen/xsec_aQGC_DB.csv',delimiter=',') #14TeV
+	df = pd.read_csv('xsec_aQGC_DB.csv',delimiter=',') 
 	df.set_index('name',inplace=True)
 
 	# variables
@@ -229,8 +228,9 @@ if __name__ == "__main__":
 
 
 	# Set_parameters
-	#param_list = ['FT0' ,'FT1' ,'FT2' ,'FT5' ,'FT6' ,'FT7' ,'FM0' ,'FM1' ,'FM2' ,'FM3' ,'FM4' ,'FM6' ,'FM7'] 
-	param_list = ['FT0'] 
+	#param_list = ['FT1' ,'FT2' ,'FT5' ,'FT6' ,'FT7' ,'FM0' ,'FM1' ,'FM2' ,'FM3' ,'FM4' ,'FM7'] 
+	param_list = ['FM5'] 
+	#param_list = ['FT0'] 
 
 
 	#param = param_list[0]

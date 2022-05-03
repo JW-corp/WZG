@@ -2,11 +2,10 @@ import numpy as np
 import ROOT
 
 
-
 # Read data within fixed m(WZ) bins 
 
-
-fname_list = ['FT0_llA_mass.npy']
+#fname_list = ['FM0_llA_mass.npy' ,'FM1_llA_mass.npy' ,'FM2_llA_mass.npy' ,'FM3_llA_mass.npy' ,'FM4_llA_mass.npy' ,'FM5_llA_mass.npy','FM7_llA_mass.npy' ,'FT0_llA_mass.npy' ,'FT1_llA_mass.npy' ,'FT2_llA_mass.npy' ,'FT5_llA_mass.npy' ,'FT6_llA_mass.npy' ,'FT7_llA_mass.npy']
+fname_list = ['FM5_llA_mass.npy']
 #fname_list = ['FT0_lllA_mass.npy']
 
 bin = 4
@@ -23,7 +22,7 @@ for fname in fname_list:
 		x      = data[0][ith_bin]
 		
 		
-		
+			
 		# Make data point
 		graph_x=[]
 		graph_y=[]
@@ -34,13 +33,16 @@ for fname in fname_list:
 				x_val=0
 			else:
 				x_val   = float(y_key.split('_')[-1])  / 1E-12 
+
+
 			print(x_val,y_dict[y_key][ith_bin])
 			graph_x.append(x_val)
 			graph_y.append(y_dict[y_key][ith_bin])
 		graph_x=np.array(graph_x)
 		graph_y=np.array(graph_y)
 		
-		
+				
+
 		# Fitting : p0 + p1x + p2x^2
 		g1     = ROOT.TGraph(len(graph_x),graph_x,graph_y)
 		f1	   = ROOT.TF1("f1","[0]*x*x + [1]*x+1")
@@ -52,13 +54,19 @@ for fname in fname_list:
 		p1=fit1.Parameter(1)
 		def func(x,p0,p1):
 			return 1+ p1*x + p0*x*x
-		func_x = np.linspace(0,np.max(graph_x),100)
+		func_x = np.linspace(-1*np.max(graph_x),np.max(graph_x),200)
+
+
+		# Save fit-results
+		key_name	   = fname.split('_')[0]
+		out_name	   = 'outfit_' + key_name + '.pickle'
+		fit_result_out = {key_name: {'aqgc': (1, p1, p0)}}
+
 		
-		if ith_bin == bin-1:
-			ratio_point_from_func = np.array([func(0.1*i,p0,p1) for i in range(1,10*int(graph_x.max())+1)])
-			print([i*0.1 for i in range(1,10*int(graph_x.max())+1)])
-			print("ratio: ",ratio_point_from_func)
-			np.save('FT0_ratio.npy',ratio_point_from_func)
+		import pickle
+		with open(out_name,"wb") as fw:
+			pickle.dump(fit_result_out,fw,protocol=2)
+		
 
 		# Draw graph
 		import matplotlib.pyplot as plt
