@@ -19,10 +19,10 @@ class ApplyWeightFakeLeptonProducer(Module):
     def __init__(self):
         pass
     def beginJob(self):
-        self.file_ele = ROOT.TFile("%s/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/plot/Fake_Lepton/Ele_Fake_Rate_2D_2018.root" % os.environ['CMSSW_BASE'],"READ")
-        self.file_mu = ROOT.TFile("%s/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/plot/Fake_Lepton/Mu_Fake_Rate_2D_2018.root" % os.environ['CMSSW_BASE'],"READ") 
+        self.file_ele = ROOT.TFile("/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB_v3/FakeLepton/fakerate_hist/Ele_Fake_Rate_2D_2016.root","READ")
+        self.file_mu = ROOT.TFile("/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/DB_v3/FakeLepton/fakerate_hist/Mu_Fake_Rate_2D_2016.root","READ") 
         self.FR_E = self.file_ele.Get("fake_rate_e")
-        self.FR_M = self.file_mu.Get("fake_rate_mu")
+        self.FR_M = self.file_mu.Get("fake_rate_m")
         pass
     def endJob(self):
         pass
@@ -68,4 +68,7 @@ class ApplyWeightFakeLeptonProducer(Module):
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
 
-ApplyWeightFakeLeptonModule = lambda : ApplyWeightFakeLeptonProducer()
+ApplyWeightFakeLeptonModule16 = lambda : ApplyWeightFakeLeptonProducer()
+ApplyWeightFakeLeptonModule17 = lambda : ApplyWeightFakeLeptonProducer()
+ApplyWeightFakeLeptonModule18 = lambda : ApplyWeightFakeLeptonProducer()
+

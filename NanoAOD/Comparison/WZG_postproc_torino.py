@@ -12,7 +12,7 @@ from PhysicsTools.NanoAODTools.postprocessing.modules.eleRECOSFProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.eleIDSFProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.muonScaleResProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.muonIDISOSFProducer import *
-from PhysicsTools.NanoAODTools.postprocessing.modules.WZG_Module_torino import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.WZG_Module_PKUKNU import *
 
 import argparse
 import re
@@ -27,11 +27,11 @@ parser.add_argument('-f', dest='file', default='', help='File input. In local mo
 parser.add_argument('-m', dest='mode', default='local', help='runmode local/condor')
 parser.add_argument('-y', dest='year', default='2018', help='year')
 parser.add_argument('-d', dest='isdata',action='store_true',default=False)
-parser.add_argument('-p', dest='period',default="B", help="Run period, only work for data")
+parser.add_argument('-p', dest='period',default="A", help="Run period, only work for data")
 
 
 ## ---> Added by JW
-parser.add_argument('-dataset_name', dest='dataset_name',default="B", help="Run period, only work for data")
+parser.add_argument('-dataset_name', dest='dataset_name',default="A", help="Run period, only work for data")
 args = parser.parse_args()
 ## <-- Added by JW
 
@@ -48,7 +48,7 @@ if args.isdata:
         Modules = [muonScaleRes2017(),first_Template_Module(),jetmetCorrector(),WZG_select_Module_17_torino()]
     if args.year == '2016':
         jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016", runPeriod=args.period, metBranchName="MET")
-        Modules = [muonScaleRes2016b(),first_Template_Module(),jetmetCorrector(),WZG_select_Module_16_torino()]
+        Modules = [muonScaleRes2016b(),jetmetCorrector(),WZG_select_Module_16_PKUKNU()]
     if args.year == '2016_preVFP':
         jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016_preVFP", runPeriod=args.period, metBranchName="MET")
         Modules = [muonScaleRes2016a(),first_Template_Module(),jetmetCorrector(),WZG_select_Module_16preVFP_torino()]
@@ -61,7 +61,7 @@ else:
         Modules = [countHistogramsProducer(),muonScaleRes2017(),first_Template_Producer(),puAutoWeight_2017(),PrefCorrUL17(),muonIDISOSF2017(),eleRECOSF2017(),eleIDSF2017(),jetmetCorrector(),WZG_select_Module_17_torino()]
     if args.year == '2016':
         jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016", jesUncert="Total", metBranchName="MET", splitJER=False)
-        Modules = [countHistogramsProducer(),muonScaleRes2016b(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),WZG_select_Module_16_torino()]
+        Modules = [countHistogramsProducer(),muonScaleRes2016b(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),WZG_select_Module_16_PKUKNU()]
     if args.year == '2016_preVFP':
         jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016_preVFP", jesUncert="Total", metBranchName="MET", splitJER=False)
         Modules = [countHistogramsProducer(),muonScaleRes2016a(),first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),jetmetCorrector(),WZG_select_Module_16preVFP_torino()]

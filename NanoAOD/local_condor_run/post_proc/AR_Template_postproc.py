@@ -82,13 +82,11 @@ else:
     jsoninput = runsAndLumis()
     fwkjobreport = True
 
-if args.isdata and args.year=='2018' and args.period=='D' and ('MuonEG' in infilelist):
-    print 'special treatment for MuonEG_Run2018D'
+if args.isdata and args.year.startswith('2016'):
     import FWCore.PythonUtilities.LumiList as LumiList
     import FWCore.ParameterSet.Config as cms
 
-    lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="./Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt").getCMSSWString().split(',') )
-    # print lumisToProcess
+    lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/goldenjson/2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt").getCMSSWString().split(',') )
 
     runsAndLumis_special = {}
     for l in lumisToProcess:

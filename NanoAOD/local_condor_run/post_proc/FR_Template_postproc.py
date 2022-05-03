@@ -56,10 +56,10 @@ if args.isdata:
 		Modules = [muonScaleRes2017(),FRFakeLep_first_Template_Module(),jetmetCorrector(),FRFakeLeptonModule()]
 	if args.year == '2016':
 		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016", runPeriod=args.period, metBranchName="MET")
-		Modules = [muonScaleRes2016b(),FRFakeLep_first_Template_Module(),jetmetCorrector(),FRFakeLeptonModule()]
+		Modules = [muonScaleRes2016b(),FRFakeLep_first_Template_Module(),jetmetCorrector(),FRFakeLeptonModule_16()]
 	if args.year == '2016_preVFP':
 		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016_preVFP", runPeriod=args.period, metBranchName="MET")
-		Modules = [muonScaleRes2016a(),FRFakeLep_first_Template_Module(),jetmetCorrector(),FRFakeLeptonModule()]
+		Modules = [muonScaleRes2016a(),FRFakeLep_first_Template_Module(),jetmetCorrector(),FRFakeLeptonModule_16()]
 else:
 	print("MC"*20)
 	if args.year == '2018':
@@ -70,10 +70,10 @@ else:
 		Modules = [countHistogramsProducer(),muonScaleRes2017(),FRFakeLep_first_Template_Module(),puAutoWeight_2017(),PrefCorrUL17(),muonIDISOSF2017(),eleRECOSF2017(),eleIDSF2017(),jetmetCorrector(),FRFakeLeptonModule()]
 	if args.year == '2016':
 		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016", jesUncert="Total", metBranchName="MET", splitJER=False)
-		Modules = [countHistogramsProducer(),muonScaleRes2016b(),FRFakeLep_first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),FRFakeLeptonModule()]
+		Modules = [countHistogramsProducer(),muonScaleRes2016b(),FRFakeLep_first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),jetmetCorrector(),FRFakeLeptonModule_16()]
 	if args.year == '2016_preVFP':
 		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016_preVFP", jesUncert="Total", metBranchName="MET", splitJER=False)
-		Modules = [countHistogramsProducer(),muonScaleRes2016a(),FRFakeLep_first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),jetmetCorrector(),FRFakeLeptonModule()]
+		Modules = [countHistogramsProducer(),muonScaleRes2016a(),FRFakeLep_first_Template_Module(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),jetmetCorrector(),FRFakeLeptonModule_16()]
 
 if args.file:
 
@@ -94,13 +94,11 @@ else:
 	jsoninput = runsAndLumis()
 	fwkjobreport = True
 
-if args.isdata and args.year=='2018' and args.period=='D' and ('MuonEG' in infilelist):
-	print 'special treatment for MuonEG_Run2018D'
+if args.isdata and args.year.startswith('2016'):
 	import FWCore.PythonUtilities.LumiList as LumiList
 	import FWCore.ParameterSet.Config as cms
 
-	lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="./Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt").getCMSSWString().split(',') )
-	# print lumisToProcess
+	lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/goldenjson/2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt").getCMSSWString().split(',') )
 
 	runsAndLumis_special = {}
 	for l in lumisToProcess:

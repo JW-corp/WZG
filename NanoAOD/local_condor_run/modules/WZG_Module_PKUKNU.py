@@ -307,15 +307,17 @@ class WZG_Producer(Module):
 		for i in range(len(event.GenPart_pdgId)):
 			
 			#print(event.GenPart_pdgId[i] , event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])
-			if (abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15)\
-				and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])==23:
+			if (abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15):
+				#and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])==23:
 				channel = abs(event.GenPart_pdgId[i])
 				#print("channel: ",abs(event.GenPart_pdgId[i]))
 				break
-			elif(abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15)\
-				and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])!=23:
-				channel = 0
-				#print("??")
+		if channel == 0:
+		
+			for j in range(len(event.GenPart_pdgId)):
+				print("weied channel: ",j,event.GenPart_pdgId[j],event.GenPart_genPartIdxMother[j])
+			
+			#print("??")
 				
 		
 		

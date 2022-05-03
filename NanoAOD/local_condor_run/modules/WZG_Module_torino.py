@@ -146,40 +146,17 @@ class WZG_Producer(Module):
 			if abs(electrons[i].eta + electrons[i].deltaEtaSC) >  2.5:
 				continue
 			if (abs(electrons[i].eta + electrons[i].deltaEtaSC) < 1.479 and abs(electrons[i].dz) < 1 and abs(electrons[i].dxy) < 0.5) or (abs(electrons[i].eta + electrons[i].deltaEtaSC) > 1.479 and abs(electrons[i].dz) < 1 and abs(electrons[i].dxy) < 0.5):
-				continue
-			if electrons[i].pfRelIso03_all >= 0.35:
-				continue
-			if (event.Electron_sip3d[i] >= 4):
-				continue
-	
 
-			if (self.year == '2016') or (self.year == "2016_preVFP"):
-	
-				if (electrons[i].pt > 5) & (electrons[i].pt < 10):
-					if abs(electrons[i].eta) < 0.8:
-						min_bdt_score = 0.9503
-					elif (abs(electrons[i].eta) < 1.479) and (abs(electrons[i].eta) > 0.8):
-						min_bdt_score = 0.9461
-					elif abs(electrons[i].eta) > 1.479:
-						min_bdt_score = 0.9387
-					else:
-						continue
 
-				elif (electrons[i].pt > 10):
-					if abs(electrons[i].eta) < 0.8:
-						min_bdt_score = 0.3782
-					elif abs(electrons[i].eta) < 1.479:
-						min_bdt_score = 0.3587
-					elif abs(electrons[i].eta) > 1.479:
-						min_bdt_score = -0.5745
-					else:
-						continue
-				else:
+				if electrons[i].pfRelIso03_all >= 0.35:
 					continue
-
-			if event.Electron_mvaFall17V2noIso[i] > min_bdt_score:
-				tight_electrons.append(i)
-				
+				if (event.Electron_sip3d[i] >= 4):
+					continue
+	
+				# --modified .. LooseWP
+				if event.Electron_mvaFall17V2noIso_WPL[i]:
+					tight_electrons.append(i)
+			
 		
 		Electron_ID_Weight = 1
 		Electron_ID_Weight_UP = 1
@@ -339,15 +316,15 @@ class WZG_Producer(Module):
 		for i in range(len(event.GenPart_pdgId)):
 			
 			#print(event.GenPart_pdgId[i] , event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])
-			if (abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15)\
-				and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])==23:
+			if (abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15):
+				#and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])==23:
 				channel = abs(event.GenPart_pdgId[i])
 				#print("channel: ",abs(event.GenPart_pdgId[i]))
 				break
-			elif(abs(event.GenPart_pdgId[i]) == 11  or  abs(event.GenPart_pdgId[i]) == 13 or abs(event.GenPart_pdgId[i]) == 15)\
-				and abs(event.GenPart_pdgId[abs(event.GenPart_genPartIdxMother[i])])!=23:
-				channel = 0
-				#print("??")
+		if channel == 0:
+		
+			for j in range(len(event.GenPart_pdgId)):
+				print("weied channel: ",j,event.GenPart_pdgId[j],event.GenPart_genPartIdxMother[j])
 				
 		
 		
