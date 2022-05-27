@@ -1,0 +1,57 @@
+change rwgt_dir rwgt
+ 
+#FT0
+launch
+   set FM0 0.0
+	 set FM1 0.0
+	 set FM2 0.0
+   set FM3 0.0
+   set FM4 0.0
+   set FM5 0.0
+   set FM6 0.0
+	 set FM7 0.0
+	 set FT0 4.0e-12
+	set FT1 0.0
+	set FT2 0.0
+	set FT5 0.0
+	set FT6 0.0
+	    set FT7 0.0
+	set FT8 0.0
+	set FT9 0.0
+#weight_
+launch
+   set FM0 0.0
+	 set FM1 0.0
+	 set FM2 0.0
+   set FM3 0.0
+   set FM4 0.0
+   set FM5 0.0
+   set FM6 0.0
+	 set FM7 0.0
+	 set FT0 2.0e-12
+    set FT1 0.0
+    set FT2 0.0
+    set FT5 0.0
+    set FT6 0.0
+        set FT7 0.0
+	set FT8 0.0
+	set FT9 0.0
+#FM2
+#weight_
+launch
+   set FM0 0.0
+	 set FM1 0.0
+	 set FM2 4.0e-10
+   set FM3 0.0
+   set FM4 0.0
+   set FM5 0.0
+   set FM6 0.0
+	 set FM7 0.0
+	 set FT0 0.0
+    set FT1 0.0
+    set FT2 0.0
+    set FT5 0.0
+    set FT6 0.0
+        set FT7 0.0
+	set FT8 0.0
+	set FT9 0.0
