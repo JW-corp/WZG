@@ -1,0 +1,2763 @@
+Will recalculate the following discriminators on AK8 jets: pfParticleNetMassRegressionJetTags:mass
+30-May-2022 17:34:15 KST  Initiating request to open file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+30-May-2022 17:34:22 KST  Successfully opened file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+                         : Booking "muonMVATTH" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_2016.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_2016.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "muonMVALowPt" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_lowpt.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_lowpt.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "electronMVATTH" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/el_BDTG_2016.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/el_BDTG_2016.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+%MSG-w BTagSFProducer:  BTagSFProducer:btagWeightTable@ctor  30-May-2022 17:34:55 KST pre-events
+Skipped loading BTagCalibration for CMVA as it was marked as unavailable in the configuration file. Event weights will not be stored.
+
+%MSG
+%MSG-w LogicError:  GenWeightsTableProducer:genWeightsTable@beginRun  30-May-2022 17:35:21 KST Run: 1
+::getByLabel: An attempt was made to read a Run product before endRun() was called.
+The product is of type 'LHERunInfoProduct'.
+The specified ModuleLabel was 'externalLHEProducer'.
+The specified productInstanceName was ''.
+
+%MSG
+Skipping LHE header with tag
+Skipping LHE header with tagMGVersion
+Skipping LHE header with tagMG5ProcCard
+Skipping LHE header with tagMGProcCard
+Skipping LHE header with tagMGRunCard
+Skipping LHE header with tagslha
+Found LHE header with taginitrwgt
+
+<weight MUF="1.0" MUR="1.0" PDF="325500" id="1001">  </weight>
+<weightgroup combine="envelope" name="Central scale variation">
+>>> Looks like the beginning of a weight group for 'Central scale variation'
+>>> Looks like scale variation for theory uncertainties
+    <weight DYN_SCALE="1" MUF="1.0" MUR="1.0" PDF="325500" id="1002"> dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="1.0" MUR="1.0" PDF="325500" id="1003"> dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="1.0" MUR="1.0" PDF="325500" id="1004"> dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="1.0" MUR="1.0" PDF="325500" id="1005"> dyn_scale_choice=sqrts  </weight>
+    <weight MUF="1.0" MUR="2.0" PDF="325500" id="1006"> MUR=2.0  </weight>
+    >>> Scale weight MUF="1.0" MUR="2.0" for 2.0 , 1006 , > MUR=2.0  
+    <weight DYN_SCALE="1" MUF="1.0" MUR="2.0" PDF="325500" id="1007"> MUR=2.0 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="1.0" MUR="2.0" PDF="325500" id="1008"> MUR=2.0 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="1.0" MUR="2.0" PDF="325500" id="1009"> MUR=2.0 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="1.0" MUR="2.0" PDF="325500" id="1010"> MUR=2.0 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="1.0" MUR="0.5" PDF="325500" id="1011"> MUR=0.5  </weight>
+    >>> Scale weight MUF="1.0" MUR="0.5" for 0.5 , 1011 , > MUR=0.5  
+    <weight DYN_SCALE="1" MUF="1.0" MUR="0.5" PDF="325500" id="1012"> MUR=0.5 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="1.0" MUR="0.5" PDF="325500" id="1013"> MUR=0.5 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="1.0" MUR="0.5" PDF="325500" id="1014"> MUR=0.5 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="1.0" MUR="0.5" PDF="325500" id="1015"> MUR=0.5 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="2.0" MUR="1.0" PDF="325500" id="1016"> MUF=2.0  </weight>
+    >>> Scale weight MUF="2.0" MUR="1.0" for 1.0 , 1016 , > MUF=2.0  
+    <weight DYN_SCALE="1" MUF="2.0" MUR="1.0" PDF="325500" id="1017"> MUF=2.0 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="2.0" MUR="1.0" PDF="325500" id="1018"> MUF=2.0 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="2.0" MUR="1.0" PDF="325500" id="1019"> MUF=2.0 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="2.0" MUR="1.0" PDF="325500" id="1020"> MUF=2.0 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="2.0" MUR="2.0" PDF="325500" id="1021"> MUR=2.0 MUF=2.0  </weight>
+    >>> Scale weight MUF="2.0" MUR="2.0" for 2.0 , 1021 , > MUR=2.0 MUF=2.0  
+    <weight DYN_SCALE="1" MUF="2.0" MUR="2.0" PDF="325500" id="1022"> MUR=2.0 MUF=2.0 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="2.0" MUR="2.0" PDF="325500" id="1023"> MUR=2.0 MUF=2.0 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="2.0" MUR="2.0" PDF="325500" id="1024"> MUR=2.0 MUF=2.0 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="2.0" MUR="2.0" PDF="325500" id="1025"> MUR=2.0 MUF=2.0 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="2.0" MUR="0.5" PDF="325500" id="1026"> MUR=0.5 MUF=2.0  </weight>
+    >>> Scale weight MUF="2.0" MUR="0.5" for 0.5 , 1026 , > MUR=0.5 MUF=2.0  
+    <weight DYN_SCALE="1" MUF="2.0" MUR="0.5" PDF="325500" id="1027"> MUR=0.5 MUF=2.0 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="2.0" MUR="0.5" PDF="325500" id="1028"> MUR=0.5 MUF=2.0 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="2.0" MUR="0.5" PDF="325500" id="1029"> MUR=0.5 MUF=2.0 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="2.0" MUR="0.5" PDF="325500" id="1030"> MUR=0.5 MUF=2.0 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="0.5" MUR="1.0" PDF="325500" id="1031"> MUF=0.5  </weight>
+    >>> Scale weight MUF="0.5" MUR="1.0" for 1.0 , 1031 , > MUF=0.5  
+    <weight DYN_SCALE="1" MUF="0.5" MUR="1.0" PDF="325500" id="1032"> MUF=0.5 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="0.5" MUR="1.0" PDF="325500" id="1033"> MUF=0.5 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="0.5" MUR="1.0" PDF="325500" id="1034"> MUF=0.5 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="0.5" MUR="1.0" PDF="325500" id="1035"> MUF=0.5 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="0.5" MUR="2.0" PDF="325500" id="1036"> MUR=2.0 MUF=0.5  </weight>
+    >>> Scale weight MUF="0.5" MUR="2.0" for 2.0 , 1036 , > MUR=2.0 MUF=0.5  
+    <weight DYN_SCALE="1" MUF="0.5" MUR="2.0" PDF="325500" id="1037"> MUR=2.0 MUF=0.5 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="0.5" MUR="2.0" PDF="325500" id="1038"> MUR=2.0 MUF=0.5 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="0.5" MUR="2.0" PDF="325500" id="1039"> MUR=2.0 MUF=0.5 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="0.5" MUR="2.0" PDF="325500" id="1040"> MUR=2.0 MUF=0.5 dyn_scale_choice=sqrts  </weight>
+    <weight MUF="0.5" MUR="0.5" PDF="325500" id="1041"> MUR=0.5 MUF=0.5  </weight>
+    >>> Scale weight MUF="0.5" MUR="0.5" for 0.5 , 1041 , > MUR=0.5 MUF=0.5  
+    <weight DYN_SCALE="1" MUF="0.5" MUR="0.5" PDF="325500" id="1042"> MUR=0.5 MUF=0.5 dyn_scale_choice=sum pt  </weight>
+    <weight DYN_SCALE="2" MUF="0.5" MUR="0.5" PDF="325500" id="1043"> MUR=0.5 MUF=0.5 dyn_scale_choice=HT  </weight>
+    <weight DYN_SCALE="3" MUF="0.5" MUR="0.5" PDF="325500" id="1044"> MUR=0.5 MUF=0.5 dyn_scale_choice=HT/2  </weight>
+    <weight DYN_SCALE="4" MUF="0.5" MUR="0.5" PDF="325500" id="1045"> MUR=0.5 MUF=0.5 dyn_scale_choice=sqrts  </weight>
+    </weightgroup> # scale
+>>> Looks like the end of a weight group
+<weightgroup combine="envelope" name="Emission scale variation">
+>>> Looks like the beginning of a weight group for 'Emission scale variation'
+    <weight ALPSFACT="0.5" MUF="1.0" MUR="1.0" PDF="325500" id="1046"> alpsfact=0.5  </weight>
+    <weight ALPSFACT="2.0" MUF="1.0" MUR="1.0" PDF="325500" id="1047"> alpsfact=2.0  </weight>
+    </weightgroup> # ALPS
+>>> Looks like the end of a weight group
+<weightgroup combine="symmhessian" name="NNPDF31_nnlo_as_0118_nf_4_mc_hessian"> # 325500: Hessian NNPDF31_nnlo_as_0118_nf_4_mc_hessian
+>>> Looks like the beginning of a weight group for 'NNPDF31_nnlo_as_0118_nf_4_mc_hessian'
+>>> Looks like an old-style PDF weight for an individual pdf
+    <weight MUF="1.0" MUR="1.0" PDF="325500" id="1048">  </weight>
+    >>> PDF weight 1048 for 0 = 325500
+    <weight MUF="1.0" MUR="1.0" PDF="325501" id="1049"> PDF=325500 MemberID=1 </weight>
+    >>> PDF weight 1049 for 1 = 325501
+    <weight MUF="1.0" MUR="1.0" PDF="325502" id="1050"> PDF=325500 MemberID=2 </weight>
+    >>> PDF weight 1050 for 2 = 325502
+    <weight MUF="1.0" MUR="1.0" PDF="325503" id="1051"> PDF=325500 MemberID=3 </weight>
+    >>> PDF weight 1051 for 3 = 325503
+    <weight MUF="1.0" MUR="1.0" PDF="325504" id="1052"> PDF=325500 MemberID=4 </weight>
+    >>> PDF weight 1052 for 4 = 325504
+    <weight MUF="1.0" MUR="1.0" PDF="325505" id="1053"> PDF=325500 MemberID=5 </weight>
+    >>> PDF weight 1053 for 5 = 325505
+    <weight MUF="1.0" MUR="1.0" PDF="325506" id="1054"> PDF=325500 MemberID=6 </weight>
+    >>> PDF weight 1054 for 6 = 325506
+    <weight MUF="1.0" MUR="1.0" PDF="325507" id="1055"> PDF=325500 MemberID=7 </weight>
+    >>> PDF weight 1055 for 7 = 325507
+    <weight MUF="1.0" MUR="1.0" PDF="325508" id="1056"> PDF=325500 MemberID=8 </weight>
+    >>> PDF weight 1056 for 8 = 325508
+    <weight MUF="1.0" MUR="1.0" PDF="325509" id="1057"> PDF=325500 MemberID=9 </weight>
+    >>> PDF weight 1057 for 9 = 325509
+    <weight MUF="1.0" MUR="1.0" PDF="325510" id="1058"> PDF=325500 MemberID=10 </weight>
+    >>> PDF weight 1058 for 10 = 325510
+    <weight MUF="1.0" MUR="1.0" PDF="325511" id="1059"> PDF=325500 MemberID=11 </weight>
+    >>> PDF weight 1059 for 11 = 325511
+    <weight MUF="1.0" MUR="1.0" PDF="325512" id="1060"> PDF=325500 MemberID=12 </weight>
+    >>> PDF weight 1060 for 12 = 325512
+    <weight MUF="1.0" MUR="1.0" PDF="325513" id="1061"> PDF=325500 MemberID=13 </weight>
+    >>> PDF weight 1061 for 13 = 325513
+    <weight MUF="1.0" MUR="1.0" PDF="325514" id="1062"> PDF=325500 MemberID=14 </weight>
+    >>> PDF weight 1062 for 14 = 325514
+    <weight MUF="1.0" MUR="1.0" PDF="325515" id="1063"> PDF=325500 MemberID=15 </weight>
+    >>> PDF weight 1063 for 15 = 325515
+    <weight MUF="1.0" MUR="1.0" PDF="325516" id="1064"> PDF=325500 MemberID=16 </weight>
+    >>> PDF weight 1064 for 16 = 325516
+    <weight MUF="1.0" MUR="1.0" PDF="325517" id="1065"> PDF=325500 MemberID=17 </weight>
+    >>> PDF weight 1065 for 17 = 325517
+    <weight MUF="1.0" MUR="1.0" PDF="325518" id="1066"> PDF=325500 MemberID=18 </weight>
+    >>> PDF weight 1066 for 18 = 325518
+    <weight MUF="1.0" MUR="1.0" PDF="325519" id="1067"> PDF=325500 MemberID=19 </weight>
+    >>> PDF weight 1067 for 19 = 325519
+    <weight MUF="1.0" MUR="1.0" PDF="325520" id="1068"> PDF=325500 MemberID=20 </weight>
+    >>> PDF weight 1068 for 20 = 325520
+    <weight MUF="1.0" MUR="1.0" PDF="325521" id="1069"> PDF=325500 MemberID=21 </weight>
+    >>> PDF weight 1069 for 21 = 325521
+    <weight MUF="1.0" MUR="1.0" PDF="325522" id="1070"> PDF=325500 MemberID=22 </weight>
+    >>> PDF weight 1070 for 22 = 325522
+    <weight MUF="1.0" MUR="1.0" PDF="325523" id="1071"> PDF=325500 MemberID=23 </weight>
+    >>> PDF weight 1071 for 23 = 325523
+    <weight MUF="1.0" MUR="1.0" PDF="325524" id="1072"> PDF=325500 MemberID=24 </weight>
+    >>> PDF weight 1072 for 24 = 325524
+    <weight MUF="1.0" MUR="1.0" PDF="325525" id="1073"> PDF=325500 MemberID=25 </weight>
+    >>> PDF weight 1073 for 25 = 325525
+    <weight MUF="1.0" MUR="1.0" PDF="325526" id="1074"> PDF=325500 MemberID=26 </weight>
+    >>> PDF weight 1074 for 26 = 325526
+    <weight MUF="1.0" MUR="1.0" PDF="325527" id="1075"> PDF=325500 MemberID=27 </weight>
+    >>> PDF weight 1075 for 27 = 325527
+    <weight MUF="1.0" MUR="1.0" PDF="325528" id="1076"> PDF=325500 MemberID=28 </weight>
+    >>> PDF weight 1076 for 28 = 325528
+    <weight MUF="1.0" MUR="1.0" PDF="325529" id="1077"> PDF=325500 MemberID=29 </weight>
+    >>> PDF weight 1077 for 29 = 325529
+    <weight MUF="1.0" MUR="1.0" PDF="325530" id="1078"> PDF=325500 MemberID=30 </weight>
+    >>> PDF weight 1078 for 30 = 325530
+    <weight MUF="1.0" MUR="1.0" PDF="325531" id="1079"> PDF=325500 MemberID=31 </weight>
+    >>> PDF weight 1079 for 31 = 325531
+    <weight MUF="1.0" MUR="1.0" PDF="325532" id="1080"> PDF=325500 MemberID=32 </weight>
+    >>> PDF weight 1080 for 32 = 325532
+    <weight MUF="1.0" MUR="1.0" PDF="325533" id="1081"> PDF=325500 MemberID=33 </weight>
+    >>> PDF weight 1081 for 33 = 325533
+    <weight MUF="1.0" MUR="1.0" PDF="325534" id="1082"> PDF=325500 MemberID=34 </weight>
+    >>> PDF weight 1082 for 34 = 325534
+    <weight MUF="1.0" MUR="1.0" PDF="325535" id="1083"> PDF=325500 MemberID=35 </weight>
+    >>> PDF weight 1083 for 35 = 325535
+    <weight MUF="1.0" MUR="1.0" PDF="325536" id="1084"> PDF=325500 MemberID=36 </weight>
+    >>> PDF weight 1084 for 36 = 325536
+    <weight MUF="1.0" MUR="1.0" PDF="325537" id="1085"> PDF=325500 MemberID=37 </weight>
+    >>> PDF weight 1085 for 37 = 325537
+    <weight MUF="1.0" MUR="1.0" PDF="325538" id="1086"> PDF=325500 MemberID=38 </weight>
+    >>> PDF weight 1086 for 38 = 325538
+    <weight MUF="1.0" MUR="1.0" PDF="325539" id="1087"> PDF=325500 MemberID=39 </weight>
+    >>> PDF weight 1087 for 39 = 325539
+    <weight MUF="1.0" MUR="1.0" PDF="325540" id="1088"> PDF=325500 MemberID=40 </weight>
+    >>> PDF weight 1088 for 40 = 325540
+    <weight MUF="1.0" MUR="1.0" PDF="325541" id="1089"> PDF=325500 MemberID=41 </weight>
+    >>> PDF weight 1089 for 41 = 325541
+    <weight MUF="1.0" MUR="1.0" PDF="325542" id="1090"> PDF=325500 MemberID=42 </weight>
+    >>> PDF weight 1090 for 42 = 325542
+    <weight MUF="1.0" MUR="1.0" PDF="325543" id="1091"> PDF=325500 MemberID=43 </weight>
+    >>> PDF weight 1091 for 43 = 325543
+    <weight MUF="1.0" MUR="1.0" PDF="325544" id="1092"> PDF=325500 MemberID=44 </weight>
+    >>> PDF weight 1092 for 44 = 325544
+    <weight MUF="1.0" MUR="1.0" PDF="325545" id="1093"> PDF=325500 MemberID=45 </weight>
+    >>> PDF weight 1093 for 45 = 325545
+    <weight MUF="1.0" MUR="1.0" PDF="325546" id="1094"> PDF=325500 MemberID=46 </weight>
+    >>> PDF weight 1094 for 46 = 325546
+    <weight MUF="1.0" MUR="1.0" PDF="325547" id="1095"> PDF=325500 MemberID=47 </weight>
+    >>> PDF weight 1095 for 47 = 325547
+    <weight MUF="1.0" MUR="1.0" PDF="325548" id="1096"> PDF=325500 MemberID=48 </weight>
+    >>> PDF weight 1096 for 48 = 325548
+    <weight MUF="1.0" MUR="1.0" PDF="325549" id="1097"> PDF=325500 MemberID=49 </weight>
+    >>> PDF weight 1097 for 49 = 325549
+    <weight MUF="1.0" MUR="1.0" PDF="325550" id="1098"> PDF=325500 MemberID=50 </weight>
+    >>> PDF weight 1098 for 50 = 325550
+    <weight MUF="1.0" MUR="1.0" PDF="325551" id="1099"> PDF=325500 MemberID=51 </weight>
+    >>> PDF weight 1099 for 51 = 325551
+    <weight MUF="1.0" MUR="1.0" PDF="325552" id="1100"> PDF=325500 MemberID=52 </weight>
+    >>> PDF weight 1100 for 52 = 325552
+    <weight MUF="1.0" MUR="1.0" PDF="325553" id="1101"> PDF=325500 MemberID=53 </weight>
+    >>> PDF weight 1101 for 53 = 325553
+    <weight MUF="1.0" MUR="1.0" PDF="325554" id="1102"> PDF=325500 MemberID=54 </weight>
+    >>> PDF weight 1102 for 54 = 325554
+    <weight MUF="1.0" MUR="1.0" PDF="325555" id="1103"> PDF=325500 MemberID=55 </weight>
+    >>> PDF weight 1103 for 55 = 325555
+    <weight MUF="1.0" MUR="1.0" PDF="325556" id="1104"> PDF=325500 MemberID=56 </weight>
+    >>> PDF weight 1104 for 56 = 325556
+    <weight MUF="1.0" MUR="1.0" PDF="325557" id="1105"> PDF=325500 MemberID=57 </weight>
+    >>> PDF weight 1105 for 57 = 325557
+    <weight MUF="1.0" MUR="1.0" PDF="325558" id="1106"> PDF=325500 MemberID=58 </weight>
+    >>> PDF weight 1106 for 58 = 325558
+    <weight MUF="1.0" MUR="1.0" PDF="325559" id="1107"> PDF=325500 MemberID=59 </weight>
+    >>> PDF weight 1107 for 59 = 325559
+    <weight MUF="1.0" MUR="1.0" PDF="325560" id="1108"> PDF=325500 MemberID=60 </weight>
+    >>> PDF weight 1108 for 60 = 325560
+    <weight MUF="1.0" MUR="1.0" PDF="325561" id="1109"> PDF=325500 MemberID=61 </weight>
+    >>> PDF weight 1109 for 61 = 325561
+    <weight MUF="1.0" MUR="1.0" PDF="325562" id="1110"> PDF=325500 MemberID=62 </weight>
+    >>> PDF weight 1110 for 62 = 325562
+    <weight MUF="1.0" MUR="1.0" PDF="325563" id="1111"> PDF=325500 MemberID=63 </weight>
+    >>> PDF weight 1111 for 63 = 325563
+    <weight MUF="1.0" MUR="1.0" PDF="325564" id="1112"> PDF=325500 MemberID=64 </weight>
+    >>> PDF weight 1112 for 64 = 325564
+    <weight MUF="1.0" MUR="1.0" PDF="325565" id="1113"> PDF=325500 MemberID=65 </weight>
+    >>> PDF weight 1113 for 65 = 325565
+    <weight MUF="1.0" MUR="1.0" PDF="325566" id="1114"> PDF=325500 MemberID=66 </weight>
+    >>> PDF weight 1114 for 66 = 325566
+    <weight MUF="1.0" MUR="1.0" PDF="325567" id="1115"> PDF=325500 MemberID=67 </weight>
+    >>> PDF weight 1115 for 67 = 325567
+    <weight MUF="1.0" MUR="1.0" PDF="325568" id="1116"> PDF=325500 MemberID=68 </weight>
+    >>> PDF weight 1116 for 68 = 325568
+    <weight MUF="1.0" MUR="1.0" PDF="325569" id="1117"> PDF=325500 MemberID=69 </weight>
+    >>> PDF weight 1117 for 69 = 325569
+    <weight MUF="1.0" MUR="1.0" PDF="325570" id="1118"> PDF=325500 MemberID=70 </weight>
+    >>> PDF weight 1118 for 70 = 325570
+    <weight MUF="1.0" MUR="1.0" PDF="325571" id="1119"> PDF=325500 MemberID=71 </weight>
+    >>> PDF weight 1119 for 71 = 325571
+    <weight MUF="1.0" MUR="1.0" PDF="325572" id="1120"> PDF=325500 MemberID=72 </weight>
+    >>> PDF weight 1120 for 72 = 325572
+    <weight MUF="1.0" MUR="1.0" PDF="325573" id="1121"> PDF=325500 MemberID=73 </weight>
+    >>> PDF weight 1121 for 73 = 325573
+    <weight MUF="1.0" MUR="1.0" PDF="325574" id="1122"> PDF=325500 MemberID=74 </weight>
+    >>> PDF weight 1122 for 74 = 325574
+    <weight MUF="1.0" MUR="1.0" PDF="325575" id="1123"> PDF=325500 MemberID=75 </weight>
+    >>> PDF weight 1123 for 75 = 325575
+    <weight MUF="1.0" MUR="1.0" PDF="325576" id="1124"> PDF=325500 MemberID=76 </weight>
+    >>> PDF weight 1124 for 76 = 325576
+    <weight MUF="1.0" MUR="1.0" PDF="325577" id="1125"> PDF=325500 MemberID=77 </weight>
+    >>> PDF weight 1125 for 77 = 325577
+    <weight MUF="1.0" MUR="1.0" PDF="325578" id="1126"> PDF=325500 MemberID=78 </weight>
+    >>> PDF weight 1126 for 78 = 325578
+    <weight MUF="1.0" MUR="1.0" PDF="325579" id="1127"> PDF=325500 MemberID=79 </weight>
+    >>> PDF weight 1127 for 79 = 325579
+    <weight MUF="1.0" MUR="1.0" PDF="325580" id="1128"> PDF=325500 MemberID=80 </weight>
+    >>> PDF weight 1128 for 80 = 325580
+    <weight MUF="1.0" MUR="1.0" PDF="325581" id="1129"> PDF=325500 MemberID=81 </weight>
+    >>> PDF weight 1129 for 81 = 325581
+    <weight MUF="1.0" MUR="1.0" PDF="325582" id="1130"> PDF=325500 MemberID=82 </weight>
+    >>> PDF weight 1130 for 82 = 325582
+    <weight MUF="1.0" MUR="1.0" PDF="325583" id="1131"> PDF=325500 MemberID=83 </weight>
+    >>> PDF weight 1131 for 83 = 325583
+    <weight MUF="1.0" MUR="1.0" PDF="325584" id="1132"> PDF=325500 MemberID=84 </weight>
+    >>> PDF weight 1132 for 84 = 325584
+    <weight MUF="1.0" MUR="1.0" PDF="325585" id="1133"> PDF=325500 MemberID=85 </weight>
+    >>> PDF weight 1133 for 85 = 325585
+    <weight MUF="1.0" MUR="1.0" PDF="325586" id="1134"> PDF=325500 MemberID=86 </weight>
+    >>> PDF weight 1134 for 86 = 325586
+    <weight MUF="1.0" MUR="1.0" PDF="325587" id="1135"> PDF=325500 MemberID=87 </weight>
+    >>> PDF weight 1135 for 87 = 325587
+    <weight MUF="1.0" MUR="1.0" PDF="325588" id="1136"> PDF=325500 MemberID=88 </weight>
+    >>> PDF weight 1136 for 88 = 325588
+    <weight MUF="1.0" MUR="1.0" PDF="325589" id="1137"> PDF=325500 MemberID=89 </weight>
+    >>> PDF weight 1137 for 89 = 325589
+    <weight MUF="1.0" MUR="1.0" PDF="325590" id="1138"> PDF=325500 MemberID=90 </weight>
+    >>> PDF weight 1138 for 90 = 325590
+    <weight MUF="1.0" MUR="1.0" PDF="325591" id="1139"> PDF=325500 MemberID=91 </weight>
+    >>> PDF weight 1139 for 91 = 325591
+    <weight MUF="1.0" MUR="1.0" PDF="325592" id="1140"> PDF=325500 MemberID=92 </weight>
+    >>> PDF weight 1140 for 92 = 325592
+    <weight MUF="1.0" MUR="1.0" PDF="325593" id="1141"> PDF=325500 MemberID=93 </weight>
+    >>> PDF weight 1141 for 93 = 325593
+    <weight MUF="1.0" MUR="1.0" PDF="325594" id="1142"> PDF=325500 MemberID=94 </weight>
+    >>> PDF weight 1142 for 94 = 325594
+    <weight MUF="1.0" MUR="1.0" PDF="325595" id="1143"> PDF=325500 MemberID=95 </weight>
+    >>> PDF weight 1143 for 95 = 325595
+    <weight MUF="1.0" MUR="1.0" PDF="325596" id="1144"> PDF=325500 MemberID=96 </weight>
+    >>> PDF weight 1144 for 96 = 325596
+    <weight MUF="1.0" MUR="1.0" PDF="325597" id="1145"> PDF=325500 MemberID=97 </weight>
+    >>> PDF weight 1145 for 97 = 325597
+    <weight MUF="1.0" MUR="1.0" PDF="325598" id="1146"> PDF=325500 MemberID=98 </weight>
+    >>> PDF weight 1146 for 98 = 325598
+    <weight MUF="1.0" MUR="1.0" PDF="325599" id="1147"> PDF=325500 MemberID=99 </weight>
+    >>> PDF weight 1147 for 99 = 325599
+    <weight MUF="1.0" MUR="1.0" PDF="325600" id="1148"> PDF=325500 MemberID=100 </weight>
+    >>> PDF weight 1148 for 100 = 325600
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="replicas" name="NNPDF31_nnlo_as_0118_nf_4"> # 320900: NNPDF3.1 NNLO global fit, nf=4. mem=0 ; average on replicas; mem=1-100 ; PDF replicas
+>>> Looks like the beginning of a weight group for 'NNPDF31_nnlo_as_0118_nf_4'
+>>> Looks like an old-style PDF weight for an individual pdf
+    <weight MUF="1.0" MUR="1.0" PDF="320900" id="1149"> PDF=320900 MemberID=0 </weight>
+    >>> PDF weight 1149 for 0 = 320900
+    <weight MUF="1.0" MUR="1.0" PDF="320901" id="1150"> PDF=320900 MemberID=1 </weight>
+    >>> PDF weight 1150 for 1 = 320901
+    <weight MUF="1.0" MUR="1.0" PDF="320902" id="1151"> PDF=320900 MemberID=2 </weight>
+    >>> PDF weight 1151 for 2 = 320902
+    <weight MUF="1.0" MUR="1.0" PDF="320903" id="1152"> PDF=320900 MemberID=3 </weight>
+    >>> PDF weight 1152 for 3 = 320903
+    <weight MUF="1.0" MUR="1.0" PDF="320904" id="1153"> PDF=320900 MemberID=4 </weight>
+    >>> PDF weight 1153 for 4 = 320904
+    <weight MUF="1.0" MUR="1.0" PDF="320905" id="1154"> PDF=320900 MemberID=5 </weight>
+    >>> PDF weight 1154 for 5 = 320905
+    <weight MUF="1.0" MUR="1.0" PDF="320906" id="1155"> PDF=320900 MemberID=6 </weight>
+    >>> PDF weight 1155 for 6 = 320906
+    <weight MUF="1.0" MUR="1.0" PDF="320907" id="1156"> PDF=320900 MemberID=7 </weight>
+    >>> PDF weight 1156 for 7 = 320907
+    <weight MUF="1.0" MUR="1.0" PDF="320908" id="1157"> PDF=320900 MemberID=8 </weight>
+    >>> PDF weight 1157 for 8 = 320908
+    <weight MUF="1.0" MUR="1.0" PDF="320909" id="1158"> PDF=320900 MemberID=9 </weight>
+    >>> PDF weight 1158 for 9 = 320909
+    <weight MUF="1.0" MUR="1.0" PDF="320910" id="1159"> PDF=320900 MemberID=10 </weight>
+    >>> PDF weight 1159 for 10 = 320910
+    <weight MUF="1.0" MUR="1.0" PDF="320911" id="1160"> PDF=320900 MemberID=11 </weight>
+    >>> PDF weight 1160 for 11 = 320911
+    <weight MUF="1.0" MUR="1.0" PDF="320912" id="1161"> PDF=320900 MemberID=12 </weight>
+    >>> PDF weight 1161 for 12 = 320912
+    <weight MUF="1.0" MUR="1.0" PDF="320913" id="1162"> PDF=320900 MemberID=13 </weight>
+    >>> PDF weight 1162 for 13 = 320913
+    <weight MUF="1.0" MUR="1.0" PDF="320914" id="1163"> PDF=320900 MemberID=14 </weight>
+    >>> PDF weight 1163 for 14 = 320914
+    <weight MUF="1.0" MUR="1.0" PDF="320915" id="1164"> PDF=320900 MemberID=15 </weight>
+    >>> PDF weight 1164 for 15 = 320915
+    <weight MUF="1.0" MUR="1.0" PDF="320916" id="1165"> PDF=320900 MemberID=16 </weight>
+    >>> PDF weight 1165 for 16 = 320916
+    <weight MUF="1.0" MUR="1.0" PDF="320917" id="1166"> PDF=320900 MemberID=17 </weight>
+    >>> PDF weight 1166 for 17 = 320917
+    <weight MUF="1.0" MUR="1.0" PDF="320918" id="1167"> PDF=320900 MemberID=18 </weight>
+    >>> PDF weight 1167 for 18 = 320918
+    <weight MUF="1.0" MUR="1.0" PDF="320919" id="1168"> PDF=320900 MemberID=19 </weight>
+    >>> PDF weight 1168 for 19 = 320919
+    <weight MUF="1.0" MUR="1.0" PDF="320920" id="1169"> PDF=320900 MemberID=20 </weight>
+    >>> PDF weight 1169 for 20 = 320920
+    <weight MUF="1.0" MUR="1.0" PDF="320921" id="1170"> PDF=320900 MemberID=21 </weight>
+    >>> PDF weight 1170 for 21 = 320921
+    <weight MUF="1.0" MUR="1.0" PDF="320922" id="1171"> PDF=320900 MemberID=22 </weight>
+    >>> PDF weight 1171 for 22 = 320922
+    <weight MUF="1.0" MUR="1.0" PDF="320923" id="1172"> PDF=320900 MemberID=23 </weight>
+    >>> PDF weight 1172 for 23 = 320923
+    <weight MUF="1.0" MUR="1.0" PDF="320924" id="1173"> PDF=320900 MemberID=24 </weight>
+    >>> PDF weight 1173 for 24 = 320924
+    <weight MUF="1.0" MUR="1.0" PDF="320925" id="1174"> PDF=320900 MemberID=25 </weight>
+    >>> PDF weight 1174 for 25 = 320925
+    <weight MUF="1.0" MUR="1.0" PDF="320926" id="1175"> PDF=320900 MemberID=26 </weight>
+    >>> PDF weight 1175 for 26 = 320926
+    <weight MUF="1.0" MUR="1.0" PDF="320927" id="1176"> PDF=320900 MemberID=27 </weight>
+    >>> PDF weight 1176 for 27 = 320927
+    <weight MUF="1.0" MUR="1.0" PDF="320928" id="1177"> PDF=320900 MemberID=28 </weight>
+    >>> PDF weight 1177 for 28 = 320928
+    <weight MUF="1.0" MUR="1.0" PDF="320929" id="1178"> PDF=320900 MemberID=29 </weight>
+    >>> PDF weight 1178 for 29 = 320929
+    <weight MUF="1.0" MUR="1.0" PDF="320930" id="1179"> PDF=320900 MemberID=30 </weight>
+    >>> PDF weight 1179 for 30 = 320930
+    <weight MUF="1.0" MUR="1.0" PDF="320931" id="1180"> PDF=320900 MemberID=31 </weight>
+    >>> PDF weight 1180 for 31 = 320931
+    <weight MUF="1.0" MUR="1.0" PDF="320932" id="1181"> PDF=320900 MemberID=32 </weight>
+    >>> PDF weight 1181 for 32 = 320932
+    <weight MUF="1.0" MUR="1.0" PDF="320933" id="1182"> PDF=320900 MemberID=33 </weight>
+    >>> PDF weight 1182 for 33 = 320933
+    <weight MUF="1.0" MUR="1.0" PDF="320934" id="1183"> PDF=320900 MemberID=34 </weight>
+    >>> PDF weight 1183 for 34 = 320934
+    <weight MUF="1.0" MUR="1.0" PDF="320935" id="1184"> PDF=320900 MemberID=35 </weight>
+    >>> PDF weight 1184 for 35 = 320935
+    <weight MUF="1.0" MUR="1.0" PDF="320936" id="1185"> PDF=320900 MemberID=36 </weight>
+    >>> PDF weight 1185 for 36 = 320936
+    <weight MUF="1.0" MUR="1.0" PDF="320937" id="1186"> PDF=320900 MemberID=37 </weight>
+    >>> PDF weight 1186 for 37 = 320937
+    <weight MUF="1.0" MUR="1.0" PDF="320938" id="1187"> PDF=320900 MemberID=38 </weight>
+    >>> PDF weight 1187 for 38 = 320938
+    <weight MUF="1.0" MUR="1.0" PDF="320939" id="1188"> PDF=320900 MemberID=39 </weight>
+    >>> PDF weight 1188 for 39 = 320939
+    <weight MUF="1.0" MUR="1.0" PDF="320940" id="1189"> PDF=320900 MemberID=40 </weight>
+    >>> PDF weight 1189 for 40 = 320940
+    <weight MUF="1.0" MUR="1.0" PDF="320941" id="1190"> PDF=320900 MemberID=41 </weight>
+    >>> PDF weight 1190 for 41 = 320941
+    <weight MUF="1.0" MUR="1.0" PDF="320942" id="1191"> PDF=320900 MemberID=42 </weight>
+    >>> PDF weight 1191 for 42 = 320942
+    <weight MUF="1.0" MUR="1.0" PDF="320943" id="1192"> PDF=320900 MemberID=43 </weight>
+    >>> PDF weight 1192 for 43 = 320943
+    <weight MUF="1.0" MUR="1.0" PDF="320944" id="1193"> PDF=320900 MemberID=44 </weight>
+    >>> PDF weight 1193 for 44 = 320944
+    <weight MUF="1.0" MUR="1.0" PDF="320945" id="1194"> PDF=320900 MemberID=45 </weight>
+    >>> PDF weight 1194 for 45 = 320945
+    <weight MUF="1.0" MUR="1.0" PDF="320946" id="1195"> PDF=320900 MemberID=46 </weight>
+    >>> PDF weight 1195 for 46 = 320946
+    <weight MUF="1.0" MUR="1.0" PDF="320947" id="1196"> PDF=320900 MemberID=47 </weight>
+    >>> PDF weight 1196 for 47 = 320947
+    <weight MUF="1.0" MUR="1.0" PDF="320948" id="1197"> PDF=320900 MemberID=48 </weight>
+    >>> PDF weight 1197 for 48 = 320948
+    <weight MUF="1.0" MUR="1.0" PDF="320949" id="1198"> PDF=320900 MemberID=49 </weight>
+    >>> PDF weight 1198 for 49 = 320949
+    <weight MUF="1.0" MUR="1.0" PDF="320950" id="1199"> PDF=320900 MemberID=50 </weight>
+    >>> PDF weight 1199 for 50 = 320950
+    <weight MUF="1.0" MUR="1.0" PDF="320951" id="1200"> PDF=320900 MemberID=51 </weight>
+    >>> PDF weight 1200 for 51 = 320951
+    <weight MUF="1.0" MUR="1.0" PDF="320952" id="1201"> PDF=320900 MemberID=52 </weight>
+    >>> PDF weight 1201 for 52 = 320952
+    <weight MUF="1.0" MUR="1.0" PDF="320953" id="1202"> PDF=320900 MemberID=53 </weight>
+    >>> PDF weight 1202 for 53 = 320953
+    <weight MUF="1.0" MUR="1.0" PDF="320954" id="1203"> PDF=320900 MemberID=54 </weight>
+    >>> PDF weight 1203 for 54 = 320954
+    <weight MUF="1.0" MUR="1.0" PDF="320955" id="1204"> PDF=320900 MemberID=55 </weight>
+    >>> PDF weight 1204 for 55 = 320955
+    <weight MUF="1.0" MUR="1.0" PDF="320956" id="1205"> PDF=320900 MemberID=56 </weight>
+    >>> PDF weight 1205 for 56 = 320956
+    <weight MUF="1.0" MUR="1.0" PDF="320957" id="1206"> PDF=320900 MemberID=57 </weight>
+    >>> PDF weight 1206 for 57 = 320957
+    <weight MUF="1.0" MUR="1.0" PDF="320958" id="1207"> PDF=320900 MemberID=58 </weight>
+    >>> PDF weight 1207 for 58 = 320958
+    <weight MUF="1.0" MUR="1.0" PDF="320959" id="1208"> PDF=320900 MemberID=59 </weight>
+    >>> PDF weight 1208 for 59 = 320959
+    <weight MUF="1.0" MUR="1.0" PDF="320960" id="1209"> PDF=320900 MemberID=60 </weight>
+    >>> PDF weight 1209 for 60 = 320960
+    <weight MUF="1.0" MUR="1.0" PDF="320961" id="1210"> PDF=320900 MemberID=61 </weight>
+    >>> PDF weight 1210 for 61 = 320961
+    <weight MUF="1.0" MUR="1.0" PDF="320962" id="1211"> PDF=320900 MemberID=62 </weight>
+    >>> PDF weight 1211 for 62 = 320962
+    <weight MUF="1.0" MUR="1.0" PDF="320963" id="1212"> PDF=320900 MemberID=63 </weight>
+    >>> PDF weight 1212 for 63 = 320963
+    <weight MUF="1.0" MUR="1.0" PDF="320964" id="1213"> PDF=320900 MemberID=64 </weight>
+    >>> PDF weight 1213 for 64 = 320964
+    <weight MUF="1.0" MUR="1.0" PDF="320965" id="1214"> PDF=320900 MemberID=65 </weight>
+    >>> PDF weight 1214 for 65 = 320965
+    <weight MUF="1.0" MUR="1.0" PDF="320966" id="1215"> PDF=320900 MemberID=66 </weight>
+    >>> PDF weight 1215 for 66 = 320966
+    <weight MUF="1.0" MUR="1.0" PDF="320967" id="1216"> PDF=320900 MemberID=67 </weight>
+    >>> PDF weight 1216 for 67 = 320967
+    <weight MUF="1.0" MUR="1.0" PDF="320968" id="1217"> PDF=320900 MemberID=68 </weight>
+    >>> PDF weight 1217 for 68 = 320968
+    <weight MUF="1.0" MUR="1.0" PDF="320969" id="1218"> PDF=320900 MemberID=69 </weight>
+    >>> PDF weight 1218 for 69 = 320969
+    <weight MUF="1.0" MUR="1.0" PDF="320970" id="1219"> PDF=320900 MemberID=70 </weight>
+    >>> PDF weight 1219 for 70 = 320970
+    <weight MUF="1.0" MUR="1.0" PDF="320971" id="1220"> PDF=320900 MemberID=71 </weight>
+    >>> PDF weight 1220 for 71 = 320971
+    <weight MUF="1.0" MUR="1.0" PDF="320972" id="1221"> PDF=320900 MemberID=72 </weight>
+    >>> PDF weight 1221 for 72 = 320972
+    <weight MUF="1.0" MUR="1.0" PDF="320973" id="1222"> PDF=320900 MemberID=73 </weight>
+    >>> PDF weight 1222 for 73 = 320973
+    <weight MUF="1.0" MUR="1.0" PDF="320974" id="1223"> PDF=320900 MemberID=74 </weight>
+    >>> PDF weight 1223 for 74 = 320974
+    <weight MUF="1.0" MUR="1.0" PDF="320975" id="1224"> PDF=320900 MemberID=75 </weight>
+    >>> PDF weight 1224 for 75 = 320975
+    <weight MUF="1.0" MUR="1.0" PDF="320976" id="1225"> PDF=320900 MemberID=76 </weight>
+    >>> PDF weight 1225 for 76 = 320976
+    <weight MUF="1.0" MUR="1.0" PDF="320977" id="1226"> PDF=320900 MemberID=77 </weight>
+    >>> PDF weight 1226 for 77 = 320977
+    <weight MUF="1.0" MUR="1.0" PDF="320978" id="1227"> PDF=320900 MemberID=78 </weight>
+    >>> PDF weight 1227 for 78 = 320978
+    <weight MUF="1.0" MUR="1.0" PDF="320979" id="1228"> PDF=320900 MemberID=79 </weight>
+    >>> PDF weight 1228 for 79 = 320979
+    <weight MUF="1.0" MUR="1.0" PDF="320980" id="1229"> PDF=320900 MemberID=80 </weight>
+    >>> PDF weight 1229 for 80 = 320980
+    <weight MUF="1.0" MUR="1.0" PDF="320981" id="1230"> PDF=320900 MemberID=81 </weight>
+    >>> PDF weight 1230 for 81 = 320981
+    <weight MUF="1.0" MUR="1.0" PDF="320982" id="1231"> PDF=320900 MemberID=82 </weight>
+    >>> PDF weight 1231 for 82 = 320982
+    <weight MUF="1.0" MUR="1.0" PDF="320983" id="1232"> PDF=320900 MemberID=83 </weight>
+    >>> PDF weight 1232 for 83 = 320983
+    <weight MUF="1.0" MUR="1.0" PDF="320984" id="1233"> PDF=320900 MemberID=84 </weight>
+    >>> PDF weight 1233 for 84 = 320984
+    <weight MUF="1.0" MUR="1.0" PDF="320985" id="1234"> PDF=320900 MemberID=85 </weight>
+    >>> PDF weight 1234 for 85 = 320985
+    <weight MUF="1.0" MUR="1.0" PDF="320986" id="1235"> PDF=320900 MemberID=86 </weight>
+    >>> PDF weight 1235 for 86 = 320986
+    <weight MUF="1.0" MUR="1.0" PDF="320987" id="1236"> PDF=320900 MemberID=87 </weight>
+    >>> PDF weight 1236 for 87 = 320987
+    <weight MUF="1.0" MUR="1.0" PDF="320988" id="1237"> PDF=320900 MemberID=88 </weight>
+    >>> PDF weight 1237 for 88 = 320988
+    <weight MUF="1.0" MUR="1.0" PDF="320989" id="1238"> PDF=320900 MemberID=89 </weight>
+    >>> PDF weight 1238 for 89 = 320989
+    <weight MUF="1.0" MUR="1.0" PDF="320990" id="1239"> PDF=320900 MemberID=90 </weight>
+    >>> PDF weight 1239 for 90 = 320990
+    <weight MUF="1.0" MUR="1.0" PDF="320991" id="1240"> PDF=320900 MemberID=91 </weight>
+    >>> PDF weight 1240 for 91 = 320991
+    <weight MUF="1.0" MUR="1.0" PDF="320992" id="1241"> PDF=320900 MemberID=92 </weight>
+    >>> PDF weight 1241 for 92 = 320992
+    <weight MUF="1.0" MUR="1.0" PDF="320993" id="1242"> PDF=320900 MemberID=93 </weight>
+    >>> PDF weight 1242 for 93 = 320993
+    <weight MUF="1.0" MUR="1.0" PDF="320994" id="1243"> PDF=320900 MemberID=94 </weight>
+    >>> PDF weight 1243 for 94 = 320994
+    <weight MUF="1.0" MUR="1.0" PDF="320995" id="1244"> PDF=320900 MemberID=95 </weight>
+    >>> PDF weight 1244 for 95 = 320995
+    <weight MUF="1.0" MUR="1.0" PDF="320996" id="1245"> PDF=320900 MemberID=96 </weight>
+    >>> PDF weight 1245 for 96 = 320996
+    <weight MUF="1.0" MUR="1.0" PDF="320997" id="1246"> PDF=320900 MemberID=97 </weight>
+    >>> PDF weight 1246 for 97 = 320997
+    <weight MUF="1.0" MUR="1.0" PDF="320998" id="1247"> PDF=320900 MemberID=98 </weight>
+    >>> PDF weight 1247 for 98 = 320998
+    <weight MUF="1.0" MUR="1.0" PDF="320999" id="1248"> PDF=320900 MemberID=99 </weight>
+    >>> PDF weight 1248 for 99 = 320999
+    <weight MUF="1.0" MUR="1.0" PDF="321000" id="1249"> PDF=320900 MemberID=100 </weight>
+    >>> PDF weight 1249 for 100 = 321000
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="CT10nlo_nf4"> # 11082: CT10 NLO PDF fixed 4-flavour fits using the standard CTEQ PDF evolution but using the HOPPET alphas_s running solution. NEW CT12 grid type. Excluding the D0 Run-II W asymmetry data. mem=0 ; mem=0 ; NF4 high scale Q=m_Z=91.190 GeV; mem=1 ; NF4 low scale  Q=m_tau=1.778 GeV
+>>> Looks like the beginning of a weight group for 'CT10nlo_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="11082" id="1250"> PDF=11082 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="11083" id="1251"> PDF=11082 MemberID=1 </weight>
+    </weightgroup> # PDFSET -> PDF
+>>> Looks like the end of a weight group
+<weight MUF="1.0" MUR="1.0" PDF="13091" id="1252"> PDF=13091 MemberID=0 </weight>
+<weight MUF="1.0" MUR="1.0" PDF="13191" id="1253"> PDF=13191 MemberID=0 </weight>
+<weight MUF="1.0" MUR="1.0" PDF="13202" id="1254"> PDF=13202 MemberID=0 </weight>
+<weightgroup combine="hessian" name="MSTW2008lo68cl_nf4"> # 23100: MSTW 2008 LO (68% C.L.) evolved with 4 flavours maximum.  This set has 41 member PDFs.  mem=0 ; central value; mem=1-40 ; 20 eigenvectors (+/- directions).  http://mstwpdf.hepforge.org
+>>> Looks like the beginning of a weight group for 'MSTW2008lo68cl_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="23100" id="1255"> PDF=23100 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23101" id="1256"> PDF=23100 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23102" id="1257"> PDF=23100 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23103" id="1258"> PDF=23100 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23104" id="1259"> PDF=23100 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23105" id="1260"> PDF=23100 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23106" id="1261"> PDF=23100 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23107" id="1262"> PDF=23100 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23108" id="1263"> PDF=23100 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23109" id="1264"> PDF=23100 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23110" id="1265"> PDF=23100 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23111" id="1266"> PDF=23100 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23112" id="1267"> PDF=23100 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23113" id="1268"> PDF=23100 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23114" id="1269"> PDF=23100 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23115" id="1270"> PDF=23100 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23116" id="1271"> PDF=23100 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23117" id="1272"> PDF=23100 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23118" id="1273"> PDF=23100 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23119" id="1274"> PDF=23100 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23120" id="1275"> PDF=23100 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23121" id="1276"> PDF=23100 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23122" id="1277"> PDF=23100 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23123" id="1278"> PDF=23100 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23124" id="1279"> PDF=23100 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23125" id="1280"> PDF=23100 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23126" id="1281"> PDF=23100 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23127" id="1282"> PDF=23100 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23128" id="1283"> PDF=23100 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23129" id="1284"> PDF=23100 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23130" id="1285"> PDF=23100 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23131" id="1286"> PDF=23100 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23132" id="1287"> PDF=23100 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23133" id="1288"> PDF=23100 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23134" id="1289"> PDF=23100 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23135" id="1290"> PDF=23100 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23136" id="1291"> PDF=23100 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23137" id="1292"> PDF=23100 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23138" id="1293"> PDF=23100 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23139" id="1294"> PDF=23100 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23140" id="1295"> PDF=23100 MemberID=40 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="hessian" name="MSTW2008nlo68cl_nf4"> # 23300: MSTW 2008 NLO (68% C.L.) evolved with 4 flavours maximum.  This set has 41 member PDFs.  mem=0 ; central value; mem=1-40 ; 20 eigenvectors (+/- directions).  http://mstwpdf.hepforge.org
+>>> Looks like the beginning of a weight group for 'MSTW2008nlo68cl_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="23300" id="1296"> PDF=23300 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23301" id="1297"> PDF=23300 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23302" id="1298"> PDF=23300 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23303" id="1299"> PDF=23300 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23304" id="1300"> PDF=23300 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23305" id="1301"> PDF=23300 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23306" id="1302"> PDF=23300 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23307" id="1303"> PDF=23300 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23308" id="1304"> PDF=23300 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23309" id="1305"> PDF=23300 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23310" id="1306"> PDF=23300 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23311" id="1307"> PDF=23300 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23312" id="1308"> PDF=23300 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23313" id="1309"> PDF=23300 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23314" id="1310"> PDF=23300 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23315" id="1311"> PDF=23300 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23316" id="1312"> PDF=23300 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23317" id="1313"> PDF=23300 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23318" id="1314"> PDF=23300 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23319" id="1315"> PDF=23300 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23320" id="1316"> PDF=23300 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23321" id="1317"> PDF=23300 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23322" id="1318"> PDF=23300 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23323" id="1319"> PDF=23300 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23324" id="1320"> PDF=23300 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23325" id="1321"> PDF=23300 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23326" id="1322"> PDF=23300 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23327" id="1323"> PDF=23300 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23328" id="1324"> PDF=23300 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23329" id="1325"> PDF=23300 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23330" id="1326"> PDF=23300 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23331" id="1327"> PDF=23300 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23332" id="1328"> PDF=23300 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23333" id="1329"> PDF=23300 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23334" id="1330"> PDF=23300 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23335" id="1331"> PDF=23300 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23336" id="1332"> PDF=23300 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23337" id="1333"> PDF=23300 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23338" id="1334"> PDF=23300 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23339" id="1335"> PDF=23300 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23340" id="1336"> PDF=23300 MemberID=40 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MSTW2008nlo_mbrange_nf4"> # 23490: MSTW 2008 NLO (fits for range of m_b values, evolve with 4 flavours maximum).  This set has 7 member PDFs.  mem=0 ; default m_b = 4.75 GeV; mem=1-6 ; m_b = 4.00, 4.25, 4.50, 5.00, 5.25, 5.50 GeV.  http://mstwpdf.hepforge.org
+>>> Looks like the beginning of a weight group for 'MSTW2008nlo_mbrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="23490" id="1337"> PDF=23490 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23491" id="1338"> PDF=23490 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23492" id="1339"> PDF=23490 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23493" id="1340"> PDF=23490 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23494" id="1341"> PDF=23490 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23495" id="1342"> PDF=23490 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23496" id="1343"> PDF=23490 MemberID=6 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="hessian" name="MSTW2008nnlo68cl_nf4"> # 23600: MSTW 2008 NNLO (68% C.L.) evolved with 4 flavours maximum.  This set has 41 member PDFs.  mem=0 ; central value; mem=1-40 ; 20 eigenvectors (+/- directions).  http://mstwpdf.hepforge.org
+>>> Looks like the beginning of a weight group for 'MSTW2008nnlo68cl_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="23600" id="1344"> PDF=23600 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23601" id="1345"> PDF=23600 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23602" id="1346"> PDF=23600 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23603" id="1347"> PDF=23600 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23604" id="1348"> PDF=23600 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23605" id="1349"> PDF=23600 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23606" id="1350"> PDF=23600 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23607" id="1351"> PDF=23600 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23608" id="1352"> PDF=23600 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23609" id="1353"> PDF=23600 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23610" id="1354"> PDF=23600 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23611" id="1355"> PDF=23600 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23612" id="1356"> PDF=23600 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23613" id="1357"> PDF=23600 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23614" id="1358"> PDF=23600 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23615" id="1359"> PDF=23600 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23616" id="1360"> PDF=23600 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23617" id="1361"> PDF=23600 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23618" id="1362"> PDF=23600 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23619" id="1363"> PDF=23600 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23620" id="1364"> PDF=23600 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23621" id="1365"> PDF=23600 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23622" id="1366"> PDF=23600 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23623" id="1367"> PDF=23600 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23624" id="1368"> PDF=23600 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23625" id="1369"> PDF=23600 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23626" id="1370"> PDF=23600 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23627" id="1371"> PDF=23600 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23628" id="1372"> PDF=23600 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23629" id="1373"> PDF=23600 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23630" id="1374"> PDF=23600 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23631" id="1375"> PDF=23600 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23632" id="1376"> PDF=23600 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23633" id="1377"> PDF=23600 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23634" id="1378"> PDF=23600 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23635" id="1379"> PDF=23600 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23636" id="1380"> PDF=23600 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23637" id="1381"> PDF=23600 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23638" id="1382"> PDF=23600 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23639" id="1383"> PDF=23600 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23640" id="1384"> PDF=23600 MemberID=40 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MSTW2008nnlo_mbrange_nf4"> # 23790: MSTW 2008 NNLO (fits for range of m_b values, evolve with 4 flavours maximum).  This set has 7 member PDFs.  mem=0 ; default m_b = 4.75 GeV; mem=1-6 ; m_b = 4.00, 4.25, 4.50, 5.00, 5.25, 5.50 GeV.  http://mstwpdf.hepforge.org
+>>> Looks like the beginning of a weight group for 'MSTW2008nnlo_mbrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="23790" id="1385"> PDF=23790 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23791" id="1386"> PDF=23790 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23792" id="1387"> PDF=23790 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23793" id="1388"> PDF=23790 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23794" id="1389"> PDF=23790 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23795" id="1390"> PDF=23790 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="23796" id="1391"> PDF=23790 MemberID=6 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="hessian" name="MMHT2014nlo68cl_nf4"> # 25410: MMHT 2014 NLO (68% C.L.): evolve with 4 flavours maximum. This set has 51 member PDFs. mem=0 --.gt. central value; mem=1-50 --.gt. 20 eigenvector sets (+/- directions). Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nlo68cl_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25410" id="1392"> PDF=25410 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25411" id="1393"> PDF=25410 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25412" id="1394"> PDF=25410 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25413" id="1395"> PDF=25410 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25414" id="1396"> PDF=25410 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25415" id="1397"> PDF=25410 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25416" id="1398"> PDF=25410 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25417" id="1399"> PDF=25410 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25418" id="1400"> PDF=25410 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25419" id="1401"> PDF=25410 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25420" id="1402"> PDF=25410 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25421" id="1403"> PDF=25410 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25422" id="1404"> PDF=25410 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25423" id="1405"> PDF=25410 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25424" id="1406"> PDF=25410 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25425" id="1407"> PDF=25410 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25426" id="1408"> PDF=25410 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25427" id="1409"> PDF=25410 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25428" id="1410"> PDF=25410 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25429" id="1411"> PDF=25410 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25430" id="1412"> PDF=25410 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25431" id="1413"> PDF=25410 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25432" id="1414"> PDF=25410 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25433" id="1415"> PDF=25410 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25434" id="1416"> PDF=25410 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25435" id="1417"> PDF=25410 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25436" id="1418"> PDF=25410 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25437" id="1419"> PDF=25410 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25438" id="1420"> PDF=25410 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25439" id="1421"> PDF=25410 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25440" id="1422"> PDF=25410 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25441" id="1423"> PDF=25410 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25442" id="1424"> PDF=25410 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25443" id="1425"> PDF=25410 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25444" id="1426"> PDF=25410 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25445" id="1427"> PDF=25410 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25446" id="1428"> PDF=25410 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25447" id="1429"> PDF=25410 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25448" id="1430"> PDF=25410 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25449" id="1431"> PDF=25410 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25450" id="1432"> PDF=25410 MemberID=40 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25451" id="1433"> PDF=25410 MemberID=41 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25452" id="1434"> PDF=25410 MemberID=42 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25453" id="1435"> PDF=25410 MemberID=43 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25454" id="1436"> PDF=25410 MemberID=44 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25455" id="1437"> PDF=25410 MemberID=45 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25456" id="1438"> PDF=25410 MemberID=46 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25457" id="1439"> PDF=25410 MemberID=47 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25458" id="1440"> PDF=25410 MemberID=48 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25459" id="1441"> PDF=25410 MemberID=49 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25460" id="1442"> PDF=25410 MemberID=50 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="hessian" name="MMHT2014nlo68clas118_nf4"> # 25510: MMHT 2014 NLO (68% C.L.): evolve with 4 flavours maximum. This set has 51 member PDFs. mem=0 --.gt. central value; mem=1-50 --.gt. 20 eigenvector sets (+/- directions). Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nlo68clas118_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25510" id="1443"> PDF=25510 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25511" id="1444"> PDF=25510 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25512" id="1445"> PDF=25510 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25513" id="1446"> PDF=25510 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25514" id="1447"> PDF=25510 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25515" id="1448"> PDF=25510 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25516" id="1449"> PDF=25510 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25517" id="1450"> PDF=25510 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25518" id="1451"> PDF=25510 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25519" id="1452"> PDF=25510 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25520" id="1453"> PDF=25510 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25521" id="1454"> PDF=25510 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25522" id="1455"> PDF=25510 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25523" id="1456"> PDF=25510 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25524" id="1457"> PDF=25510 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25525" id="1458"> PDF=25510 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25526" id="1459"> PDF=25510 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25527" id="1460"> PDF=25510 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25528" id="1461"> PDF=25510 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25529" id="1462"> PDF=25510 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25530" id="1463"> PDF=25510 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25531" id="1464"> PDF=25510 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25532" id="1465"> PDF=25510 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25533" id="1466"> PDF=25510 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25534" id="1467"> PDF=25510 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25535" id="1468"> PDF=25510 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25536" id="1469"> PDF=25510 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25537" id="1470"> PDF=25510 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25538" id="1471"> PDF=25510 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25539" id="1472"> PDF=25510 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25540" id="1473"> PDF=25510 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25541" id="1474"> PDF=25510 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25542" id="1475"> PDF=25510 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25543" id="1476"> PDF=25510 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25544" id="1477"> PDF=25510 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25545" id="1478"> PDF=25510 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25546" id="1479"> PDF=25510 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25547" id="1480"> PDF=25510 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25548" id="1481"> PDF=25510 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25549" id="1482"> PDF=25510 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25550" id="1483"> PDF=25510 MemberID=40 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25551" id="1484"> PDF=25510 MemberID=41 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25552" id="1485"> PDF=25510 MemberID=42 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25553" id="1486"> PDF=25510 MemberID=43 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25554" id="1487"> PDF=25510 MemberID=44 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25555" id="1488"> PDF=25510 MemberID=45 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25556" id="1489"> PDF=25510 MemberID=46 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25557" id="1490"> PDF=25510 MemberID=47 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25558" id="1491"> PDF=25510 MemberID=48 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25559" id="1492"> PDF=25510 MemberID=49 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25560" id="1493"> PDF=25510 MemberID=50 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nlo_asmzsmallrange_nf4"> # 25570: MMHT 2014 NLO (fits for range of alpha_S values, evolve with 4 flavours maximum). This set has 5 member PDFs. mem=0 --.gt. best-fit alpha_S(M_Z) = 0.120; mem=1-4 --.gt. alpha_S(M_Z) = 0.117,...,0.121. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nlo_asmzsmallrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25570" id="1494"> PDF=25570 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25571" id="1495"> PDF=25570 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25572" id="1496"> PDF=25570 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25573" id="1497"> PDF=25570 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25574" id="1498"> PDF=25570 MemberID=4 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nlo_mcrange_nf4"> # 25605: MMHT 2014 NLO (range of mc, evolve with 4 flavours maximum). This set has 9 member PDFs. mem=0 --.gt. default mc = 1.40 GeV; mem=1-8 --.gt. mc = 1.15 - 1.55 GeV in steps of 0.05 GeV. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nlo_mcrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25605" id="1499"> PDF=25605 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25606" id="1500"> PDF=25605 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25607" id="1501"> PDF=25605 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25608" id="1502"> PDF=25605 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25609" id="1503"> PDF=25605 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25610" id="1504"> PDF=25605 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25611" id="1505"> PDF=25605 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25612" id="1506"> PDF=25605 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25613" id="1507"> PDF=25605 MemberID=8 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nlo_mbrange_nf4"> # 25620: MMHT 2014 NLO (range of mb, evolve with 4 flavours maximum). This set has 5 member PDFs. mem=0 --.gt. default mb = 4.75 GeV; mem=1-4 --.gt. mb = 4.25 - 5.25 GeV in steps of 0.25 GeV. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nlo_mbrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25620" id="1508"> PDF=25620 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25621" id="1509"> PDF=25620 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25622" id="1510"> PDF=25620 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25623" id="1511"> PDF=25620 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25624" id="1512"> PDF=25620 MemberID=4 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="hessian" name="MMHT2014nnlo68cl_nf4"> # 25710: MMHT 2014 NNLO (68% C.L.): evolve with 4 flavours maximum. This set has 51 member PDFs. mem=0 --.gt. central value; mem=1-50 --.gt. 20 eigenvector sets (+/- directions). Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nnlo68cl_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25710" id="1513"> PDF=25710 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25711" id="1514"> PDF=25710 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25712" id="1515"> PDF=25710 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25713" id="1516"> PDF=25710 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25714" id="1517"> PDF=25710 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25715" id="1518"> PDF=25710 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25716" id="1519"> PDF=25710 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25717" id="1520"> PDF=25710 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25718" id="1521"> PDF=25710 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25719" id="1522"> PDF=25710 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25720" id="1523"> PDF=25710 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25721" id="1524"> PDF=25710 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25722" id="1525"> PDF=25710 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25723" id="1526"> PDF=25710 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25724" id="1527"> PDF=25710 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25725" id="1528"> PDF=25710 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25726" id="1529"> PDF=25710 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25727" id="1530"> PDF=25710 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25728" id="1531"> PDF=25710 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25729" id="1532"> PDF=25710 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25730" id="1533"> PDF=25710 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25731" id="1534"> PDF=25710 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25732" id="1535"> PDF=25710 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25733" id="1536"> PDF=25710 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25734" id="1537"> PDF=25710 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25735" id="1538"> PDF=25710 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25736" id="1539"> PDF=25710 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25737" id="1540"> PDF=25710 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25738" id="1541"> PDF=25710 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25739" id="1542"> PDF=25710 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25740" id="1543"> PDF=25710 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25741" id="1544"> PDF=25710 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25742" id="1545"> PDF=25710 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25743" id="1546"> PDF=25710 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25744" id="1547"> PDF=25710 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25745" id="1548"> PDF=25710 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25746" id="1549"> PDF=25710 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25747" id="1550"> PDF=25710 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25748" id="1551"> PDF=25710 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25749" id="1552"> PDF=25710 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25750" id="1553"> PDF=25710 MemberID=40 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25751" id="1554"> PDF=25710 MemberID=41 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25752" id="1555"> PDF=25710 MemberID=42 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25753" id="1556"> PDF=25710 MemberID=43 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25754" id="1557"> PDF=25710 MemberID=44 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25755" id="1558"> PDF=25710 MemberID=45 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25756" id="1559"> PDF=25710 MemberID=46 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25757" id="1560"> PDF=25710 MemberID=47 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25758" id="1561"> PDF=25710 MemberID=48 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25759" id="1562"> PDF=25710 MemberID=49 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25760" id="1563"> PDF=25710 MemberID=50 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nnlo_asmzsmallrange_nf4"> # 25770: MMHT 2014 NNLO (fits for range of alpha_S values, evolve with 4 flavours maximum). This set has 3 member PDFs. mem=0 --.gt. best-fit alpha_S(M_Z) = 0.118; mem=1-2 --.gt. alpha_S(M_Z) = 0.117, 0.119. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nnlo_asmzsmallrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25770" id="1564"> PDF=25770 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25771" id="1565"> PDF=25770 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25772" id="1566"> PDF=25770 MemberID=2 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nnlo_mcrange_nf4"> # 25805: MMHT 2014 NNLO (range of mc, evolve with 4 flavours maximum). This set has 9 member PDFs. mem=0 --.gt. default mc = 1.40 GeV; mem=1-8 --.gt. mc = 1.15 - 1.55 GeV in steps of 0.05 GeV. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nnlo_mcrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25805" id="1567"> PDF=25805 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25806" id="1568"> PDF=25805 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25807" id="1569"> PDF=25805 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25808" id="1570"> PDF=25805 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25809" id="1571"> PDF=25805 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25810" id="1572"> PDF=25805 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25811" id="1573"> PDF=25805 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25812" id="1574"> PDF=25805 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25813" id="1575"> PDF=25805 MemberID=8 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="unknown" name="MMHT2014nnlo_mbrange_nf4"> # 25840: MMHT 2014 NNLO (range of mb, evolve with 4 flavours maximum). This set has 5 member PDFs. mem=0 --.gt. default mb = 4.75 GeV; mem=1-4 --.gt. mb = 4.25 - 5.25 GeV in steps of 0.25 GeV. Website: www.hep.ucl.ac.uk/mmht
+>>> Looks like the beginning of a weight group for 'MMHT2014nnlo_mbrange_nf4'
+    <weight MUF="1.0" MUR="1.0" PDF="25840" id="1576"> PDF=25840 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25841" id="1577"> PDF=25840 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25842" id="1578"> PDF=25840 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25843" id="1579"> PDF=25840 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="25844" id="1580"> PDF=25840 MemberID=4 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="symmhessian" name="PDF4LHC15_nlo_nf4_30"> # 92000: PDF4LHC15_nlo_nf4_30, alphas(MZ)=0.1126, mem=0 ; central value; mem=1-30 ; PDF symmetric eigenvectors
+>>> Looks like the beginning of a weight group for 'PDF4LHC15_nlo_nf4_30'
+    <weight MUF="1.0" MUR="1.0" PDF="92000" id="1581"> PDF=92000 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92001" id="1582"> PDF=92000 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92002" id="1583"> PDF=92000 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92003" id="1584"> PDF=92000 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92004" id="1585"> PDF=92000 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92005" id="1586"> PDF=92000 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92006" id="1587"> PDF=92000 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92007" id="1588"> PDF=92000 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92008" id="1589"> PDF=92000 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92009" id="1590"> PDF=92000 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92010" id="1591"> PDF=92000 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92011" id="1592"> PDF=92000 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92012" id="1593"> PDF=92000 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92013" id="1594"> PDF=92000 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92014" id="1595"> PDF=92000 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92015" id="1596"> PDF=92000 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92016" id="1597"> PDF=92000 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92017" id="1598"> PDF=92000 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92018" id="1599"> PDF=92000 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92019" id="1600"> PDF=92000 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92020" id="1601"> PDF=92000 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92021" id="1602"> PDF=92000 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92022" id="1603"> PDF=92000 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92023" id="1604"> PDF=92000 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92024" id="1605"> PDF=92000 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92025" id="1606"> PDF=92000 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92026" id="1607"> PDF=92000 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92027" id="1608"> PDF=92000 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92028" id="1609"> PDF=92000 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92029" id="1610"> PDF=92000 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="92030" id="1611"> PDF=92000 MemberID=30 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="symmhessian+as" name="NNPDF31_nnlo_hessian_pdfas"> # 306000: Hessian conversion of NNPDF31_nnlo_as_0118_1000, mem=0 central value ; Alphas(MZ)=0.118; mem=1-100 ; PDF eig.; mem=101 ; central value Alphas(MZ)=0.116; mem=102 ; central value Alphas(MZ)=0.120
+>>> Looks like the beginning of a weight group for 'NNPDF31_nnlo_hessian_pdfas'
+>>> Looks like an old-style PDF weight for an individual pdf
+    <weight MUF="1.0" MUR="1.0" PDF="306000" id="1612"> PDF=306000 MemberID=0 </weight>
+    >>> PDF weight 1612 for 0 = 306000
+    <weight MUF="1.0" MUR="1.0" PDF="306001" id="1613"> PDF=306000 MemberID=1 </weight>
+    >>> PDF weight 1613 for 1 = 306001
+    <weight MUF="1.0" MUR="1.0" PDF="306002" id="1614"> PDF=306000 MemberID=2 </weight>
+    >>> PDF weight 1614 for 2 = 306002
+    <weight MUF="1.0" MUR="1.0" PDF="306003" id="1615"> PDF=306000 MemberID=3 </weight>
+    >>> PDF weight 1615 for 3 = 306003
+    <weight MUF="1.0" MUR="1.0" PDF="306004" id="1616"> PDF=306000 MemberID=4 </weight>
+    >>> PDF weight 1616 for 4 = 306004
+    <weight MUF="1.0" MUR="1.0" PDF="306005" id="1617"> PDF=306000 MemberID=5 </weight>
+    >>> PDF weight 1617 for 5 = 306005
+    <weight MUF="1.0" MUR="1.0" PDF="306006" id="1618"> PDF=306000 MemberID=6 </weight>
+    >>> PDF weight 1618 for 6 = 306006
+    <weight MUF="1.0" MUR="1.0" PDF="306007" id="1619"> PDF=306000 MemberID=7 </weight>
+    >>> PDF weight 1619 for 7 = 306007
+    <weight MUF="1.0" MUR="1.0" PDF="306008" id="1620"> PDF=306000 MemberID=8 </weight>
+    >>> PDF weight 1620 for 8 = 306008
+    <weight MUF="1.0" MUR="1.0" PDF="306009" id="1621"> PDF=306000 MemberID=9 </weight>
+    >>> PDF weight 1621 for 9 = 306009
+    <weight MUF="1.0" MUR="1.0" PDF="306010" id="1622"> PDF=306000 MemberID=10 </weight>
+    >>> PDF weight 1622 for 10 = 306010
+    <weight MUF="1.0" MUR="1.0" PDF="306011" id="1623"> PDF=306000 MemberID=11 </weight>
+    >>> PDF weight 1623 for 11 = 306011
+    <weight MUF="1.0" MUR="1.0" PDF="306012" id="1624"> PDF=306000 MemberID=12 </weight>
+    >>> PDF weight 1624 for 12 = 306012
+    <weight MUF="1.0" MUR="1.0" PDF="306013" id="1625"> PDF=306000 MemberID=13 </weight>
+    >>> PDF weight 1625 for 13 = 306013
+    <weight MUF="1.0" MUR="1.0" PDF="306014" id="1626"> PDF=306000 MemberID=14 </weight>
+    >>> PDF weight 1626 for 14 = 306014
+    <weight MUF="1.0" MUR="1.0" PDF="306015" id="1627"> PDF=306000 MemberID=15 </weight>
+    >>> PDF weight 1627 for 15 = 306015
+    <weight MUF="1.0" MUR="1.0" PDF="306016" id="1628"> PDF=306000 MemberID=16 </weight>
+    >>> PDF weight 1628 for 16 = 306016
+    <weight MUF="1.0" MUR="1.0" PDF="306017" id="1629"> PDF=306000 MemberID=17 </weight>
+    >>> PDF weight 1629 for 17 = 306017
+    <weight MUF="1.0" MUR="1.0" PDF="306018" id="1630"> PDF=306000 MemberID=18 </weight>
+    >>> PDF weight 1630 for 18 = 306018
+    <weight MUF="1.0" MUR="1.0" PDF="306019" id="1631"> PDF=306000 MemberID=19 </weight>
+    >>> PDF weight 1631 for 19 = 306019
+    <weight MUF="1.0" MUR="1.0" PDF="306020" id="1632"> PDF=306000 MemberID=20 </weight>
+    >>> PDF weight 1632 for 20 = 306020
+    <weight MUF="1.0" MUR="1.0" PDF="306021" id="1633"> PDF=306000 MemberID=21 </weight>
+    >>> PDF weight 1633 for 21 = 306021
+    <weight MUF="1.0" MUR="1.0" PDF="306022" id="1634"> PDF=306000 MemberID=22 </weight>
+    >>> PDF weight 1634 for 22 = 306022
+    <weight MUF="1.0" MUR="1.0" PDF="306023" id="1635"> PDF=306000 MemberID=23 </weight>
+    >>> PDF weight 1635 for 23 = 306023
+    <weight MUF="1.0" MUR="1.0" PDF="306024" id="1636"> PDF=306000 MemberID=24 </weight>
+    >>> PDF weight 1636 for 24 = 306024
+    <weight MUF="1.0" MUR="1.0" PDF="306025" id="1637"> PDF=306000 MemberID=25 </weight>
+    >>> PDF weight 1637 for 25 = 306025
+    <weight MUF="1.0" MUR="1.0" PDF="306026" id="1638"> PDF=306000 MemberID=26 </weight>
+    >>> PDF weight 1638 for 26 = 306026
+    <weight MUF="1.0" MUR="1.0" PDF="306027" id="1639"> PDF=306000 MemberID=27 </weight>
+    >>> PDF weight 1639 for 27 = 306027
+    <weight MUF="1.0" MUR="1.0" PDF="306028" id="1640"> PDF=306000 MemberID=28 </weight>
+    >>> PDF weight 1640 for 28 = 306028
+    <weight MUF="1.0" MUR="1.0" PDF="306029" id="1641"> PDF=306000 MemberID=29 </weight>
+    >>> PDF weight 1641 for 29 = 306029
+    <weight MUF="1.0" MUR="1.0" PDF="306030" id="1642"> PDF=306000 MemberID=30 </weight>
+    >>> PDF weight 1642 for 30 = 306030
+    <weight MUF="1.0" MUR="1.0" PDF="306031" id="1643"> PDF=306000 MemberID=31 </weight>
+    >>> PDF weight 1643 for 31 = 306031
+    <weight MUF="1.0" MUR="1.0" PDF="306032" id="1644"> PDF=306000 MemberID=32 </weight>
+    >>> PDF weight 1644 for 32 = 306032
+    <weight MUF="1.0" MUR="1.0" PDF="306033" id="1645"> PDF=306000 MemberID=33 </weight>
+    >>> PDF weight 1645 for 33 = 306033
+    <weight MUF="1.0" MUR="1.0" PDF="306034" id="1646"> PDF=306000 MemberID=34 </weight>
+    >>> PDF weight 1646 for 34 = 306034
+    <weight MUF="1.0" MUR="1.0" PDF="306035" id="1647"> PDF=306000 MemberID=35 </weight>
+    >>> PDF weight 1647 for 35 = 306035
+    <weight MUF="1.0" MUR="1.0" PDF="306036" id="1648"> PDF=306000 MemberID=36 </weight>
+    >>> PDF weight 1648 for 36 = 306036
+    <weight MUF="1.0" MUR="1.0" PDF="306037" id="1649"> PDF=306000 MemberID=37 </weight>
+    >>> PDF weight 1649 for 37 = 306037
+    <weight MUF="1.0" MUR="1.0" PDF="306038" id="1650"> PDF=306000 MemberID=38 </weight>
+    >>> PDF weight 1650 for 38 = 306038
+    <weight MUF="1.0" MUR="1.0" PDF="306039" id="1651"> PDF=306000 MemberID=39 </weight>
+    >>> PDF weight 1651 for 39 = 306039
+    <weight MUF="1.0" MUR="1.0" PDF="306040" id="1652"> PDF=306000 MemberID=40 </weight>
+    >>> PDF weight 1652 for 40 = 306040
+    <weight MUF="1.0" MUR="1.0" PDF="306041" id="1653"> PDF=306000 MemberID=41 </weight>
+    >>> PDF weight 1653 for 41 = 306041
+    <weight MUF="1.0" MUR="1.0" PDF="306042" id="1654"> PDF=306000 MemberID=42 </weight>
+    >>> PDF weight 1654 for 42 = 306042
+    <weight MUF="1.0" MUR="1.0" PDF="306043" id="1655"> PDF=306000 MemberID=43 </weight>
+    >>> PDF weight 1655 for 43 = 306043
+    <weight MUF="1.0" MUR="1.0" PDF="306044" id="1656"> PDF=306000 MemberID=44 </weight>
+    >>> PDF weight 1656 for 44 = 306044
+    <weight MUF="1.0" MUR="1.0" PDF="306045" id="1657"> PDF=306000 MemberID=45 </weight>
+    >>> PDF weight 1657 for 45 = 306045
+    <weight MUF="1.0" MUR="1.0" PDF="306046" id="1658"> PDF=306000 MemberID=46 </weight>
+    >>> PDF weight 1658 for 46 = 306046
+    <weight MUF="1.0" MUR="1.0" PDF="306047" id="1659"> PDF=306000 MemberID=47 </weight>
+    >>> PDF weight 1659 for 47 = 306047
+    <weight MUF="1.0" MUR="1.0" PDF="306048" id="1660"> PDF=306000 MemberID=48 </weight>
+    >>> PDF weight 1660 for 48 = 306048
+    <weight MUF="1.0" MUR="1.0" PDF="306049" id="1661"> PDF=306000 MemberID=49 </weight>
+    >>> PDF weight 1661 for 49 = 306049
+    <weight MUF="1.0" MUR="1.0" PDF="306050" id="1662"> PDF=306000 MemberID=50 </weight>
+    >>> PDF weight 1662 for 50 = 306050
+    <weight MUF="1.0" MUR="1.0" PDF="306051" id="1663"> PDF=306000 MemberID=51 </weight>
+    >>> PDF weight 1663 for 51 = 306051
+    <weight MUF="1.0" MUR="1.0" PDF="306052" id="1664"> PDF=306000 MemberID=52 </weight>
+    >>> PDF weight 1664 for 52 = 306052
+    <weight MUF="1.0" MUR="1.0" PDF="306053" id="1665"> PDF=306000 MemberID=53 </weight>
+    >>> PDF weight 1665 for 53 = 306053
+    <weight MUF="1.0" MUR="1.0" PDF="306054" id="1666"> PDF=306000 MemberID=54 </weight>
+    >>> PDF weight 1666 for 54 = 306054
+    <weight MUF="1.0" MUR="1.0" PDF="306055" id="1667"> PDF=306000 MemberID=55 </weight>
+    >>> PDF weight 1667 for 55 = 306055
+    <weight MUF="1.0" MUR="1.0" PDF="306056" id="1668"> PDF=306000 MemberID=56 </weight>
+    >>> PDF weight 1668 for 56 = 306056
+    <weight MUF="1.0" MUR="1.0" PDF="306057" id="1669"> PDF=306000 MemberID=57 </weight>
+    >>> PDF weight 1669 for 57 = 306057
+    <weight MUF="1.0" MUR="1.0" PDF="306058" id="1670"> PDF=306000 MemberID=58 </weight>
+    >>> PDF weight 1670 for 58 = 306058
+    <weight MUF="1.0" MUR="1.0" PDF="306059" id="1671"> PDF=306000 MemberID=59 </weight>
+    >>> PDF weight 1671 for 59 = 306059
+    <weight MUF="1.0" MUR="1.0" PDF="306060" id="1672"> PDF=306000 MemberID=60 </weight>
+    >>> PDF weight 1672 for 60 = 306060
+    <weight MUF="1.0" MUR="1.0" PDF="306061" id="1673"> PDF=306000 MemberID=61 </weight>
+    >>> PDF weight 1673 for 61 = 306061
+    <weight MUF="1.0" MUR="1.0" PDF="306062" id="1674"> PDF=306000 MemberID=62 </weight>
+    >>> PDF weight 1674 for 62 = 306062
+    <weight MUF="1.0" MUR="1.0" PDF="306063" id="1675"> PDF=306000 MemberID=63 </weight>
+    >>> PDF weight 1675 for 63 = 306063
+    <weight MUF="1.0" MUR="1.0" PDF="306064" id="1676"> PDF=306000 MemberID=64 </weight>
+    >>> PDF weight 1676 for 64 = 306064
+    <weight MUF="1.0" MUR="1.0" PDF="306065" id="1677"> PDF=306000 MemberID=65 </weight>
+    >>> PDF weight 1677 for 65 = 306065
+    <weight MUF="1.0" MUR="1.0" PDF="306066" id="1678"> PDF=306000 MemberID=66 </weight>
+    >>> PDF weight 1678 for 66 = 306066
+    <weight MUF="1.0" MUR="1.0" PDF="306067" id="1679"> PDF=306000 MemberID=67 </weight>
+    >>> PDF weight 1679 for 67 = 306067
+    <weight MUF="1.0" MUR="1.0" PDF="306068" id="1680"> PDF=306000 MemberID=68 </weight>
+    >>> PDF weight 1680 for 68 = 306068
+    <weight MUF="1.0" MUR="1.0" PDF="306069" id="1681"> PDF=306000 MemberID=69 </weight>
+    >>> PDF weight 1681 for 69 = 306069
+    <weight MUF="1.0" MUR="1.0" PDF="306070" id="1682"> PDF=306000 MemberID=70 </weight>
+    >>> PDF weight 1682 for 70 = 306070
+    <weight MUF="1.0" MUR="1.0" PDF="306071" id="1683"> PDF=306000 MemberID=71 </weight>
+    >>> PDF weight 1683 for 71 = 306071
+    <weight MUF="1.0" MUR="1.0" PDF="306072" id="1684"> PDF=306000 MemberID=72 </weight>
+    >>> PDF weight 1684 for 72 = 306072
+    <weight MUF="1.0" MUR="1.0" PDF="306073" id="1685"> PDF=306000 MemberID=73 </weight>
+    >>> PDF weight 1685 for 73 = 306073
+    <weight MUF="1.0" MUR="1.0" PDF="306074" id="1686"> PDF=306000 MemberID=74 </weight>
+    >>> PDF weight 1686 for 74 = 306074
+    <weight MUF="1.0" MUR="1.0" PDF="306075" id="1687"> PDF=306000 MemberID=75 </weight>
+    >>> PDF weight 1687 for 75 = 306075
+    <weight MUF="1.0" MUR="1.0" PDF="306076" id="1688"> PDF=306000 MemberID=76 </weight>
+    >>> PDF weight 1688 for 76 = 306076
+    <weight MUF="1.0" MUR="1.0" PDF="306077" id="1689"> PDF=306000 MemberID=77 </weight>
+    >>> PDF weight 1689 for 77 = 306077
+    <weight MUF="1.0" MUR="1.0" PDF="306078" id="1690"> PDF=306000 MemberID=78 </weight>
+    >>> PDF weight 1690 for 78 = 306078
+    <weight MUF="1.0" MUR="1.0" PDF="306079" id="1691"> PDF=306000 MemberID=79 </weight>
+    >>> PDF weight 1691 for 79 = 306079
+    <weight MUF="1.0" MUR="1.0" PDF="306080" id="1692"> PDF=306000 MemberID=80 </weight>
+    >>> PDF weight 1692 for 80 = 306080
+    <weight MUF="1.0" MUR="1.0" PDF="306081" id="1693"> PDF=306000 MemberID=81 </weight>
+    >>> PDF weight 1693 for 81 = 306081
+    <weight MUF="1.0" MUR="1.0" PDF="306082" id="1694"> PDF=306000 MemberID=82 </weight>
+    >>> PDF weight 1694 for 82 = 306082
+    <weight MUF="1.0" MUR="1.0" PDF="306083" id="1695"> PDF=306000 MemberID=83 </weight>
+    >>> PDF weight 1695 for 83 = 306083
+    <weight MUF="1.0" MUR="1.0" PDF="306084" id="1696"> PDF=306000 MemberID=84 </weight>
+    >>> PDF weight 1696 for 84 = 306084
+    <weight MUF="1.0" MUR="1.0" PDF="306085" id="1697"> PDF=306000 MemberID=85 </weight>
+    >>> PDF weight 1697 for 85 = 306085
+    <weight MUF="1.0" MUR="1.0" PDF="306086" id="1698"> PDF=306000 MemberID=86 </weight>
+    >>> PDF weight 1698 for 86 = 306086
+    <weight MUF="1.0" MUR="1.0" PDF="306087" id="1699"> PDF=306000 MemberID=87 </weight>
+    >>> PDF weight 1699 for 87 = 306087
+    <weight MUF="1.0" MUR="1.0" PDF="306088" id="1700"> PDF=306000 MemberID=88 </weight>
+    >>> PDF weight 1700 for 88 = 306088
+    <weight MUF="1.0" MUR="1.0" PDF="306089" id="1701"> PDF=306000 MemberID=89 </weight>
+    >>> PDF weight 1701 for 89 = 306089
+    <weight MUF="1.0" MUR="1.0" PDF="306090" id="1702"> PDF=306000 MemberID=90 </weight>
+    >>> PDF weight 1702 for 90 = 306090
+    <weight MUF="1.0" MUR="1.0" PDF="306091" id="1703"> PDF=306000 MemberID=91 </weight>
+    >>> PDF weight 1703 for 91 = 306091
+    <weight MUF="1.0" MUR="1.0" PDF="306092" id="1704"> PDF=306000 MemberID=92 </weight>
+    >>> PDF weight 1704 for 92 = 306092
+    <weight MUF="1.0" MUR="1.0" PDF="306093" id="1705"> PDF=306000 MemberID=93 </weight>
+    >>> PDF weight 1705 for 93 = 306093
+    <weight MUF="1.0" MUR="1.0" PDF="306094" id="1706"> PDF=306000 MemberID=94 </weight>
+    >>> PDF weight 1706 for 94 = 306094
+    <weight MUF="1.0" MUR="1.0" PDF="306095" id="1707"> PDF=306000 MemberID=95 </weight>
+    >>> PDF weight 1707 for 95 = 306095
+    <weight MUF="1.0" MUR="1.0" PDF="306096" id="1708"> PDF=306000 MemberID=96 </weight>
+    >>> PDF weight 1708 for 96 = 306096
+    <weight MUF="1.0" MUR="1.0" PDF="306097" id="1709"> PDF=306000 MemberID=97 </weight>
+    >>> PDF weight 1709 for 97 = 306097
+    <weight MUF="1.0" MUR="1.0" PDF="306098" id="1710"> PDF=306000 MemberID=98 </weight>
+    >>> PDF weight 1710 for 98 = 306098
+    <weight MUF="1.0" MUR="1.0" PDF="306099" id="1711"> PDF=306000 MemberID=99 </weight>
+    >>> PDF weight 1711 for 99 = 306099
+    <weight MUF="1.0" MUR="1.0" PDF="306100" id="1712"> PDF=306000 MemberID=100 </weight>
+    >>> PDF weight 1712 for 100 = 306100
+    <weight MUF="1.0" MUR="1.0" PDF="306101" id="1713"> PDF=306000 MemberID=101 </weight>
+    >>> PDF weight 1713 for 101 = 306101
+    <weight MUF="1.0" MUR="1.0" PDF="306102" id="1714"> PDF=306000 MemberID=102 </weight>
+    >>> PDF weight 1714 for 102 = 306102
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="replicas" name="NNPDF31_nlo_as_0118_nf_4"> # 320500: NNPDF3.1 NLO global fit, nf=4. mem=0 ; average on replicas; mem=1-100 ; PDF replicas
+>>> Looks like the beginning of a weight group for 'NNPDF31_nlo_as_0118_nf_4'
+    <weight MUF="1.0" MUR="1.0" PDF="320500" id="1715"> PDF=320500 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320501" id="1716"> PDF=320500 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320502" id="1717"> PDF=320500 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320503" id="1718"> PDF=320500 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320504" id="1719"> PDF=320500 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320505" id="1720"> PDF=320500 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320506" id="1721"> PDF=320500 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320507" id="1722"> PDF=320500 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320508" id="1723"> PDF=320500 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320509" id="1724"> PDF=320500 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320510" id="1725"> PDF=320500 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320511" id="1726"> PDF=320500 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320512" id="1727"> PDF=320500 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320513" id="1728"> PDF=320500 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320514" id="1729"> PDF=320500 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320515" id="1730"> PDF=320500 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320516" id="1731"> PDF=320500 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320517" id="1732"> PDF=320500 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320518" id="1733"> PDF=320500 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320519" id="1734"> PDF=320500 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320520" id="1735"> PDF=320500 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320521" id="1736"> PDF=320500 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320522" id="1737"> PDF=320500 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320523" id="1738"> PDF=320500 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320524" id="1739"> PDF=320500 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320525" id="1740"> PDF=320500 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320526" id="1741"> PDF=320500 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320527" id="1742"> PDF=320500 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320528" id="1743"> PDF=320500 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320529" id="1744"> PDF=320500 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320530" id="1745"> PDF=320500 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320531" id="1746"> PDF=320500 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320532" id="1747"> PDF=320500 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320533" id="1748"> PDF=320500 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320534" id="1749"> PDF=320500 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320535" id="1750"> PDF=320500 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320536" id="1751"> PDF=320500 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320537" id="1752"> PDF=320500 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320538" id="1753"> PDF=320500 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320539" id="1754"> PDF=320500 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320540" id="1755"> PDF=320500 MemberID=40 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320541" id="1756"> PDF=320500 MemberID=41 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320542" id="1757"> PDF=320500 MemberID=42 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320543" id="1758"> PDF=320500 MemberID=43 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320544" id="1759"> PDF=320500 MemberID=44 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320545" id="1760"> PDF=320500 MemberID=45 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320546" id="1761"> PDF=320500 MemberID=46 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320547" id="1762"> PDF=320500 MemberID=47 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320548" id="1763"> PDF=320500 MemberID=48 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320549" id="1764"> PDF=320500 MemberID=49 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320550" id="1765"> PDF=320500 MemberID=50 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320551" id="1766"> PDF=320500 MemberID=51 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320552" id="1767"> PDF=320500 MemberID=52 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320553" id="1768"> PDF=320500 MemberID=53 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320554" id="1769"> PDF=320500 MemberID=54 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320555" id="1770"> PDF=320500 MemberID=55 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320556" id="1771"> PDF=320500 MemberID=56 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320557" id="1772"> PDF=320500 MemberID=57 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320558" id="1773"> PDF=320500 MemberID=58 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320559" id="1774"> PDF=320500 MemberID=59 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320560" id="1775"> PDF=320500 MemberID=60 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320561" id="1776"> PDF=320500 MemberID=61 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320562" id="1777"> PDF=320500 MemberID=62 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320563" id="1778"> PDF=320500 MemberID=63 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320564" id="1779"> PDF=320500 MemberID=64 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320565" id="1780"> PDF=320500 MemberID=65 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320566" id="1781"> PDF=320500 MemberID=66 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320567" id="1782"> PDF=320500 MemberID=67 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320568" id="1783"> PDF=320500 MemberID=68 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320569" id="1784"> PDF=320500 MemberID=69 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320570" id="1785"> PDF=320500 MemberID=70 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320571" id="1786"> PDF=320500 MemberID=71 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320572" id="1787"> PDF=320500 MemberID=72 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320573" id="1788"> PDF=320500 MemberID=73 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320574" id="1789"> PDF=320500 MemberID=74 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320575" id="1790"> PDF=320500 MemberID=75 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320576" id="1791"> PDF=320500 MemberID=76 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320577" id="1792"> PDF=320500 MemberID=77 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320578" id="1793"> PDF=320500 MemberID=78 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320579" id="1794"> PDF=320500 MemberID=79 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320580" id="1795"> PDF=320500 MemberID=80 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320581" id="1796"> PDF=320500 MemberID=81 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320582" id="1797"> PDF=320500 MemberID=82 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320583" id="1798"> PDF=320500 MemberID=83 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320584" id="1799"> PDF=320500 MemberID=84 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320585" id="1800"> PDF=320500 MemberID=85 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320586" id="1801"> PDF=320500 MemberID=86 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320587" id="1802"> PDF=320500 MemberID=87 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320588" id="1803"> PDF=320500 MemberID=88 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320589" id="1804"> PDF=320500 MemberID=89 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320590" id="1805"> PDF=320500 MemberID=90 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320591" id="1806"> PDF=320500 MemberID=91 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320592" id="1807"> PDF=320500 MemberID=92 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320593" id="1808"> PDF=320500 MemberID=93 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320594" id="1809"> PDF=320500 MemberID=94 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320595" id="1810"> PDF=320500 MemberID=95 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320596" id="1811"> PDF=320500 MemberID=96 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320597" id="1812"> PDF=320500 MemberID=97 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320598" id="1813"> PDF=320500 MemberID=98 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320599" id="1814"> PDF=320500 MemberID=99 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="320600" id="1815"> PDF=320500 MemberID=100 </weight>
+    </weightgroup> # PDFSET -> PDFSET
+>>> Looks like the end of a weight group
+<weightgroup combine="replicas" name="NNPDF30_nlo_as_0118_nf_4"> # 260400: NNPDF3.0 NLO global fit, alphas(mb)=0.22278. mem=0 ; average on replicas; mem=1-100 ; PDF replicas
+>>> Looks like the beginning of a weight group for 'NNPDF30_nlo_as_0118_nf_4'
+    <weight MUF="1.0" MUR="1.0" PDF="260400" id="1816"> PDF=260400 MemberID=0 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260401" id="1817"> PDF=260400 MemberID=1 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260402" id="1818"> PDF=260400 MemberID=2 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260403" id="1819"> PDF=260400 MemberID=3 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260404" id="1820"> PDF=260400 MemberID=4 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260405" id="1821"> PDF=260400 MemberID=5 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260406" id="1822"> PDF=260400 MemberID=6 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260407" id="1823"> PDF=260400 MemberID=7 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260408" id="1824"> PDF=260400 MemberID=8 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260409" id="1825"> PDF=260400 MemberID=9 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260410" id="1826"> PDF=260400 MemberID=10 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260411" id="1827"> PDF=260400 MemberID=11 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260412" id="1828"> PDF=260400 MemberID=12 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260413" id="1829"> PDF=260400 MemberID=13 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260414" id="1830"> PDF=260400 MemberID=14 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260415" id="1831"> PDF=260400 MemberID=15 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260416" id="1832"> PDF=260400 MemberID=16 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260417" id="1833"> PDF=260400 MemberID=17 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260418" id="1834"> PDF=260400 MemberID=18 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260419" id="1835"> PDF=260400 MemberID=19 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260420" id="1836"> PDF=260400 MemberID=20 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260421" id="1837"> PDF=260400 MemberID=21 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260422" id="1838"> PDF=260400 MemberID=22 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260423" id="1839"> PDF=260400 MemberID=23 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260424" id="1840"> PDF=260400 MemberID=24 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260425" id="1841"> PDF=260400 MemberID=25 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260426" id="1842"> PDF=260400 MemberID=26 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260427" id="1843"> PDF=260400 MemberID=27 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260428" id="1844"> PDF=260400 MemberID=28 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260429" id="1845"> PDF=260400 MemberID=29 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260430" id="1846"> PDF=260400 MemberID=30 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260431" id="1847"> PDF=260400 MemberID=31 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260432" id="1848"> PDF=260400 MemberID=32 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260433" id="1849"> PDF=260400 MemberID=33 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260434" id="1850"> PDF=260400 MemberID=34 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260435" id="1851"> PDF=260400 MemberID=35 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260436" id="1852"> PDF=260400 MemberID=36 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260437" id="1853"> PDF=260400 MemberID=37 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260438" id="1854"> PDF=260400 MemberID=38 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260439" id="1855"> PDF=260400 MemberID=39 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260440" id="1856"> PDF=260400 MemberID=40 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260441" id="1857"> PDF=260400 MemberID=41 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260442" id="1858"> PDF=260400 MemberID=42 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260443" id="1859"> PDF=260400 MemberID=43 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260444" id="1860"> PDF=260400 MemberID=44 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260445" id="1861"> PDF=260400 MemberID=45 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260446" id="1862"> PDF=260400 MemberID=46 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260447" id="1863"> PDF=260400 MemberID=47 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260448" id="1864"> PDF=260400 MemberID=48 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260449" id="1865"> PDF=260400 MemberID=49 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260450" id="1866"> PDF=260400 MemberID=50 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260451" id="1867"> PDF=260400 MemberID=51 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260452" id="1868"> PDF=260400 MemberID=52 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260453" id="1869"> PDF=260400 MemberID=53 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260454" id="1870"> PDF=260400 MemberID=54 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260455" id="1871"> PDF=260400 MemberID=55 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260456" id="1872"> PDF=260400 MemberID=56 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260457" id="1873"> PDF=260400 MemberID=57 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260458" id="1874"> PDF=260400 MemberID=58 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260459" id="1875"> PDF=260400 MemberID=59 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260460" id="1876"> PDF=260400 MemberID=60 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260461" id="1877"> PDF=260400 MemberID=61 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260462" id="1878"> PDF=260400 MemberID=62 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260463" id="1879"> PDF=260400 MemberID=63 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260464" id="1880"> PDF=260400 MemberID=64 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260465" id="1881"> PDF=260400 MemberID=65 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260466" id="1882"> PDF=260400 MemberID=66 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260467" id="1883"> PDF=260400 MemberID=67 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260468" id="1884"> PDF=260400 MemberID=68 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260469" id="1885"> PDF=260400 MemberID=69 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260470" id="1886"> PDF=260400 MemberID=70 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260471" id="1887"> PDF=260400 MemberID=71 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260472" id="1888"> PDF=260400 MemberID=72 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260473" id="1889"> PDF=260400 MemberID=73 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260474" id="1890"> PDF=260400 MemberID=74 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260475" id="1891"> PDF=260400 MemberID=75 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260476" id="1892"> PDF=260400 MemberID=76 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260477" id="1893"> PDF=260400 MemberID=77 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260478" id="1894"> PDF=260400 MemberID=78 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260479" id="1895"> PDF=260400 MemberID=79 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260480" id="1896"> PDF=260400 MemberID=80 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260481" id="1897"> PDF=260400 MemberID=81 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260482" id="1898"> PDF=260400 MemberID=82 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260483" id="1899"> PDF=260400 MemberID=83 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260484" id="1900"> PDF=260400 MemberID=84 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260485" id="1901"> PDF=260400 MemberID=85 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260486" id="1902"> PDF=260400 MemberID=86 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260487" id="1903"> PDF=260400 MemberID=87 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260488" id="1904"> PDF=260400 MemberID=88 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260489" id="1905"> PDF=260400 MemberID=89 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260490" id="1906"> PDF=260400 MemberID=90 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260491" id="1907"> PDF=260400 MemberID=91 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260492" id="1908"> PDF=260400 MemberID=92 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260493" id="1909"> PDF=260400 MemberID=93 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260494" id="1910"> PDF=260400 MemberID=94 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260495" id="1911"> PDF=260400 MemberID=95 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260496" id="1912"> PDF=260400 MemberID=96 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260497" id="1913"> PDF=260400 MemberID=97 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260498" id="1914"> PDF=260400 MemberID=98 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260499" id="1915"> PDF=260400 MemberID=99 </weight>
+    <weight MUF="1.0" MUR="1.0" PDF="260500" id="1916"> PDF=260400 MemberID=100 </weight>
+    </weightgroup> # PDFSET -> PDF
+>>> Looks like the end of a weight group
+<weight MUF="1.0" MUR="1.0" PDF="262400" id="1917"> PDF=262400 MemberID=0 </weight>
+<weight MUF="1.0" MUR="1.0" PDF="263400" id="1918"> PDF=263400 MemberID=0 </weight>
+<weightgroup combine="replicas+as" name="NNPDF30_nlo_nf_4_pdfas"> # 292000: NNPDF3.0 NLO global fit; mem=0 to mem=100 with alphas(MZ)=0.118, mem=0 ; average on replicas 1-100; mem=1-100 ; PDF replicas with  alphas(MZ)=0.118; mem=101 ; central value for alphas=0.117; mem=102 ; central value for alphas=0.119; maximum number of active flavors NF=4
+>>> Looks like the beginning of a weight group for 'NNPDF30_nlo_nf_4_pdfas'
+>>> Looks like an old-style PDF weight for an individual pdf
+    <weight MUF="1.0" MUR="1.0" PDF="292000" id="1919"> PDF=292000 MemberID=0 </weight>
+    >>> PDF weight 1919 for 0 = 292000
+    <weight MUF="1.0" MUR="1.0" PDF="292001" id="1920"> PDF=292000 MemberID=1 </weight>
+    >>> PDF weight 1920 for 1 = 292001
+    <weight MUF="1.0" MUR="1.0" PDF="292002" id="1921"> PDF=292000 MemberID=2 </weight>
+    >>> PDF weight 1921 for 2 = 292002
+    <weight MUF="1.0" MUR="1.0" PDF="292003" id="1922"> PDF=292000 MemberID=3 </weight>
+    >>> PDF weight 1922 for 3 = 292003
+    <weight MUF="1.0" MUR="1.0" PDF="292004" id="1923"> PDF=292000 MemberID=4 </weight>
+    >>> PDF weight 1923 for 4 = 292004
+    <weight MUF="1.0" MUR="1.0" PDF="292005" id="1924"> PDF=292000 MemberID=5 </weight>
+    >>> PDF weight 1924 for 5 = 292005
+    <weight MUF="1.0" MUR="1.0" PDF="292006" id="1925"> PDF=292000 MemberID=6 </weight>
+    >>> PDF weight 1925 for 6 = 292006
+    <weight MUF="1.0" MUR="1.0" PDF="292007" id="1926"> PDF=292000 MemberID=7 </weight>
+    >>> PDF weight 1926 for 7 = 292007
+    <weight MUF="1.0" MUR="1.0" PDF="292008" id="1927"> PDF=292000 MemberID=8 </weight>
+    >>> PDF weight 1927 for 8 = 292008
+    <weight MUF="1.0" MUR="1.0" PDF="292009" id="1928"> PDF=292000 MemberID=9 </weight>
+    >>> PDF weight 1928 for 9 = 292009
+    <weight MUF="1.0" MUR="1.0" PDF="292010" id="1929"> PDF=292000 MemberID=10 </weight>
+    >>> PDF weight 1929 for 10 = 292010
+    <weight MUF="1.0" MUR="1.0" PDF="292011" id="1930"> PDF=292000 MemberID=11 </weight>
+    >>> PDF weight 1930 for 11 = 292011
+    <weight MUF="1.0" MUR="1.0" PDF="292012" id="1931"> PDF=292000 MemberID=12 </weight>
+    >>> PDF weight 1931 for 12 = 292012
+    <weight MUF="1.0" MUR="1.0" PDF="292013" id="1932"> PDF=292000 MemberID=13 </weight>
+    >>> PDF weight 1932 for 13 = 292013
+    <weight MUF="1.0" MUR="1.0" PDF="292014" id="1933"> PDF=292000 MemberID=14 </weight>
+    >>> PDF weight 1933 for 14 = 292014
+    <weight MUF="1.0" MUR="1.0" PDF="292015" id="1934"> PDF=292000 MemberID=15 </weight>
+    >>> PDF weight 1934 for 15 = 292015
+    <weight MUF="1.0" MUR="1.0" PDF="292016" id="1935"> PDF=292000 MemberID=16 </weight>
+    >>> PDF weight 1935 for 16 = 292016
+    <weight MUF="1.0" MUR="1.0" PDF="292017" id="1936"> PDF=292000 MemberID=17 </weight>
+    >>> PDF weight 1936 for 17 = 292017
+    <weight MUF="1.0" MUR="1.0" PDF="292018" id="1937"> PDF=292000 MemberID=18 </weight>
+    >>> PDF weight 1937 for 18 = 292018
+    <weight MUF="1.0" MUR="1.0" PDF="292019" id="1938"> PDF=292000 MemberID=19 </weight>
+    >>> PDF weight 1938 for 19 = 292019
+    <weight MUF="1.0" MUR="1.0" PDF="292020" id="1939"> PDF=292000 MemberID=20 </weight>
+    >>> PDF weight 1939 for 20 = 292020
+    <weight MUF="1.0" MUR="1.0" PDF="292021" id="1940"> PDF=292000 MemberID=21 </weight>
+    >>> PDF weight 1940 for 21 = 292021
+    <weight MUF="1.0" MUR="1.0" PDF="292022" id="1941"> PDF=292000 MemberID=22 </weight>
+    >>> PDF weight 1941 for 22 = 292022
+    <weight MUF="1.0" MUR="1.0" PDF="292023" id="1942"> PDF=292000 MemberID=23 </weight>
+    >>> PDF weight 1942 for 23 = 292023
+    <weight MUF="1.0" MUR="1.0" PDF="292024" id="1943"> PDF=292000 MemberID=24 </weight>
+    >>> PDF weight 1943 for 24 = 292024
+    <weight MUF="1.0" MUR="1.0" PDF="292025" id="1944"> PDF=292000 MemberID=25 </weight>
+    >>> PDF weight 1944 for 25 = 292025
+    <weight MUF="1.0" MUR="1.0" PDF="292026" id="1945"> PDF=292000 MemberID=26 </weight>
+    >>> PDF weight 1945 for 26 = 292026
+    <weight MUF="1.0" MUR="1.0" PDF="292027" id="1946"> PDF=292000 MemberID=27 </weight>
+    >>> PDF weight 1946 for 27 = 292027
+    <weight MUF="1.0" MUR="1.0" PDF="292028" id="1947"> PDF=292000 MemberID=28 </weight>
+    >>> PDF weight 1947 for 28 = 292028
+    <weight MUF="1.0" MUR="1.0" PDF="292029" id="1948"> PDF=292000 MemberID=29 </weight>
+    >>> PDF weight 1948 for 29 = 292029
+    <weight MUF="1.0" MUR="1.0" PDF="292030" id="1949"> PDF=292000 MemberID=30 </weight>
+    >>> PDF weight 1949 for 30 = 292030
+    <weight MUF="1.0" MUR="1.0" PDF="292031" id="1950"> PDF=292000 MemberID=31 </weight>
+    >>> PDF weight 1950 for 31 = 292031
+    <weight MUF="1.0" MUR="1.0" PDF="292032" id="1951"> PDF=292000 MemberID=32 </weight>
+    >>> PDF weight 1951 for 32 = 292032
+    <weight MUF="1.0" MUR="1.0" PDF="292033" id="1952"> PDF=292000 MemberID=33 </weight>
+    >>> PDF weight 1952 for 33 = 292033
+    <weight MUF="1.0" MUR="1.0" PDF="292034" id="1953"> PDF=292000 MemberID=34 </weight>
+    >>> PDF weight 1953 for 34 = 292034
+    <weight MUF="1.0" MUR="1.0" PDF="292035" id="1954"> PDF=292000 MemberID=35 </weight>
+    >>> PDF weight 1954 for 35 = 292035
+    <weight MUF="1.0" MUR="1.0" PDF="292036" id="1955"> PDF=292000 MemberID=36 </weight>
+    >>> PDF weight 1955 for 36 = 292036
+    <weight MUF="1.0" MUR="1.0" PDF="292037" id="1956"> PDF=292000 MemberID=37 </weight>
+    >>> PDF weight 1956 for 37 = 292037
+    <weight MUF="1.0" MUR="1.0" PDF="292038" id="1957"> PDF=292000 MemberID=38 </weight>
+    >>> PDF weight 1957 for 38 = 292038
+    <weight MUF="1.0" MUR="1.0" PDF="292039" id="1958"> PDF=292000 MemberID=39 </weight>
+    >>> PDF weight 1958 for 39 = 292039
+    <weight MUF="1.0" MUR="1.0" PDF="292040" id="1959"> PDF=292000 MemberID=40 </weight>
+    >>> PDF weight 1959 for 40 = 292040
+    <weight MUF="1.0" MUR="1.0" PDF="292041" id="1960"> PDF=292000 MemberID=41 </weight>
+    >>> PDF weight 1960 for 41 = 292041
+    <weight MUF="1.0" MUR="1.0" PDF="292042" id="1961"> PDF=292000 MemberID=42 </weight>
+    >>> PDF weight 1961 for 42 = 292042
+    <weight MUF="1.0" MUR="1.0" PDF="292043" id="1962"> PDF=292000 MemberID=43 </weight>
+    >>> PDF weight 1962 for 43 = 292043
+    <weight MUF="1.0" MUR="1.0" PDF="292044" id="1963"> PDF=292000 MemberID=44 </weight>
+    >>> PDF weight 1963 for 44 = 292044
+    <weight MUF="1.0" MUR="1.0" PDF="292045" id="1964"> PDF=292000 MemberID=45 </weight>
+    >>> PDF weight 1964 for 45 = 292045
+    <weight MUF="1.0" MUR="1.0" PDF="292046" id="1965"> PDF=292000 MemberID=46 </weight>
+    >>> PDF weight 1965 for 46 = 292046
+    <weight MUF="1.0" MUR="1.0" PDF="292047" id="1966"> PDF=292000 MemberID=47 </weight>
+    >>> PDF weight 1966 for 47 = 292047
+    <weight MUF="1.0" MUR="1.0" PDF="292048" id="1967"> PDF=292000 MemberID=48 </weight>
+    >>> PDF weight 1967 for 48 = 292048
+    <weight MUF="1.0" MUR="1.0" PDF="292049" id="1968"> PDF=292000 MemberID=49 </weight>
+    >>> PDF weight 1968 for 49 = 292049
+    <weight MUF="1.0" MUR="1.0" PDF="292050" id="1969"> PDF=292000 MemberID=50 </weight>
+    >>> PDF weight 1969 for 50 = 292050
+    <weight MUF="1.0" MUR="1.0" PDF="292051" id="1970"> PDF=292000 MemberID=51 </weight>
+    >>> PDF weight 1970 for 51 = 292051
+    <weight MUF="1.0" MUR="1.0" PDF="292052" id="1971"> PDF=292000 MemberID=52 </weight>
+    >>> PDF weight 1971 for 52 = 292052
+    <weight MUF="1.0" MUR="1.0" PDF="292053" id="1972"> PDF=292000 MemberID=53 </weight>
+    >>> PDF weight 1972 for 53 = 292053
+    <weight MUF="1.0" MUR="1.0" PDF="292054" id="1973"> PDF=292000 MemberID=54 </weight>
+    >>> PDF weight 1973 for 54 = 292054
+    <weight MUF="1.0" MUR="1.0" PDF="292055" id="1974"> PDF=292000 MemberID=55 </weight>
+    >>> PDF weight 1974 for 55 = 292055
+    <weight MUF="1.0" MUR="1.0" PDF="292056" id="1975"> PDF=292000 MemberID=56 </weight>
+    >>> PDF weight 1975 for 56 = 292056
+    <weight MUF="1.0" MUR="1.0" PDF="292057" id="1976"> PDF=292000 MemberID=57 </weight>
+    >>> PDF weight 1976 for 57 = 292057
+    <weight MUF="1.0" MUR="1.0" PDF="292058" id="1977"> PDF=292000 MemberID=58 </weight>
+    >>> PDF weight 1977 for 58 = 292058
+    <weight MUF="1.0" MUR="1.0" PDF="292059" id="1978"> PDF=292000 MemberID=59 </weight>
+    >>> PDF weight 1978 for 59 = 292059
+    <weight MUF="1.0" MUR="1.0" PDF="292060" id="1979"> PDF=292000 MemberID=60 </weight>
+    >>> PDF weight 1979 for 60 = 292060
+    <weight MUF="1.0" MUR="1.0" PDF="292061" id="1980"> PDF=292000 MemberID=61 </weight>
+    >>> PDF weight 1980 for 61 = 292061
+    <weight MUF="1.0" MUR="1.0" PDF="292062" id="1981"> PDF=292000 MemberID=62 </weight>
+    >>> PDF weight 1981 for 62 = 292062
+    <weight MUF="1.0" MUR="1.0" PDF="292063" id="1982"> PDF=292000 MemberID=63 </weight>
+    >>> PDF weight 1982 for 63 = 292063
+    <weight MUF="1.0" MUR="1.0" PDF="292064" id="1983"> PDF=292000 MemberID=64 </weight>
+    >>> PDF weight 1983 for 64 = 292064
+    <weight MUF="1.0" MUR="1.0" PDF="292065" id="1984"> PDF=292000 MemberID=65 </weight>
+    >>> PDF weight 1984 for 65 = 292065
+    <weight MUF="1.0" MUR="1.0" PDF="292066" id="1985"> PDF=292000 MemberID=66 </weight>
+    >>> PDF weight 1985 for 66 = 292066
+    <weight MUF="1.0" MUR="1.0" PDF="292067" id="1986"> PDF=292000 MemberID=67 </weight>
+    >>> PDF weight 1986 for 67 = 292067
+    <weight MUF="1.0" MUR="1.0" PDF="292068" id="1987"> PDF=292000 MemberID=68 </weight>
+    >>> PDF weight 1987 for 68 = 292068
+    <weight MUF="1.0" MUR="1.0" PDF="292069" id="1988"> PDF=292000 MemberID=69 </weight>
+    >>> PDF weight 1988 for 69 = 292069
+    <weight MUF="1.0" MUR="1.0" PDF="292070" id="1989"> PDF=292000 MemberID=70 </weight>
+    >>> PDF weight 1989 for 70 = 292070
+    <weight MUF="1.0" MUR="1.0" PDF="292071" id="1990"> PDF=292000 MemberID=71 </weight>
+    >>> PDF weight 1990 for 71 = 292071
+    <weight MUF="1.0" MUR="1.0" PDF="292072" id="1991"> PDF=292000 MemberID=72 </weight>
+    >>> PDF weight 1991 for 72 = 292072
+    <weight MUF="1.0" MUR="1.0" PDF="292073" id="1992"> PDF=292000 MemberID=73 </weight>
+    >>> PDF weight 1992 for 73 = 292073
+    <weight MUF="1.0" MUR="1.0" PDF="292074" id="1993"> PDF=292000 MemberID=74 </weight>
+    >>> PDF weight 1993 for 74 = 292074
+    <weight MUF="1.0" MUR="1.0" PDF="292075" id="1994"> PDF=292000 MemberID=75 </weight>
+    >>> PDF weight 1994 for 75 = 292075
+    <weight MUF="1.0" MUR="1.0" PDF="292076" id="1995"> PDF=292000 MemberID=76 </weight>
+    >>> PDF weight 1995 for 76 = 292076
+    <weight MUF="1.0" MUR="1.0" PDF="292077" id="1996"> PDF=292000 MemberID=77 </weight>
+    >>> PDF weight 1996 for 77 = 292077
+    <weight MUF="1.0" MUR="1.0" PDF="292078" id="1997"> PDF=292000 MemberID=78 </weight>
+    >>> PDF weight 1997 for 78 = 292078
+    <weight MUF="1.0" MUR="1.0" PDF="292079" id="1998"> PDF=292000 MemberID=79 </weight>
+    >>> PDF weight 1998 for 79 = 292079
+    <weight MUF="1.0" MUR="1.0" PDF="292080" id="1999"> PDF=292000 MemberID=80 </weight>
+    >>> PDF weight 1999 for 80 = 292080
+    <weight MUF="1.0" MUR="1.0" PDF="292081" id="2000"> PDF=292000 MemberID=81 </weight>
+    >>> PDF weight 2000 for 81 = 292081
+    <weight MUF="1.0" MUR="1.0" PDF="292082" id="2001"> PDF=292000 MemberID=82 </weight>
+    >>> PDF weight 2001 for 82 = 292082
+    <weight MUF="1.0" MUR="1.0" PDF="292083" id="2002"> PDF=292000 MemberID=83 </weight>
+    >>> PDF weight 2002 for 83 = 292083
+    <weight MUF="1.0" MUR="1.0" PDF="292084" id="2003"> PDF=292000 MemberID=84 </weight>
+    >>> PDF weight 2003 for 84 = 292084
+    <weight MUF="1.0" MUR="1.0" PDF="292085" id="2004"> PDF=292000 MemberID=85 </weight>
+    >>> PDF weight 2004 for 85 = 292085
+    <weight MUF="1.0" MUR="1.0" PDF="292086" id="2005"> PDF=292000 MemberID=86 </weight>
+    >>> PDF weight 2005 for 86 = 292086
+    <weight MUF="1.0" MUR="1.0" PDF="292087" id="2006"> PDF=292000 MemberID=87 </weight>
+    >>> PDF weight 2006 for 87 = 292087
+    <weight MUF="1.0" MUR="1.0" PDF="292088" id="2007"> PDF=292000 MemberID=88 </weight>
+    >>> PDF weight 2007 for 88 = 292088
+    <weight MUF="1.0" MUR="1.0" PDF="292089" id="2008"> PDF=292000 MemberID=89 </weight>
+    >>> PDF weight 2008 for 89 = 292089
+    <weight MUF="1.0" MUR="1.0" PDF="292090" id="2009"> PDF=292000 MemberID=90 </weight>
+    >>> PDF weight 2009 for 90 = 292090
+    <weight MUF="1.0" MUR="1.0" PDF="292091" id="2010"> PDF=292000 MemberID=91 </weight>
+    >>> PDF weight 2010 for 91 = 292091
+    <weight MUF="1.0" MUR="1.0" PDF="292092" id="2011"> PDF=292000 MemberID=92 </weight>
+    >>> PDF weight 2011 for 92 = 292092
+    <weight MUF="1.0" MUR="1.0" PDF="292093" id="2012"> PDF=292000 MemberID=93 </weight>
+    >>> PDF weight 2012 for 93 = 292093
+    <weight MUF="1.0" MUR="1.0" PDF="292094" id="2013"> PDF=292000 MemberID=94 </weight>
+    >>> PDF weight 2013 for 94 = 292094
+    <weight MUF="1.0" MUR="1.0" PDF="292095" id="2014"> PDF=292000 MemberID=95 </weight>
+    >>> PDF weight 2014 for 95 = 292095
+    <weight MUF="1.0" MUR="1.0" PDF="292096" id="2015"> PDF=292000 MemberID=96 </weight>
+    >>> PDF weight 2015 for 96 = 292096
+    <weight MUF="1.0" MUR="1.0" PDF="292097" id="2016"> PDF=292000 MemberID=97 </weight>
+    >>> PDF weight 2016 for 97 = 292097
+    <weight MUF="1.0" MUR="1.0" PDF="292098" id="2017"> PDF=292000 MemberID=98 </weight>
+    >>> PDF weight 2017 for 98 = 292098
+    <weight MUF="1.0" MUR="1.0" PDF="292099" id="2018"> PDF=292000 MemberID=99 </weight>
+    >>> PDF weight 2018 for 99 = 292099
+    <weight MUF="1.0" MUR="1.0" PDF="292100" id="2019"> PDF=292000 MemberID=100 </weight>
+    >>> PDF weight 2019 for 100 = 292100
+    <weight MUF="1.0" MUR="1.0" PDF="292101" id="2020"> PDF=292000 MemberID=101 </weight>
+    >>> PDF weight 2020 for 101 = 292101
+    <weight MUF="1.0" MUR="1.0" PDF="292102" id="2021"> PDF=292000 MemberID=102 </weight>
+    >>> PDF weight 2021 for 102 = 292102
+    </weightgroup> # PDFSET -> PDF
+>>> Looks like the end of a weight group
+<weight MUF="1.0" MUR="1.0" PDF="292400" id="2022"> PDF=292400 MemberID=0 </weight>
+Found 8 scale variations: 
+    id 1041: scales ren =  0.50  fact =  0.50  text = MUF="0.5" MUR="0.5"
+    id 1011: scales ren =  0.50  fact =  1.00  text = MUF="1.0" MUR="0.5"
+    id 1026: scales ren =  0.50  fact =  2.00  text = MUF="2.0" MUR="0.5"
+    id 1031: scales ren =  1.00  fact =  0.50  text = MUF="0.5" MUR="1.0"
+    id 1016: scales ren =  1.00  fact =  2.00  text = MUF="2.0" MUR="1.0"
+    id 1036: scales ren =  2.00  fact =  0.50  text = MUF="0.5" MUR="2.0"
+    id 1006: scales ren =  2.00  fact =  1.00  text = MUF="1.0" MUR="2.0"
+    id 1021: scales ren =  2.00  fact =  2.00  text = MUF="2.0" MUR="2.0"
+Found 4 PDF set errors: 
+lhaIDs 325500 - 325600 (101 weights: 1048, ... )
+lhaIDs 320900 - 321000 (101 weights: 1149, ... )
+lhaIDs 306000 - 306102 (103 weights: 1612, ... )
+lhaIDs 292000 - 292102 (103 weights: 1919, ... )
+Found 0 reweighting weights
+Skipping LHE header with tagMGGenerationInfo
+%MSG-w LogicError:  HTXSRivetProducer:rivetProducerHTXS@beginRun  30-May-2022 17:35:21 KST Run: 1
+::getByLabel: An attempt was made to read a Run product before endRun() was called.
+The product is of type 'LHERunInfoProduct'.
+The specified ModuleLabel was 'externalLHEProducer'.
+The specified productInstanceName was ''.
+
+%MSG
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 on stream 0 at 30-May-2022 17:35:22.544 KST
+Rivet.Analysis.Handler: WARN  Analysis 'HiggsTemplateCrossSections' is unvalidated: be careful, it may be broken!
+==============================================================
+========     HiggsTemplateCrossSections Initialization     =========
+==============================================================
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  No HIGGSPRODMODE shell variable found. Needed when running Rivet stand-alone.
+==============================================================
+========             Higgs prod mode 0              =========
+========          Sucessful Initialization           =========
+==============================================================
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Weight   +0.02922   rel  +1.00000   for id 1001
+Weight   +0.03316   rel  +1.13480   for id 1002
+Weight   +0.03316   rel  +1.13480   for id 1003
+Weight   +0.03032   rel  +1.03770   for id 1004
+Weight   +0.03433   rel  +1.17491   for id 1005
+Weight   +0.02922   rel  +1.00000   for id 1006
+Weight   +0.03316   rel  +1.13480   for id 1007
+Weight   +0.03316   rel  +1.13480   for id 1008
+Weight   +0.03032   rel  +1.03770   for id 1009
+Weight   +0.03433   rel  +1.17491   for id 1010
+Weight   +0.02922   rel  +1.00000   for id 1011
+Weight   +0.03316   rel  +1.13480   for id 1012
+Weight   +0.03316   rel  +1.13480   for id 1013
+Weight   +0.03032   rel  +1.03770   for id 1014
+Weight   +0.03433   rel  +1.17491   for id 1015
+Weight   +0.03220   rel  +1.10198   for id 1016
+Weight   +0.03565   rel  +1.21994   for id 1017
+Weight   +0.03565   rel  +1.21994   for id 1018
+Weight   +0.03316   rel  +1.13480   for id 1019
+Weight   +0.03667   rel  +1.25490   for id 1020
+Weight   +0.03220   rel  +1.10198   for id 1021
+Weight   +0.03565   rel  +1.21994   for id 1022
+Weight   +0.03565   rel  +1.21994   for id 1023
+Weight   +0.03316   rel  +1.13480   for id 1024
+Weight   +0.03667   rel  +1.25490   for id 1025
+Weight   +0.03220   rel  +1.10198   for id 1026
+Weight   +0.03565   rel  +1.21994   for id 1027
+Weight   +0.03565   rel  +1.21994   for id 1028
+Weight   +0.03316   rel  +1.13480   for id 1029
+Weight   +0.03667   rel  +1.25490   for id 1030
+Weight   +0.02582   rel  +0.88362   for id 1031
+Weight   +0.03032   rel  +1.03770   for id 1032
+Weight   +0.03032   rel  +1.03770   for id 1033
+Weight   +0.02708   rel  +0.92664   for id 1034
+Weight   +0.03166   rel  +1.08343   for id 1035
+Weight   +0.02582   rel  +0.88362   for id 1036
+Weight   +0.03032   rel  +1.03770   for id 1037
+Weight   +0.03032   rel  +1.03770   for id 1038
+Weight   +0.02708   rel  +0.92664   for id 1039
+Weight   +0.03166   rel  +1.08343   for id 1040
+Weight   +0.02582   rel  +0.88362   for id 1041
+Weight   +0.03032   rel  +1.03770   for id 1042
+Weight   +0.03032   rel  +1.03770   for id 1043
+Weight   +0.02708   rel  +0.92664   for id 1044
+Weight   +0.03166   rel  +1.08343   for id 1045
+Weight   +0.02922   rel  +1.00000   for id 1046
+Weight   +0.02922   rel  +1.00000   for id 1047
+Weight   +0.02922   rel  +1.00000   for id 1048
+Weight   +0.02930   rel  +1.00248   for id 1049
+Weight   +0.02922   rel  +1.00004   for id 1050
+Weight   +0.02919   rel  +0.99882   for id 1051
+Weight   +0.02928   rel  +1.00200   for id 1052
+Weight   +0.02909   rel  +0.99551   for id 1053
+Weight   +0.02920   rel  +0.99910   for id 1054
+Weight   +0.02912   rel  +0.99646   for id 1055
+Weight   +0.02904   rel  +0.99361   for id 1056
+Weight   +0.02923   rel  +1.00020   for id 1057
+Weight   +0.02915   rel  +0.99760   for id 1058
+Weight   +0.02924   rel  +1.00053   for id 1059
+Weight   +0.02927   rel  +1.00156   for id 1060
+Weight   +0.02927   rel  +1.00176   for id 1061
+Weight   +0.02923   rel  +1.00031   for id 1062
+Weight   +0.02928   rel  +1.00185   for id 1063
+Weight   +0.02917   rel  +0.99821   for id 1064
+Weight   +0.02930   rel  +1.00281   for id 1065
+Weight   +0.02912   rel  +0.99631   for id 1066
+Weight   +0.02931   rel  +1.00302   for id 1067
+Weight   +0.02919   rel  +0.99898   for id 1068
+Weight   +0.02926   rel  +1.00141   for id 1069
+Weight   +0.02925   rel  +1.00091   for id 1070
+Weight   +0.02912   rel  +0.99639   for id 1071
+Weight   +0.02929   rel  +1.00224   for id 1072
+Weight   +0.02922   rel  +1.00002   for id 1073
+Weight   +0.02920   rel  +0.99915   for id 1074
+Weight   +0.02927   rel  +1.00148   for id 1075
+Weight   +0.02923   rel  +1.00032   for id 1076
+Weight   +0.02951   rel  +1.00991   for id 1077
+Weight   +0.02918   rel  +0.99839   for id 1078
+Weight   +0.02955   rel  +1.01108   for id 1079
+Weight   +0.02929   rel  +1.00237   for id 1080
+Weight   +0.02932   rel  +1.00328   for id 1081
+Weight   +0.02931   rel  +1.00314   for id 1082
+Weight   +0.02915   rel  +0.99752   for id 1083
+Weight   +0.02909   rel  +0.99554   for id 1084
+Weight   +0.02939   rel  +1.00573   for id 1085
+Weight   +0.02921   rel  +0.99954   for id 1086
+Weight   +0.02920   rel  +0.99913   for id 1087
+Weight   +0.02924   rel  +1.00063   for id 1088
+Weight   +0.02928   rel  +1.00208   for id 1089
+Weight   +0.02925   rel  +1.00109   for id 1090
+Weight   +0.02916   rel  +0.99777   for id 1091
+Weight   +0.02915   rel  +0.99756   for id 1092
+Weight   +0.02931   rel  +1.00296   for id 1093
+Weight   +0.02921   rel  +0.99970   for id 1094
+Weight   +0.02921   rel  +0.99955   for id 1095
+Weight   +0.02917   rel  +0.99815   for id 1096
+Weight   +0.02918   rel  +0.99841   for id 1097
+Weight   +0.02915   rel  +0.99756   for id 1098
+Weight   +0.02917   rel  +0.99829   for id 1099
+Weight   +0.02920   rel  +0.99929   for id 1100
+Weight   +0.02928   rel  +1.00184   for id 1101
+Weight   +0.02927   rel  +1.00153   for id 1102
+Weight   +0.02934   rel  +1.00410   for id 1103
+Weight   +0.02918   rel  +0.99848   for id 1104
+Weight   +0.02924   rel  +1.00051   for id 1105
+Weight   +0.02931   rel  +1.00297   for id 1106
+Weight   +0.02918   rel  +0.99867   for id 1107
+Weight   +0.02923   rel  +1.00035   for id 1108
+Weight   +0.02935   rel  +1.00430   for id 1109
+Weight   +0.02929   rel  +1.00223   for id 1110
+Weight   +0.02921   rel  +0.99957   for id 1111
+Weight   +0.02922   rel  +0.99974   for id 1112
+Weight   +0.02925   rel  +1.00088   for id 1113
+Weight   +0.02922   rel  +0.99979   for id 1114
+Weight   +0.02923   rel  +1.00030   for id 1115
+Weight   +0.02927   rel  +1.00170   for id 1116
+Weight   +0.02923   rel  +1.00041   for id 1117
+Weight   +0.02922   rel  +1.00004   for id 1118
+Weight   +0.02923   rel  +1.00031   for id 1119
+Weight   +0.02921   rel  +0.99941   for id 1120
+Weight   +0.02924   rel  +1.00075   for id 1121
+Weight   +0.02921   rel  +0.99953   for id 1122
+Weight   +0.02919   rel  +0.99894   for id 1123
+Weight   +0.02918   rel  +0.99867   for id 1124
+Weight   +0.02926   rel  +1.00143   for id 1125
+Weight   +0.02919   rel  +0.99896   for id 1126
+Weight   +0.02920   rel  +0.99912   for id 1127
+Weight   +0.02925   rel  +1.00106   for id 1128
+Weight   +0.02922   rel  +1.00003   for id 1129
+Weight   +0.02924   rel  +1.00065   for id 1130
+Weight   +0.02928   rel  +1.00195   for id 1131
+Weight   +0.02922   rel  +0.99980   for id 1132
+Weight   +0.02923   rel  +1.00024   for id 1133
+Weight   +0.02921   rel  +0.99966   for id 1134
+Weight   +0.02926   rel  +1.00116   for id 1135
+Weight   +0.02924   rel  +1.00064   for id 1136
+Weight   +0.02924   rel  +1.00055   for id 1137
+Weight   +0.02924   rel  +1.00064   for id 1138
+Weight   +0.02924   rel  +1.00042   for id 1139
+Weight   +0.02924   rel  +1.00057   for id 1140
+Weight   +0.02922   rel  +0.99983   for id 1141
+Weight   +0.02924   rel  +1.00064   for id 1142
+Weight   +0.02922   rel  +0.99992   for id 1143
+Weight   +0.02922   rel  +0.99978   for id 1144
+Weight   +0.02922   rel  +0.99977   for id 1145
+Weight   +0.02922   rel  +0.99983   for id 1146
+Weight   +0.02924   rel  +1.00056   for id 1147
+Weight   +0.02922   rel  +1.00000   for id 1148
+Weight   +0.02922   rel  +1.00000   for id 1149
+Weight   +0.02985   rel  +1.02143   for id 1150
+Weight   +0.02960   rel  +1.01288   for id 1151
+Weight   +0.02912   rel  +0.99653   for id 1152
+Weight   +0.02842   rel  +0.97250   for id 1153
+Weight   +0.02894   rel  +0.99033   for id 1154
+Weight   +0.02960   rel  +1.01280   for id 1155
+Weight   +0.02939   rel  +1.00570   for id 1156
+Weight   +0.02941   rel  +1.00629   for id 1157
+Weight   +0.02966   rel  +1.01513   for id 1158
+Weight   +0.02731   rel  +0.93445   for id 1159
+Weight   +0.02876   rel  +0.98432   for id 1160
+Weight   +0.02862   rel  +0.97935   for id 1161
+Weight   +0.02856   rel  +0.97734   for id 1162
+Weight   +0.02955   rel  +1.01106   for id 1163
+Weight   +0.02977   rel  +1.01877   for id 1164
+Weight   +0.02874   rel  +0.98337   for id 1165
+Weight   +0.02920   rel  +0.99912   for id 1166
+Weight   +0.02931   rel  +1.00301   for id 1167
+Weight   +0.02954   rel  +1.01077   for id 1168
+Weight   +0.02880   rel  +0.98541   for id 1169
+Weight   +0.02965   rel  +1.01471   for id 1170
+Weight   +0.03021   rel  +1.03369   for id 1171
+Weight   +0.02957   rel  +1.01186   for id 1172
+Weight   +0.02838   rel  +0.97129   for id 1173
+Weight   +0.02945   rel  +1.00780   for id 1174
+Weight   +0.02981   rel  +1.02009   for id 1175
+Weight   +0.02918   rel  +0.99846   for id 1176
+Weight   +0.02962   rel  +1.01371   for id 1177
+Weight   +0.02867   rel  +0.98115   for id 1178
+Weight   +0.02986   rel  +1.02166   for id 1179
+Weight   +0.03002   rel  +1.02739   for id 1180
+Weight   +0.02933   rel  +1.00373   for id 1181
+Weight   +0.03027   rel  +1.03579   for id 1182
+Weight   +0.02903   rel  +0.99346   for id 1183
+Weight   +0.02904   rel  +0.99390   for id 1184
+Weight   +0.02954   rel  +1.01079   for id 1185
+Weight   +0.02841   rel  +0.97210   for id 1186
+Weight   +0.02883   rel  +0.98667   for id 1187
+Weight   +0.02874   rel  +0.98339   for id 1188
+Weight   +0.02954   rel  +1.01072   for id 1189
+Weight   +0.02940   rel  +1.00612   for id 1190
+Weight   +0.02997   rel  +1.02550   for id 1191
+Weight   +0.02940   rel  +1.00615   for id 1192
+Weight   +0.02903   rel  +0.99347   for id 1193
+Weight   +0.02751   rel  +0.94126   for id 1194
+Weight   +0.02942   rel  +1.00670   for id 1195
+Weight   +0.03011   rel  +1.03050   for id 1196
+Weight   +0.02970   rel  +1.01639   for id 1197
+Weight   +0.03046   rel  +1.04220   for id 1198
+Weight   +0.02930   rel  +1.00248   for id 1199
+Weight   +0.02924   rel  +1.00046   for id 1200
+Weight   +0.02944   rel  +1.00734   for id 1201
+Weight   +0.03008   rel  +1.02933   for id 1202
+Weight   +0.02963   rel  +1.01393   for id 1203
+Weight   +0.02949   rel  +1.00897   for id 1204
+Weight   +0.02886   rel  +0.98742   for id 1205
+Weight   +0.02964   rel  +1.01421   for id 1206
+Weight   +0.03005   rel  +1.02832   for id 1207
+Weight   +0.02929   rel  +1.00217   for id 1208
+Weight   +0.02986   rel  +1.02191   for id 1209
+Weight   +0.02953   rel  +1.01058   for id 1210
+Weight   +0.02941   rel  +1.00653   for id 1211
+Weight   +0.02943   rel  +1.00702   for id 1212
+Weight   +0.02968   rel  +1.01564   for id 1213
+Weight   +0.02909   rel  +0.99539   for id 1214
+Weight   +0.02823   rel  +0.96608   for id 1215
+Weight   +0.02884   rel  +0.98679   for id 1216
+Weight   +0.02968   rel  +1.01581   for id 1217
+Weight   +0.02928   rel  +1.00193   for id 1218
+Weight   +0.02943   rel  +1.00726   for id 1219
+Weight   +0.02987   rel  +1.02200   for id 1220
+Weight   +0.02830   rel  +0.96845   for id 1221
+Weight   +0.02819   rel  +0.96464   for id 1222
+Weight   +0.02858   rel  +0.97793   for id 1223
+Weight   +0.02850   rel  +0.97537   for id 1224
+Weight   +0.02965   rel  +1.01478   for id 1225
+Weight   +0.02911   rel  +0.99603   for id 1226
+Weight   +0.03027   rel  +1.03596   for id 1227
+Weight   +0.02978   rel  +1.01912   for id 1228
+Weight   +0.02858   rel  +0.97784   for id 1229
+Weight   +0.02957   rel  +1.01198   for id 1230
+Weight   +0.02874   rel  +0.98337   for id 1231
+Weight   +0.02705   rel  +0.92561   for id 1232
+Weight   +0.02891   rel  +0.98922   for id 1233
+Weight   +0.02973   rel  +1.01719   for id 1234
+Weight   +0.03002   rel  +1.02741   for id 1235
+Weight   +0.02944   rel  +1.00735   for id 1236
+Weight   +0.02957   rel  +1.01203   for id 1237
+Weight   +0.02584   rel  +0.88423   for id 1238
+Weight   +0.02936   rel  +1.00478   for id 1239
+Weight   +0.02970   rel  +1.01634   for id 1240
+Weight   +0.02874   rel  +0.98362   for id 1241
+Weight   +0.02852   rel  +0.97598   for id 1242
+Weight   +0.02927   rel  +1.00171   for id 1243
+Weight   +0.02872   rel  +0.98266   for id 1244
+Weight   +0.03003   rel  +1.02777   for id 1245
+Weight   +0.02866   rel  +0.98069   for id 1246
+Weight   +0.02880   rel  +0.98546   for id 1247
+Weight   +0.02967   rel  +1.01522   for id 1248
+Weight   +0.02920   rel  +0.99906   for id 1249
+Weight   +0.02775   rel  +0.94965   for id 1250
+Weight   +0.02821   rel  +0.96521   for id 1251
+Weight   +0.02972   rel  +1.01685   for id 1252
+Weight   +0.02837   rel  +0.97070   for id 1253
+Weight   +0.02580   rel  +0.88285   for id 1254
+Weight   +0.02721   rel  +0.93112   for id 1255
+Weight   +0.02712   rel  +0.92787   for id 1256
+Weight   +0.02727   rel  +0.93301   for id 1257
+Weight   +0.02731   rel  +0.93441   for id 1258
+Weight   +0.02716   rel  +0.92948   for id 1259
+Weight   +0.02730   rel  +0.93413   for id 1260
+Weight   +0.02709   rel  +0.92705   for id 1261
+Weight   +0.02729   rel  +0.93402   for id 1262
+Weight   +0.02716   rel  +0.92927   for id 1263
+Weight   +0.02750   rel  +0.94095   for id 1264
+Weight   +0.02701   rel  +0.92437   for id 1265
+Weight   +0.02719   rel  +0.93057   for id 1266
+Weight   +0.02723   rel  +0.93166   for id 1267
+Weight   +0.02721   rel  +0.93109   for id 1268
+Weight   +0.02721   rel  +0.93126   for id 1269
+Weight   +0.02746   rel  +0.93970   for id 1270
+Weight   +0.02691   rel  +0.92083   for id 1271
+Weight   +0.02750   rel  +0.94095   for id 1272
+Weight   +0.02697   rel  +0.92286   for id 1273
+Weight   +0.02707   rel  +0.92622   for id 1274
+Weight   +0.02738   rel  +0.93686   for id 1275
+Weight   +0.02700   rel  +0.92398   for id 1276
+Weight   +0.02741   rel  +0.93782   for id 1277
+Weight   +0.02705   rel  +0.92576   for id 1278
+Weight   +0.02733   rel  +0.93522   for id 1279
+Weight   +0.02723   rel  +0.93165   for id 1280
+Weight   +0.02709   rel  +0.92691   for id 1281
+Weight   +0.02722   rel  +0.93137   for id 1282
+Weight   +0.02710   rel  +0.92752   for id 1283
+Weight   +0.02711   rel  +0.92759   for id 1284
+Weight   +0.02717   rel  +0.92972   for id 1285
+Weight   +0.02710   rel  +0.92752   for id 1286
+Weight   +0.02721   rel  +0.93127   for id 1287
+Weight   +0.02701   rel  +0.92441   for id 1288
+Weight   +0.02729   rel  +0.93397   for id 1289
+Weight   +0.02727   rel  +0.93331   for id 1290
+Weight   +0.02719   rel  +0.93036   for id 1291
+Weight   +0.02713   rel  +0.92836   for id 1292
+Weight   +0.02696   rel  +0.92269   for id 1293
+Weight   +0.02734   rel  +0.93568   for id 1294
+Weight   +0.02722   rel  +0.93135   for id 1295
+Weight   +0.02766   rel  +0.94666   for id 1296
+Weight   +0.02747   rel  +0.93990   for id 1297
+Weight   +0.02783   rel  +0.95225   for id 1298
+Weight   +0.02778   rel  +0.95077   for id 1299
+Weight   +0.02753   rel  +0.94212   for id 1300
+Weight   +0.02764   rel  +0.94578   for id 1301
+Weight   +0.02770   rel  +0.94803   for id 1302
+Weight   +0.02782   rel  +0.95188   for id 1303
+Weight   +0.02756   rel  +0.94325   for id 1304
+Weight   +0.02766   rel  +0.94662   for id 1305
+Weight   +0.02767   rel  +0.94683   for id 1306
+Weight   +0.02765   rel  +0.94609   for id 1307
+Weight   +0.02767   rel  +0.94701   for id 1308
+Weight   +0.02752   rel  +0.94170   for id 1309
+Weight   +0.02786   rel  +0.95338   for id 1310
+Weight   +0.02767   rel  +0.94703   for id 1311
+Weight   +0.02766   rel  +0.94667   for id 1312
+Weight   +0.02751   rel  +0.94147   for id 1313
+Weight   +0.02770   rel  +0.94778   for id 1314
+Weight   +0.02749   rel  +0.94073   for id 1315
+Weight   +0.02780   rel  +0.95121   for id 1316
+Weight   +0.02711   rel  +0.92757   for id 1317
+Weight   +0.02859   rel  +0.97829   for id 1318
+Weight   +0.02777   rel  +0.95022   for id 1319
+Weight   +0.02757   rel  +0.94349   for id 1320
+Weight   +0.02753   rel  +0.94202   for id 1321
+Weight   +0.02772   rel  +0.94852   for id 1322
+Weight   +0.02751   rel  +0.94122   for id 1323
+Weight   +0.02744   rel  +0.93916   for id 1324
+Weight   +0.02790   rel  +0.95470   for id 1325
+Weight   +0.02724   rel  +0.93217   for id 1326
+Weight   +0.02762   rel  +0.94527   for id 1327
+Weight   +0.02768   rel  +0.94718   for id 1328
+Weight   +0.02753   rel  +0.94224   for id 1329
+Weight   +0.02774   rel  +0.94943   for id 1330
+Weight   +0.02764   rel  +0.94585   for id 1331
+Weight   +0.02762   rel  +0.94529   for id 1332
+Weight   +0.02771   rel  +0.94807   for id 1333
+Weight   +0.02776   rel  +0.95000   for id 1334
+Weight   +0.02783   rel  +0.95241   for id 1335
+Weight   +0.02760   rel  +0.94460   for id 1336
+Weight   +0.02766   rel  +0.94666   for id 1337
+Weight   +0.02759   rel  +0.94412   for id 1338
+Weight   +0.02762   rel  +0.94516   for id 1339
+Weight   +0.02765   rel  +0.94604   for id 1340
+Weight   +0.02769   rel  +0.94738   for id 1341
+Weight   +0.02770   rel  +0.94793   for id 1342
+Weight   +0.02772   rel  +0.94847   for id 1343
+Weight   +0.02991   rel  +1.02340   for id 1344
+Weight   +0.02966   rel  +1.01503   for id 1345
+Weight   +0.03015   rel  +1.03172   for id 1346
+Weight   +0.02986   rel  +1.02171   for id 1347
+Weight   +0.02994   rel  +1.02463   for id 1348
+Weight   +0.03000   rel  +1.02662   for id 1349
+Weight   +0.02983   rel  +1.02066   for id 1350
+Weight   +0.02990   rel  +1.02330   for id 1351
+Weight   +0.02991   rel  +1.02360   for id 1352
+Weight   +0.03002   rel  +1.02730   for id 1353
+Weight   +0.02983   rel  +1.02070   for id 1354
+Weight   +0.03013   rel  +1.03094   for id 1355
+Weight   +0.02973   rel  +1.01747   for id 1356
+Weight   +0.03004   rel  +1.02808   for id 1357
+Weight   +0.02982   rel  +1.02058   for id 1358
+Weight   +0.02989   rel  +1.02275   for id 1359
+Weight   +0.02997   rel  +1.02542   for id 1360
+Weight   +0.03037   rel  +1.03909   for id 1361
+Weight   +0.02949   rel  +1.00902   for id 1362
+Weight   +0.03020   rel  +1.03327   for id 1363
+Weight   +0.02950   rel  +1.00952   for id 1364
+Weight   +0.02981   rel  +1.02019   for id 1365
+Weight   +0.02994   rel  +1.02438   for id 1366
+Weight   +0.02973   rel  +1.01723   for id 1367
+Weight   +0.02998   rel  +1.02606   for id 1368
+Weight   +0.02958   rel  +1.01214   for id 1369
+Weight   +0.03017   rel  +1.03250   for id 1370
+Weight   +0.02989   rel  +1.02285   for id 1371
+Weight   +0.02956   rel  +1.01157   for id 1372
+Weight   +0.02997   rel  +1.02543   for id 1373
+Weight   +0.02983   rel  +1.02086   for id 1374
+Weight   +0.02976   rel  +1.01827   for id 1375
+Weight   +0.02994   rel  +1.02437   for id 1376
+Weight   +0.02995   rel  +1.02499   for id 1377
+Weight   +0.02983   rel  +1.02067   for id 1378
+Weight   +0.02985   rel  +1.02141   for id 1379
+Weight   +0.02987   rel  +1.02200   for id 1380
+Weight   +0.02994   rel  +1.02446   for id 1381
+Weight   +0.03009   rel  +1.02971   for id 1382
+Weight   +0.02984   rel  +1.02126   for id 1383
+Weight   +0.03013   rel  +1.03118   for id 1384
+Weight   +0.02991   rel  +1.02340   for id 1385
+Weight   +0.02981   rel  +1.01994   for id 1386
+Weight   +0.02985   rel  +1.02144   for id 1387
+Weight   +0.02988   rel  +1.02259   for id 1388
+Weight   +0.02994   rel  +1.02443   for id 1389
+Weight   +0.02995   rel  +1.02497   for id 1390
+Weight   +0.02997   rel  +1.02542   for id 1391
+Weight   +0.02735   rel  +0.93602   for id 1392
+Weight   +0.02749   rel  +0.94056   for id 1393
+Weight   +0.02721   rel  +0.93116   for id 1394
+Weight   +0.02728   rel  +0.93368   for id 1395
+Weight   +0.02740   rel  +0.93771   for id 1396
+Weight   +0.02725   rel  +0.93237   for id 1397
+Weight   +0.02746   rel  +0.93956   for id 1398
+Weight   +0.02730   rel  +0.93409   for id 1399
+Weight   +0.02742   rel  +0.93844   for id 1400
+Weight   +0.02744   rel  +0.93900   for id 1401
+Weight   +0.02725   rel  +0.93232   for id 1402
+Weight   +0.02734   rel  +0.93558   for id 1403
+Weight   +0.02738   rel  +0.93694   for id 1404
+Weight   +0.02744   rel  +0.93890   for id 1405
+Weight   +0.02724   rel  +0.93210   for id 1406
+Weight   +0.02741   rel  +0.93782   for id 1407
+Weight   +0.02732   rel  +0.93479   for id 1408
+Weight   +0.02741   rel  +0.93790   for id 1409
+Weight   +0.02729   rel  +0.93399   for id 1410
+Weight   +0.02747   rel  +0.93996   for id 1411
+Weight   +0.02727   rel  +0.93301   for id 1412
+Weight   +0.02759   rel  +0.94410   for id 1413
+Weight   +0.02711   rel  +0.92754   for id 1414
+Weight   +0.02757   rel  +0.94342   for id 1415
+Weight   +0.02715   rel  +0.92898   for id 1416
+Weight   +0.02701   rel  +0.92433   for id 1417
+Weight   +0.02763   rel  +0.94538   for id 1418
+Weight   +0.02733   rel  +0.93527   for id 1419
+Weight   +0.02731   rel  +0.93452   for id 1420
+Weight   +0.02755   rel  +0.94281   for id 1421
+Weight   +0.02709   rel  +0.92713   for id 1422
+Weight   +0.02786   rel  +0.95325   for id 1423
+Weight   +0.02693   rel  +0.92170   for id 1424
+Weight   +0.02729   rel  +0.93398   for id 1425
+Weight   +0.02741   rel  +0.93813   for id 1426
+Weight   +0.02734   rel  +0.93541   for id 1427
+Weight   +0.02745   rel  +0.93934   for id 1428
+Weight   +0.02731   rel  +0.93440   for id 1429
+Weight   +0.02738   rel  +0.93693   for id 1430
+Weight   +0.02730   rel  +0.93411   for id 1431
+Weight   +0.02739   rel  +0.93736   for id 1432
+Weight   +0.02662   rel  +0.91081   for id 1433
+Weight   +0.02790   rel  +0.95487   for id 1434
+Weight   +0.02750   rel  +0.94108   for id 1435
+Weight   +0.02717   rel  +0.92988   for id 1436
+Weight   +0.02719   rel  +0.93031   for id 1437
+Weight   +0.02778   rel  +0.95056   for id 1438
+Weight   +0.02740   rel  +0.93774   for id 1439
+Weight   +0.02735   rel  +0.93592   for id 1440
+Weight   +0.02735   rel  +0.93608   for id 1441
+Weight   +0.02728   rel  +0.93337   for id 1442
+Weight   +0.02710   rel  +0.92729   for id 1443
+Weight   +0.02723   rel  +0.93182   for id 1444
+Weight   +0.02696   rel  +0.92241   for id 1445
+Weight   +0.02703   rel  +0.92490   for id 1446
+Weight   +0.02715   rel  +0.92892   for id 1447
+Weight   +0.02698   rel  +0.92330   for id 1448
+Weight   +0.02721   rel  +0.93098   for id 1449
+Weight   +0.02705   rel  +0.92556   for id 1450
+Weight   +0.02715   rel  +0.92922   for id 1451
+Weight   +0.02718   rel  +0.93018   for id 1452
+Weight   +0.02702   rel  +0.92449   for id 1453
+Weight   +0.02709   rel  +0.92713   for id 1454
+Weight   +0.02711   rel  +0.92757   for id 1455
+Weight   +0.02720   rel  +0.93091   for id 1456
+Weight   +0.02691   rel  +0.92088   for id 1457
+Weight   +0.02714   rel  +0.92876   for id 1458
+Weight   +0.02707   rel  +0.92646   for id 1459
+Weight   +0.02721   rel  +0.93100   for id 1460
+Weight   +0.02697   rel  +0.92306   for id 1461
+Weight   +0.02721   rel  +0.93122   for id 1462
+Weight   +0.02700   rel  +0.92379   for id 1463
+Weight   +0.02731   rel  +0.93447   for id 1464
+Weight   +0.02682   rel  +0.91787   for id 1465
+Weight   +0.02744   rel  +0.93885   for id 1466
+Weight   +0.02689   rel  +0.92015   for id 1467
+Weight   +0.02718   rel  +0.93009   for id 1468
+Weight   +0.02685   rel  +0.91865   for id 1469
+Weight   +0.02708   rel  +0.92661   for id 1470
+Weight   +0.02705   rel  +0.92582   for id 1471
+Weight   +0.02725   rel  +0.93256   for id 1472
+Weight   +0.02689   rel  +0.92032   for id 1473
+Weight   +0.02747   rel  +0.94017   for id 1474
+Weight   +0.02664   rel  +0.91152   for id 1475
+Weight   +0.02693   rel  +0.92155   for id 1476
+Weight   +0.02724   rel  +0.93209   for id 1477
+Weight   +0.02708   rel  +0.92681   for id 1478
+Weight   +0.02719   rel  +0.93046   for id 1479
+Weight   +0.02709   rel  +0.92692   for id 1480
+Weight   +0.02713   rel  +0.92854   for id 1481
+Weight   +0.02704   rel  +0.92524   for id 1482
+Weight   +0.02715   rel  +0.92902   for id 1483
+Weight   +0.02631   rel  +0.90031   for id 1484
+Weight   +0.02764   rel  +0.94592   for id 1485
+Weight   +0.02734   rel  +0.93546   for id 1486
+Weight   +0.02684   rel  +0.91845   for id 1487
+Weight   +0.02691   rel  +0.92088   for id 1488
+Weight   +0.02754   rel  +0.94251   for id 1489
+Weight   +0.02711   rel  +0.92784   for id 1490
+Weight   +0.02707   rel  +0.92618   for id 1491
+Weight   +0.02708   rel  +0.92663   for id 1492
+Weight   +0.02701   rel  +0.92429   for id 1493
+Weight   +0.02735   rel  +0.93602   for id 1494
+Weight   +0.02696   rel  +0.92268   for id 1495
+Weight   +0.02710   rel  +0.92729   for id 1496
+Weight   +0.02722   rel  +0.93138   for id 1497
+Weight   +0.02745   rel  +0.93925   for id 1498
+Weight   +0.02735   rel  +0.93585   for id 1499
+Weight   +0.02678   rel  +0.91626   for id 1500
+Weight   +0.02689   rel  +0.92027   for id 1501
+Weight   +0.02700   rel  +0.92396   for id 1502
+Weight   +0.02710   rel  +0.92749   for id 1503
+Weight   +0.02723   rel  +0.93170   for id 1504
+Weight   +0.02745   rel  +0.93922   for id 1505
+Weight   +0.02756   rel  +0.94305   for id 1506
+Weight   +0.02766   rel  +0.94641   for id 1507
+Weight   +0.02735   rel  +0.93585   for id 1508
+Weight   +0.02735   rel  +0.93591   for id 1509
+Weight   +0.02735   rel  +0.93601   for id 1510
+Weight   +0.02735   rel  +0.93581   for id 1511
+Weight   +0.02734   rel  +0.93540   for id 1512
+Weight   +0.02932   rel  +1.00331   for id 1513
+Weight   +0.02944   rel  +1.00752   for id 1514
+Weight   +0.02916   rel  +0.99788   for id 1515
+Weight   +0.02936   rel  +1.00462   for id 1516
+Weight   +0.02928   rel  +1.00204   for id 1517
+Weight   +0.02921   rel  +0.99961   for id 1518
+Weight   +0.02936   rel  +1.00484   for id 1519
+Weight   +0.02915   rel  +0.99740   for id 1520
+Weight   +0.02949   rel  +1.00924   for id 1521
+Weight   +0.02937   rel  +1.00506   for id 1522
+Weight   +0.02927   rel  +1.00169   for id 1523
+Weight   +0.02925   rel  +1.00099   for id 1524
+Weight   +0.02935   rel  +1.00427   for id 1525
+Weight   +0.02937   rel  +1.00488   for id 1526
+Weight   +0.02926   rel  +1.00138   for id 1527
+Weight   +0.02941   rel  +1.00653   for id 1528
+Weight   +0.02922   rel  +0.99983   for id 1529
+Weight   +0.02940   rel  +1.00594   for id 1530
+Weight   +0.02927   rel  +1.00163   for id 1531
+Weight   +0.02917   rel  +0.99818   for id 1532
+Weight   +0.02952   rel  +1.01023   for id 1533
+Weight   +0.02921   rel  +0.99954   for id 1534
+Weight   +0.02939   rel  +1.00568   for id 1535
+Weight   +0.02890   rel  +0.98886   for id 1536
+Weight   +0.02967   rel  +1.01545   for id 1537
+Weight   +0.02918   rel  +0.99861   for id 1538
+Weight   +0.02967   rel  +1.01540   for id 1539
+Weight   +0.02935   rel  +1.00421   for id 1540
+Weight   +0.02926   rel  +1.00124   for id 1541
+Weight   +0.02916   rel  +0.99777   for id 1542
+Weight   +0.02966   rel  +1.01495   for id 1543
+Weight   +0.02950   rel  +1.00946   for id 1544
+Weight   +0.02893   rel  +0.98997   for id 1545
+Weight   +0.02929   rel  +1.00223   for id 1546
+Weight   +0.02938   rel  +1.00542   for id 1547
+Weight   +0.02951   rel  +1.00992   for id 1548
+Weight   +0.02923   rel  +1.00038   for id 1549
+Weight   +0.02930   rel  +1.00281   for id 1550
+Weight   +0.02917   rel  +0.99805   for id 1551
+Weight   +0.02926   rel  +1.00126   for id 1552
+Weight   +0.02934   rel  +1.00400   for id 1553
+Weight   +0.02980   rel  +1.01961   for id 1554
+Weight   +0.02834   rel  +0.96983   for id 1555
+Weight   +0.02933   rel  +1.00353   for id 1556
+Weight   +0.02904   rel  +0.99369   for id 1557
+Weight   +0.02915   rel  +0.99747   for id 1558
+Weight   +0.02959   rel  +1.01243   for id 1559
+Weight   +0.02967   rel  +1.01531   for id 1560
+Weight   +0.02919   rel  +0.99878   for id 1561
+Weight   +0.02945   rel  +1.00766   for id 1562
+Weight   +0.02935   rel  +1.00433   for id 1563
+Weight   +0.02932   rel  +1.00331   for id 1564
+Weight   +0.02922   rel  +0.99990   for id 1565
+Weight   +0.02947   rel  +1.00861   for id 1566
+Weight   +0.02933   rel  +1.00383   for id 1567
+Weight   +0.02875   rel  +0.98367   for id 1568
+Weight   +0.02888   rel  +0.98820   for id 1569
+Weight   +0.02900   rel  +0.99250   for id 1570
+Weight   +0.02911   rel  +0.99609   for id 1571
+Weight   +0.02923   rel  +1.00023   for id 1572
+Weight   +0.02944   rel  +1.00760   for id 1573
+Weight   +0.02953   rel  +1.01050   for id 1574
+Weight   +0.02963   rel  +1.01402   for id 1575
+Weight   +0.02933   rel  +1.00383   for id 1576
+Weight   +0.02932   rel  +1.00338   for id 1577
+Weight   +0.02932   rel  +1.00321   for id 1578
+Weight   +0.02934   rel  +1.00403   for id 1579
+Weight   +0.02935   rel  +1.00429   for id 1580
+Weight   +0.02763   rel  +0.94562   for id 1581
+Weight   +0.02760   rel  +0.94463   for id 1582
+Weight   +0.02777   rel  +0.95018   for id 1583
+Weight   +0.02772   rel  +0.94854   for id 1584
+Weight   +0.02759   rel  +0.94397   for id 1585
+Weight   +0.02697   rel  +0.92303   for id 1586
+Weight   +0.02742   rel  +0.93836   for id 1587
+Weight   +0.02754   rel  +0.94225   for id 1588
+Weight   +0.02764   rel  +0.94592   for id 1589
+Weight   +0.02776   rel  +0.94998   for id 1590
+Weight   +0.02758   rel  +0.94367   for id 1591
+Weight   +0.02781   rel  +0.95149   for id 1592
+Weight   +0.02748   rel  +0.94036   for id 1593
+Weight   +0.02770   rel  +0.94790   for id 1594
+Weight   +0.02770   rel  +0.94786   for id 1595
+Weight   +0.02730   rel  +0.93407   for id 1596
+Weight   +0.02793   rel  +0.95579   for id 1597
+Weight   +0.02735   rel  +0.93589   for id 1598
+Weight   +0.02793   rel  +0.95568   for id 1599
+Weight   +0.02753   rel  +0.94192   for id 1600
+Weight   +0.02769   rel  +0.94752   for id 1601
+Weight   +0.02764   rel  +0.94594   for id 1602
+Weight   +0.02771   rel  +0.94839   for id 1603
+Weight   +0.02768   rel  +0.94727   for id 1604
+Weight   +0.02752   rel  +0.94157   for id 1605
+Weight   +0.02772   rel  +0.94851   for id 1606
+Weight   +0.02752   rel  +0.94170   for id 1607
+Weight   +0.02798   rel  +0.95752   for id 1608
+Weight   +0.02758   rel  +0.94370   for id 1609
+Weight   +0.02762   rel  +0.94505   for id 1610
+Weight   +0.02767   rel  +0.94692   for id 1611
+Weight   +0.02929   rel  +1.00230   for id 1612
+Weight   +0.02925   rel  +1.00089   for id 1613
+Weight   +0.02927   rel  +1.00174   for id 1614
+Weight   +0.02926   rel  +1.00130   for id 1615
+Weight   +0.02946   rel  +1.00829   for id 1616
+Weight   +0.02929   rel  +1.00233   for id 1617
+Weight   +0.02927   rel  +1.00172   for id 1618
+Weight   +0.02930   rel  +1.00247   for id 1619
+Weight   +0.02924   rel  +1.00076   for id 1620
+Weight   +0.02938   rel  +1.00533   for id 1621
+Weight   +0.02924   rel  +1.00043   for id 1622
+Weight   +0.02918   rel  +0.99868   for id 1623
+Weight   +0.02933   rel  +1.00359   for id 1624
+Weight   +0.02926   rel  +1.00126   for id 1625
+Weight   +0.02934   rel  +1.00390   for id 1626
+Weight   +0.02929   rel  +1.00244   for id 1627
+Weight   +0.02931   rel  +1.00295   for id 1628
+Weight   +0.02923   rel  +1.00041   for id 1629
+Weight   +0.02931   rel  +1.00283   for id 1630
+Weight   +0.02934   rel  +1.00388   for id 1631
+Weight   +0.02929   rel  +1.00216   for id 1632
+Weight   +0.02938   rel  +1.00551   for id 1633
+Weight   +0.02933   rel  +1.00361   for id 1634
+Weight   +0.02925   rel  +1.00079   for id 1635
+Weight   +0.02943   rel  +1.00693   for id 1636
+Weight   +0.02936   rel  +1.00463   for id 1637
+Weight   +0.02914   rel  +0.99706   for id 1638
+Weight   +0.02937   rel  +1.00495   for id 1639
+Weight   +0.02940   rel  +1.00592   for id 1640
+Weight   +0.02883   rel  +0.98671   for id 1641
+Weight   +0.02915   rel  +0.99755   for id 1642
+Weight   +0.02924   rel  +1.00065   for id 1643
+Weight   +0.02916   rel  +0.99784   for id 1644
+Weight   +0.02927   rel  +1.00157   for id 1645
+Weight   +0.02928   rel  +1.00211   for id 1646
+Weight   +0.02929   rel  +1.00245   for id 1647
+Weight   +0.02929   rel  +1.00238   for id 1648
+Weight   +0.02937   rel  +1.00515   for id 1649
+Weight   +0.02928   rel  +1.00206   for id 1650
+Weight   +0.02931   rel  +1.00285   for id 1651
+Weight   +0.02927   rel  +1.00165   for id 1652
+Weight   +0.02929   rel  +1.00217   for id 1653
+Weight   +0.02926   rel  +1.00137   for id 1654
+Weight   +0.02930   rel  +1.00268   for id 1655
+Weight   +0.02934   rel  +1.00395   for id 1656
+Weight   +0.02921   rel  +0.99953   for id 1657
+Weight   +0.02928   rel  +1.00181   for id 1658
+Weight   +0.02938   rel  +1.00540   for id 1659
+Weight   +0.02920   rel  +0.99911   for id 1660
+Weight   +0.02940   rel  +1.00594   for id 1661
+Weight   +0.02940   rel  +1.00610   for id 1662
+Weight   +0.02939   rel  +1.00581   for id 1663
+Weight   +0.02927   rel  +1.00148   for id 1664
+Weight   +0.02928   rel  +1.00193   for id 1665
+Weight   +0.02933   rel  +1.00369   for id 1666
+Weight   +0.02926   rel  +1.00124   for id 1667
+Weight   +0.02929   rel  +1.00230   for id 1668
+Weight   +0.02924   rel  +1.00060   for id 1669
+Weight   +0.02930   rel  +1.00280   for id 1670
+Weight   +0.02926   rel  +1.00138   for id 1671
+Weight   +0.02923   rel  +1.00040   for id 1672
+Weight   +0.02931   rel  +1.00289   for id 1673
+Weight   +0.02922   rel  +1.00005   for id 1674
+Weight   +0.02933   rel  +1.00350   for id 1675
+Weight   +0.02930   rel  +1.00270   for id 1676
+Weight   +0.02927   rel  +1.00165   for id 1677
+Weight   +0.02934   rel  +1.00406   for id 1678
+Weight   +0.02928   rel  +1.00204   for id 1679
+Weight   +0.02929   rel  +1.00244   for id 1680
+Weight   +0.02928   rel  +1.00204   for id 1681
+Weight   +0.02928   rel  +1.00188   for id 1682
+Weight   +0.02924   rel  +1.00049   for id 1683
+Weight   +0.02931   rel  +1.00305   for id 1684
+Weight   +0.02930   rel  +1.00249   for id 1685
+Weight   +0.02932   rel  +1.00330   for id 1686
+Weight   +0.02929   rel  +1.00234   for id 1687
+Weight   +0.02930   rel  +1.00251   for id 1688
+Weight   +0.02930   rel  +1.00250   for id 1689
+Weight   +0.02930   rel  +1.00279   for id 1690
+Weight   +0.02937   rel  +1.00506   for id 1691
+Weight   +0.02927   rel  +1.00162   for id 1692
+Weight   +0.02927   rel  +1.00151   for id 1693
+Weight   +0.02925   rel  +1.00104   for id 1694
+Weight   +0.02930   rel  +1.00281   for id 1695
+Weight   +0.02926   rel  +1.00134   for id 1696
+Weight   +0.02930   rel  +1.00271   for id 1697
+Weight   +0.02930   rel  +1.00273   for id 1698
+Weight   +0.02927   rel  +1.00156   for id 1699
+Weight   +0.02931   rel  +1.00283   for id 1700
+Weight   +0.02928   rel  +1.00203   for id 1701
+Weight   +0.02927   rel  +1.00153   for id 1702
+Weight   +0.02934   rel  +1.00399   for id 1703
+Weight   +0.02932   rel  +1.00339   for id 1704
+Weight   +0.02929   rel  +1.00220   for id 1705
+Weight   +0.02929   rel  +1.00227   for id 1706
+Weight   +0.02927   rel  +1.00162   for id 1707
+Weight   +0.02927   rel  +1.00175   for id 1708
+Weight   +0.02930   rel  +1.00279   for id 1709
+Weight   +0.02927   rel  +1.00157   for id 1710
+Weight   +0.02927   rel  +1.00163   for id 1711
+Weight   +0.02933   rel  +1.00368   for id 1712
+Weight   +0.02911   rel  +0.99610   for id 1713
+Weight   +0.02950   rel  +1.00950   for id 1714
+Weight   +0.02883   rel  +0.98665   for id 1715
+Weight   +0.02865   rel  +0.98052   for id 1716
+Weight   +0.02944   rel  +1.00728   for id 1717
+Weight   +0.02790   rel  +0.95463   for id 1718
+Weight   +0.02860   rel  +0.97858   for id 1719
+Weight   +0.03000   rel  +1.02644   for id 1720
+Weight   +0.02797   rel  +0.95701   for id 1721
+Weight   +0.02889   rel  +0.98873   for id 1722
+Weight   +0.02843   rel  +0.97294   for id 1723
+Weight   +0.02919   rel  +0.99905   for id 1724
+Weight   +0.02849   rel  +0.97499   for id 1725
+Weight   +0.02892   rel  +0.98968   for id 1726
+Weight   +0.02894   rel  +0.99039   for id 1727
+Weight   +0.02837   rel  +0.97099   for id 1728
+Weight   +0.02873   rel  +0.98330   for id 1729
+Weight   +0.02804   rel  +0.95957   for id 1730
+Weight   +0.02656   rel  +0.90893   for id 1731
+Weight   +0.02918   rel  +0.99841   for id 1732
+Weight   +0.02905   rel  +0.99423   for id 1733
+Weight   +0.02951   rel  +1.00995   for id 1734
+Weight   +0.02663   rel  +0.91128   for id 1735
+Weight   +0.02899   rel  +0.99202   for id 1736
+Weight   +0.02921   rel  +0.99941   for id 1737
+Weight   +0.02957   rel  +1.01191   for id 1738
+Weight   +0.02952   rel  +1.01017   for id 1739
+Weight   +0.02903   rel  +0.99339   for id 1740
+Weight   +0.02848   rel  +0.97454   for id 1741
+Weight   +0.02951   rel  +1.00991   for id 1742
+Weight   +0.02803   rel  +0.95926   for id 1743
+Weight   +0.02932   rel  +1.00318   for id 1744
+Weight   +0.02750   rel  +0.94121   for id 1745
+Weight   +0.02902   rel  +0.99299   for id 1746
+Weight   +0.02896   rel  +0.99085   for id 1747
+Weight   +0.02841   rel  +0.97202   for id 1748
+Weight   +0.02950   rel  +1.00936   for id 1749
+Weight   +0.02896   rel  +0.99086   for id 1750
+Weight   +0.02932   rel  +1.00326   for id 1751
+Weight   +0.02971   rel  +1.01673   for id 1752
+Weight   +0.02935   rel  +1.00434   for id 1753
+Weight   +0.02928   rel  +1.00200   for id 1754
+Weight   +0.02902   rel  +0.99309   for id 1755
+Weight   +0.02925   rel  +1.00087   for id 1756
+Weight   +0.02942   rel  +1.00672   for id 1757
+Weight   +0.02853   rel  +0.97637   for id 1758
+Weight   +0.02786   rel  +0.95333   for id 1759
+Weight   +0.02871   rel  +0.98261   for id 1760
+Weight   +0.02825   rel  +0.96657   for id 1761
+Weight   +0.02894   rel  +0.99039   for id 1762
+Weight   +0.02837   rel  +0.97088   for id 1763
+Weight   +0.02991   rel  +1.02338   for id 1764
+Weight   +0.02932   rel  +1.00345   for id 1765
+Weight   +0.02962   rel  +1.01355   for id 1766
+Weight   +0.02883   rel  +0.98653   for id 1767
+Weight   +0.02712   rel  +0.92804   for id 1768
+Weight   +0.02959   rel  +1.01245   for id 1769
+Weight   +0.02965   rel  +1.01450   for id 1770
+Weight   +0.02981   rel  +1.02024   for id 1771
+Weight   +0.02836   rel  +0.97054   for id 1772
+Weight   +0.02922   rel  +0.99989   for id 1773
+Weight   +0.02761   rel  +0.94473   for id 1774
+Weight   +0.02823   rel  +0.96605   for id 1775
+Weight   +0.02939   rel  +1.00580   for id 1776
+Weight   +0.02880   rel  +0.98540   for id 1777
+Weight   +0.02872   rel  +0.98265   for id 1778
+Weight   +0.02909   rel  +0.99541   for id 1779
+Weight   +0.02976   rel  +1.01845   for id 1780
+Weight   +0.02872   rel  +0.98283   for id 1781
+Weight   +0.03016   rel  +1.03205   for id 1782
+Weight   +0.02911   rel  +0.99631   for id 1783
+Weight   +0.02881   rel  +0.98585   for id 1784
+Weight   +0.02900   rel  +0.99233   for id 1785
+Weight   +0.02902   rel  +0.99317   for id 1786
+Weight   +0.02887   rel  +0.98778   for id 1787
+Weight   +0.02863   rel  +0.97983   for id 1788
+Weight   +0.02887   rel  +0.98785   for id 1789
+Weight   +0.02914   rel  +0.99704   for id 1790
+Weight   +0.02698   rel  +0.92339   for id 1791
+Weight   +0.02815   rel  +0.96327   for id 1792
+Weight   +0.02880   rel  +0.98545   for id 1793
+Weight   +0.02837   rel  +0.97066   for id 1794
+Weight   +0.02732   rel  +0.93506   for id 1795
+Weight   +0.02966   rel  +1.01481   for id 1796
+Weight   +0.02799   rel  +0.95780   for id 1797
+Weight   +0.02895   rel  +0.99050   for id 1798
+Weight   +0.02932   rel  +1.00329   for id 1799
+Weight   +0.02908   rel  +0.99509   for id 1800
+Weight   +0.02794   rel  +0.95616   for id 1801
+Weight   +0.02922   rel  +0.99983   for id 1802
+Weight   +0.02865   rel  +0.98053   for id 1803
+Weight   +0.02962   rel  +1.01363   for id 1804
+Weight   +0.02942   rel  +1.00680   for id 1805
+Weight   +0.02836   rel  +0.97051   for id 1806
+Weight   +0.02866   rel  +0.98086   for id 1807
+Weight   +0.02735   rel  +0.93583   for id 1808
+Weight   +0.02921   rel  +0.99947   for id 1809
+Weight   +0.02880   rel  +0.98565   for id 1810
+Weight   +0.02942   rel  +1.00687   for id 1811
+Weight   +0.02880   rel  +0.98552   for id 1812
+Weight   +0.02932   rel  +1.00344   for id 1813
+Weight   +0.02941   rel  +1.00656   for id 1814
+Weight   +0.02941   rel  +1.00625   for id 1815
+Weight   +0.02749   rel  +0.94086   for id 1816
+Weight   +0.02719   rel  +0.93035   for id 1817
+Weight   +0.02783   rel  +0.95244   for id 1818
+Weight   +0.02787   rel  +0.95382   for id 1819
+Weight   +0.02853   rel  +0.97628   for id 1820
+Weight   +0.02785   rel  +0.95300   for id 1821
+Weight   +0.02765   rel  +0.94603   for id 1822
+Weight   +0.02754   rel  +0.94231   for id 1823
+Weight   +0.02804   rel  +0.95949   for id 1824
+Weight   +0.02707   rel  +0.92618   for id 1825
+Weight   +0.02838   rel  +0.97106   for id 1826
+Weight   +0.02520   rel  +0.86229   for id 1827
+Weight   +0.02772   rel  +0.94852   for id 1828
+Weight   +0.02728   rel  +0.93348   for id 1829
+Weight   +0.02720   rel  +0.93072   for id 1830
+Weight   +0.02720   rel  +0.93062   for id 1831
+Weight   +0.02724   rel  +0.93217   for id 1832
+Weight   +0.02635   rel  +0.90166   for id 1833
+Weight   +0.02480   rel  +0.84882   for id 1834
+Weight   +0.02783   rel  +0.95238   for id 1835
+Weight   +0.02842   rel  +0.97251   for id 1836
+Weight   +0.02869   rel  +0.98191   for id 1837
+Weight   +0.02755   rel  +0.94283   for id 1838
+Weight   +0.02827   rel  +0.96735   for id 1839
+Weight   +0.02791   rel  +0.95510   for id 1840
+Weight   +0.02707   rel  +0.92633   for id 1841
+Weight   +0.02733   rel  +0.93508   for id 1842
+Weight   +0.02613   rel  +0.89401   for id 1843
+Weight   +0.02723   rel  +0.93171   for id 1844
+Weight   +0.02742   rel  +0.93846   for id 1845
+Weight   +0.02766   rel  +0.94635   for id 1846
+Weight   +0.02903   rel  +0.99339   for id 1847
+Weight   +0.02692   rel  +0.92127   for id 1848
+Weight   +0.02901   rel  +0.99273   for id 1849
+Weight   +0.02829   rel  +0.96822   for id 1850
+Weight   +0.02792   rel  +0.95530   for id 1851
+Weight   +0.02752   rel  +0.94169   for id 1852
+Weight   +0.02662   rel  +0.91094   for id 1853
+Weight   +0.02625   rel  +0.89835   for id 1854
+Weight   +0.02742   rel  +0.93817   for id 1855
+Weight   +0.02792   rel  +0.95543   for id 1856
+Weight   +0.02832   rel  +0.96908   for id 1857
+Weight   +0.02794   rel  +0.95603   for id 1858
+Weight   +0.02762   rel  +0.94502   for id 1859
+Weight   +0.02758   rel  +0.94393   for id 1860
+Weight   +0.02840   rel  +0.97191   for id 1861
+Weight   +0.02731   rel  +0.93445   for id 1862
+Weight   +0.02776   rel  +0.94990   for id 1863
+Weight   +0.02731   rel  +0.93457   for id 1864
+Weight   +0.02848   rel  +0.97470   for id 1865
+Weight   +0.02801   rel  +0.95867   for id 1866
+Weight   +0.02800   rel  +0.95807   for id 1867
+Weight   +0.02744   rel  +0.93906   for id 1868
+Weight   +0.02777   rel  +0.95015   for id 1869
+Weight   +0.02744   rel  +0.93905   for id 1870
+Weight   +0.02731   rel  +0.93460   for id 1871
+Weight   +0.02603   rel  +0.89086   for id 1872
+Weight   +0.02699   rel  +0.92352   for id 1873
+Weight   +0.02754   rel  +0.94245   for id 1874
+Weight   +0.02775   rel  +0.94948   for id 1875
+Weight   +0.02805   rel  +0.95984   for id 1876
+Weight   +0.02644   rel  +0.90470   for id 1877
+Weight   +0.02730   rel  +0.93425   for id 1878
+Weight   +0.02745   rel  +0.93929   for id 1879
+Weight   +0.02456   rel  +0.84059   for id 1880
+Weight   +0.02801   rel  +0.95835   for id 1881
+Weight   +0.02717   rel  +0.92983   for id 1882
+Weight   +0.02900   rel  +0.99231   for id 1883
+Weight   +0.02743   rel  +0.93853   for id 1884
+Weight   +0.02749   rel  +0.94075   for id 1885
+Weight   +0.02758   rel  +0.94379   for id 1886
+Weight   +0.02764   rel  +0.94580   for id 1887
+Weight   +0.02713   rel  +0.92827   for id 1888
+Weight   +0.02734   rel  +0.93541   for id 1889
+Weight   +0.02853   rel  +0.97637   for id 1890
+Weight   +0.02725   rel  +0.93247   for id 1891
+Weight   +0.02738   rel  +0.93688   for id 1892
+Weight   +0.02674   rel  +0.91513   for id 1893
+Weight   +0.02785   rel  +0.95298   for id 1894
+Weight   +0.02692   rel  +0.92105   for id 1895
+Weight   +0.02767   rel  +0.94676   for id 1896
+Weight   +0.02829   rel  +0.96813   for id 1897
+Weight   +0.02888   rel  +0.98831   for id 1898
+Weight   +0.02758   rel  +0.94367   for id 1899
+Weight   +0.02763   rel  +0.94535   for id 1900
+Weight   +0.02717   rel  +0.92988   for id 1901
+Weight   +0.02736   rel  +0.93616   for id 1902
+Weight   +0.02805   rel  +0.95995   for id 1903
+Weight   +0.02714   rel  +0.92878   for id 1904
+Weight   +0.02590   rel  +0.88629   for id 1905
+Weight   +0.02791   rel  +0.95523   for id 1906
+Weight   +0.02836   rel  +0.97045   for id 1907
+Weight   +0.02786   rel  +0.95320   for id 1908
+Weight   +0.02678   rel  +0.91629   for id 1909
+Weight   +0.02805   rel  +0.95995   for id 1910
+Weight   +0.02635   rel  +0.90160   for id 1911
+Weight   +0.02778   rel  +0.95073   for id 1912
+Weight   +0.02702   rel  +0.92448   for id 1913
+Weight   +0.02809   rel  +0.96115   for id 1914
+Weight   +0.02742   rel  +0.93815   for id 1915
+Weight   +0.02631   rel  +0.90017   for id 1916
+Weight   +0.02537   rel  +0.86815   for id 1917
+Weight   +0.02852   rel  +0.97599   for id 1918
+Weight   +0.02749   rel  +0.94086   for id 1919
+Weight   +0.02719   rel  +0.93035   for id 1920
+Weight   +0.02783   rel  +0.95244   for id 1921
+Weight   +0.02787   rel  +0.95382   for id 1922
+Weight   +0.02853   rel  +0.97628   for id 1923
+Weight   +0.02785   rel  +0.95300   for id 1924
+Weight   +0.02765   rel  +0.94603   for id 1925
+Weight   +0.02754   rel  +0.94231   for id 1926
+Weight   +0.02804   rel  +0.95949   for id 1927
+Weight   +0.02707   rel  +0.92618   for id 1928
+Weight   +0.02838   rel  +0.97106   for id 1929
+Weight   +0.02520   rel  +0.86229   for id 1930
+Weight   +0.02772   rel  +0.94852   for id 1931
+Weight   +0.02728   rel  +0.93348   for id 1932
+Weight   +0.02720   rel  +0.93072   for id 1933
+Weight   +0.02720   rel  +0.93062   for id 1934
+Weight   +0.02724   rel  +0.93217   for id 1935
+Weight   +0.02635   rel  +0.90166   for id 1936
+Weight   +0.02480   rel  +0.84882   for id 1937
+Weight   +0.02783   rel  +0.95238   for id 1938
+Weight   +0.02842   rel  +0.97251   for id 1939
+Weight   +0.02869   rel  +0.98191   for id 1940
+Weight   +0.02755   rel  +0.94283   for id 1941
+Weight   +0.02827   rel  +0.96735   for id 1942
+Weight   +0.02791   rel  +0.95510   for id 1943
+Weight   +0.02707   rel  +0.92633   for id 1944
+Weight   +0.02733   rel  +0.93508   for id 1945
+Weight   +0.02613   rel  +0.89401   for id 1946
+Weight   +0.02723   rel  +0.93171   for id 1947
+Weight   +0.02742   rel  +0.93846   for id 1948
+Weight   +0.02766   rel  +0.94635   for id 1949
+Weight   +0.02903   rel  +0.99339   for id 1950
+Weight   +0.02692   rel  +0.92127   for id 1951
+Weight   +0.02901   rel  +0.99273   for id 1952
+Weight   +0.02829   rel  +0.96822   for id 1953
+Weight   +0.02792   rel  +0.95530   for id 1954
+Weight   +0.02752   rel  +0.94169   for id 1955
+Weight   +0.02662   rel  +0.91094   for id 1956
+Weight   +0.02625   rel  +0.89835   for id 1957
+Weight   +0.02742   rel  +0.93817   for id 1958
+Weight   +0.02792   rel  +0.95543   for id 1959
+Weight   +0.02832   rel  +0.96908   for id 1960
+Weight   +0.02794   rel  +0.95603   for id 1961
+Weight   +0.02762   rel  +0.94502   for id 1962
+Weight   +0.02758   rel  +0.94393   for id 1963
+Weight   +0.02840   rel  +0.97191   for id 1964
+Weight   +0.02731   rel  +0.93445   for id 1965
+Weight   +0.02776   rel  +0.94990   for id 1966
+Weight   +0.02731   rel  +0.93457   for id 1967
+Weight   +0.02848   rel  +0.97470   for id 1968
+Weight   +0.02801   rel  +0.95867   for id 1969
+Weight   +0.02800   rel  +0.95807   for id 1970
+Weight   +0.02744   rel  +0.93906   for id 1971
+Weight   +0.02777   rel  +0.95015   for id 1972
+Weight   +0.02744   rel  +0.93905   for id 1973
+Weight   +0.02731   rel  +0.93460   for id 1974
+Weight   +0.02603   rel  +0.89086   for id 1975
+Weight   +0.02699   rel  +0.92352   for id 1976
+Weight   +0.02754   rel  +0.94245   for id 1977
+Weight   +0.02775   rel  +0.94948   for id 1978
+Weight   +0.02805   rel  +0.95984   for id 1979
+Weight   +0.02644   rel  +0.90470   for id 1980
+Weight   +0.02730   rel  +0.93425   for id 1981
+Weight   +0.02745   rel  +0.93929   for id 1982
+Weight   +0.02456   rel  +0.84059   for id 1983
+Weight   +0.02801   rel  +0.95835   for id 1984
+Weight   +0.02717   rel  +0.92983   for id 1985
+Weight   +0.02900   rel  +0.99231   for id 1986
+Weight   +0.02743   rel  +0.93853   for id 1987
+Weight   +0.02749   rel  +0.94075   for id 1988
+Weight   +0.02758   rel  +0.94379   for id 1989
+Weight   +0.02764   rel  +0.94580   for id 1990
+Weight   +0.02713   rel  +0.92827   for id 1991
+Weight   +0.02734   rel  +0.93541   for id 1992
+Weight   +0.02853   rel  +0.97637   for id 1993
+Weight   +0.02725   rel  +0.93247   for id 1994
+Weight   +0.02738   rel  +0.93688   for id 1995
+Weight   +0.02674   rel  +0.91513   for id 1996
+Weight   +0.02785   rel  +0.95298   for id 1997
+Weight   +0.02692   rel  +0.92105   for id 1998
+Weight   +0.02767   rel  +0.94676   for id 1999
+Weight   +0.02829   rel  +0.96813   for id 2000
+Weight   +0.02888   rel  +0.98831   for id 2001
+Weight   +0.02758   rel  +0.94367   for id 2002
+Weight   +0.02763   rel  +0.94535   for id 2003
+Weight   +0.02717   rel  +0.92988   for id 2004
+Weight   +0.02736   rel  +0.93616   for id 2005
+Weight   +0.02805   rel  +0.95995   for id 2006
+Weight   +0.02714   rel  +0.92878   for id 2007
+Weight   +0.02590   rel  +0.88629   for id 2008
+Weight   +0.02791   rel  +0.95523   for id 2009
+Weight   +0.02836   rel  +0.97045   for id 2010
+Weight   +0.02786   rel  +0.95320   for id 2011
+Weight   +0.02678   rel  +0.91629   for id 2012
+Weight   +0.02805   rel  +0.95995   for id 2013
+Weight   +0.02635   rel  +0.90160   for id 2014
+Weight   +0.02778   rel  +0.95073   for id 2015
+Weight   +0.02702   rel  +0.92448   for id 2016
+Weight   +0.02809   rel  +0.96115   for id 2017
+Weight   +0.02742   rel  +0.93815   for id 2018
+Weight   +0.02631   rel  +0.90017   for id 2019
+Weight   +0.02743   rel  +0.93873   for id 2020
+Weight   +0.02757   rel  +0.94337   for id 2021
+Weight   +0.02876   rel  +0.98430   for id 2022
+Begin processing the 2nd record. Run 1, Event 2, LumiSection 1 on stream 0 at 30-May-2022 17:35:38.909 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 3rd record. Run 1, Event 3, LumiSection 1 on stream 0 at 30-May-2022 17:35:39.575 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 4th record. Run 1, Event 4, LumiSection 1 on stream 0 at 30-May-2022 17:35:39.679 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 5th record. Run 1, Event 5, LumiSection 1 on stream 0 at 30-May-2022 17:35:39.758 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 6th record. Run 1, Event 6, LumiSection 1 on stream 0 at 30-May-2022 17:35:39.903 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 7th record. Run 1, Event 7, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.003 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 8th record. Run 1, Event 8, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.072 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 9th record. Run 1, Event 9, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.153 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 10th record. Run 1, Event 10, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.280 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+%MSG-w NullTransverseMomentum:   JetFlavourClustering:genJetAK8FlavourAssociation 30-May-2022 17:35:40 KST  Run: 1 Event: 10
+dropping input candidate with pt=0
+%MSG
+Begin processing the 11th record. Run 1, Event 11, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.348 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 12th record. Run 1, Event 12, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.411 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 13th record. Run 1, Event 13, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.501 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 14th record. Run 1, Event 14, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.623 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 15th record. Run 1, Event 15, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.741 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 16th record. Run 1, Event 16, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.827 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 17th record. Run 1, Event 17, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.914 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 18th record. Run 1, Event 18, LumiSection 1 on stream 0 at 30-May-2022 17:35:40.971 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 19th record. Run 1, Event 19, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.044 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 20th record. Run 1, Event 20, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.135 KST
+Begin processing the 21st record. Run 1, Event 21, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.231 KST
+Begin processing the 22nd record. Run 1, Event 22, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.322 KST
+Begin processing the 23rd record. Run 1, Event 23, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.396 KST
+Begin processing the 24th record. Run 1, Event 24, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.482 KST
+Begin processing the 25th record. Run 1, Event 25, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.585 KST
+Begin processing the 26th record. Run 1, Event 26, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.662 KST
+Begin processing the 27th record. Run 1, Event 27, LumiSection 1 on stream 0 at 30-May-2022 17:35:41.737 KST
+Begin processing the 28th record. Run 1, Event 28, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.151 KST
+Begin processing the 29th record. Run 1, Event 29, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.249 KST
+Begin processing the 30th record. Run 1, Event 30, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.384 KST
+Begin processing the 31st record. Run 1, Event 31, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.496 KST
+Begin processing the 32nd record. Run 1, Event 32, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.580 KST
+Begin processing the 33rd record. Run 1, Event 33, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.697 KST
+Begin processing the 34th record. Run 1, Event 34, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.764 KST
+Begin processing the 35th record. Run 1, Event 35, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.840 KST
+Begin processing the 36th record. Run 1, Event 36, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.913 KST
+Begin processing the 37th record. Run 1, Event 37, LumiSection 1 on stream 0 at 30-May-2022 17:35:42.993 KST
+Begin processing the 38th record. Run 1, Event 38, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.056 KST
+Begin processing the 39th record. Run 1, Event 39, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.166 KST
+Begin processing the 40th record. Run 1, Event 40, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.248 KST
+Begin processing the 41st record. Run 1, Event 41, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.340 KST
+Begin processing the 42nd record. Run 1, Event 42, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.457 KST
+Begin processing the 43rd record. Run 1, Event 43, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.532 KST
+Begin processing the 44th record. Run 1, Event 44, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.620 KST
+Begin processing the 45th record. Run 1, Event 45, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.713 KST
+Begin processing the 46th record. Run 1, Event 46, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.805 KST
+Begin processing the 47th record. Run 1, Event 47, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.853 KST
+Begin processing the 48th record. Run 1, Event 48, LumiSection 1 on stream 0 at 30-May-2022 17:35:43.925 KST
+Begin processing the 49th record. Run 1, Event 49, LumiSection 1 on stream 0 at 30-May-2022 17:35:44.009 KST
+Begin processing the 50th record. Run 1, Event 50, LumiSection 1 on stream 0 at 30-May-2022 17:35:44.105 KST
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO        Higgs Template X-Sec Categorization Tool          
+Rivet.Analysis.HiggsTemplateCrossSections: INFO                  Status Code Summary                     
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO       >>>> All 0 events successfully categorized!
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+30-May-2022 17:35:44 KST  Closed file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+TimeReport> Time report complete in 125.013 seconds
+ Time Summary: 
+ - Min event:   0.04549
+ - Max event:   16.3582
+ - Avg event:   0.429061
+ - Total loop:  37.3286
+ - Total init:  84.5208
+ - Total job:   125.013
+ - EventSetup Lock:   0.000107765
+ - EventSetup Get:   21.6237
+ Event Throughput: 1.33946 ev/s
+ CPU Summary: 
+ - Total loop:  17.1785
+ - Total init:  54.8804
+ - Total extra: 0
+ - Total job:   75.2206
+ Processing Summary: 
+ - Number of Events:  50
+ - Number of Global Begin Lumi Calls:  1
+ - Number of Global Begin Run Calls: 1
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 BTagSFProducer       -w BTagSFProducer:b                       1        1
+    2 LogicError           -w GenWeightsTableP                       1        1
+    3 LogicError           -w HTXSRivetProduce                       1        1
+    4 NullTransverseMoment -w JetFlavourCluste                       1        1
+    5 TimeReport           -e AfterModEndJob                         1        1
+    6 fileAction           -s file_close                             1        1
+    7 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 BTagSFProducer       pre-events                        
+    2 LogicError           Run: 1                            
+    3 LogicError           Run: 1                            
+    4 NullTransverseMomentum 1/10                              
+    5 TimeReport           PostGlobalEndRun                  
+    6 fileAction           PostGlobalEndRun                  
+    7 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                 4                   4
+Error                   1                   1
+System                  3                   3
+
+dropped waiting message count 0
