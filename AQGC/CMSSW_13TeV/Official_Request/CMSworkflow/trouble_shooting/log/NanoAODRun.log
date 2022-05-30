@@ -1,0 +1,186 @@
+NANO,ENDJOB
+entry file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+Step: NANO Spec: 
+Step: ENDJOB Spec: 
+customising the process with nanoAOD_customizeMC from PhysicsTools/NanoAOD/nano_cff
+Will recalculate the following discriminators on AK8 jets: pfParticleNetMassRegressionJetTags:mass
+customising the process with addMonitoring from Configuration/DataProcessing/Utils
+Config file SMP-RunIISummer20UL16NanoAODAPVv9-00xxx_1_cfg.py created
+Will recalculate the following discriminators on AK8 jets: pfParticleNetMassRegressionJetTags:mass
+30-May-2022 13:24:58 KST  Initiating request to open file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+30-May-2022 13:25:07 KST  Successfully opened file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+                         : Booking "muonMVATTH" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_2016.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_2016.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "muonMVALowPt" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_lowpt.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/mu_BDTG_lowpt.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+                         : Booking "electronMVATTH" of type "BDT" from /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/el_BDTG_2016.weights.xml.
+                         : Reading weight file: /cvmfs/cms.cern.ch/slc7_amd64_gcc700/cms/cmssw/CMSSW_10_6_26/external/slc7_amd64_gcc700/data/PhysicsTools/NanoAOD/data/el_BDTG_2016.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+                         : Booked classifier "BDTG" of type: "BDT"
+%MSG-w BTagSFProducer:  BTagSFProducer:btagWeightTable@ctor  30-May-2022 13:25:36 KST pre-events
+Skipped loading BTagCalibration for CMVA as it was marked as unavailable in the configuration file. Event weights will not be stored.
+
+%MSG
+%MSG-w LogicError:  GenWeightsTableProducer:genWeightsTable@beginRun  30-May-2022 13:25:51 KST Run: 1
+::getByLabel: An attempt was made to read a Run product before endRun() was called.
+The product is of type 'LHERunInfoProduct'.
+The specified ModuleLabel was 'externalLHEProducer'.
+The specified productInstanceName was ''.
+
+%MSG
+%MSG-w LogicError:  HTXSRivetProducer:rivetProducerHTXS@beginRun  30-May-2022 13:25:51 KST Run: 1
+::getByLabel: An attempt was made to read a Run product before endRun() was called.
+The product is of type 'LHERunInfoProduct'.
+The specified ModuleLabel was 'externalLHEProducer'.
+The specified productInstanceName was ''.
+
+%MSG
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 on stream 0 at 30-May-2022 13:25:52.892 KST
+Rivet.Analysis.Handler: WARN  Analysis 'HiggsTemplateCrossSections' is unvalidated: be careful, it may be broken!
+==============================================================
+========     HiggsTemplateCrossSections Initialization     =========
+==============================================================
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  No HIGGSPRODMODE shell variable found. Needed when running Rivet stand-alone.
+==============================================================
+========             Higgs prod mode 0              =========
+========          Sucessful Initialization           =========
+==============================================================
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 2nd record. Run 1, Event 2, LumiSection 1 on stream 0 at 30-May-2022 13:26:12.117 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 3rd record. Run 1, Event 3, LumiSection 1 on stream 0 at 30-May-2022 13:26:12.805 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 4th record. Run 1, Event 4, LumiSection 1 on stream 0 at 30-May-2022 13:26:12.908 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 5th record. Run 1, Event 5, LumiSection 1 on stream 0 at 30-May-2022 13:26:12.987 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 6th record. Run 1, Event 6, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.132 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 7th record. Run 1, Event 7, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.232 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 8th record. Run 1, Event 8, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.302 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 9th record. Run 1, Event 9, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.380 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 10th record. Run 1, Event 10, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.503 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+%MSG-w NullTransverseMomentum:   JetFlavourClustering:genJetAK8FlavourAssociation 30-May-2022 13:26:13 KST  Run: 1 Event: 10
+dropping input candidate with pt=0
+%MSG
+Begin processing the 11th record. Run 1, Event 11, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.569 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 12th record. Run 1, Event 12, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.633 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 13th record. Run 1, Event 13, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.723 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 14th record. Run 1, Event 14, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.846 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 15th record. Run 1, Event 15, LumiSection 1 on stream 0 at 30-May-2022 13:26:13.963 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 16th record. Run 1, Event 16, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.046 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 17th record. Run 1, Event 17, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.131 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 18th record. Run 1, Event 18, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.189 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 19th record. Run 1, Event 19, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.262 KST
+Rivet.Analysis.HiggsTemplateCrossSections: WARN  Unkown Higgs production mechanism. Cannot classify event. Classification for all events will most likely fail.
+Begin processing the 20th record. Run 1, Event 20, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.354 KST
+Begin processing the 21st record. Run 1, Event 21, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.450 KST
+Begin processing the 22nd record. Run 1, Event 22, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.541 KST
+Begin processing the 23rd record. Run 1, Event 23, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.610 KST
+Begin processing the 24th record. Run 1, Event 24, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.695 KST
+Begin processing the 25th record. Run 1, Event 25, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.797 KST
+Begin processing the 26th record. Run 1, Event 26, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.875 KST
+Begin processing the 27th record. Run 1, Event 27, LumiSection 1 on stream 0 at 30-May-2022 13:26:14.951 KST
+Begin processing the 28th record. Run 1, Event 28, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.384 KST
+Begin processing the 29th record. Run 1, Event 29, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.480 KST
+Begin processing the 30th record. Run 1, Event 30, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.617 KST
+Begin processing the 31st record. Run 1, Event 31, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.728 KST
+Begin processing the 32nd record. Run 1, Event 32, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.814 KST
+Begin processing the 33rd record. Run 1, Event 33, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.928 KST
+Begin processing the 34th record. Run 1, Event 34, LumiSection 1 on stream 0 at 30-May-2022 13:26:15.994 KST
+Begin processing the 35th record. Run 1, Event 35, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.068 KST
+Begin processing the 36th record. Run 1, Event 36, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.141 KST
+Begin processing the 37th record. Run 1, Event 37, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.219 KST
+Begin processing the 38th record. Run 1, Event 38, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.282 KST
+Begin processing the 39th record. Run 1, Event 39, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.392 KST
+Begin processing the 40th record. Run 1, Event 40, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.473 KST
+Begin processing the 41st record. Run 1, Event 41, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.563 KST
+Begin processing the 42nd record. Run 1, Event 42, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.681 KST
+Begin processing the 43rd record. Run 1, Event 43, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.754 KST
+Begin processing the 44th record. Run 1, Event 44, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.842 KST
+Begin processing the 45th record. Run 1, Event 45, LumiSection 1 on stream 0 at 30-May-2022 13:26:16.940 KST
+Begin processing the 46th record. Run 1, Event 46, LumiSection 1 on stream 0 at 30-May-2022 13:26:17.034 KST
+Begin processing the 47th record. Run 1, Event 47, LumiSection 1 on stream 0 at 30-May-2022 13:26:17.082 KST
+Begin processing the 48th record. Run 1, Event 48, LumiSection 1 on stream 0 at 30-May-2022 13:26:17.155 KST
+Begin processing the 49th record. Run 1, Event 49, LumiSection 1 on stream 0 at 30-May-2022 13:26:17.241 KST
+Begin processing the 50th record. Run 1, Event 50, LumiSection 1 on stream 0 at 30-May-2022 13:26:17.344 KST
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO        Higgs Template X-Sec Categorization Tool          
+Rivet.Analysis.HiggsTemplateCrossSections: INFO                  Status Code Summary                     
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO       >>>> All 0 events successfully categorized!
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+Rivet.Analysis.HiggsTemplateCrossSections: INFO   ====================================================== 
+30-May-2022 13:26:17 KST  Closed file file:SMP-RunIISummer20UL16MiniAODAPVv2-00xxx.root
+TimeReport> Time report complete in 111.172 seconds
+ Time Summary: 
+ - Min event:   0.0462301
+ - Max event:   19.221
+ - Avg event:   0.486878
+ - Total loop:  30.548
+ - Total init:  77.4247
+ - Total job:   111.172
+ - EventSetup Lock:   0.000123501
+ - EventSetup Get:   27.7252
+ Event Throughput: 1.63677 ev/s
+ CPU Summary: 
+ - Total loop:  17.4141
+ - Total init:  51.2399
+ - Total extra: 0
+ - Total job:   71.8449
+ Processing Summary: 
+ - Number of Events:  50
+ - Number of Global Begin Lumi Calls:  1
+ - Number of Global Begin Run Calls: 1
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 BTagSFProducer       -w BTagSFProducer:b                       1        1
+    2 LogicError           -w GenWeightsTableP                       1        1
+    3 LogicError           -w HTXSRivetProduce                       1        1
+    4 NullTransverseMoment -w JetFlavourCluste                       1        1
+    5 TimeReport           -e AfterModEndJob                         1        1
+    6 fileAction           -s file_close                             1        1
+    7 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 BTagSFProducer       pre-events                        
+    2 LogicError           Run: 1                            
+    3 LogicError           Run: 1                            
+    4 NullTransverseMomentum 1/10                              
+    5 TimeReport           PostGlobalEndRun                  
+    6 fileAction           PostGlobalEndRun                  
+    7 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                 4                   4
+Error                   1                   1
+System                  3                   3
+
+dropped waiting message count 0
