@@ -401,6 +401,7 @@ public:
         wPDF[mPDF - pdfWeightIDs.begin()] = weight.wgt / w0;
 
       auto mRwgt = std::find(rwgtWeightIDs.begin(), rwgtWeightIDs.end(), weight.id);
+		std::cout << "jwkim >>> " << " " << mRwgt << std::endl;
       if (mRwgt != rwgtWeightIDs.end())
         wRwgt[mRwgt - rwgtWeightIDs.begin()] = weight.wgt / w0;
 
