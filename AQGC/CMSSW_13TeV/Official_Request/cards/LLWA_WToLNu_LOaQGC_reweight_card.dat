@@ -1,27 +1,31 @@
 change rwgt_dir rwgt
 
+
 launch
-	set FS0 0
-	set FS1 0
-	set FS2 0
-	set FM0 0
-	set FM1 0
-	set FM2 0
-	set FM3 0
-	set FM4 0
-	set FM5 0
-	set FM6 0
-	set FM7 0
-	set FT0 0
-	set FT1 0
-	set FT2 0
-	set FT3	0
-	set FT4	0
-	set FT5 0
-	set FT6 0
-	set FT7 0
-	set FT8 0
-	set FT9 0
+    set FS0 0
+    set FS1 0
+    set FS2 0
+    set FM0 0
+    set FM1 0
+    set FM2 0
+    set FM3 0
+    set FM4 0
+    set FM5 0
+    set FM6 0
+    set FM7 0
+    set FT0 0
+    set FT1 0
+    set FT2 0
+    set FT3 0
+    set FT4 0
+    set FT5 0
+    set FT6 0
+    set FT7 0
+    set FT8 0
+    set FT9 0
+
+
+
 
 launch
 	set FS0 0
@@ -1183,6 +1187,78 @@ launch
 	set FM1 0
 	set FM2 0
 	set FM3 0
+	set FM4 -3e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 -2e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 -1e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
 	set FM4 -5e-12
 	set FM5 0
 	set FM6 0
@@ -1423,6 +1499,150 @@ launch
 	set FM1 0
 	set FM2 0
 	set FM3 0
+	set FM4 1e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 2e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 3e-11
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 -3e-11
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 -2e-11
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 -1e-11
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
 	set FM4 0
 	set FM5 -5e-12
 	set FM6 0
@@ -1641,6 +1861,78 @@ launch
 	set FM3 0
 	set FM4 0
 	set FM5 5e-12
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 1e-11
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 2e-11
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 3e-11
 	set FM6 0
 	set FM7 0
 	set FT0 0
@@ -2051,6 +2343,78 @@ launch
 	set FM5 0
 	set FM6 0
 	set FM7 0
+	set FT0 -3e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 -2e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 -1e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
 	set FT0 -5e-12
 	set FT1 0
 	set FT2 0
@@ -2269,6 +2633,150 @@ launch
 	set FM7 0
 	set FT0 5e-12
 	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 1e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 2e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 3e-11
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 -3e-11
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 -2e-11
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 -1e-11
 	set FT2 0
 	set FT3	0
 	set FT4	0
@@ -2532,6 +3040,150 @@ launch
 	set FM6 0
 	set FM7 0
 	set FT0 0
+	set FT1 1e-11
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 2e-11
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 3e-11
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 -3e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 -2e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 -1e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
 	set FT1 0
 	set FT2 -5e-12
 	set FT3	0
@@ -2753,6 +3405,150 @@ launch
 	set FT3	0
 	set FT4	0
 	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 1e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 2e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 3e-11
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 -3e-11
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 -2e-11
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 -1e-11
 	set FT6 0
 	set FT7 0
 	set FT8 0
@@ -3016,6 +3812,150 @@ launch
 	set FT2 0
 	set FT3	0
 	set FT4	0
+	set FT5 1e-11
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 2e-11
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 3e-11
+	set FT6 0
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 -3e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 -2e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 -1e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
 	set FT5 0
 	set FT6 -5e-12
 	set FT7 0
@@ -3257,6 +4197,150 @@ launch
 	set FT3	0
 	set FT4	0
 	set FT5 0
+	set FT6 1e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 2e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 3e-11
+	set FT7 0
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 -3e-11
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 -2e-11
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 -1e-11
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
 	set FT6 0
 	set FT7 -5e-12
 	set FT8 0
@@ -3475,6 +4559,78 @@ launch
 	set FT5 0
 	set FT6 0
 	set FT7 5e-12
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 1e-11
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 2e-11
+	set FT8 0
+	set FT9 0
+
+
+launch
+	set FS0 0
+	set FS1 0
+	set FS2 0
+	set FM0 0
+	set FM1 0
+	set FM2 0
+	set FM3 0
+	set FM4 0
+	set FM5 0
+	set FM6 0
+	set FM7 0
+	set FT0 0
+	set FT1 0
+	set FT2 0
+	set FT3	0
+	set FT4	0
+	set FT5 0
+	set FT6 0
+	set FT7 3e-11
 	set FT8 0
 	set FT9 0
 
