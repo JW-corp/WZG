@@ -37,8 +37,9 @@ def failfile_finder(required_files,output_files,rootout_files):
 	if len(required_files) != len(rootout_files):
 
 		for fout in required_files:
-			tmp = fout.replace('jdl','root')
-			tmp = tmp.replace('submit_','')
+			tmp = fout.replace('.jdl','')
+			tmp = tmp.split("_")[-1].split('.')[0]
+			tmp = tmp + "_Skim.root"
 
 			if not tmp in rootout_files:
 				fail_list_root_memory.append(fout)	
@@ -62,9 +63,12 @@ def rm_failed_file(fa_list):
 		
 			tmp = 'log/' + fa.replace('jdl','output')
 
-			f.write(f"rm {fa.replace('jdl','root')}\n")
 			f.write(f"rm {tmp}\n")
 		
+			tmpr = fa.replace('.jdl','')
+			tmpr = tmpr.split("_")[-1].split('.')[0]
+			tmpr = tmpr + "_Skim.root"
+			f.write(f"rm {tmpr}\n")
 		
 if __name__ == "__main__":
 
