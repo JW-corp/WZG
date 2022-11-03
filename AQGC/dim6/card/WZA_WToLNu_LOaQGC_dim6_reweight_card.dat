@@ -1,0 +1,34 @@
+change rwgt_dir rwgt
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~ SM ~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# SM rwgt_0
+launch
+   set SMEFT 2 0
+   set SMEFT 7 0
+   set SMEFT 8 0
+   set SMEFT 9 0
+   set SMEFT 27 0
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~ cW ~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# cW=1 rwgt_1
+launch
+   set SMEFT 2 1
+   set SMEFT 7 0
+   set SMEFT 8 0
+   set SMEFT 9 0
+   set SMEFT 27 0
+
+# cW=0.1 rwgt_12
+launch
+   set SMEFT 2 0.1
+   set SMEFT 7 0
+   set SMEFT 8 0
+   set SMEFT 9 0
+   set SMEFT 27 0
