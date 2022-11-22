@@ -7,7 +7,9 @@ set gauge unitary
 set complex_mass_scheme False
 set max_npoint_for_channel 0
 
-import model SMEFTsim_U35_MwScheme_UFO
+#import model SMEFTsim_U35_MwScheme_UFO-massless
+import model WZA_WToLNu_LOaQGC_dim6
+
 
 define p = g u c d s u~ c~ d~ s~
 define j = g u c d s u~ c~ d~ s~
@@ -18,4 +20,3 @@ define nu = ve vm vt ve~ vm~ vt~
 define w = w+ w-
 generate p p > w l+ l- a NP=1, (w > l nu)
 output WZA_WToLNu_LOaQGC_dim6 -nojpeg
-
