@@ -9,7 +9,6 @@ set max_npoint_for_channel 0
 
 import model SMEFTsim_U35_MwScheme_UFO-WZA_WToLNu_LOaQGC_dim6
 
-#import model SMEFTsim_U35_MwScheme_UFO-massless
 
 
 define p = g u c d s u~ c~ d~ s~
