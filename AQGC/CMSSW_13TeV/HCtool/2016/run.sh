@@ -1,18 +1,14 @@
 #!/bin/bash
 
+
+### Fitted functions are used as input. Prepare fit function as a npy format
 #>>> import numpy as np
 #>>> np.load('scales.npy',allow_pickle=True)[()]
 #{'FT0': {'aqgc': (1, 0.561, 4.418)}}
+#>  1 + 0.561x + 4.418x^2
 
 
-
-
-
-#for i in 'FT0' 'FT1' 'FT2' 'FT5' 'FT6' 'FT7'
-#for i in 'FM0' 'FM1' 'FM2' 'FM3' 'FM4' 'FM7'
-#for i in 'FM0' 'FM1' 
-#for i in 'FM4' 
-for i in 'FM5' 
+for i in 'FT0' 'FT1' 'FT2' 'FT5' 'FT6' 'FT7'
 do
 echo "start fit......${i} "
 cardname="cards_SR_2016/${i}_card_SR_mZA_bin4.txt"
