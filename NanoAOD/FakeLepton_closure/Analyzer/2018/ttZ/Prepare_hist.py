@@ -1,8 +1,6 @@
 import matplotlib
-import uproot, uproot3
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import mplhep as hep
@@ -99,8 +97,11 @@ def Prepare_hist():
 			hist_FakeLep_temp.SetYTitle(f'events / bin')
 			SetHistStyle(hist_FakeLep_temp,2)
 			hist_FakeLep_Estimated[plot_branch] = deepcopy(hist_FakeLep_temp)
+
+
 		AddHist_FakeLepton(filelist_pseudo_data[file]["path"], hist_FakeLep_Estimated, 0, filelist_pseudo_data[file]["xsec"], lumi, channel, branch,False)
 		filelist_pseudo_data[file]['hist_E'] = hist_FakeLep_Estimated
+
 
 		hist_FakeLep_True = {}
 		for branch_name in branch:
@@ -113,6 +114,7 @@ def Prepare_hist():
 			hist_FakeLep_temp2.SetYTitle(f'events / bin')
 			SetHistStyle(hist_FakeLep_temp2,4)
 			hist_FakeLep_True[plot_branch] = deepcopy(hist_FakeLep_temp2)
+
 		AddHist_FakeLepton(filelist_pseudo_data[file]["path"], hist_FakeLep_True, 0, filelist_pseudo_data[file]["xsec"], lumi, channel, branch,True)
 		filelist_pseudo_data[file]['hist_T'] = hist_FakeLep_True
 	
@@ -160,11 +162,11 @@ def Prepare_hist():
 		for file in filelist_pseudo_data:
 			plot_branch = branch[branch_name]["name"]
 
-			filelist_pseudo_data[file]['hist_T'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
-			filelist_pseudo_data[file]['hist_T'][plot_branch].Write()
-		
-			filelist_pseudo_data[file]['hist_E'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			filelist_pseudo_data[file]['hist_E'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
 			filelist_pseudo_data[file]['hist_E'][plot_branch].Write()
+		
+			filelist_pseudo_data[file]['hist_T'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			filelist_pseudo_data[file]['hist_T'][plot_branch].Write()
 
 			
 

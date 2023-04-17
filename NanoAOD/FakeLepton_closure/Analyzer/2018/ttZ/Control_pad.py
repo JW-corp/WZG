@@ -296,6 +296,12 @@ filelist_pseudo_data = {
         "xsec": 35.13,
         "color": 46,
     },
+   # "TTJets": {
+   #     "name": "TTJets",
+   #     "path": "/cms/ldap_home/jwkim2/New_ccp/FakeLepton_weight_pseudo/2018/TTJets_TuneCP5_13TeV-amcatnloFXFX-pythia8_2018.root",
+   #     "xsec": 831.76,
+   #     "color": 28,
+   # },
     "WWW": {
         "name": "WWW",
         "path": "/cms/ldap_home/jwkim2/New_ccp/FakeLepton_weight_pseudo/2018/WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8_2018_0000.root",

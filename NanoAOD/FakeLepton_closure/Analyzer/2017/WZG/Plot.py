@@ -21,6 +21,12 @@ from lumi import CMS_lumi
 #from AddHist_help import SetHistStyle
 from ratio import createRatio
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('mode', type=str,
+			help="python Plot.py E (or T)")
+args = parser.parse_args()
+mode = args.mode
 
 def SetHistStyle(hist, color):
 
@@ -65,8 +71,8 @@ def Plot():
 		hist_Estimated ={}
 		for branch_name in branch:
 			plot_branch 				= branch[branch_name]["name"]
-			hist_True[plot_branch] 		= file_hist.Get(f'WZG_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
-			hist_Estimated[plot_branch] = file_hist.Get(f'WZG_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			hist_True[plot_branch] 		= file_hist.Get(f'WZG_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			hist_Estimated[plot_branch] = file_hist.Get(f'WZG_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
 
 			
 	
@@ -79,6 +85,8 @@ def Plot():
 	tdrStyle.gtdr()
 	
 	for branch_name in branch:
+
+
 
 			if not branch_name == "WZG_mlla":
 				continue
@@ -95,7 +103,7 @@ def Plot():
 			else:
 				MC_err_T   = ROOT.TH1D("","",branch[plot_branch]["xbins"],branch[plot_branch]["xleft"],branch[plot_branch]["xright"])
 				ggZZ_sum_T = ROOT.TH1D("","",branch[plot_branch]["xbins"],branch[plot_branch]["xleft"],branch[plot_branch]["xright"])
-				QCD_T      = ROOT.TH1D("","",branch[plot_branch]["xbins"],branch[plot_branch]["xleft"],branch[plot_branch]["xright"])
+				QCD_T  = ROOT.TH1D("","",branch[plot_branch]["xbins"],branch[plot_branch]["xleft"],branch[plot_branch]["xright"])
 				DYJets_T   = ROOT.TH1D("","",branch[plot_branch]["xbins"],branch[plot_branch]["xleft"],branch[plot_branch]["xright"])
 
 			MC_err_T.Sumw2()
@@ -135,40 +143,37 @@ def Plot():
 				if 'ZG' in file:
 					continue
 
-
 				# Fill stack
 				SetHistStyle(filelist_pseudo_data[file]["hist_True"][plot_branch],filelist_pseudo_data[file]["color"])
 				stack_mc_T.Add(filelist_pseudo_data[file]["hist_True"][plot_branch])
 				MC_err_T.Add(filelist_pseudo_data[file]["hist_True"][plot_branch])
 
-
-
-			# Add QCD
-			SetHistStyle(QCD_T,filelist_pseudo_data['QCD_Pt-15to20_EMEnriched']['color'])
-			stack_mc_T.Add(QCD_T)
-			MC_err_T.Add(QCD_T)
-
 			# Add WZG
 			SetHistStyle(filelist_pseudo_data['WZG']["hist_True"][plot_branch],filelist_pseudo_data['WZG']["color"])
 			stack_mc_T.Add(filelist_pseudo_data['WZG']["hist_True"][plot_branch])
 			MC_err_T.Add(filelist_pseudo_data['WZG']["hist_True"][plot_branch])
-			
-			# Add ggZZ
-			SetHistStyle(ggZZ_sum_T,filelist_pseudo_data['ggZZ_2e2mu']['color'])
-			stack_mc_T.Add(ggZZ_sum_T)
-			MC_err_T.Add(ggZZ_sum_T)
 
-
-			# Add DYJets
-			SetHistStyle(DYJets_T,filelist_pseudo_data['DYJetsToLL_M10to50']["color"])
-			stack_mc_T.Add(DYJets_T)
-			MC_err_T.Add(DYJets_T)
 
 
 			# Add ZG
 			SetHistStyle(filelist_pseudo_data['ZGToLLG']["hist_True"][plot_branch],filelist_pseudo_data['ZGToLLG']["color"])
 			stack_mc_T.Add(filelist_pseudo_data['ZGToLLG']["hist_True"][plot_branch])
 			MC_err_T.Add(filelist_pseudo_data['ZGToLLG']["hist_True"][plot_branch])
+
+			# Add QCD
+			SetHistStyle(QCD_T,filelist_pseudo_data['QCD_Pt-15to20_EMEnriched']['color'])
+			stack_mc_T.Add(QCD_T)
+			MC_err_T.Add(QCD_T)
+
+			# Add ggZZ
+			SetHistStyle(ggZZ_sum_T,filelist_pseudo_data['ggZZ_2e2mu']['color'])
+			stack_mc_T.Add(ggZZ_sum_T)
+			MC_err_T.Add(ggZZ_sum_T)
+
+			# Add DYJets
+			SetHistStyle(DYJets_T,filelist_pseudo_data['DYJetsToLL_M10to50']["color"])
+			stack_mc_T.Add(DYJets_T)
+			MC_err_T.Add(DYJets_T)
 
 
 			## -- Estimated Fake Lepton --##
@@ -197,8 +202,6 @@ def Plot():
 
 			# Define stack Estimated
 			stack_mc_E = ROOT.THStack("","")
-
-
 
 
 			# Loop samples
@@ -233,33 +236,30 @@ def Plot():
 				MC_err_E.Add(filelist_pseudo_data[file]["hist_Estimated"][plot_branch])
 
 
-
 			# Add WZG
 			SetHistStyle(filelist_pseudo_data['WZG']["hist_Estimated"][plot_branch],filelist_pseudo_data['WZG']["color"])
 			stack_mc_E.Add(filelist_pseudo_data['WZG']["hist_Estimated"][plot_branch])
 			MC_err_E.Add(filelist_pseudo_data['WZG']["hist_Estimated"][plot_branch])
-
-			# Add ggZZ
-			SetHistStyle(ggZZ_sum_E,filelist_pseudo_data['ggZZ_2e2mu']['color'])
-			stack_mc_E.Add(ggZZ_sum_E)
-			MC_err_E.Add(ggZZ_sum_E)
-
-
-			# Add QCD
-			SetHistStyle(QCD_E,filelist_pseudo_data['QCD_Pt-15to20_EMEnriched']['color'])
-			stack_mc_E.Add(QCD_E)
-			MC_err_E.Add(QCD_E)
-
-			# Add DYJets
-			SetHistStyle(DYJets_E,filelist_pseudo_data['DYJetsToLL_M10to50']["color"])
-			stack_mc_E.Add(DYJets_E)
-			MC_err_E.Add(DYJets_E)
 
 			# Add ZGToLLG
 			SetHistStyle(filelist_pseudo_data['ZGToLLG']["hist_Estimated"][plot_branch],filelist_pseudo_data['ZGToLLG']["color"])
 			stack_mc_E.Add(filelist_pseudo_data['ZGToLLG']["hist_Estimated"][plot_branch])
 			MC_err_E.Add(filelist_pseudo_data['ZGToLLG']["hist_Estimated"][plot_branch])
 
+			# Add QCD
+			SetHistStyle(QCD_E,filelist_pseudo_data['QCD_Pt-15to20_EMEnriched']['color'])
+			stack_mc_E.Add(QCD_E)
+			MC_err_E.Add(QCD_E)
+
+			# Add ggZZ
+			SetHistStyle(ggZZ_sum_E,filelist_pseudo_data['ggZZ_2e2mu']['color'])
+			stack_mc_E.Add(ggZZ_sum_E)
+			MC_err_E.Add(ggZZ_sum_E)
+
+			# Add DYJets
+			SetHistStyle(DYJets_E,filelist_pseudo_data['DYJetsToLL_M10to50']["color"])
+			stack_mc_E.Add(DYJets_E)
+			MC_err_E.Add(DYJets_E)
 
 
 
@@ -286,29 +286,35 @@ def Plot():
 				if 'DY' in file:
 					continue
 
-				#legend.AddEntry(filelist_pseudo_data[file]["hist_True"][plot_branch], f'{filelist_pseudo_data[file]["name"]}: {format(filelist_pseudo_data[file]["hist_True"][plot_branch].GetSumOfWeights(), ".2f")}','F')
-				legend.AddEntry(filelist_pseudo_data[file]["hist_Estimated"][plot_branch], f'{filelist_pseudo_data[file]["name"]}: {format(filelist_pseudo_data[file]["hist_Estimated"][plot_branch].GetSumOfWeights(), ".2f")}','F')
-				
+				if mode == "T":
+					legend.AddEntry(filelist_pseudo_data[file]["hist_True"][plot_branch], f'{filelist_pseudo_data[file]["name"]}: {format(filelist_pseudo_data[file]["hist_True"][plot_branch].GetSumOfWeights(), ".2f")}','F')
+				elif mode == "E":
+					legend.AddEntry(filelist_pseudo_data[file]["hist_Estimated"][plot_branch], f'{filelist_pseudo_data[file]["name"]}: {format(filelist_pseudo_data[file]["hist_Estimated"][plot_branch].GetSumOfWeights(), ".2f")}','F')
+				else:
+					print("Wrong argument")
+					exit()
 
 			# Add legend entries for ggZZ and WZG if weight is not zero
-			#legend.AddEntry(filelist_pseudo_data["WZG"]["hist_True"][plot_branch], f'{filelist_pseudo_data["WZG"]["name"]}: {format(filelist_pseudo_data[file]["hist_True"][plot_branch].GetSumOfWeights(), ".2f")}','F')
-			legend.AddEntry(filelist_pseudo_data["WZG"]["hist_Estimated"][plot_branch], f'{filelist_pseudo_data["WZG"]["name"]}: {format(filelist_pseudo_data[file]["hist_Estimated"][plot_branch].GetSumOfWeights(), ".2f")}','F')
-		
-			#legend.AddEntry(ggZZ_sum_T,f'ggZZ: {format(ggZZ_sum_T.GetSumOfWeights(), ".2f")}', 'F')
-			legend.AddEntry(ggZZ_sum_E,f'ggZZ: {format(ggZZ_sum_E.GetSumOfWeights(), ".2f")}', 'F')
 
-			#legend.AddEntry(QCD_T,f'QCD: {format(QCD_T.GetSumOfWeights(), ".2f")}', 'F')
-			legend.AddEntry(QCD_E,f'QCD: {format(QCD_E.GetSumOfWeights(), ".2f")}', 'F')
-
-			#legend.AddEntry(DYJets_T,f'DYJets: {format(DYJets_T.GetSumOfWeights(), ".2f")}', 'F')
-			legend.AddEntry(DYJets_E,f'DYJets: {format(DYJets_E.GetSumOfWeights(), ".2f")}', 'F')
-
-			#Stat_Unc_Total_T = sum([MC_err_T.GetBinError(Bin) for Bin in range(1, MC_err_T.GetNbinsX()+1)])
-			Stat_Unc_Total_E = sum([MC_err_E.GetBinError(Bin) for Bin in range(1, MC_err_E.GetNbinsX()+1)])
-
-			#legend.AddEntry(MC_err_T, f'Stat Unc.: {format(Stat_Unc_Total_T, ".2f")}', 'F')
-			legend.AddEntry(MC_err_E, f'Stat Unc.: {format(Stat_Unc_Total_E, ".2f")}', 'F')
-
+			if mode == "T":
+				legend.AddEntry(filelist_pseudo_data["WZG"]["hist_True"][plot_branch], f'{filelist_pseudo_data["WZG"]["name"]}: {format(filelist_pseudo_data[file]["hist_True"][plot_branch].GetSumOfWeights(), ".2f")}','F')
+				legend.AddEntry(ggZZ_sum_T,f'ggZZ: {format(ggZZ_sum_T.GetSumOfWeights(), ".2f")}', 'F')
+				legend.AddEntry(QCD_T,f'QCD: {format(QCD_T.GetSumOfWeights(), ".2f")}', 'F')
+				legend.AddEntry(DYJets_T,f'DYJets: {format(DYJets_T.GetSumOfWeights(), ".2f")}', 'F')
+				Stat_Unc_Total_T = sum([MC_err_T.GetBinError(Bin) for Bin in range(1, MC_err_T.GetNbinsX()+1)])
+				legend.AddEntry(MC_err_T, f'Stat Unc.: {format(Stat_Unc_Total_T, ".2f")}', 'F')
+			
+			elif mode == "E":
+				legend.AddEntry(filelist_pseudo_data["WZG"]["hist_Estimated"][plot_branch], f'{filelist_pseudo_data["WZG"]["name"]}: {format(filelist_pseudo_data[file]["hist_Estimated"][plot_branch].GetSumOfWeights(), ".2f")}','F')
+				legend.AddEntry(ggZZ_sum_E,f'ggZZ: {format(ggZZ_sum_E.GetSumOfWeights(), ".2f")}', 'F')
+				legend.AddEntry(QCD_E,f'QCD: {format(QCD_E.GetSumOfWeights(), ".2f")}', 'F')
+				legend.AddEntry(DYJets_E,f'DYJets: {format(DYJets_E.GetSumOfWeights(), ".2f")}', 'F')
+				Stat_Unc_Total_E = sum([MC_err_E.GetBinError(Bin) for Bin in range(1, MC_err_E.GetNbinsX()+1)])
+				legend.AddEntry(MC_err_E, f'Stat Unc.: {format(Stat_Unc_Total_E, ".2f")}', 'F')
+			else:
+				print("Wrong argument")
+				exit()
+						
 
 			c1.Draw()
 			pad1 = ROOT.TPad("pad1", "pad1", 0, 0.30, 1, 1.00)
@@ -338,24 +344,29 @@ def Plot():
 			#	hist_data[plot_branch].GetXaxis().SetLabelSize(0)
 			#else:
 
+			
 			# -- Draw True
-			#MC_err_T.SetXTitle(f'{branch[plot_branch]["axis_name"]}')
-			#MC_err_T.GetXaxis().SetLabelSize(0)
-			#MC_err_T.Draw("e2")
-			#MC_err_T.SetMaximum(6.0 * MC_err_T.GetMaximum())
-			#MC_err_T.SetMinimum(0)
-			#stack_mc_T.Draw("HIST SAME")
-			#MC_err_T.Draw("e2 SAME")
-
-
-			# -- Draw Estimated
-			MC_err_E.SetXTitle(f'{branch[plot_branch]["axis_name"]}')
-			MC_err_E.GetXaxis().SetLabelSize(0)
-			MC_err_E.Draw("e2")
-			MC_err_E.SetMaximum(6.0 * MC_err_E.GetMaximum())
-			MC_err_E.SetMinimum(0)
-			stack_mc_E.Draw("HIST SAME")
-			MC_err_E.Draw("e2 SAME")
+			if mode == "T":
+				MC_err_T.SetXTitle(f'{branch[plot_branch]["axis_name"]}')
+				MC_err_T.GetXaxis().SetLabelSize(0)
+				MC_err_T.Draw("e2")
+				#MC_err_T.SetMaximum(6.0 * MC_err_T.GetMaximum())
+				MC_err_T.SetMaximum(18.0)
+				MC_err_T.SetMinimum(0)
+				stack_mc_T.Draw("HIST SAME")
+				MC_err_T.Draw("e2 SAME")
+			elif mode == "E":
+				MC_err_E.SetXTitle(f'{branch[plot_branch]["axis_name"]}')
+				MC_err_E.GetXaxis().SetLabelSize(0)
+				MC_err_E.Draw("e2")
+				#MC_err_E.SetMaximum(6.0 * MC_err_E.GetMaximum())
+				MC_err_E.SetMaximum(18.0)
+				MC_err_E.SetMinimum(0)
+				stack_mc_E.Draw("HIST SAME")
+				MC_err_E.Draw("e2 SAME")
+			else:
+				print("Wrong argument")
+				exit()
 
 			legend.Draw("SAME") # commented out temporarily
 			# ROOT.gPad.SetLogy()
@@ -385,11 +396,19 @@ def Plot():
 
 			CMS_lumi(pad1, 0, 0)
 			c1.Update()
-			c1.SaveAs(f'./closure/E_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.pdf')
-			c1.SaveAs(f'./closure/E_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.png')
+
+			if mode == "T":
+				c1.SaveAs(f'./closure/T_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.pdf')
+				c1.SaveAs(f'./closure/T_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.png')
+			elif mode == "E":
+				c1.SaveAs(f'./closure/E_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.pdf')
+				c1.SaveAs(f'./closure/E_{channel_map[channel]}_{plot_branch}_{str(UpDown_map[UpDown])}.png')
+			else:
+				print("Wrong argument")
+				exit()
+
 			del c1,pad1,pad2
 			print (time.time()-time_total_init)
-
 
 
 if __name__ == "__main__":

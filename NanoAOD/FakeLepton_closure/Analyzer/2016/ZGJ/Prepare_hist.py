@@ -1,8 +1,7 @@
 import matplotlib
-import uproot, uproot3
+import uproot
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import mplhep as hep
@@ -160,11 +159,11 @@ def Prepare_hist():
 		for file in filelist_pseudo_data:
 			plot_branch = branch[branch_name]["name"]
 
-			filelist_pseudo_data[file]['hist_T'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
-			filelist_pseudo_data[file]['hist_T'][plot_branch].Write()
-		
-			filelist_pseudo_data[file]['hist_E'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			filelist_pseudo_data[file]['hist_E'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepEstimated_{filelist_pseudo_data[file]["name"]}')
 			filelist_pseudo_data[file]['hist_E'][plot_branch].Write()
+		
+			filelist_pseudo_data[file]['hist_T'][plot_branch].SetName(f'{channel_map[channel]}_{plot_branch}_FakeLepTrue_{filelist_pseudo_data[file]["name"]}')
+			filelist_pseudo_data[file]['hist_T'][plot_branch].Write()
 
 			
 

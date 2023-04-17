@@ -1,8 +1,7 @@
 import matplotlib
-import uproot, uproot3
+import uproot
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import mplhep as hep
@@ -466,7 +465,8 @@ def AddHist_FakeLepton(file, hist, isData, xsec, lumi, channel, branch,realFake=
 		arrays['Electron_RECO_Weight'] = arrays['Electron_RECO_Weight'].apply(lambda x: 1 if x==0 else x)
 		arrays['Electron_RECO_Weight_UP'] = arrays['Electron_RECO_Weight_UP'].apply(lambda x: 1 if x==0 else x)
 		arrays['Electron_RECO_Weight_DOWN'] = arrays['Electron_RECO_Weight_DOWN'].apply(lambda x: 1 if x==0 else x)
-		arrays['true_weight'] = arrays['puWeight'] * arrays['L1PreFiringWeight_Nom'] * arrays['Muon_ID_Weight'] * arrays['Electron_ID_Weight'] * arrays['Electron_RECO_Weight'] * lumi * xsec * 1000 * arrays['Generator_weight_sgn'] / true_events
+		#arrays['true_weight'] = arrays['puWeight'] * arrays['L1PreFiringWeight_Nom'] * arrays['Muon_ID_Weight'] * arrays['Electron_ID_Weight'] * arrays['Electron_RECO_Weight'] * lumi * xsec * 1000 * arrays['Generator_weight_sgn'] / true_events
+		arrays['true_weight'] =  lumi * xsec * 1000 * arrays['Generator_weight_sgn'] / true_events
 
 
 
@@ -498,7 +498,7 @@ def AddHist_FakeLepton(file, hist, isData, xsec, lumi, channel, branch,realFake=
 			for branch_name in branch:
 				for i in trange(0, len(arrays_copy_nominal[branch[branch_name]["name"]]), desc=f'fill {branch[branch_name]["name"]} for {file} in {UpDown_map[0]}'):
 					#hist[branch_name+f"_{UpDown_map[0]}"].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays_copy_nominal['true_weight'].values[i]))
-					hist[branch_name].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays['fake_lepton_closure_weight'].values[i]) * float(arrays_copy_nominal['true_weight'].values[i]))
+					hist[branch_name].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays_copy_nominal['fake_lepton_closure_weight'].values[i]) * float(arrays_copy_nominal['true_weight'].values[i]))
 			print (f"SumOfWeights for {branch_name}: ", hist[branch_name].GetSumOfWeights())
 			print("\n")
 

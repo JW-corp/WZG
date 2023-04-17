@@ -1,8 +1,7 @@
 import matplotlib
-import uproot, uproot3
+import uproot
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import mplhep as hep
