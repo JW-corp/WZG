@@ -112,8 +112,8 @@ def Plot():
 			# Loop samples
 			for file in filelist_pseudo_data:
 				# Skip empty histogram
-				if filelist_pseudo_data[file]["hist_Estimated"][plot_branch].Integral() < 0.0001:
-					continue
+				#if filelist_pseudo_data[file]["hist_Estimated"][plot_branch].Integral() < 0.0001:
+				#	continue
 
 				# Fill stack
 				MC_err_E.Add(filelist_pseudo_data[file]["hist_Estimated"][plot_branch])
