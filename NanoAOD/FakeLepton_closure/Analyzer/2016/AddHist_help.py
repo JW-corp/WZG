@@ -493,7 +493,7 @@ def AddHist_FakeLepton(file, hist, isData, xsec, lumi, channel, branch,realFake=
 			for branch_name in branch:
 				for i in trange(0, len(arrays_copy_nominal[branch[branch_name]["name"]]), desc=f'fill {branch[branch_name]["name"]} for {file} in {UpDown_map[0]}'):
 					#hist[branch_name+f"_{UpDown_map[0]}"].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays_copy_nominal['true_weight'].values[i]))
-					hist[branch_name].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays['fake_lepton_closure_weight'].values[i]) * float(arrays_copy_nominal['true_weight'].values[i]))
+					hist[branch_name].Fill(float(arrays_copy_nominal[branch[branch_name]["name"]].values[i]), float(arrays_copy_nominal['fake_lepton_closure_weight'].values[i]) * float(arrays_copy_nominal['true_weight'].values[i]))
 			print (f"SumOfWeights for {branch_name}: ", hist[branch_name].GetSumOfWeights())
 			print("\n")
 
