@@ -106,8 +106,7 @@ class CR_FakePhotonFullProducer(Module):
 			#  photons[i].genPartFlav == 1:
 				# continue
 			
-			#if photons[i].pt < 20:
-			if photons[i].pt < 15:
+			if photons[i].pt < 20:
 				continue
 
 			if not (photons[i].isScEtaEE or photons[i].isScEtaEB):
@@ -192,23 +191,21 @@ class CR_FakePhotonFullProducer(Module):
 
 			tight_jets.append(i)
 
+
 			if event.Jet_pt_nom[i] >= 30:
-
-
-				if self.year == '2016_preVFP':
+				if self.year == '2016Pre':
 					if jets[i].btagDeepB > 0.8819:
-							tight_bjets.append(i)
-
-				elif self.year == '2016':
+						tight_bjets.append(i)
+				elif self.year == '2016Post':
 					if jets[i].btagDeepB > 0.8767:
-							tight_bjets.append(i)
-
+						tight_bjets.append(i)
 				elif self.year == '2017':
 					if jets[i].btagDeepB > 0.7738:
-							tight_bjets.append(i)
+						tight_bjets.append(i)
 				elif self.year == '2018':
 					if jets[i].btagDeepB > 0.7665:
-							tight_bjets.append(i)
+						tight_bjets.append(i)
+
 
 		self.out.fillBranch("nJets", len(tight_jets))
 		self.out.fillBranch("nbJets", len(tight_bjets))
@@ -421,8 +418,8 @@ class first_Template_Producer(Module):
 
 # define modules using the syntax 'name = lambda : constructor' to avoid having them loaded when not needed
 
-CR_FakePhotonFullModule_18 = lambda : CR_FakePhotonFullProducer("2018")
-CR_FakePhotonFullModule_17 = lambda : CR_FakePhotonFullProducer("2017")
-CR_FakePhotonFullModule_16 = lambda : CR_FakePhotonFullProducer("2016_preVFP")
-CR_FakePhotonFullModule_16preVFP = lambda : CR_FakePhotonFullProducer("2016")
+CR_FakePhotonFullModule_16Pre  = lambda : CR_FakePhotonFullProducer("2016Pre")
+CR_FakePhotonFullModule_16Post = lambda : CR_FakePhotonFullProducer("2016Post")
+CR_FakePhotonFullModule_18 	   = lambda : CR_FakePhotonFullProducer("2018")
+CR_FakePhotonFullModule_17 	   = lambda : CR_FakePhotonFullProducer("2017")
 first_Template_Module = lambda : first_Template_Producer()
