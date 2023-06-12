@@ -5,19 +5,22 @@ ROOT.PyConfig.IgnoreCommandLineOptions = True
 from importlib import import_module
 from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import PostProcessor
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.countHistogramsModule import countHistogramsProducer
-from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetHelperRun2       import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.jme.jetmetHelperRun2	   import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.PrefireCorr import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.eleRECOSFProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.eleIDSFProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.muonScaleResProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.muonIDISOSFProducer import *
-from PhysicsTools.NanoAODTools.postprocessing.modules.WZG_Module import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.btv.btagSFProducer import *
-from PhysicsTools.NanoAODTools.postprocessing.modules.btagWeightProducer import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.btagWeightProducer_1a import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.btagEffProducer import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.photonIDSFProducer import *
 
-
+#from PhysicsTools.NanoAODTools.postprocessing.modules.WZG_Module import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.define_object import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.pre_select import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.WZG_Module_multi import *
 
 
 import argparse
@@ -39,82 +42,95 @@ parser.add_argument('-p', dest='period',default="B", help="Run period, only work
 ## ---> Added by JW
 parser.add_argument('-dataset_name', dest='dataset_name',default="B", help="Run period, only work for data")
 args = parser.parse_args()
+
+golden_json_file = "/cms/ldap_home/jwkim2/New_ccp/Ntuplizer/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/goldenJson/2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt"
+
+
 ## <-- Added by JW
 
 # print ("mode: ", args.mode)
 # print ("input file: ", args.file)
 
 
+
 if args.isdata:
-    if args.year == '2018':
-        jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2018", runPeriod=args.period, metBranchName="MET")
-        Modules = [muonScaleRes2018(),first_Template_Module(),jetmetCorrector(),WZG_select_Module_18()]
-    if args.year == '2017':
-        jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2017", runPeriod=args.period, metBranchName="MET")
-        Modules = [muonScaleRes2017(),first_Template_Module(),jetmetCorrector(),WZG_select_Module_17()]
-    if args.year == '2016Post':
-        jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016", runPeriod=args.period, metBranchName="MET")
-        Modules = [muonScaleRes2016b(),jetmetCorrector(),WZG_select_Module_16()]
-    if args.year == '2016Pre':
-        jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016_preVFP", runPeriod=args.period, metBranchName="MET")
-        Modules = [muonScaleRes2016a(),jetmetCorrector(),WZG_select_Module_16preVFP()]
+	if args.year == '2018':
+		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2018", runPeriod=args.period, metBranchName="MET")
+		Modules = [muonScaleRes2018(),pre_select_Producer(),jetmetCorrector(),define_object_Module_18(),WZG_select_multi_Module()]
+		golden_json_file = "/cms/ldap_home/jwkim2/New_ccp/Ntuplizer/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/goldenJson/2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt"
+
+	if args.year == '2017':
+		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2017", runPeriod=args.period, metBranchName="MET")
+		Modules = [muonScaleRes2017(),pre_select_Producer(),jetmetCorrector(),define_object_Module_17(),WZG_select_multi_Module()]
+		golden_json_file = "/cms/ldap_home/jwkim2/New_ccp/Ntuplizer/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/goldenJson/2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt"
+
+	if args.year == '2016Post':
+		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016", runPeriod=args.period, metBranchName="MET")
+		#Modules = [muonScaleRes2016b(),jetmetCorrector(),WZG_select_Module_16()] 
+		Modules = [muonScaleRes2016b(),pre_select_Producer(),jetmetCorrector(),define_object_Module_16Pre(),WZG_select_multi_Module()]
+	if args.year == '2016Pre':
+		jetmetCorrector = createJMECorrector(isMC=False, dataYear="UL2016_preVFP", runPeriod=args.period, metBranchName="MET")
+		#Modules = [muonScaleRes2016a(),jetmetCorrector(),WZG_select_Module_16preVFP()]
+		Modules = [muonScaleRes2016a(),pre_select_Producer(),jetmetCorrector(),define_object_Module_16Post(),WZG_select_multi_Module()]
 else:
-    if args.year == '2018':
-        jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2018", jesUncert="Total", metBranchName="MET", splitJER=False, applyHEMfix=True)
-        Modules = [countHistogramsProducer(),muonScaleRes2018(),first_Template_Producer(),puAutoWeight_2018(),muonIDISOSF2018(),eleRECOSF2018(),eleIDSF2018(),phoIDSF2018(),jetmetCorrector(),btagSFUL2018(),btagWeightModule_18(),WZG_select_Module_18()]
-    if args.year == '2017':
-        jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2017", jesUncert="Total", metBranchName="MET", splitJER=False)
-        Modules = [countHistogramsProducer(),muonScaleRes2017(),first_Template_Producer(),puAutoWeight_2017(),PrefCorrUL17(),muonIDISOSF2017(),eleRECOSF2017(),eleIDSF2017(),phoIDSF2017(),jetmetCorrector(),btagSFUL2017(),btagWeightModule_17(),WZG_select_Module_17()]
-    if args.year == '2016Post':
-        jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016", jesUncert="Total", metBranchName="MET", splitJER=False)
-        Modules = [countHistogramsProducer(),muonScaleRes2016b(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),phoIDSF2016Post(),jetmetCorrector(),btagSFUL2016Post(),btagWeightModule_16(),WZG_select_Module_16()]
-        #Modules = [countHistogramsProducer(),muonScaleRes2016b(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),phoIDSF2016Post(),jetmetCorrector(),WZG_select_Module_16()]
-    if args.year == '2016Pre':
-        jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016_preVFP", jesUncert="Total", metBranchName="MET", splitJER=False)
-        Modules = [countHistogramsProducer(),muonScaleRes2016a(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),phoIDSF2016Pre(),jetmetCorrector(),btagSFUL2016Pre(),btagWeightModule_16(),WZG_select_Module_16preVFP()]
-        #Modules = [countHistogramsProducer(),muonScaleRes2016a(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),phoIDSF2016Pre(),jetmetCorrector(),WZG_select_Module_16preVFP()]
+	if args.year == '2018':
+		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2018", jesUncert="Total", metBranchName="MET", splitJER=False, applyHEMfix=True)
+		Modules = [countHistogramsProducer(),muonScaleRes2018(),pre_select_Producer(),puAutoWeight_2018(),muonIDISOSF2018(),eleRECOSF2018(),eleIDSF2018(),phoIDSF2018(),jetmetCorrector(),define_object_Module_18(),btagSFUL2018(),btagWeight_1a_Module(),WZG_select_multi_Module()]
+		#Modules = [countHistogramsProducer(),muonScaleRes2018(),pre_select_Producer(),puAutoWeight_2018(),muonIDISOSF2018(),eleRECOSF2018(),eleIDSF2018(),phoIDSF2018(),jetmetCorrector(),define_object_Module_18(),btagEffModule(),btagSFUL2018(),WZG_select_multi_Module()]
+	if args.year == '2017':
+		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2017", jesUncert="Total", metBranchName="MET", splitJER=False)
+		Modules = [countHistogramsProducer(),muonScaleRes2017(),pre_select_Producer(),puAutoWeight_2017(),PrefCorrUL17(),muonIDISOSF2017(),eleRECOSF2017(),eleIDSF2017(),phoIDSF2017(),jetmetCorrector(),define_object_Module_17(),btagSFUL2017(),btagWeight_1a_Module(),WZG_select_multi_Module()]
+		#Modules = [countHistogramsProducer(),muonScaleRes2017(),pre_select_Producer(),puAutoWeight_2017(),PrefCorrUL17(),muonIDISOSF2017(),eleRECOSF2017(),eleIDSF2017(),phoIDSF2017(),jetmetCorrector(),define_object_Module_17(),btagEffModule(),btagSFUL2017(),WZG_select_multi_Module()]
+	if args.year == '2016Post':
+		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016", jesUncert="Total", metBranchName="MET", splitJER=False)
+		Modules = [countHistogramsProducer(),muonScaleRes2016b(),pre_select_Producer(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),phoIDSF2016Post(),jetmetCorrector(),define_object_Module_16Post(),btagSFUL2016Post(),btagWeight_1a_Module(),WZG_select_multi_Module()]
+		#Modules = [countHistogramsProducer(),muonScaleRes2016b(),pre_select_Producer(),puAutoWeight_2016(),PrefCorrUL16_postVFP(),muonIDISOSF2016(),eleRECOSF2016(),eleIDSF2016(),phoIDSF2016Post(),jetmetCorrector(),define_object_Module_16Post(),btagEffModule(),btagSFUL2016Post(),WZG_select_multi_Module()]
+	if args.year == '2016Pre':
+		jetmetCorrector = createJMECorrector(isMC=True, dataYear="UL2016_preVFP", jesUncert="Total", metBranchName="MET", splitJER=False)
+		Modules = [countHistogramsProducer(),muonScaleRes2016a(),pre_select_Producer(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),phoIDSF2016Pre(),jetmetCorrector(),define_object_Module_16Pre(),btagSFUL2016Pre(),btagWeight_1a_Module(),WZG_select_multi_Module()]
+		#Modules = [countHistogramsProducer(),muonScaleRes2016a(),pre_select_Producer(),puAutoWeight_2016(),PrefCorrUL16_preVFP(),muonIDISOSF2016_preVFP(),eleRECOSF2016_preVFP(),eleIDSF2016_preVFP(),phoIDSF2016Pre(),jetmetCorrector(),define_object_Module_16Pre(),btagEffModule(),btagSFUL2016Pre(),WZG_select_multi_Module()]
 
 if args.file:
 
-    infilelist = []
-    jsoninput = None
-    fwkjobreport = False
+	infilelist = []
+	jsoninput = None
+	fwkjobreport = False
 
-    if args.mode == 'condor':
-        import DAS_filesearch as search
-        infilelist.append(search.getValidSite(args.file)+args.file) 
-    else:
-        infilelist = [args.file]
+	if args.mode == 'condor':
+		import DAS_filesearch as search
+		infilelist.append(search.getValidSite(args.file)+args.file) 
+	else:
+		infilelist = [args.file]
 
 else:
 
-    from PhysicsTools.NanoAODTools.postprocessing.framework.crabhelper import inputFiles,runsAndLumis
-    infilelist = inputFiles()
-    jsoninput = runsAndLumis()
-    fwkjobreport = True
+	from PhysicsTools.NanoAODTools.postprocessing.framework.crabhelper import inputFiles,runsAndLumis
+	infilelist = inputFiles()
+	jsoninput = runsAndLumis()
+	fwkjobreport = True
 
-if args.isdata and args.year.startswith('2016'):
-    import FWCore.PythonUtilities.LumiList as LumiList
-    import FWCore.ParameterSet.Config as cms
+if args.isdata:
+	import FWCore.PythonUtilities.LumiList as LumiList
+	import FWCore.ParameterSet.Config as cms
 
-    lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename="/x5/cms/jwkim/gitdir/JWCorp/JW_analysis/for_graduation2022/CMSSW_10_6_19/src/PhysicsTools/NanoAODTools/nanoAOD-WVG/local_condor_run/goldenjson/2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt").getCMSSWString().split(',') )
+	lumisToProcess = cms.untracked.VLuminosityBlockRange( LumiList.LumiList(filename=golden_json_file).getCMSSWString().split(',') )
 
-    runsAndLumis_special = {}
-    for l in lumisToProcess:
-        if "-" in l:
-            start, stop = l.split("-")
-            rstart, lstart = start.split(":")
-            rstop, lstop = stop.split(":")
-        else:
-            rstart, lstart = l.split(":")
-            rstop, lstop = l.split(":")
-        if rstart != rstop:
-            raise Exception(
-                "Cannot convert '%s' to runs and lumis json format" % l)
-        if rstart not in runsAndLumis_special:
-            runsAndLumis_special[rstart] = []
-        runsAndLumis_special[rstart].append([int(lstart), int(lstop)])
-    jsoninput = runsAndLumis_special
+	runsAndLumis_special = {}
+	for l in lumisToProcess:
+		if "-" in l:
+			start, stop = l.split("-")
+			rstart, lstart = start.split(":")
+			rstop, lstop = stop.split(":")
+		else:
+			rstart, lstart = l.split(":")
+			rstop, lstop = l.split(":")
+		if rstart != rstop:
+			raise Exception(
+				"Cannot convert '%s' to runs and lumis json format" % l)
+		if rstart not in runsAndLumis_special:
+			runsAndLumis_special[rstart] = []
+		runsAndLumis_special[rstart].append([int(lstart), int(lstop)])
+	jsoninput = runsAndLumis_special
 
 
 print("processing..: ",infilelist)
@@ -131,13 +147,13 @@ if not isExist:
 
 #p=PostProcessor(".",infilelist,
 p=PostProcessor(args.dataset_name,infilelist,  # new: specify the directory following name of dataset
-                branchsel="WZG_input_branch.txt",
-                modules=Modules,
-                justcount=False,
-                noOut=False,
-                fwkJobReport=fwkjobreport, 
-                jsonInput=jsoninput, 
-                provenance=True,
-                outputbranchsel="WZG_output_branch.txt",
-                )
+				branchsel="WZG_input_branch.txt",
+				modules=Modules,
+				justcount=False,
+				noOut=False,
+				fwkJobReport=fwkjobreport, 
+				jsonInput=jsoninput, 
+				provenance=True,
+				outputbranchsel="WZG_output_branch.txt",
+				)
 p.run()
