@@ -1,0 +1,36 @@
+imax 	1	number of channels
+jmax 	6	number of bkgs
+kmax 	23	number of NPs
+----------------
+bin 	SR_mlllA_bin2
+observation	1.149814
+----------------
+bin                           SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   
+process                                                                     aQGC           FakeLep        FakePho        Top            VV             VVV            VG             
+process                                                                     0              1              2              3              4              5              6              
+rate                                                                        0.386415       0.351449       0.126770       0.055129       0.060236       0.044962       0.124853       
+----------------
+lumi_17                               lnN                                   1.02           -              1.02           1.02           1.02           1.02           1.02           
+lumi_fullrun2                         lnN                                   1.009          -              1.009          1.009          1.009          1.009          1.009          
+lumi_1718                             lnN                                   1.006          -              1.006          1.006          1.006          1.006          1.006          
+JES_17                                lnN                                   1.007424       -              -              1.000000       1.058787       1.853478       1.000000       
+JER_17                                lnN                                   1.006933       -              -              1.027262       1.017679       1.000000       1.000000       
+FakeLepton_Sys_17                     lnN                                   -              1.687824       -              -              -              -              -              
+FakeLepton_Stat_17                    lnN                                   -              1.061840       -              -              -              -              -              
+FakePho                               lnN                                   -              -              1.3            -              -              -              -              
+HLT_method_sys                        lnN                                   1.01           -              -              1.01           1.01           1.01           1.01           
+HLT_sta_17                            lnN                                   1.003          -              -              1.003          1.003          1.003          1.003          
+photon_id                             lnN                                   1.025943       -              -              1.020789       1.022664       1.019735       1.023447       
+muon_id                               lnN                                   1.002805       -              -              1.003211       1.002716       1.005068       1.000773       
+ele_reco                              lnN                                   1.009064       -              -              1.010246       1.009973       1.004989       1.047916       
+ele_id                                lnN                                   1.056548       -              -              1.038185       1.056326       1.024385       2.004717       
+pileup                                lnN                                   1.001276       -              -              1.058218       1.078782       1.103735       1.136079       
+l1pref                                lnN                                   1.015675       -              -              1.016798       1.008535       1.001547       1.000252       
+SR_aQGC_stat_17_bin2                  lnN                                   1.084000       -              -              -              -              -              -              
+SR_FakeLep_stat_17_bin2               lnN                                   -              2.311315       -              -              -              -              -              
+SR_FakePho_stat_17_bin2               lnN                                   -              -              2.009711       -              -              -              -              
+SR_Top_stat_17_bin2                   lnN                                   -              -              -              1.191588       -              -              -              
+SR_VV_stat_17_bin2                    lnN                                   -              -              -              -              1.093873       -              -              
+SR_VVV_stat_17_bin2                   lnN                                   -              -              -              -              -              2.000000       -              
+SR_VG_stat_17_bin2                    lnN                                   -              -              -              -              -              -              2.000000       
+VV_scale                              rateParam                             *              VV             1.0            [0,5]          
