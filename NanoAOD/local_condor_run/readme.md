@@ -15,9 +15,9 @@
 
 
 
-## Applying btag SF and uncertainty
+## 2. Applying btag SF and uncertainty
   1. Making btag EF 2-d histogram (lookup table) : [btag Eff maker moduel](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/modules/btagEffProducer.py)
   2. Applying btag SF and making branch for btag-weight : [btag SF](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/modules/btagSFProducer.py), [btag weight](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/modules/btagWeightProducer_1a.py)
   3. Post-processor to run 1 and 2 : [post-proc](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/post_proc/WZG_postproc.py)
   - Please note that you should run separately 1. and 2. The output of 1 should the input of 2.
- 
+  4. output aQGC file path: /eos/home-j/jiwoong/WZG_DB/ntuples
