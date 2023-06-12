@@ -1,5 +1,5 @@
 
-## 1. Applying fake-lepton uncertainty
+## 1. Applying fake-lepton uncertainty (aQGC)
 
 ### Three uncertainties in fakelepton 
  1. FakeRate systematic uncertainty
@@ -13,7 +13,8 @@
 ### 2. Applying and Plotting FakeLepton Unc
 - https://github.com/JW-corp/WZG/tree/main/AQGC/Plot
 
-
+### 3. Fitting using HiggsCombined tool
+= https://github.com/JW-corp/WZG/tree/main/AQGC/HCtool
 
 ## 2. Applying btag SF and uncertainty
   1. Making btag EF 2-d histogram (lookup table) : [btag Eff maker moduel](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/modules/btagEffProducer.py)
