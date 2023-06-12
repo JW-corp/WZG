@@ -26,3 +26,15 @@ Need CMSSW==corresponding thos of HiggsCombined tool setting
 - N03_make_ratio.py
 - N04_plot_ratio.py
 - N05_Prepare_hist_forCombine.py
+
+
+### 3. Please read this before running
+- AddHist_help_aQGC.py: You need to change this block [359](https://github.com/JW-corp/WZG/blob/main/AQGC/Plot/2018/AddHist_help_aQGC.py#L360) [360](https://github.com/JW-corp/WZG/blob/main/AQGC/Plot/2018/AddHist_help_aQGC.py#L360) to process all re-weight. Currently only the first reweight (all parameter zero, so equal to SM) is default one. Beware the running time if you process the all re-weight. It is time-consumming job. 
+
+- N01_Prepare_hist.py: Also you need to change this block [132](https://github.com/JW-corp/WZG/blob/main/AQGC/Plot/2018/N01_Prepare_hist.py#L132) to [131](https://github.com/JW-corp/WZG/blob/main/AQGC/Plot/2018/N01_Prepare_hist.py#L131). For same reason.
+
+- N05_Prepare_hist_forCombine.py: When you running N05_Prepare_hist_forCombine.py you need argument like
+```bash
+python N05_Prepare_hist_forCombine.py 0
+```
+0 means the 0th parameter: Standard model. You need to use 0 if there is no special reason. The starting point of HC should be the SM. We will fit this using pre-calculated quadratic function: ratios/XXX.npys
