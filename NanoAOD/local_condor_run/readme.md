@@ -6,9 +6,13 @@
  2. FakeRate statistical uncertainty
  3. WZG SR FakeLepton statistical uncertainty (bin) 
 
-### 1. FakeRate Sys & Stat uncertainty
+### 1. FakeRate Sys & Stat uncertainty Module
 - [FakeRate Sys/Stat Unc module](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/modules/FakeLep_Apply_weight_Template_Module.py)
 - [FakeRate Sys/Stat Unc post-proc](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/post_proc/Apply_weight_Template_postproc.py)
+
+### 2. Applying and Plotting FakeLepton Unc
+- https://github.com/JW-corp/WZG/tree/main/AQGC/Plot
+
 
 
 ## Applying btag SF and uncertainty
