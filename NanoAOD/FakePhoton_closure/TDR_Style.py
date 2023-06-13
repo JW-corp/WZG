@@ -3,7 +3,6 @@ import matplotlib
 import uproot, uproot3
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

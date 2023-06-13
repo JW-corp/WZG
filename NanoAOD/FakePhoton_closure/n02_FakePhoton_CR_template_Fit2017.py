@@ -349,8 +349,8 @@ if __name__ == "__main__":
 		print(f"True fake Estimated fake Error: {Closure_Unc}")
 		print("###"*20)
 
-		textChi2.DrawLatex(0.55, 0.45,f"N_true_fake: {N_true_fake:.3f} \n N_estimated_fake: {nfake_window:.3f} \n Unc: {Closure_Unc:.3f}")
-	textChi2.DrawLatex(0.55, 0.45,f"Fake fraction: {fake_fraction:.3f} #pm {fake_fraction_err:.3f}")
+		textChi2.DrawLatex(0.55, 0.45,f"N_true_fake: {N_true_fake:.1f} \n N_estimated_fake: {nfake_window:.1f} \n Unc: {Closure_Unc:.3f}")
+	#textChi2.DrawLatex(0.55, 0.45,f"Fake fraction: {fake_fraction:.3f} #pm {fake_fraction_err:.3f}")
 	
 	
 	CMS_lumi(c1, 0, 0)

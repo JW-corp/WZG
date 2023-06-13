@@ -1,6 +1,6 @@
 import matplotlib
 from pathlib import Path
-import uproot, uproot3
+import uproot4 
 import numpy
 import awkward
 import numba
@@ -15,6 +15,7 @@ from array import array
 import pickle
 import argparse
 import time
+
 
 from Lumi_17 import *
 from Ratio_Plot import *
@@ -89,10 +90,10 @@ def AddHist_data(file, hist, ptrange, isbarrel,closure=False,xsec=1,lumi=1):
 
 	# Add branches for pseudo-data
 	if closure:
-		true_events = uproot.open(file)['nEventsGenWeighted'].values()[0]
+		true_events = uproot4.open(file)['nEventsGenWeighted'].values()[0]
 		for_pseudo_data_add_branch = ['photon_genPartFlav','puWeight','Generator_weight']
 		init_branches.extend(for_pseudo_data_add_branch)
-	branches = uproot.open(file+':Events').arrays(init_branches,library='pd')
+	branches = uproot4.open(file+':Events').arrays(init_branches,library='pd')
 	
 
 	HLT_SingleMuon = branches.loc[:,'HLT_IsoMu27'] == True
@@ -169,7 +170,7 @@ def AddHist_data(file, hist, ptrange, isbarrel,closure=False,xsec=1,lumi=1):
 
 # --Add True(Real) Template
 def AddHist_mcTruth(file, hist, ptrange, isbarrel, xsec, lumi):
-	branches = uproot.open(file+':Events').arrays([
+	branches = uproot4.open(file+':Events').arrays([
 					'channel_mark'
 					,'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL'
 					,'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ'
@@ -185,7 +186,7 @@ def AddHist_mcTruth(file, hist, ptrange, isbarrel, xsec, lumi):
 					,'photon_genPartFlav'
 					,'Generator_weight'
 					,'puWeight'], library='pd')   
-	true_events = uproot.open(file)['nEventsGenWeighted'].values()[0]
+	true_events = uproot4.open(file)['nEventsGenWeighted'].values()[0]
 	
 		
 	HLT_SingleMuon = branches.loc[:,'HLT_IsoMu27'] == True
@@ -257,10 +258,10 @@ def AddHist_dataFake(file, hist, ptrange, isbarrel,sb,closure=False,xsec=1,lumi=
 	
 	# Add branches for pseudo-data
 	if closure:
-		true_events = uproot.open(file)['nEventsGenWeighted'].values()[0]
+		true_events = uproot4.open(file)['nEventsGenWeighted'].values()[0]
 		for_pseudo_data_add_branch = ['photon_genPartFlav','puWeight','Generator_weight']
 		init_branches.extend(for_pseudo_data_add_branch)
-	branches = uproot.open(file+':Events').arrays(init_branches,library='pd')
+	branches = uproot4.open(file+':Events').arrays(init_branches,library='pd')
 
 	HLT_SingleMuon = branches.loc[:,'HLT_IsoMu27'] == True
 	HLT_DoubleMuon = branches.loc[:,'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8']

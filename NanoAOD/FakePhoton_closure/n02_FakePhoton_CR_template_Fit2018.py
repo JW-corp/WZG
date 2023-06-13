@@ -2,7 +2,6 @@ import matplotlib
 import uproot, uproot3
 import numpy
 import awkward
-import numba
 import numpy as np
 import matplotlib.pyplot as plt
 import mplhep as hep
@@ -94,18 +93,18 @@ if __name__ == "__main__":
 
 
 	### >> REAL TEMPLATE ###
-	with open('N01_Closure_test_results/pickle_dict_sample/real_hist_dict_18.pickle','rb') as fr:
+	with open('pickle_dict_sample/real_hist_dict_18.pickle','rb') as fr:
 		hist_mctruth_picke	 = pickle.load(fr)
 	
 	# real template unc --
-	#with open('pickle_dict_sample/real_ZG_hist_dict_18.pickle','rb') as fr:
+	#with open('N02_realtemplate_results/pickle_dict_sample_18/real_ZG_hist_dict_18.pickle','rb') as fr:
 	#	hist_mctruth_picke	 = pickle.load(fr)
-	#with open('pickle_dict_sample_18/real_WZG_hist_dict_18.pickle','rb') as fr:
+	#with open('N02_realtemplate_results/pickle_dict_sample_18/real_WZG_hist_dict_18.pickle','rb') as fr:
 	#	hist_mctruth_picke	 = pickle.load(fr)
 
 	
 	### >> FAKE TEMPLATE ###
-	with open('N01_Closure_test_results/pickle_dict_sample/fake_hist_dict_18.pickle','rb') as fr:
+	with open('pickle_dict_sample/fake_hist_dict_18.pickle','rb') as fr:
 		hist_datafake_pickle   = pickle.load(fr)
 	
 	# SB  unc --		
@@ -116,16 +115,16 @@ if __name__ == "__main__":
 	#	hist_datafake_pickle   = pickle.load(fr)
 
 	### >> DATA TEMPLATE ###
-	with open('N01_Closure_test_results/pickle_dict_sample/data_hist_dict_18.pickle','rb') as fr:
+	with open('pickle_dict_sample/data_hist_dict_18.pickle','rb') as fr:
 		hist_data_pickle 	   = pickle.load(fr)
 	
 
 	# -- From real
 	if closure:
-		with open('N01_Closure_test_results/pickle_dict_sample/hist_true_fake_dict_18.pickle','rb') as fr:
+		with open('pickle_dict_sample/hist_true_fake_dict_18.pickle','rb') as fr:
 			hist_true_fake_pickle  = pickle.load(fr)
 
-		with open('N01_Closure_test_results/pickle_dict_sample/hist_true_real_dict_18.pickle','rb') as fr:
+		with open('pickle_dict_sample/hist_true_real_dict_18.pickle','rb') as fr:
 			hist_true_real_pickle  = pickle.load(fr)
 
 
@@ -151,6 +150,8 @@ if __name__ == "__main__":
 	isbarrel	 = check_isbarrel(ptrange)
 	xleft,xright = set_xrange(isbarrel)
 	
+
+
 	# Observable
 	sieie = ROOT.RooRealVar("sieie","sieie",xleft,xright)
 	
@@ -252,14 +253,19 @@ if __name__ == "__main__":
 
 
 	xbins = hist_data.GetNbinsX()
+	print("##"*20)
 	print("bins region :", xbins,region_mark)
+	print("##"*20)
 	
 	xframe = sieie.frame(ROOT.RooFit.Title(f"{region_mark} region, {ptrange[0]} GeV < photon PT < {ptrange[1]}"), ROOT.RooFit.Bins(xbins))
 	xframe.GetXaxis().SetTitle("#sigma_{i#etai#eta}")
 	xframe.GetYaxis().SetTitle("events / bin")
 	data_hist.plotOn(xframe)
+
 	fullpdf.plotOn(xframe, ROOT.RooFit.Name("sum"), ROOT.RooFit.FillStyle(4100), ROOT.RooFit.FillColor(20), ROOT.RooFit.DrawOption("F"))
+	
 	fullpdf.plotOn(xframe, ROOT.RooFit.Components("ntrue"), ROOT.RooFit.Name("true"), ROOT.RooFit.LineColor(4), ROOT.RooFit.LineStyle(9))
+
 	fullpdf.plotOn(xframe, ROOT.RooFit.Components("nfake"), ROOT.RooFit.Name("fake"), ROOT.RooFit.LineColor(2), ROOT.RooFit.LineStyle(9))
 	data_hist.plotOn(xframe)
 			
@@ -316,6 +322,7 @@ if __name__ == "__main__":
 
 	# Origirnal mediume photon range
 	if isbarrel == 1:
+		print("barrel"*20)
 		sieie.setRange('window', 0.00515, 0.01015)
 	else:
 		sieie.setRange('window', 0.0182, 0.0272)
@@ -348,10 +355,9 @@ if __name__ == "__main__":
 		print("###"*20)
 
 
-		#textChi2.DrawLatex(0.55, 0.45,f"Fake fraction: {fake_fraction:.3f} #pm {fake_fraction_err:.3f} \n True fake fraction: {true_fake_fraction:.3f} \n Unc: {(true_fake_fraction-fake_fraction)/true_fake_fraction}")
-		textChi2.DrawLatex(0.55, 0.45,f"N_true_fake: {N_true_fake:.3f} \n N_estimated_fake: {nfake_window:.3f} \n Unc: {Closure_Unc:.3f}")
+		textChi2.DrawLatex(0.55, 0.45,f"TrueFake: {N_true_fake:.1f} EstimatedFake: {nfake_window:.1f} \n Unc: {(true_fake_fraction-fake_fraction)/true_fake_fraction:.3f}")
 	
-	textChi2.DrawLatex(0.55, 0.45,f"Fake fraction: {fake_fraction:.3f} #pm {fake_fraction_err:.3f}")
+	#textChi2.DrawLatex(0.55, 0.45,f"Fake fraction: {fake_fraction:.3f} #pm {fake_fraction_err:.3f}")
 	
 
 	CMS_lumi(c1, 0, 0)
