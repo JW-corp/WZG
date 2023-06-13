@@ -22,3 +22,6 @@
   3. Post-processor to run 1 and 2 : [post-proc](https://github.com/JW-corp/WZG/blob/main/NanoAOD/local_condor_run/post_proc/WZG_postproc.py)
   - Please note that you should run separately 1. and 2. The output of 1 should the input of 2.
   4. output aQGC file path: /eos/home-j/jiwoong/WZG_DB/ntuples
+
+## 3 Applying FakePhoton related uncertainties
+https://github.com/JW-corp/WZG/tree/main/NanoAOD/FakePhoton_closure
