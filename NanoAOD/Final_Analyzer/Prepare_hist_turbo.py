@@ -299,10 +299,15 @@ class WZG_plot():
 				"color":'tab:orange',
 				"label":"Top"
 			},
-			"WZG":{
-				"names":["wzg"],
+			#"WZG":{
+			#	"names":["wzg"],
+			#	"color":'tab:red',
+			#	"label":"WZG"
+			#},
+			"aQGC":{
+				"names":["aqgc"],
 				"color":'tab:red',
-				"label":"WZG"
+				"label":"aQGC"
 			},
 		}
 
@@ -635,6 +640,14 @@ class WZG_plot():
 				MET_cut = (df.loc[:,'MET'] >= 0)
 			df = df.loc[MET_cut,:]
 			for branch_name in self.branch:
+
+
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
+
+
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, histogram=bh.Histogram, storage=bh.storage.Weight())
 				else:
@@ -718,6 +731,11 @@ class WZG_plot():
 
 			# Fill hist
 			for branch_name in self.branch:
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
+
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['true_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					# h_temp_err = bh.numpy.sqrt(np.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['true_weight']**2)[0])
@@ -812,6 +830,10 @@ class WZG_plot():
 				MET_cut = (df.loc[:,'MET'] >= 0)
 			df = df.loc[MET_cut,:]
 			for branch_name in self.branch:
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight'],histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight_up'],histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -847,6 +869,10 @@ class WZG_plot():
 			df['true_weight'] = df['unc_product'] * self.lumi * xsec * 1000 * df['Generator_weight_sgn'] / true_events
 
 			for branch_name in self.branch:
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight_up'], histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -952,6 +978,10 @@ class WZG_plot():
 				MET_cut = (df.loc[:,'MET'] >= 0)
 			df = df.loc[MET_cut,:]
 			for branch_name in self.branch:
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_photon_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_photon_weight_statup'], histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -989,6 +1019,10 @@ class WZG_plot():
 			df['true_weight'] = df['unc_product'] * self.lumi * xsec * 1000 * df['Generator_weight_sgn'] / true_events
 
 			for branch_name in self.branch:
+				# >>> Fill onlu aQGC variable M(lllA) for speed-up
+				if branch_name != "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight']*df['fake_photon_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight']*df['fake_photon_weight_statup'], histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -1021,6 +1055,10 @@ class WZG_plot():
 	def hist_store(self, hists_data={}, hists_mc={}, hists_flep={}, hists_fpho={}, **kwargs):
 		output = uproot.recreate(f'{self.year}/{self.region}_{self.year}.root')
 		for branch_name in self.branch:
+			# >>> Fill onlu aQGC variable M(lllA) for speed-up
+			if branch_name != "WZG_mllla":
+				continue
+			# <<< added by Jiwoong
 			plotbranch = self.branch[branch_name]['name']
 			# store data
 			output[f'{self.channel_map[self.channel]}_{plotbranch}_data_None'] = hists_data[branch_name]
