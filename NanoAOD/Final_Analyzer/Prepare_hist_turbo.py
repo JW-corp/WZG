@@ -214,6 +214,13 @@ class WZG_plot():
 				"overlap":1,
 				"corr":1
 			},
+			"Photon_ID_Weight":{
+				"Nom":"Photon_ID_Weight",
+				"Up":"Photon_ID_Weight_UP",
+				"Down":"Photon_ID_Weight_DOWN",
+				"overlap":0,
+				"corr":1
+			},
 			"Muon_ID_Weight":{
 				"Nom":"Muon_ID_Weight",
 				"Up":"Muon_ID_Weight_UP",
