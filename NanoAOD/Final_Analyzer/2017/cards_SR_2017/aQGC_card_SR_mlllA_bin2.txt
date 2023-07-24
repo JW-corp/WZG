@@ -1,0 +1,61 @@
+imax 	1	number of channels
+jmax 	6	number of bkgs
+kmax 	48	number of NPs
+----------------
+bin 	SR_mlllA_bin2
+observation	1.135417
+----------------
+bin                           SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   
+process                                                                               aQGC           FakeLep        FakePho        Top            VV             VVV            VG             
+process                                                                               0              1              2              3              4              5              6              
+rate                                                                                  0.377330       0.420588       0.042891       0.054634       0.070152       0.044969       0.124853       
+----------------
+lumi_17                                    lnN                                        1.02           -              1.02           1.02           1.02           1.02           1.02           
+lumi_fullrun2                              lnN                                        1.009          -              1.009          1.009          1.009          1.009          1.009          
+lumi_1718                                  lnN                                        1.006          -              1.006          1.006          1.006          1.006          1.006          
+FakeLep                                    lnN                                        -              1.3            -              -              -              -              -              
+FakePho                                    lnN                                        -              -              1.3            -              -              -              -              
+HLT_method_sys                             lnN                                        1.01           -              -              1.01           1.01           1.01           1.01           
+SR_HLT_stat_17_bin2                        lnN                                        1.003          -              -              1.003          1.003          1.003          1.003          
+fakerate_17                                lnN                                        -              1.041786       -              -              -              -              -              
+fakefraction_17                            lnN                                        -              -              1.139508       -              -              -              -              
+jesTotal_17                                lnN                                        1.007931       -              -              1.000000       1.058504       1.853359       1.000000       
+jer_17                                     lnN                                        1.007105       -              -              1.027509       1.022331       1.000000       1.000000       
+photon_id                                  lnN                                        1.025838       -              -              1.021377       1.022285       1.019735       1.023447       
+muon_id                                    lnN                                        1.002811       -              -              1.003232       1.002576       1.005068       1.000773       
+ele_id                                     lnN                                        1.055417       -              -              1.038762       1.051472       1.024385       2.004717       
+ele_reco                                   lnN                                        1.009052       -              -              1.010326       1.009980       1.004989       1.047916       
+pileup                                     lnN                                        1.011310       -              -              1.058817       1.067057       1.103735       1.136079       
+l1pref                                     lnN                                        1.014739       -              -              1.019783       1.008249       1.001547       1.000252       
+SR_aQGC_stat_17_bin2                       lnN                                        1.084010       -              -              -              -              -              -              
+SR_FakeLep_stat_17_bin2                    lnN                                        -              2.083008       -              -              -              -              -              
+SR_FakePho_stat_17_bin2                    lnN                                        -              -              2.002536       -              -              -              -              
+SR_Top_stat_17_bin2                        lnN                                        -              -              -              1.192672       -              -              -              
+SR_VV_stat_17_bin2                         lnN                                        -              -              -              -              1.086726       -              -              
+SR_VVV_stat_17_bin2                        lnN                                        -              -              -              -              -              2.000000       -              
+SR_VG_stat_17_bin2                         lnN                                        -              -              -              -              -              -              2.000000       
+WZG_scale                                  lnN                                        1.078237       -              -              -              -              -              -              
+WZG_pdf                                    lnN                                        1.055241       -              -              -              -              -              -              
+WZG_PSWeight_isr                           lnN                                        1.007551       -              -              -              -              -              -              
+WZG_PSWeight_fsr                           lnN                                        1.086129       -              -              -              -              -              -              
+Top_scale                                  lnN                                        -              -              -              1.246077       -              -              -              
+Top_pdf                                    lnN                                        -              -              -              1.170832       -              -              -              
+Top_PSWeight_isr                           lnN                                        -              -              -              1.082945       -              -              -              
+Top_PSWeight_fsr                           lnN                                        -              -              -              1.468077       -              -              -              
+VV_scale                                   lnN                                        -              -              -              -              1.033080       -              -              
+VV_pdf                                     lnN                                        -              -              -              -              1.038697       -              -              
+VV_PSWeight_isr                            lnN                                        -              -              -              -              1.003066       -              -              
+VV_PSWeight_fsr                            lnN                                        -              -              -              -              1.073360       -              -              
+VVV_scale                                  lnN                                        -              -              -              -              -              1.226563       -              
+VVV_pdf                                    lnN                                        -              -              -              -              -              1.023852       -              
+VVV_PSWeight_isr                           lnN                                        -              -              -              -              -              1.119019       -              
+VVV_PSWeight_fsr                           lnN                                        -              -              -              -              -              1.852478       -              
+VG_scale                                   lnN                                        -              -              -              -              -              -              1.253540       
+VG_pdf                                     lnN                                        -              -              -              -              -              -              1.029580       
+VG_PSWeight_isr                            lnN                                        -              -              -              -              -              -              1.074310       
+VG_PSWeight_fsr                            lnN                                        -              -              -              -              -              -              1.268188       
+btagWeight_bc_corr                         lnN                                        1.000258       -              -              1.002460       1.000561       1.005494       1.000000       
+btagWeight_l_corr                          lnN                                        1.000051       -              -              1.101349       1.000510       1.000827       1.000000       
+btagWeight_bc_uncorr_17                    lnN                                        1.000258       -              -              1.002160       1.000521       1.005494       1.000000       
+btagWeight_l_uncorr_17                     lnN                                        1.000041       -              -              1.101327       1.000494       1.000598       1.000000       
+VV_Norm                                    rateParam                                  *              VV             1.0            [0.2]          

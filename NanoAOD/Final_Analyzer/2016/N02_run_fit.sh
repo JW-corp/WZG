@@ -8,9 +8,14 @@
 
 
 
-#for i in 'FT0' 'FT1' 'FT5' 'FT6' # 5
+#for i in 'FT0' 'FT5'  # 5
 #do
-#band=5
+#band=10
+
+
+#for i in  'FT1'  'FT6' # 5
+#do
+#band=15
 
 
 #for i in 'FT2' 'FT7'
@@ -18,9 +23,14 @@
 #band=100
 
 
-#for i in 'FM0' 'FM2' 'FM3'
+#for i in 'FM2' 'FM3'
 #do
 #band=800
+
+
+#for i in 'FM0'
+#do
+#band=1200
 
 
 #for i in 'FM1' 
@@ -41,12 +51,12 @@ band=300
 
 
 echo "start fit......${i} "
-cardname="cards_SR_2018/aQGC_card_SR_mlllA_bin2.txt"
+cardname="cards_SR_2016/aQGC_card_SR_mlllA_bin2.txt"
 
 
 
-scalename="/cms/ldap_home/jwkim2/New_ccp/plot/2018/aQGC_dim8/ratios/${i}_ratio.npy"
-outname="cards_SR_2018/${i}.root"
+scalename="/cms/ldap_home/jwkim2/New_ccp/plot/2016_merged_aQGC/aQGC_dim8/ratios/${i}_ratio.npy"
+outname="cards_SR_2016/${i}.root"
 
 text2workspace.py ${cardname} -P HiggsAnalysis.CombinedLimit.QuadraticScaling:quad --PO scaling=${scalename} --PO process=aQGC --PO coefficient=${i} -o ${outname}
 
@@ -55,7 +65,7 @@ combine -M MultiDimFit ${outname} --algo=grid --points=1000 -P ${i} --floatOther
 EOF
 
 source fit_${i}.sh
-mv higgsCombineTest.MultiDimFit.mH120.root "cards_SR_2018/${i}.root"
+mv higgsCombineTest.MultiDimFit.mH120.root "cards_SR_2016/${i}.root"
 rm fit_${i}.sh
 done
 

@@ -44,18 +44,18 @@ def auto_cal(region, file, variable, process, uncertainty, bin,idx=None):
 	cal_unc = 1.0
 	hist_name = str(region + '_' +  variable + '_' + process)
 	
-	if 'jestotal_18' in uncertainty.lower():
+	if 'jestotal_16' in uncertainty.lower():
 		
 		JES_nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-		JES_up = file.Get(str(hist_name + '_jesTotal_18Up')).GetBinContent(bin)
-		JES_down = file.Get(str(hist_name + '_jesTotal_18Down')).GetBinContent(bin)
+		JES_up = file.Get(str(hist_name + '_jesTotal_16Up')).GetBinContent(bin)
+		JES_down = file.Get(str(hist_name + '_jesTotal_16Down')).GetBinContent(bin)
 		return process_unc('jes', JES_nominal, JES_up, JES_down)		
 
-	elif 'jer_18' in uncertainty.lower():
+	elif 'jer_16' in uncertainty.lower():
 		
 		JER_nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-		JER_up = file.Get(str(hist_name + '_jer_18Up')).GetBinContent(bin)
-		JER_down = file.Get(str(hist_name + '_jer_18Down')).GetBinContent(bin)
+		JER_up = file.Get(str(hist_name + '_jer_16Up')).GetBinContent(bin)
+		JER_down = file.Get(str(hist_name + '_jer_16Down')).GetBinContent(bin)
 		return process_unc('jer', JER_nominal, JER_up, JER_down)	
 
 
@@ -75,19 +75,19 @@ def auto_cal(region, file, variable, process, uncertainty, bin,idx=None):
 	#	return process_unc('FakeLepton Sys', FakeLep_nominal, FakeLep_sys_up, FakeLep_sys_down)
 	
 	
-	elif 'fakefraction_18' in uncertainty.lower():
+	elif 'fakefraction_16' in uncertainty.lower():
 		
 		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-		up = file.Get(str(hist_name + '_fakefraction_18Up')).GetBinContent(bin)
-		down = file.Get(str(hist_name + '_fakefraction_18Down')).GetBinContent(bin)
-		return process_unc('fakefraction_18', nominal, up, down)	
+		up = file.Get(str(hist_name + '_fakefraction_16Up')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_fakefraction_16Down')).GetBinContent(bin)
+		return process_unc('fakefraction_16', nominal, up, down)	
 
-	elif 'fakerate_18' in uncertainty.lower():
+	elif 'fakerate_16' in uncertainty.lower():
 		
 		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-		up = file.Get(str(hist_name + '_fakerate_18Up')).GetBinContent(bin)
-		down = file.Get(str(hist_name + '_fakerate_18Down')).GetBinContent(bin)
-		return process_unc('fakerate_18', nominal, up, down)	
+		up = file.Get(str(hist_name + '_fakerate_16Up')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_fakerate_16Down')).GetBinContent(bin)
+		return process_unc('fakerate_16', nominal, up, down)	
 
 
 	elif 'stat' in uncertainty.lower() and (not 'hlt' in uncertainty.lower()):
@@ -103,12 +103,12 @@ def auto_cal(region, file, variable, process, uncertainty, bin,idx=None):
 			cal_unc = 1 + abs(stat_unc/nominal)
 		return Decimal(valid_unc(cal_unc)).quantize(Decimal("1e-06"), rounding="ROUND_HALF_UP")
 	
-	#elif 'photon_id' in uncertainty.lower():
-	#	
-	#	PhotonID_nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-	#	PhotonID_up = file.Get(str(hist_name + '_PhotonIDup')).GetBinContent(bin)
-	#	PhotonID_down = file.Get(str(hist_name + '_PhotonIDdown')).GetBinContent(bin)
-	#	return process_unc('photon_id', PhotonID_nominal, PhotonID_up, PhotonID_down)	
+	elif 'photon_id' in uncertainty.lower():
+		
+		PhotonID_nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		PhotonID_up = file.Get(str(hist_name + '_Photon_ID_WeightUp')).GetBinContent(bin)
+		PhotonID_down = file.Get(str(hist_name + '_Photon_ID_WeightDown')).GetBinContent(bin)
+		return process_unc('photon_id', PhotonID_nominal, PhotonID_up, PhotonID_down)	
 
 	elif 'muon_id' in uncertainty.lower():
 		
@@ -139,13 +139,13 @@ def auto_cal(region, file, variable, process, uncertainty, bin,idx=None):
 		down = file.Get(str(hist_name + '_puWeightDown')).GetBinContent(bin)
 		return process_unc('pileup', nominal, up, down)
 
-	# -- only for 16 & 17	
-	#elif 'l1pref' in uncertainty.lower():
-	#	
-	#	nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
-	#	up = file.Get(str(hist_name + '_l1prefUp')).GetBinContent(bin)
-	#	down = file.Get(str(hist_name + '_l1prefDown')).GetBinContent(bin)
-	#	return process_unc('l1pref', nominal, up, down)
+	# -- only for 16 & 16	
+	elif 'l1pref' in uncertainty.lower():
+		
+		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		up = file.Get(str(hist_name + '_l1prefUp')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_l1prefDown')).GetBinContent(bin)
+		return process_unc('l1pref', nominal, up, down)
 
 
 
@@ -297,6 +297,32 @@ def auto_cal(region, file, variable, process, uncertainty, bin,idx=None):
 		down = file.Get(str(hist_name + '_VG_PSWeight_FsrDown')).GetBinContent(bin)
 		return process_unc('vg_psweight_fsr', nominal, up, down)
 
+
+
+	# -- btag
+	elif 'btagweight_bc_corr' in uncertainty.lower():
+		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		up = file.Get(str(hist_name + '_btagWeight_bc_corrUp')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_btagWeight_bc_corrDown')).GetBinContent(bin)
+		return process_unc('btagWeight_bc_corr', nominal, up, down)
+
+	elif 'btagweight_l_corr' in uncertainty.lower():
+		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		up = file.Get(str(hist_name + '_btagWeight_l_corrUp')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_btagWeight_l_corrDown')).GetBinContent(bin)
+		return process_unc('btagWeight_l_corr', nominal, up, down)
+
+	elif 'btagweight_bc_uncorr_16' in uncertainty.lower():
+		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		up = file.Get(str(hist_name + '_btagWeight_bc_uncorr_16Up')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_btagWeight_bc_uncorr_16Down')).GetBinContent(bin)
+		return process_unc('btagWeight_bc_uncorr', nominal, up, down)
+
+	elif 'btagweight_l_uncorr_16' in uncertainty.lower():
+		nominal = file.Get(str(hist_name + '_None')).GetBinContent(bin)
+		up = file.Get(str(hist_name + '_btagWeight_l_uncorr_16Up')).GetBinContent(bin)
+		down = file.Get(str(hist_name + '_btagWeight_l_uncorr_16Down')).GetBinContent(bin)
+		return process_unc('btagWeight_l_uncorr', nominal, up, down)
 	else:
 		print "Unknown nuissance parameters: ", uncertainty, " ,Set to 1.0"
 		return 1.0
