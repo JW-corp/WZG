@@ -46,4 +46,3 @@ btagWeight_bc_corr,lnN,auto_cal,,,auto_cal,auto_cal,auto_cal,auto_cal
 btagWeight_l_corr,lnN,auto_cal,,,auto_cal,auto_cal,auto_cal,auto_cal
 btagWeight_bc_uncorr_18,lnN,auto_cal,,,auto_cal,auto_cal,auto_cal,auto_cal
 btagWeight_l_uncorr_18,lnN,auto_cal,,,auto_cal,auto_cal,auto_cal,auto_cal
-VV_Norm,rateParam,*,VV,1.0,[0.2]
