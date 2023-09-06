@@ -405,6 +405,8 @@ class WZG_plot():
 			# sel = '((ZGJ_mlla + ZGJ_dileptonmass) > 182) & ZGJ_dileptonmass>75 & ZGJ_dileptonmass<105'
 			# sel = '(ZGJ_dileptonmass<75 | ZGJ_dileptonmass>105) & ZGJ_photon_pt>20 & nbJets>0'
 			# sel = 'nbJets>0'
+		if self.channel in [20,21,22,23,24]:
+			sel = 'channel_mark>0'
 		arrays = arrays.query(sel)
 
 		return arrays
@@ -487,32 +489,32 @@ class WZG_plot():
 	# >>> define M(lllA) for aQGC study
 	def Make4Vec(self,target_arrays):
 	
-	    lep1_pt  = target_arrays["WZG_lepton1_pt"]
-	    lep1_eta = target_arrays["WZG_lepton1_eta"]
-	    lep1_phi = target_arrays["WZG_lepton1_phi"]
-	    lep1_m   = target_arrays["WZG_lepton1_mass"]
-	    lep2_pt  = target_arrays["WZG_lepton2_pt"]
-	    lep2_eta = target_arrays["WZG_lepton2_eta"]
-	    lep2_phi = target_arrays["WZG_lepton2_phi"]
-	    lep2_m   = target_arrays["WZG_lepton2_mass"]
-	    lep3_pt  = target_arrays["WZG_lepton3_pt"]
-	    lep3_eta = target_arrays["WZG_lepton3_eta"]
-	    lep3_phi = target_arrays["WZG_lepton3_phi"]
-	    lep3_m   = target_arrays["WZG_lepton3_mass"]
-	    pho_pt   = target_arrays["WZG_photon_pt"]
-	    pho_eta  = target_arrays["WZG_photon_eta"]
-	    pho_phi  = target_arrays["WZG_photon_phi"]
-	    pho_m= target_arrays["WZG_photon_mass"]
+		lep1_pt  = target_arrays["WZG_lepton1_pt"]
+		lep1_eta = target_arrays["WZG_lepton1_eta"]
+		lep1_phi = target_arrays["WZG_lepton1_phi"]
+		lep1_m   = target_arrays["WZG_lepton1_mass"]
+		lep2_pt  = target_arrays["WZG_lepton2_pt"]
+		lep2_eta = target_arrays["WZG_lepton2_eta"]
+		lep2_phi = target_arrays["WZG_lepton2_phi"]
+		lep2_m   = target_arrays["WZG_lepton2_mass"]
+		lep3_pt  = target_arrays["WZG_lepton3_pt"]
+		lep3_eta = target_arrays["WZG_lepton3_eta"]
+		lep3_phi = target_arrays["WZG_lepton3_phi"]
+		lep3_m   = target_arrays["WZG_lepton3_mass"]
+		pho_pt   = target_arrays["WZG_photon_pt"]
+		pho_eta  = target_arrays["WZG_photon_eta"]
+		pho_phi  = target_arrays["WZG_photon_phi"]
+		pho_m= target_arrays["WZG_photon_mass"]
 	
-	    Ele1vec =  vector.array({"pt":lep1_pt ,"eta":lep1_eta ,"phi":lep1_phi ,"M":lep1_m})
-	    Ele2vec =  vector.array({"pt":lep2_pt ,"eta":lep2_eta ,"phi":lep2_phi ,"M":lep2_m})
-	    Ele3vec =  vector.array({"pt":lep3_pt ,"eta":lep3_eta ,"phi":lep3_phi ,"M":lep3_m})
-	    Phovec  =  vector.array({"pt":pho_pt  ,"eta":pho_eta  ,"phi":pho_phi  ,"M":pho_m})
-	    lllA_vec = Ele1vec + Ele2vec + Ele3vec + Phovec
+		Ele1vec =  vector.array({"pt":lep1_pt ,"eta":lep1_eta ,"phi":lep1_phi ,"M":lep1_m})
+		Ele2vec =  vector.array({"pt":lep2_pt ,"eta":lep2_eta ,"phi":lep2_phi ,"M":lep2_m})
+		Ele3vec =  vector.array({"pt":lep3_pt ,"eta":lep3_eta ,"phi":lep3_phi ,"M":lep3_m})
+		Phovec  =  vector.array({"pt":pho_pt  ,"eta":pho_eta  ,"phi":pho_phi  ,"M":pho_m})
+		lllA_vec = Ele1vec + Ele2vec + Ele3vec + Phovec
 	
 	
-	    # Please modify here to output other 4vectors
-	    return lllA_vec
+		# Please modify here to output other 4vectors
+		return lllA_vec
 	# >>> Added by Jiwoong
 
 
@@ -612,6 +614,11 @@ class WZG_plot():
 		# ROOT branch to arrays
 		df = uproot.open(f'{file}:Events').arrays(init_branches, library='pd')
 
+
+		print("##"*20)
+		print("Initial events: ",len(df))
+		print("##"*20)
+
 		# >>> Add reweight branch (memory optimized)
 		file_basename = file.split('/')[-1]
 		if "LOaQGC" in file_basename:
@@ -624,14 +631,19 @@ class WZG_plot():
 		time_IO = "{:.2f}".format(time.time()-time_IO)
 		logging.info(f'IO for {file}: {time_IO} s')
 		df = self.HLT_cut(file, df)
+		print("Cut1 HLT: ",len(df))
 		df = self.channel_cut(df)
+		print("Cut2 channel cut: ",len(df))
+
 		region_cut = df.loc[:,'region_mark'] == 1
 		df = df.loc[region_cut,:]
+		print("Cut3 region cut: ",len(df))
 
 		## >>> aQGC SR cut
 		if self.region == 'aQGC':
 			aQGC_SR_cut = df.loc[:,'WZG_photon_pt'] > 60
 			df = df.loc[aQGC_SR_cut,:]
+			print("Cut4 photon pT SR cut: ",len(df))
 
 			## Define M(llA)
 			lllA_vec = self.Make4Vec(df)
@@ -673,19 +685,26 @@ class WZG_plot():
 		else:
 			df = self.lep_gen_cut(df)
 			df = self.pho_gen_cut(df)
+			print("Cut5 gen-cut: ",len(df))
 
-			# only for tes
-			# for unc in ['btagWeight_bc','btagWeight_l']:
-			#	 for suffix1 in ['up','down']:
-			#		 for suffix2 in ['corr','uncorr']:
-			#			 df[f'{unc}_{suffix1}_{suffix2}'] = df[f'{unc}_{suffix1}_{suffix2}'].apply(lambda x: 1 if x==0 else x)
-			#			 print(df[f'{unc}_{suffix1}_{suffix2}'])
+			# >> special treatment for btag
+			for unc in ['btagWeight_bc','btagWeight_l']:
+				for suffix1 in ['up','down']:
+					for suffix2 in ['corr','uncorr']:
+						df[f'{unc}_{suffix1}_{suffix2}'] = df[f'{unc}_{suffix1}_{suffix2}'].apply(lambda x: 1 if x<=0 else x)
+						#print(df[f'{unc}_{suffix1}_{suffix2}'])
 			df['Generator_weight_sgn'] = df['Generator_weight'].apply(lambda x: 1 if x >= 0 else -1)
 
 			# prepare unc
 			df['unc_product'] = 1.0
 			unc_nom_list = set([self.unc_map[x]['Nom'] for x in self.unc_map])
 			for unc in unc_nom_list:
+			
+			# >> special treatment for photon ID
+			#if unc == "Photon_ID_Weight":
+				df[f'{unc}'] = df[f'{unc}'].apply(lambda x: 1 if x==0 else x)
+				#print("Check transformed : ", df[f'{unc}'])
+			## <<
 				df['unc_product'] *= df[f'{unc}']
 
 
@@ -732,15 +751,27 @@ class WZG_plot():
 				unc_else = unc_nom_list - set([self.unc_map[unc]['Nom']])
 				df['temp_unc_product'] = 1.0
 				for unc_temp in unc_else:
+
+					## >> special treatment for photon ID
+					#if "Photon_ID_Weight" in unc_temp:
+					df[f'{unc_temp}'] = df[f'{unc_temp}'].apply(lambda x: 1 if x==0 else x)
+						#print("Check transformed : ", df[f'{unc_temp}'])
+					## <<
 					df['temp_unc_product'] *= df[f'{unc_temp}']
 				df[f'{unc}Up'] = df['temp_unc_product'] * df[self.unc_map[unc]['Up']] * df['Generator_weight_sgn'] * self.lumi * xsec * 1000 / true_events
 				df[f'{unc}Down'] = df['temp_unc_product'] * df[self.unc_map[unc]['Down']] * df['Generator_weight_sgn'] * self.lumi * xsec * 1000 / true_events
 
+				# Temporal treatment for btag  : The negative weight came from GenWeight.. Manually make them 0 
+				if 'btagWeight_l' in unc:
+					df[f'{unc}Up'] = df[f'{unc}Up'].apply(lambda x: 0 if x<0 else x)
+					df[f'{unc}Down'] = df[f'{unc}Down'].apply(lambda x: 0 if x<0 else x)
+
 			# Fill hist
 			for branch_name in self.branch:
 				# >>> Fill onlu aQGC variable M(lllA) for speed-up
-				if branch_name != "WZG_mllla":
-					continue
+				if self.region == "aQGC":
+					if branch_name != "WZG_mllla":
+						continue
 				# <<< added by Jiwoong
 
 				if self.branch[branch_name].__contains__('bin_array'):
@@ -777,7 +808,7 @@ class WZG_plot():
 
 	def AddHist_FakeLep(self, file, hists={}, isData=True, xsec=0, **kwargs):
 		time_init = time.time()
-		init_branches = ['fake_lepton_weight','fake_lepton_weight_up','fake_lepton_weight_down']
+		init_branches = ['fake_lepton_weight','fake_lepton_weight_up','fake_lepton_weight_down','fake_lepton_weight_sys_up','fake_lepton_weight_sys_down']
 		init_branches = self.init_branch(init_branches)
 
 		if isData:
@@ -837,14 +868,24 @@ class WZG_plot():
 				MET_cut = (df.loc[:,'MET'] >= 0)
 			df = df.loc[MET_cut,:]
 			for branch_name in self.branch:
-				# >>> Fill onlu aQGC variable M(lllA) for speed-up
-				if branch_name != "WZG_mllla":
-					continue
+
+
+				if self.region == "aQGC":
+					# >>> Fill onlu aQGC variable M(lllA) for speed-up
+					if branch_name != "WZG_mllla":
+						continue
 				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight'],histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight_up'],histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight_down'],histogram=bh.Histogram, storage=bh.storage.Weight())
+
+					# SysUnandDown added
+					h_temp_sys_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight_sys_up'],histogram=bh.Histogram, storage=bh.storage.Weight())
+					h_temp_sys_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_lepton_weight_sys_down'],histogram=bh.Histogram, storage=bh.storage.Weight())
+
+
+
 				else:
 					xbins = self.branch[branch_name]['xbins']
 					xleft = self.branch[branch_name]['xleft']
@@ -852,14 +893,29 @@ class WZG_plot():
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=df['fake_lepton_weight'],histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=df['fake_lepton_weight_up'],histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=df['fake_lepton_weight_down'],histogram=bh.Histogram, storage=bh.storage.Weight())
+
+
+					# SysUnandDown added
+					h_temp_sys_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=df['fake_lepton_weight_sys_up'],histogram=bh.Histogram, storage=bh.storage.Weight())
+					h_temp_sys_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=df['fake_lepton_weight_sys_down'],histogram=bh.Histogram, storage=bh.storage.Weight())
+
+
+
+
 				if f'{branch_name}' in hists.keys():
 					hists[branch_name] += h_temp
 					hists[f'{branch_name}_fakerateUp'] += h_temp_up
 					hists[f'{branch_name}_fakerateDown'] += h_temp_down
+					# SysUnandDown added
+					hists[f'{branch_name}_fakerateSysUp'] += h_temp_sys_up
+					hists[f'{branch_name}_fakerateSysDown'] += h_temp_sys_down
 				else:
 					hists[branch_name] = deepcopy(h_temp)
 					hists[f'{branch_name}_fakerateUp'] = deepcopy(h_temp_up)
 					hists[f'{branch_name}_fakerateDown'] = deepcopy(h_temp_down)
+					# SysUnandDown added
+					hists[f'{branch_name}_fakerateSysUp'] = deepcopy(h_temp_sys_up)
+					hists[f'{branch_name}_fakerateSysDown'] = deepcopy(h_temp_sys_down)
 				del h_temp
 			print (f'Time Cost for {file.split("/")[len(file.split("/"))-1]}: {time.time()-time_init}s')
 			return hists
@@ -872,18 +928,28 @@ class WZG_plot():
 			df['unc_product'] = 1.0
 			unc_nom_list = set([self.unc_map[x]['Nom'] for x in self.unc_map])
 			for unc in unc_nom_list:
+				# >> special treatment for photon ID
+				#if unc == "Photon_ID_Weight":
+				df[f'{unc}'] = df[f'{unc}'].apply(lambda x: 1 if x==0 else x)
+					#print("Check transformed : ", df[f'{unc}'])
+				## <<
 				df['unc_product'] *= df[f'{unc}']
 			df['true_weight'] = df['unc_product'] * self.lumi * xsec * 1000 * df['Generator_weight_sgn'] / true_events
 
 			for branch_name in self.branch:
-				# >>> Fill onlu aQGC variable M(lllA) for speed-up
-				if branch_name != "WZG_mllla":
-					continue
+
+				if self.region == "aQGC":
+					# >>> Fill onlu aQGC variable M(lllA) for speed-up
+					if branch_name != "WZG_mllla":
+						continue
 				# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight_up'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight_down'], histogram=bh.Histogram, storage=bh.storage.Weight())
+					# SysUnandDown added
+					h_temp_sys_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight_sys_up'], histogram=bh.Histogram, storage=bh.storage.Weight())
+					h_temp_sys_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight'] * df['fake_lepton_weight_sys_down'], histogram=bh.Histogram, storage=bh.storage.Weight())
 				else:
 					xbins = self.branch[branch_name]['xbins']
 					xleft = self.branch[branch_name]['xleft']
@@ -891,15 +957,28 @@ class WZG_plot():
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=-1*df['true_weight']*df['fake_lepton_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=-1*df['true_weight']*df['fake_lepton_weight_up'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=-1*df['true_weight']*df['fake_lepton_weight_down'], histogram=bh.Histogram, storage=bh.storage.Weight())
+					# SysUnandDown added
+					h_temp_sys_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=-1*df['true_weight']*df['fake_lepton_weight_sys_up'], histogram=bh.Histogram, storage=bh.storage.Weight())
+					h_temp_sys_down = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=xbins, range=(xleft, xright), density=False, weights=-1*df['true_weight']*df['fake_lepton_weight_sys_down'], histogram=bh.Histogram, storage=bh.storage.Weight())
 				if f'{branch_name}' in hists.keys():
 					hists[branch_name] += h_temp
 					hists[f'{branch_name}_fakerateUp'] += h_temp_up
 					hists[f'{branch_name}_fakerateDown'] += h_temp_down
+					# SysUnandDown added
+					hists[f'{branch_name}_fakerateSysUp'] += h_temp_sys_up
+					hists[f'{branch_name}_fakerateSysDown'] += h_temp_sys_down
 				else:
 					hists[branch_name] = deepcopy(h_temp)
 					hists[f'{branch_name}_fakerateUp'] = deepcopy(h_temp_up)
 					hists[f'{branch_name}_fakerateDown'] = deepcopy(h_temp_down)
+					# SysUnandDown added
+					hists[f'{branch_name}_fakerateSysUp'] = deepcopy(h_temp_sys_up)
+					hists[f'{branch_name}_fakerateSysDown'] = deepcopy(h_temp_sys_down)
 				del h_temp
+				del h_temp_up
+				del h_temp_down
+				del h_temp_sys_up
+				del h_temp_sys_down
 			print (f'Time Cost for {file.split("/")[len(file.split("/"))-1]}: {time.time()-time_init}s')
 			return hists
 
@@ -924,10 +1003,11 @@ class WZG_plot():
 		print(f'Adding hist for {file}')
 		for branch_name in self.branch:
 
-			# >>> aQGC variable M(lllA) is pre-dfined. Skip this time
-			if branch_name == "WZG_mllla":
-				continue
-			# <<< added by Jiwoong
+			if self.region=="aQGC":
+				# >>> aQGC variable M(lllA) is pre-dfined. Skip this time
+				if branch_name == "WZG_mllla":
+					continue
+				# <<< added by Jiwoong
 
 			if self.branch[branch_name]['name'] not in init_branches:
 				init_branches.append(self.branch[branch_name]['name'])
@@ -985,10 +1065,12 @@ class WZG_plot():
 				MET_cut = (df.loc[:,'MET'] >= 0)
 			df = df.loc[MET_cut,:]
 			for branch_name in self.branch:
-				# >>> Fill onlu aQGC variable M(lllA) for speed-up
-				if branch_name != "WZG_mllla":
-					continue
-				# <<< added by Jiwoong
+
+				if self.region == "aQGC":
+					# >>> Fill onlu aQGC variable M(lllA) for speed-up
+					if branch_name != "WZG_mllla":
+						continue
+					# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_photon_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=df['fake_photon_weight_statup'], histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -1022,14 +1104,21 @@ class WZG_plot():
 			df['unc_product'] = 1.0
 			unc_nom_list = set([self.unc_map[x]['Nom'] for x in self.unc_map])
 			for unc in unc_nom_list:
+				# >> special treatment for photon ID
+				#if unc == "Photon_ID_Weight":
+				df[f'{unc}'] = df[f'{unc}'].apply(lambda x: 1 if x==0 else x)
+					#print("Check transformed : ", df[f'{unc}'])
+				## <<
 				df['unc_product'] *= df[f'{unc}']
 			df['true_weight'] = df['unc_product'] * self.lumi * xsec * 1000 * df['Generator_weight_sgn'] / true_events
 
 			for branch_name in self.branch:
-				# >>> Fill onlu aQGC variable M(lllA) for speed-up
-				if branch_name != "WZG_mllla":
-					continue
-				# <<< added by Jiwoong
+
+				if self.region == "aQGC":
+					# >>> Fill onlu aQGC variable M(lllA) for speed-up
+					if branch_name != "WZG_mllla":
+						continue
+					# <<< added by Jiwoong
 				if self.branch[branch_name].__contains__('bin_array'):
 					h_temp = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight']*df['fake_photon_weight'], histogram=bh.Histogram, storage=bh.storage.Weight())
 					h_temp_up = bh.numpy.histogram(df[self.branch[branch_name]['name']], bins=self.branch[branch_name]['bin_array'], density=False, weights=-1*df['true_weight']*df['fake_photon_weight_statup'], histogram=bh.Histogram, storage=bh.storage.Weight())
@@ -1060,13 +1149,17 @@ class WZG_plot():
 		pass
 
 	def hist_store(self, hists_data={}, hists_mc={}, hists_flep={}, hists_fpho={}, **kwargs):
+	#def hist_store(self, hists_mc={}, **kwargs): # --> only for testaQGC or WZG
 		output = uproot.recreate(f'{self.year}/{self.region}_{self.year}.root')
 		for branch_name in self.branch:
 			# >>> Fill onlu aQGC variable M(lllA) for speed-up
-			if branch_name != "WZG_mllla":
-				continue
+
+			if self.region == 'aQGC':
+				if branch_name != "WZG_mllla":
+					continue
 			# <<< added by Jiwoong
 			plotbranch = self.branch[branch_name]['name']
+
 			# store data
 			output[f'{self.channel_map[self.channel]}_{plotbranch}_data_None'] = hists_data[branch_name]
 		
@@ -1120,6 +1213,8 @@ class WZG_plot():
 			output[f'{self.channel_map[self.channel]}_{plotbranch}_FakeLep_None'] = hists_flep[branch_name]
 			output[f'{self.channel_map[self.channel]}_{plotbranch}_FakeLep_fakerate_{year_suffix}Up'] = hists_flep[f'{branch_name}_fakerateUp']
 			output[f'{self.channel_map[self.channel]}_{plotbranch}_FakeLep_fakerate_{year_suffix}Down'] = hists_flep[f'{branch_name}_fakerateDown']
+			output[f'{self.channel_map[self.channel]}_{plotbranch}_FakeLep_fakerate_{year_suffix}SysUp'] = hists_flep[f'{branch_name}_fakerateSysUp']
+			output[f'{self.channel_map[self.channel]}_{plotbranch}_FakeLep_fakerate_{year_suffix}SysDown'] = hists_flep[f'{branch_name}_fakerateSysDown']
 
 			if self.channel in [0,1,2,3,4,20,21,22,23,24,30,31,32]:
 				# store fakepho
@@ -1336,15 +1431,21 @@ queue 1'''
 				# -- Run MC
 				threads = {}
 				for file in self.filelist_MC:
+
+					## >> Only for testing one sample >> WZG or aQGC
+					#if self.filelist_MC[file]['name'] != 'WZG':
+					#	continue
+					## <<
+
 					hists_mc[file] = {}
 					hists_mc[file]['name'] = self.filelist_MC[file]['name']
 					thread = WZG_Thread(hists_mc[file]['name'], target=self.AddHist, args=(self.filelist_MC[file]['path'], ), kwargs={"hists":hists_mc[file], "isData":False, "xsec":self.filelist_MC[file]['xsec']})
 					thread.start()
 					threads[file] = thread
-					# hists_mc[file] = threads[file].join()
-					# hists_mc[file] = self.AddHist(self.filelist_MC[file]['path'], hists=hists_mc[file], isData=False, xsec=self.filelist_MC[file]['xsec'])
 				for file in threads:
 					hists_mc[file] = threads[file].join()
+
+
 
 				# -- Run FakeLepton
 				for file in self.filelist_data:
@@ -1373,6 +1474,7 @@ queue 1'''
 
 				print("End test data-driven")
 				self.hist_store(hists_data=hists_data, hists_mc=hists_mc, hists_flep=hists_flep, hists_fpho=hists_fpho)
+				#self.hist_store(hists_mc=hists_mc) # --> Only for test aQGC or WZG 
 		else:
 			file = uproot.open(f'{self.year}/{self.region}_{self.year}.root')
 			for group in self.plot_groups:

@@ -1,0 +1,444 @@
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is Significance
+============================================================
+Analysing bin errors for: prop_binCR1
+Poisson cut-off: 1e+07
+============================================================
+Bin        Contents        Error           Notes                         
+0          214.622697      10.813911       total sum                     
+0          394.000000      19.849433       Unweighted events, alpha=0.544728
+  => Number of weighted events is below poisson threshold
+    WZG                  0.022205        0.005260                                      
+                         18.000000       4.242641        Unweighted events, alpha=0.001234
+      => Product of prop_binCR1_bin0_WZG[18.00,1.81,66.97] and const [0.0556] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              199.976303      10.708863                                     
+                         349.000000      18.681542       Unweighted events, alpha=0.572998
+      => Product of prop_binCR1_bin0_FakeLep[349.00,233.76,497.37] and const [0.0029] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  13.628834       1.383534                                      
+                         97.000000       9.848858        Unweighted events, alpha=0.140503
+      => Product of prop_binCR1_bin0_Top[97.00,43.13,184.03] and const [0.0103] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.117607        0.009549                                      
+                         152.000000      12.328828       Unweighted events, alpha=0.000774
+      => Product of prop_binCR1_bin0_VV[152.00,80.97,256.19] and const [0.0066] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.020092        0.004946                                      
+                         17.000000       4.123106        Unweighted events, alpha=0.001182
+      => Product of prop_binCR1_bin0_VVV[17.00,1.56,65.19] and const [0.0588] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.857657        0.588746                                      
+                         2.000000        1.414214        Unweighted events, alpha=0.428828
+      => Product of prop_binCR1_bin0_VG[2.00,0.00,33.79] and const [0.5000] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+1          164.247925      9.328829        total sum                     
+1          310.000000      17.606817       Unweighted events, alpha=0.529832
+  => Number of weighted events is below poisson threshold
+    WZG                  0.011936        0.004024                                      
+                         9.000000        3.000000        Unweighted events, alpha=0.001326
+      => Product of prop_binCR1_bin1_WZG[9.00,0.20,49.98] and const [0.1111] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              148.471329      9.217593                                      
+                         259.000000      16.093477       Unweighted events, alpha=0.573248
+      => Product of prop_binCR1_bin1_FakeLep[259.00,161.80,389.34] and const [0.0039] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  15.618925       1.436279                                      
+                         118.000000      10.862780       Unweighted events, alpha=0.132364
+      => Product of prop_binCR1_bin1_Top[118.00,57.13,212.04] and const [0.0085] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.127229        0.009879                                      
+                         166.000000      12.884099       Unweighted events, alpha=0.000766
+      => Product of prop_binCR1_bin1_VV[166.00,91.12,274.04] and const [0.0060] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.018506        0.005000                                      
+                         14.000000       3.741657        Unweighted events, alpha=0.001322
+      => Product of prop_binCR1_bin1_VVV[14.00,0.91,59.71] and const [0.0714] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.000000        0.000000                                      
+      => Error is zero, ignore      
+  ----------------------------------------------------------
+------------------------------------------------------------
+2          121.921944      8.049882        total sum                     
+2          229.000000      15.132746       Unweighted events, alpha=0.532410
+  => Number of weighted events is below poisson threshold
+    WZG                  0.007204        0.003348                                      
+                         5.000000        2.236068        Unweighted events, alpha=0.001441
+      => Product of prop_binCR1_bin2_WZG[5.00,0.01,41.33] and const [0.2000] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              108.396111      7.984209                                      
+                         184.000000      13.564660       Unweighted events, alpha=0.589109
+      => Product of prop_binCR1_bin2_FakeLep[184.00,104.39,296.76] and const [0.0054] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  13.208419       1.009885                                      
+                         171.000000      13.076697       Unweighted events, alpha=0.077242
+      => Product of prop_binCR1_bin2_Top[171.00,94.78,280.38] and const [0.0058] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.104168        0.009003                                      
+                         134.000000      11.575837       Unweighted events, alpha=0.000777
+      => Product of prop_binCR1_bin2_VV[134.00,68.19,232.97] and const [0.0075] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.024331        0.005354                                      
+                         21.000000       4.582576        Unweighted events, alpha=0.001159
+      => Product of prop_binCR1_bin2_VVV[21.00,2.66,72.21] and const [0.0476] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.181711        0.181711                                      
+                         1.000000        1.000000        Unweighted events, alpha=0.181711
+      => Product of prop_binCR1_bin2_VG[1.00,0.00,30.85] and const [1.0000] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+3          76.247239       6.190401        total sum                     
+3          152.000000      12.328828       Unweighted events, alpha=0.501627
+  => Number of weighted events is below poisson threshold
+    WZG                  0.013591        0.004847                                      
+                         8.000000        2.828427        Unweighted events, alpha=0.001699
+      => Product of prop_binCR1_bin3_WZG[8.00,0.12,47.91] and const [0.1250] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              66.669556       6.135354                                      
+                         118.000000      10.862780       Unweighted events, alpha=0.564996
+      => Product of prop_binCR1_bin3_FakeLep[118.00,57.13,212.04] and const [0.0085] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  8.915896        0.595132                                      
+                         224.000000      14.966630       Unweighted events, alpha=0.039803
+      => Product of prop_binCR1_bin3_Top[224.00,134.64,346.50] and const [0.0045] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.062529        0.006955                                      
+                         81.000000       9.000000        Unweighted events, alpha=0.000772
+      => Product of prop_binCR1_bin3_VV[81.00,32.97,162.18] and const [0.0123] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.016265        0.004996                                      
+                         11.000000       3.316625        Unweighted events, alpha=0.001479
+      => Product of prop_binCR1_bin3_VVV[11.00,0.42,53.98] and const [0.0909] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.569403        0.569403                                      
+                         1.000000        1.000000        Unweighted events, alpha=0.569403
+      => Product of prop_binCR1_bin3_VG[1.00,0.00,30.85] and const [1.0000] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+4          94.409993       6.687018        total sum                     
+4          199.000000      14.106736       Unweighted events, alpha=0.474422
+  => Number of weighted events is below poisson threshold
+    WZG                  0.019016        0.005119                                      
+                         14.000000       3.741657        Unweighted events, alpha=0.001358
+      => Product of prop_binCR1_bin4_WZG[14.00,0.91,59.71] and const [0.0714] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              77.246071       6.584794                                      
+                         138.000000      11.747340       Unweighted events, alpha=0.559754
+      => Product of prop_binCR1_bin4_FakeLep[138.00,71.00,238.16] and const [0.0072] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  17.011488       1.164709                                      
+                         213.000000      14.594520       Unweighted events, alpha=0.079866
+      => Product of prop_binCR1_bin4_Top[213.00,126.23,332.92] and const [0.0047] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.099916        0.008726                                      
+                         131.000000      11.445523       Unweighted events, alpha=0.000763
+      => Product of prop_binCR1_bin4_VV[131.00,66.09,229.07] and const [0.0076] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.033502        0.006509                                      
+                         26.000000       5.099020        Unweighted events, alpha=0.001289
+      => Product of prop_binCR1_bin4_VVV[26.00,4.32,80.64] and const [0.0385] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.000000        0.000000                                      
+      => Error is zero, ignore      
+  ----------------------------------------------------------
+------------------------------------------------------------
+============================================================
+Analysing bin errors for: prop_binCR2
+Poisson cut-off: 1e+07
+============================================================
+Bin        Contents        Error           Notes                         
+0          251.110882      7.604613        total sum                     
+0          1090.000000     33.015148       Unweighted events, alpha=0.230377
+  => Number of weighted events is below poisson threshold
+    WZG                  0.005197        0.002626                                      
+                         4.000000        2.000000        Unweighted events, alpha=0.001299
+      => Product of prop_binCR2_bin0_WZG[4.00,0.00,38.96] and const [0.2500] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              141.270004      4.883474                                      
+                         837.000000      28.930952       Unweighted events, alpha=0.168781
+      => Product of prop_binCR2_bin0_FakePho[837.00,650.19,1056.91] and const [0.0012] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  6.515778        1.312277                                      
+                         25.000000       5.000000        Unweighted events, alpha=0.260631
+      => Product of prop_binCR2_bin0_Top[25.00,3.96,78.98] and const [0.0400] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.023125        0.004260                                      
+                         29.000000       5.385165        Unweighted events, alpha=0.000797
+      => Product of prop_binCR2_bin0_VV[29.00,5.44,85.56] and const [0.0345] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.003358        0.001965                                      
+                         3.000000        1.732051        Unweighted events, alpha=0.001119
+      => Product of prop_binCR2_bin0_VVV[3.00,0.00,36.46] and const [0.3333] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   103.293419      5.679764                                      
+                         331.000000      18.193405       Unweighted events, alpha=0.312065
+      => Product of prop_binCR2_bin0_VG[331.00,219.17,475.97] and const [0.0030] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+1          93.188101       4.623006        total sum                     
+1          406.000000      20.149442       Unweighted events, alpha=0.229527
+  => Number of weighted events is below poisson threshold
+    WZG                  0.012522        0.003995                                      
+                         10.000000       3.162278        Unweighted events, alpha=0.001252
+      => Product of prop_binCR2_bin1_WZG[10.00,0.30,52.00] and const [0.1000] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              46.193127       2.596013                                      
+                         317.000000      17.804494       Unweighted events, alpha=0.145720
+      => Product of prop_binCR2_bin1_FakePho[317.00,207.88,459.26] and const [0.0032] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  3.742563        0.925118                                      
+                         16.000000       4.000000        Unweighted events, alpha=0.233910
+      => Product of prop_binCR2_bin1_Top[16.00,1.33,63.38] and const [0.0625] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.015146        0.003552                                      
+                         18.000000       4.242641        Unweighted events, alpha=0.000841
+      => Product of prop_binCR2_bin1_VV[18.00,1.81,66.97] and const [0.0556] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.003162        0.001826                                      
+                         3.000000        1.732051        Unweighted events, alpha=0.001054
+      => Product of prop_binCR2_bin1_VVV[3.00,0.00,36.46] and const [0.3333] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   43.221581       3.711742                                      
+                         136.000000      11.661904       Unweighted events, alpha=0.317806
+      => Product of prop_binCR2_bin1_VG[136.00,69.59,235.57] and const [0.0074] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+2          46.468085       3.564515        total sum                     
+2          170.000000      13.038405       Unweighted events, alpha=0.273342
+  => Number of weighted events is below poisson threshold
+    WZG                  0.002485        0.001757                                      
+                         2.000000        1.414214        Unweighted events, alpha=0.001242
+      => Product of prop_binCR2_bin2_WZG[2.00,0.00,33.79] and const [0.5000] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              19.497700       1.647093                                      
+                         140.000000      11.832160       Unweighted events, alpha=0.139269
+      => Product of prop_binCR2_bin2_FakePho[140.00,72.41,240.75] and const [0.0071] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  2.701839        0.703687                                      
+                         15.000000       3.872983        Unweighted events, alpha=0.180123
+      => Product of prop_binCR2_bin2_Top[15.00,1.11,61.56] and const [0.0667] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.013390        0.003147                                      
+                         18.000000       4.242641        Unweighted events, alpha=0.000744
+      => Product of prop_binCR2_bin2_VV[18.00,1.81,66.97] and const [0.0556] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.003220        0.001860                                      
+                         3.000000        1.732051        Unweighted events, alpha=0.001073
+      => Product of prop_binCR2_bin2_VVV[3.00,0.00,36.46] and const [0.3333] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   24.249451       3.081827                                      
+                         62.000000       7.874008        Unweighted events, alpha=0.391120
+      => Product of prop_binCR2_bin2_VG[62.00,21.68,135.45] and const [0.0161] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+3          13.211652       2.072554        total sum                     
+3          41.000000       6.403124        Unweighted events, alpha=0.322235
+  => Number of weighted events is below poisson threshold
+    WZG                  0.001134        0.001134                                      
+                         1.000000        1.000000        Unweighted events, alpha=0.001134
+      => Product of prop_binCR2_bin3_WZG[1.00,0.00,30.85] and const [1.0000] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              4.581389        0.775009                                      
+                         35.000000       5.916080        Unweighted events, alpha=0.130897
+      => Product of prop_binCR2_bin3_FakePho[35.00,7.92,95.13] and const [0.0286] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  1.052449        0.398163                                      
+                         7.000000        2.645751        Unweighted events, alpha=0.150350
+      => Product of prop_binCR2_bin3_Top[7.00,0.07,45.79] and const [0.1429] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   0.002743        0.001426                                      
+                         4.000000        2.000000        Unweighted events, alpha=0.000686
+      => Product of prop_binCR2_bin3_VV[4.00,0.00,38.96] and const [0.2500] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.003193        0.002414                                      
+                         2.000000        1.414214        Unweighted events, alpha=0.001597
+      => Product of prop_binCR2_bin3_VVV[2.00,0.00,33.79] and const [0.5000] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   7.570743        1.880504                                      
+                         16.000000       4.000000        Unweighted events, alpha=0.473171
+      => Product of prop_binCR2_bin3_VG[16.00,1.33,63.38] and const [0.0625] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+============================================================
+Analysing bin errors for: prop_binCR3
+Poisson cut-off: 1e+07
+============================================================
+Bin        Contents        Error           Notes                         
+0          79.475506       0.233631        total sum                     
+0          115719.000000   340.174955      Unweighted events, alpha=0.000687
+  => Number of weighted events is below poisson threshold
+    WZG                  0.000000        0.001263                                      
+      => Poisson not viable, prop_binCR3_bin0_WZG[0.00,-7.00,7.00] to be gaussian constrained
+  ----------------------------------------------------------
+    Top                  0.024575        0.008382                                      
+                         9.000000        3.000000        Unweighted events, alpha=0.002731
+      => Product of prop_binCR3_bin0_Top[9.00,0.20,49.98] and const [0.1111] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   79.444801       0.233464                                      
+                         115795.000000   340.286644      Unweighted events, alpha=0.000686
+      => Product of prop_binCR3_bin0_VV[115795.00,113428.97,118194.04] and const [0.0000] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.006130        0.002506                                      
+                         6.000000        2.449490        Unweighted events, alpha=0.001022
+      => Product of prop_binCR3_bin0_VVV[6.00,0.03,43.60] and const [0.1667] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+1          159.852752      0.333527        total sum                     
+1          229709.000000   479.279668      Unweighted events, alpha=0.000696
+  => Number of weighted events is below poisson threshold
+    WZG                  0.003663        0.002115                                      
+                         3.000000        1.732051        Unweighted events, alpha=0.001221
+      => Product of prop_binCR3_bin1_WZG[3.00,0.00,36.46] and const [0.3333] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  0.046367        0.012078                                      
+                         15.000000       3.872983        Unweighted events, alpha=0.003091
+      => Product of prop_binCR3_bin1_Top[15.00,1.11,61.56] and const [0.0667] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   159.789627      0.333278                                      
+                         229871.000000   479.448642      Unweighted events, alpha=0.000695
+      => Product of prop_binCR3_bin1_VV[229871.00,226530.84,233244.16] and const [0.0000] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.013095        0.003935                                      
+                         11.000000       3.316625        Unweighted events, alpha=0.001190
+      => Product of prop_binCR3_bin1_VVV[11.00,0.42,53.98] and const [0.0909] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+2          79.478725       0.236188        total sum                     
+2          113236.000000   336.505572      Unweighted events, alpha=0.000702
+  => Number of weighted events is below poisson threshold
+    WZG                  0.004934        0.002471                                      
+                         4.000000        2.000000        Unweighted events, alpha=0.001234
+      => Product of prop_binCR3_bin2_WZG[4.00,0.00,38.96] and const [0.2500] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  0.040200        0.009479                                      
+                         18.000000       4.242641        Unweighted events, alpha=0.002233
+      => Product of prop_binCR3_bin2_Top[18.00,1.81,66.97] and const [0.0556] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   79.419357       0.235954                                      
+                         113291.000000   336.587284      Unweighted events, alpha=0.000701
+      => Product of prop_binCR3_bin2_VV[113291.00,110950.87,115664.14] and const [0.0000] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.014233        0.003806                                      
+                         14.000000       3.741657        Unweighted events, alpha=0.001017
+      => Product of prop_binCR3_bin2_VVV[14.00,0.91,59.71] and const [0.0714] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+3          38.447205       0.165540        total sum                     
+3          53941.000000    232.252018      Unweighted events, alpha=0.000713
+  => Number of weighted events is below poisson threshold
+    WZG                  0.000000        0.001198                                      
+      => Poisson not viable, prop_binCR3_bin3_WZG[0.00,-7.00,7.00] to be gaussian constrained
+  ----------------------------------------------------------
+    Top                  0.018052        0.006284                                      
+                         8.000000        2.828427        Unweighted events, alpha=0.002257
+      => Product of prop_binCR3_bin3_Top[8.00,0.12,47.91] and const [0.1250] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   38.420956       0.165391                                      
+                         53965.000000    232.303681      Unweighted events, alpha=0.000712
+      => Product of prop_binCR3_bin3_VV[53965.00,52354.84,55608.17] and const [0.0000] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.008197        0.002903                                      
+                         8.000000        2.828427        Unweighted events, alpha=0.001025
+      => Product of prop_binCR3_bin3_VVV[8.00,0.12,47.91] and const [0.1250] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+4          41.096965       0.172402        total sum                     
+4          56824.000000    238.377851      Unweighted events, alpha=0.000723
+  => Number of weighted events is below poisson threshold
+    WZG                  0.000000        0.001588                                      
+      => Poisson not viable, prop_binCR3_bin4_WZG[0.00,-7.00,7.00] to be gaussian constrained
+  ----------------------------------------------------------
+    Top                  0.018055        0.006918                                      
+                         7.000000        2.645751        Unweighted events, alpha=0.002579
+      => Product of prop_binCR3_bin4_Top[7.00,0.07,45.79] and const [0.1429] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   41.066132       0.172216                                      
+                         56862.000000    238.457543      Unweighted events, alpha=0.000722
+      => Product of prop_binCR3_bin4_VV[56862.00,55208.76,58548.25] and const [0.0000] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.012779        0.003710                                      
+                         12.000000       3.464102        Unweighted events, alpha=0.001065
+      => Product of prop_binCR3_bin4_VVV[12.00,0.56,55.92] and const [0.0833] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+============================================================
+Analysing bin errors for: prop_binSR
+Poisson cut-off: 1e+07
+============================================================
+Bin        Contents        Error           Notes                         
+0          27.320353       2.173613        total sum                     
+0          158.000000      12.569805       Unweighted events, alpha=0.172914
+  => Number of weighted events is below poisson threshold
+    WZG                  8.988022        0.110389                                      
+                         6629.000000     81.418671       Unweighted events, alpha=0.001356
+      => Product of prop_binSR_bin0_WZG[6629.00,6074.97,7216.07] and const [0.0002] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              3.430443        1.741956                                      
+                         4.000000        2.000000        Unweighted events, alpha=0.857611
+      => Product of prop_binSR_bin0_FakeLep[4.00,0.00,38.96] and const [0.2500] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              8.767596        1.215448                                      
+                         52.000000       7.211103        Unweighted events, alpha=0.168608
+      => Product of prop_binSR_bin0_FakePho[52.00,16.20,120.92] and const [0.0192] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  0.520361        0.213843                                      
+                         6.000000        2.449490        Unweighted events, alpha=0.086727
+      => Product of prop_binSR_bin0_Top[6.00,0.03,43.60] and const [0.1667] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   4.417239        0.056333                                      
+                         6149.000000     78.415560       Unweighted events, alpha=0.000718
+      => Product of prop_binSR_bin0_VV[6149.00,5615.99,6715.06] and const [0.0002] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.328669        0.019487                                      
+                         284.000000      16.852300       Unweighted events, alpha=0.001157
+      => Product of prop_binSR_bin0_VVV[284.00,181.52,419.63] and const [0.0035] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.868023        0.389104                                      
+                         5.000000        2.236068        Unweighted events, alpha=0.173605
+      => Product of prop_binSR_bin0_VG[5.00,0.01,41.33] and const [0.2000] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+1          24.042176       1.863997        total sum                     
+1          166.000000      12.884099       Unweighted events, alpha=0.144832
+  => Number of weighted events is below poisson threshold
+    WZG                  10.138110       0.116574                                      
+                         7563.000000     86.965510       Unweighted events, alpha=0.001340
+      => Product of prop_binSR_bin1_WZG[7563.00,6970.15,8188.89] and const [0.0001] to be poisson constrained
+  ----------------------------------------------------------
+    FakeLep              2.811407        1.520473                                      
+                         3.000000        1.732051        Unweighted events, alpha=0.937136
+      => Product of prop_binSR_bin1_FakeLep[3.00,0.00,36.46] and const [0.3333] to be poisson constrained
+  ----------------------------------------------------------
+    FakePho              5.521491        0.857724                                      
+                         41.000000       6.403124        Unweighted events, alpha=0.134671
+      => Product of prop_binSR_bin1_FakePho[41.00,10.66,104.43] and const [0.0244] to be poisson constrained
+  ----------------------------------------------------------
+    Top                  1.112815        0.187005                                      
+                         35.000000       5.916080        Unweighted events, alpha=0.031795
+      => Product of prop_binSR_bin1_Top[35.00,7.92,95.13] and const [0.0286] to be poisson constrained
+  ----------------------------------------------------------
+    VV                   3.167719        0.047988                                      
+                         4357.000000     66.007575       Unweighted events, alpha=0.000727
+      => Product of prop_binSR_bin1_VV[4357.00,3910.82,4836.23] and const [0.0002] to be poisson constrained
+  ----------------------------------------------------------
+    VVV                  0.529312        0.025217                                      
+                         441.000000      21.000000       Unweighted events, alpha=0.001200
+      => Product of prop_binSR_bin1_VVV[441.00,309.59,605.53] and const [0.0023] to be poisson constrained
+  ----------------------------------------------------------
+    VG                   0.761323        0.612744                                      
+                         2.000000        1.414214        Unweighted events, alpha=0.380661
+      => Product of prop_binSR_bin1_VG[2.00,0.00,33.79] and const [0.5000] to be poisson constrained
+  ----------------------------------------------------------
+------------------------------------------------------------
+Check... param_range:  0,2
+Channel CR1 will use autoMCStats with settings: event-threshold=1e+07, include-signal=1, hist-mode=1
+Channel CR2 will use autoMCStats with settings: event-threshold=1e+07, include-signal=1, hist-mode=1
+Channel CR3 will use autoMCStats with settings: event-threshold=1e+07, include-signal=1, hist-mode=1
+Channel SR will use autoMCStats with settings: event-threshold=1e+07, include-signal=1, hist-mode=1
+WARNING: cannot freeze nuisance parameter all if it doesn't exist!
+
+ -- Significance -- 
+Significance: 2.4989
+Done in 0.01 min (cpu), 0.01 min (real)
