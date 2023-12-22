@@ -38,3 +38,6 @@ Need CMSSW==corresponding thos of HiggsCombined tool setting
 python N05_Prepare_hist_forCombine.py 0
 ```
 0 means the 0th parameter: Standard model. You need to use 0 if there is no special reason. The starting point of HC should be the SM. We will fit this using pre-calculated quadratic function: ratios/XXX.npys
+
+### 4. Limit calculation
+- See here : https://github.com/JW-corp/WZG/tree/main/AQGC/HCtool/2018
