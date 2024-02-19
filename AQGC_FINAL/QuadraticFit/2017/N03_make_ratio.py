@@ -24,7 +24,7 @@ list_all = ['FM0' ,'FM1' ,'FM2' ,'FM3' ,'FM4' ,'FM5' ,'FM7' ,'FT0' ,'FT1' ,'FT2'
 
 ## - I/O
 Nbin = 2
-file_hist = ROOT.TFile.Open("../../input_hist_root/WZG_18.root")
+file_hist = ROOT.TFile.Open("test/WZG.root")
 h1 = file_hist.Get("WZG_WZG_mllla_aQGC_None_Rwt0")
 All_zero = h1.GetBinContent(Nbin)
 
@@ -44,11 +44,10 @@ for param in list_all:
 
 
 	
-	# Fill Center value (all-zero SM) first
+	# Center value
 	tmp_var_list.append(0)
 	tmp_rat_list.append(All_zero/All_zero)
 
-	# Fill Other parameters
 	for i, var in enumerate(list_map[param]):
 
 		infile_name = "WZG_WZG_mllla_aQGC_None_Rwt" + str(cnt)
@@ -56,7 +55,7 @@ for param in list_all:
 
 		ratio = h1.GetBinContent(Nbin)/All_zero
 		
-		#print(cnt,param,h1.GetBinContent(Nbin),All_zero,ratio)
+		print(cnt,param,h1.GetBinContent(Nbin),All_zero,ratio)
 		tmp_var_list.append(float(var))
 		tmp_rat_list.append(float(ratio))
 		cnt+=1
@@ -64,8 +63,19 @@ for param in list_all:
 
 	outname = param + '.npy'
 	outpath = npy_out_dir_name + '/' + outname
-	print(outpath)
-	outArr  = np.array([tmp_var_list,tmp_rat_list])
-	np.save(outpath,outArr)
+	np.save(outpath,[tmp_var_list,tmp_rat_list])
 
-print("check is saved: ",np.load(outpath))
+quit()
+
+
+#h1.SetLineColor(2)
+#h1.SetFillColor(0)
+#h1.SetLineWidth(4)
+#
+#
+#print(h1)
+#c1 = ROOT.TCanvas("","",1000,1000)
+#h1.Draw("HIST")
+#c1.Print("this.png")
+
+
