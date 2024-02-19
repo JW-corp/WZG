@@ -1,0 +1,51 @@
+imax 	1	number of channels
+jmax 	6	number of bkgs
+kmax 	38	number of NPs
+----------------
+bin 	SR_mlllA_bin2
+observation	1.489811
+----------------
+bin                           SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   SR_mlllA_bin2   
+process                                                                               aQGC           FakeLep        FakePho        Top            VV             VVV            VG             
+process                                                                               0              1              2              3              4              5              6              
+rate                                                                                  0.600260       0.601279       0.081283       0.030283       0.119114       0.057591       0.0            
+----------------
+lumi_18                                    lnN                                        1.015          -              1.015          1.015          1.015          1.015          1.015          
+lumi_fullrun2                              lnN                                        1.02           -              1.02           1.02           1.02           1.02           1.02           
+lumi_1718                                  lnN                                        1.002          -              1.002          1.002          1.002          1.002          1.002          
+jesTotal_18                                lnN                                        1.005868       -              -              1.054309       1.025532       1.022018       1.000000       
+jer_18                                     lnN                                        1.013852       -              -              1.050891       1.029480       1.024526       1.000000       
+fakerate_18Sta                             lnN                                        -              1.051809       -              -              -              -              -              
+fakerate_18Ele                             lnN                                        -              1.333242       -              -              -              -              -              
+fakerate_18Mu                              lnN                                        -              1.032432       -              -              -              -              -              
+FakePho_mc                                 lnN                                        -              -              1.083215       -              -              -              -              
+FakePho_closure                            lnN                                        -              -              1.041750       -              -              -              -              
+FakePho_iso                                lnN                                        -              -              1.010996       -              -              -              -              
+FakePho_sta_18                             lnN                                        -              -              1.205060       -              -              -              -              
+HLT_method_sys                             lnN                                        1.01           -              -              1.01           1.01           1.01           1.01           
+HLT_sta_18                                 lnN                                        1.002          -              -              1.002          1.002          1.002          1.002          
+photon_id                                  lnN                                        1.022133       -              -              1.010777       1.020024       1.019542       1.000000       
+muon_id                                    lnN                                        1.001618       -              -              1.002354       1.001448       1.001971       1.000000       
+ele_reco                                   lnN                                        1.010306       -              -              1.005181       1.007978       1.008380       1.000000       
+ele_id                                     lnN                                        1.029316       -              -              1.023133       1.055881       1.033644       1.000000       
+pileup                                     lnN                                        1.018374       -              -              1.013528       1.017440       1.003987       1.000000       
+SR_aQGC_stat_18_bin2                       lnN                                        1.086251       -              -              -              -              -              -              
+SR_FakeLep_stat_18_bin2                    lnN                                        -              2.132700       -              -              -              -              -              
+SR_FakePho_stat_18_bin2                    lnN                                        -              -              2.026811       -              -              -              -              
+SR_Top_stat_18_bin2                        lnN                                        -              -              -              1.424404       -              -              -              
+SR_VV_stat_18_bin2                         lnN                                        -              -              -              -              1.080144       -              -              
+SR_VVV_stat_18_bin2                        lnN                                        -              -              -              -              -              1.148993       -              
+SR_VG_stat_18_bin2                         lnN                                        -              -              -              -              -              -              1.000000       
+WZG_scale                                  lnN                                        1.085059       -              -              -              -              -              -              
+WZG_pdf                                    lnN                                        1.068662       -              -              -              -              -              -              
+WZG_PSWeight_isr                           lnN                                        1.004306       -              -              -              -              -              -              
+WZG_PSWeight_fsr                           lnN                                        1.025972       -              -              -              -              -              -              
+Top_scale                                  lnN                                        -              -              -              1.126658       -              -              -              
+Top_pdf                                    lnN                                        -              -              -              1.138452       -              -              -              
+Top_PSWeight_isr                           lnN                                        -              -              -              1.023550       -              -              -              
+Top_PSWeight_fsr                           lnN                                        -              -              -              1.280489       -              -              -              
+btagWeight_bc_corr                         lnN                                        1.000492       -              -              1.001925       1.000892       1.000883       1.000000       
+btagWeight_l_corr                          lnN                                        1.005996       -              -              1.059985       1.000358       1.002474       1.000000       
+btagWeight_bc_uncorr_18                    lnN                                        1.000491       -              -              1.001701       1.000892       1.000845       1.000000       
+btagWeight_l_uncorr_18                     lnN                                        1.005948       -              -              1.059682       1.000259       1.002388       1.000000       
+VV_Norm                                    rateParam                                  *              VV             1.0            [0.2]          
