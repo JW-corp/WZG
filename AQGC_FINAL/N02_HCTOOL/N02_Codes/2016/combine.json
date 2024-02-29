@@ -1,0 +1,19 @@
+{
+    "utils":{
+        "imax":1,
+        "nrateParam":1
+    },
+
+
+    "regions":{
+        "SR_1":{
+            "final_name":"SR",
+            "file_name":"WZG",
+            "bins":2,
+            "variable":"WZG_mllla",
+            "variable_plotname":"mlllA",
+            "csv":"combine_AQGC.csv",
+            "tag":"2016"
+        }
+    }
+}
