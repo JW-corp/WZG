@@ -12,5 +12,8 @@
 ### 🚀 General step..  
 1. Do N01  : Make hist 
 2. Do N02  : Read number of expected events from output of N01 (histogram) and read function in Quadratic Fit. Calculate Limit.
-
+  
+### 🚀 Draw hist and Summarize uncertainties
+1. https://github.com/JW-corp/WZG/blob/main/Analyzer_summary/aQGC/draw_sr_hist.ipynb
+2. https://github.com/JW-corp/WZG/tree/main/Analyzer_summary/aQGC/uncertainty
     
